@@ -2,6 +2,10 @@
 
 ## Project management
 
-It is intended to develop an information system with a web interface for project management. There are only two types of permissions in the context of a project: the coordinator and the common users. Users may be associated with multiple projects. Each project has a team, task lists, and also a discussion forum for members of the project. Task lists can be organized into groups. Associated with each task can also be comments from other users. It is important to keep track of the user that defined the task as well as the user who completed it.
+The purpose of this project is to develop and promote a project management system available through the web for organizing and managing projects.
 
-Pretende-se desenvolver um sistema de informação com interface web para a gestão de projetos. Os utilizadores podem estar associados a vários projetos. Existem apenas dois tipos de permissões no contexto de cada projeto, coordenador ou utilizador comum. Cada projeto tem uma equipa, listas de tarefas e ainda um fórum de discussão para os membros do projeto. As listas de tarefas podem ser organizadas em grupos. Associado a cada tarefa podem também existir comentários de outros utilizadores. É importante existir um registo do utilizador que definiu a tarefa, bem como do utilizador que a concluiu.
+In the context of computer engineering few things are as important as a good project manager for group projects, having that in mind we decided to develop a simple but effective one.
+
+The platform will have a very simplistic design, with minimal clutter and optimal performance. Fast search engine and intuitive UI will allow anyone to participate in discussion forums, create task lists and organize groups. In addition, each task can be commented on by other users. It'll also be multiplatform (desktop, smartphone).
+
+Finally the users will be placed into 2 categories with different permissions, users and administrators. Administrators are able to ban users and delete content.
