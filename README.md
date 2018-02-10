@@ -10,5 +10,5 @@ https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 
 ### Artefacts
 #### User Requirements specification
-* A1: [Project presentation](https://github.com/mpcmarques/lbaw/blob/master/A1.md)
+* A1: [Project presentation](https://github.com/mpcmarques/lbaw/blob/master/Artefacts/A1.pdf)
 
