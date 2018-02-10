@@ -1,19 +1,18 @@
-# A1: Project Management
-> The purpose of this project is to develop and promote a project management system available through the web for organizing and managing projects, allowing easy communication between team members and sustained by advertisement.
->Currently, whatever the field may be, there's always the need to organize your project properly and to have good communication in order to maximize success. With that in mind we decided to develop a web based project management system with emphasis on simplicity and efficiency, such that organizing and updating a project and it's tasks becomes a fast and easy process. 
->  Users may be associated with multiple projects. Each project has a team, task lists, and a discussion forum. Task lists can be organized into groups and each task can be commented on by other team members. There are only two types of permissions in the context of a project: the coordinator and the common users. The coordinator is allowed to add and remove team members, delete and edit all tasks, and moderate the discussion forum,
-> Finally the users will be placed into 3 categories with different permissions, visitors, users and administrators. Visitors can only view public projects, users have access to all of the features and administrators are able to ban users and delete content.
+# FEUP-LBAW
+### 3MIEIC01 - Group 14 - 7.Project management
+http://lbaw.fe.up.pt/201617/doku.php/lbaw1614/index
 
- 
-***
- 
-## Revision history
- 
-Changes made to the first submission:
-1. Item 1
-1. Item 2
- 
-***
- 
-GROUP1743, 06/01/2018
+### Developers
+Mateus Pedroza Cortes Marques
+Bernardo Manuel Costa Barbosa
+João Pedro Teixeira Pereira de Sá
+Mario Rui Macedo Flores dos Santos
+* [Mário Rui Macedo Flores dos Santos](https://github.com/mariosantosprivate)
+* [Bernardo Manuel Costa Barbosa](https://github.com/bernardomcbarbosa)
+* [Mateus Pedroza Cortes Marques](https://github.com/mpcmarques)
+* [João Pedro Teixeira Pereira de Sá](dunno)
+
+### Artefacts
+#### User Requirements specification
+* A1: [Project presentation](https://github.com/mpcmarques/lbaw/blob/master/A1.md)
 
