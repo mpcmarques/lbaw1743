@@ -1,6 +1,6 @@
 # FEUP-LBAW
-### 3MIEIC01 - Group 14 - 7.Project management
-http://lbaw.fe.up.pt/201617/doku.php/lbaw1614/index
+### 3MIEIC04 - Group 43 - 7.Project management
+https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 
 ### Developers
 Mateus Pedroza Cortes Marques
