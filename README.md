@@ -3,10 +3,6 @@
 https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 
 ### Developers
-Mateus Pedroza Cortes Marques
-Bernardo Manuel Costa Barbosa
-João Pedro Teixeira Pereira de Sá
-Mario Rui Macedo Flores dos Santos
 * [Mário Rui Macedo Flores dos Santos](https://github.com/mariosantosprivate)
 * [Bernardo Manuel Costa Barbosa](https://github.com/bernardomcbarbosa)
 * [Mateus Pedroza Cortes Marques](https://github.com/mpcmarques)
