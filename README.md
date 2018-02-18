@@ -14,6 +14,6 @@ https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 ### Artifacts
 
 #### User Requirements specification
-* A1: [Project presentation](artifacts/a1.md)
-* A2: [Actors and User Stories](artifacts/a2.md)
+* A1: [Project presentation](/artifacts/A1.md)
+* A2: [Actors and User Stories](/artifacts/A2.md)
 
