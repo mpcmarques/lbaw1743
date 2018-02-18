@@ -1,10 +1,16 @@
 # FEUP-LBAW
 
-### 3MIEIC04 - Group 43 - 7.Project management
+### NAME
+Group 1743
+
+
+### THEME: 
+
+7.Project management
 
 https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 
-### Developers
+### Group Elements
 
 * [Mário Rui Macedo Flores dos Santos](https://github.com/mariosantosprivate)
 * [Bernardo Manuel Costa Barbosa](https://github.com/bernardomcbarbosa)
