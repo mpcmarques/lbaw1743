@@ -15,4 +15,7 @@
 </head>
 <body>
 
+
+{include file="navbar.tpl" title="navbar"}
+
 </body>
