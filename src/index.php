@@ -14,6 +14,6 @@
 $smarty->caching = true;
 $smarty->cache_lifetime = 120;
 // display it
-$smarty->display('header.tpl');
+$smarty->display('index.tpl');
 
 ?>
