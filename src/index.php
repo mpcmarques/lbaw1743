@@ -11,6 +11,6 @@
 //$smarty->assign('address', '45th & Harris');
 
 // display it
-$smarty->display('index.tpl');
+$smarty->display('header.tpl');
 
 ?>
