@@ -14,7 +14,7 @@
 </head>
 <body>
 
-
+<!-- navbar -->
 {include file="navbar.tpl" title="navbar"}
 
 </body>
