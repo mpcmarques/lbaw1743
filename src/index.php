@@ -10,6 +10,9 @@
 //$smarty->assign('name', 'george smith');
 //$smarty->assign('address', '45th & Harris');
 
+
+$smarty->caching = true;
+$smarty->cache_lifetime = 120;
 // display it
 $smarty->display('header.tpl');
 
