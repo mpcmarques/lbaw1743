@@ -13,8 +13,6 @@
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<!-- navbar -->
-{include file="navbar.tpl" title="navbar"}
-
+	<!-- navbar -->
+	{include file="navbar.tpl" title="navbar"}
 </body>

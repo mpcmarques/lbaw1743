@@ -1,5 +1,5 @@
 <?php
-  include('libs/Smarty.class.php');
+  require('libs/Smarty.class.php');
 
   // create object
   $smarty = new Smarty;
@@ -9,7 +9,6 @@
 // values for the purpose of this example.
 //$smarty->assign('name', 'george smith');
 //$smarty->assign('address', '45th & Harris');
-
 
 $smarty->caching = true;
 $smarty->cache_lifetime = 120;
