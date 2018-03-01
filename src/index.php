@@ -7,7 +7,7 @@ $smarty = new Smarty;
 $smarty->caching = true;
 $smarty->cache_lifetime = 120;
 // display it
-$smarty->display('header.tpl');
-$smarty->display('footer.tpl');
+$smarty->display('templates/common/header.tpl');
+$smarty->display('templates/common/footer.tpl');
 
 ?>
