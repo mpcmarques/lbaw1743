@@ -6,10 +6,10 @@
           <button type="button" class="list-group-item list-group-item-action">
             Dashboard
           </button>
-          <button type="button" class="list-group-item list-group-item-action">
+          <button type="button" class="list-group-item list-group-item-action active">
             My Projects
           </button>
-          <button type="button" class="list-group-item list-group-item-action active">
+          <button type="button" class="list-group-item list-group-item-action">
             Tasks
           </button>
           <button type="button" class="list-group-item list-group-item-action">
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="col-10">
-      {include file='templates/tasks.tpl'}
+      {include file='templates/my_projects.tpl'}
     </div>
   </div>
 </div>
