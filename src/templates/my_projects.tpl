@@ -33,23 +33,35 @@
             <img class="card-img-top" src="images/task-placeholder.svg" alt="Project image">
             <div class="card-body text-center">
               <h6 class="card-title">Project name</h6>
-              <img src="images/octicons/clippy.svg" class="btn rounded bg-lapis pr-0 mr-0" href="#">
-              <img src="images/octicons/comment-discussion.svg" class="btn rounded bg-green-sheen p-0 m-0" href="#">
-              <img src="images/octicons/tools.svg" class="btn rounded bg-sunset pl-0 ml-0" href="#">
+              <a href="#">
+                <img src="images/octicons/clippy.svg" style="background-color:#247ba0" class="btn">
+              </a>
+              <a href="#">
+              <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
+              </a>
+              <a href="#">
+              <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <div class="card">
-          <img class="card-img-top" src="images/task-placeholder.svg" alt="Project image">
-          <div class="card-body text-center">
-            <h6 class="card-title">Project name</h6>
-            <img src="images/octicons/clippy.svg" class="btn rounded btn-lapis pr-0 mr-0" href="#">
-            <img src="images/octicons/comment-discussion.svg" class="btn rounded btn-green-sheen p-0 m-0" href="#">
-            <img src="images/octicons/tools.svg" class="btn rounded btn-sunset pl-0 ml-0" href="#">
+      <div class="row">
+        <div class="col-3">
+          <div class="card">
+            <img class="card-img-top" src="images/task-placeholder.svg" alt="Project image">
+            <div class="card-body text-center">
+              <h6 class="card-title">Project name</h6>
+              <a href="#">
+                <img src="images/octicons/clippy.svg" style="background-color:#247ba0" class="btn">
+              </a>
+              <a href="#">
+              <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
+              </a>
+              <a href="#">
+              <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
+              </a>
+            </div>
           </div>
         </div>
       </div>
