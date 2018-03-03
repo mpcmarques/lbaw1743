@@ -18,9 +18,7 @@
         <div class="col-4">
           <form>
             <div class="form-group text-right">
-              <label>
-                <input type="text" class="form-control" name="search" placeholder="Search">
-              </label>
+              <input type="text" class="form-control" name="search" placeholder="Search">
             </div>
           </form>
         </div>
@@ -37,10 +35,10 @@
                 <img src="images/octicons/clippy.svg" style="background-color:#247ba0" class="btn">
               </a>
               <a href="#">
-              <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
+                <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
               </a>
               <a href="#">
-              <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
+                <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
               </a>
             </div>
           </div>
@@ -56,10 +54,10 @@
                 <img src="images/octicons/clippy.svg" style="background-color:#247ba0" class="btn">
               </a>
               <a href="#">
-              <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
+                <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
               </a>
               <a href="#">
-              <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
+                <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
               </a>
             </div>
           </div>

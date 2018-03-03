@@ -3,7 +3,6 @@
     <div class="card-header">
       <h5>Dashboard</h5>
       <div class="form-group">
-        <label></label>
         <select class="form-control" id="sel_orderBy">
           <option>Order by Date Asc.</option>
           <option>Order by Date Desc.</option>
