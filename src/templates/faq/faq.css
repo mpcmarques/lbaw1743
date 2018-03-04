@@ -1,0 +1,10 @@
+.faq-content {
+    margin-bottom: 40px;
+}
+
+.faq-questions {
+    list-style: decimal inside;
+}
+.faq-questions .list-group-item {
+    display: list-item;
+}

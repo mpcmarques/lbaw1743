@@ -6,6 +6,6 @@
   $smarty->cache_lifetime = 120;
 
   $smarty->display('templates/common/header.tpl');
-  $smarty->display('templates/home.tpl');
+  $smarty->display('templates/home/home.tpl');
   $smarty->display('templates/common/footer.tpl');
 ?>
