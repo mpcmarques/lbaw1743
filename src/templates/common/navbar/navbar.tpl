@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="templates/common/navbar/navbar.css"/>
 
 <!-- navbar -->
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
 		<a class="navbar-brand" href="home.php">
 			<img class="company-icon" src="images/logo.png" alt="Plenum" width="30" height="30"/>
 		</a>
