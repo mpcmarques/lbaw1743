@@ -8,9 +8,7 @@
         <div class="col-6">
           <form>
             <div class="form-group text-right">
-              <label>
-                <input type="text" class="form-control" name="search" placeholder="Search">
-              </label>
+              <input type="text" class="form-control" name="search" placeholder="Search">
             </div>
           </form>
         </div>

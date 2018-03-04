@@ -5,7 +5,7 @@
   $smarty->caching = true;
   $smarty->cache_lifetime = 120;
 
-  $page='templates/dashboard/my_projects.tpl';
+  $page='templates/dashboard/tasks.tpl';
 
   $smarty->assign('page', $page);
   $smarty->display('templates/common/header.tpl');
