@@ -1,18 +1,12 @@
-.error-page {
-    margin-bottom: 150px;
-}
+
 
 .error-page h1{
   font-size: 15em;
 }
 
 .error-page p{
+  padding-top: 20px;
   font-size: 2em;
-}
-
-.error-page > .inline-group{
-  display: inline-flex;
-  padding-left: 10em;
 }
 
 .error-page img{
