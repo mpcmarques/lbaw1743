@@ -1,14 +1,16 @@
- <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action">
-        Dashboard
-    </button>
-    <button type="button" class="list-group-item list-group-item-action active">
-        My Projects
-     </button>
-     <button type="button" class="list-group-item list-group-item-action">
-        Tasks
-     </button>
-     <button type="button" class="list-group-item list-group-item-action">
-        Public Projects
-     </button>
+<div class="container">
+  <div class="list-group">
+    <li class="list-group-item list-group-item-info">
+      Dashboard
+    </li>
+    <a href="dashboard_my_projects.php" class="list-group-item list-group-item-action" role="button">
+      My Projects
+    </a>
+    <a href="dashboard_tasks.php" class="list-group-item list-group-item-action" role="button">
+      Tasks
+    </a>
+    <a href="dashboard_public_projects.php" class="list-group-item list-group-item-action" role="button">
+      Public Projects
+    </a>
+  </div>
 </div>

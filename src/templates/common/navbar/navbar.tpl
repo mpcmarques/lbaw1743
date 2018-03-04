@@ -23,7 +23,7 @@
 					<a class="nav-link" href="faq.php">FAQ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="dashboard.php">Dashboard</a>
+					<a class="nav-link" href="dashboard_my_projects.php">Dashboard</a>
 				</li>
 				<li>
 			</ul>
