@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" type="text/css" href="templates/admin/admin.css"/>
 
 {* if user is logged in*}
