@@ -5,7 +5,7 @@
 <!-- navbar -->
 <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
 		<a class="navbar-brand" href="index.php">
-			<img class="company-icon" src="images/logo.png" alt="Plenum" width="30" height="30"/>
+			<img class="company-icon" src="images/logo.png" alt="Plenum" width="40" height="40"/>
 		</a>
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,24 +45,23 @@
             </div>
             <div class="modal-body mx-3">
                 <div class="md-form mb-5">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-										  <label data-error="wrong" data-success="right" for="defaultForm-email">Username / Email</label>
+										 <label data-error="wrong" data-success="right" for="defaultForm-email">Username / Email</label>
                     <input type="email" id="defaultForm-email" class="form-control validate">
                 </div>
 
                 <div class="md-form mb-4">
-                    <i class="fa fa-lock prefix grey-text"></i>
 										<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
                     <input type="password" id="defaultForm-pass" class="form-control validate">
+										<a id="forgotPassword" href="forgot_password.php">Forgot Password?</a>
                 </div>
 
             </div>
 						<ul class="nav nav-pills justify-content-start">
 			        <li class="nav-item">
-			          <a class="nav-link" href="#">Sign up</a>
+			          <button type="submit" class="btn btn-secondary">Sign Up</button>
 			        </li>
 			        <li class="nav-item">
-			          <a class="nav-link active" href="#">Sign in</a>
+			          <button type="submit" class="btn btn-primary">Sign In</button>
 			        </li>
 			      </ul>
             <div class="modal-footer d-flex justify-content-center">

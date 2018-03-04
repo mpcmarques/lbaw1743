@@ -5,3 +5,8 @@ h4{
 .modal-content{
   width: 40em;
 }
+
+#forgotPassword{
+  color: #247BA0;
+  cursor: pointer;
+}
