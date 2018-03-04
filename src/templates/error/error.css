@@ -1,0 +1,16 @@
+.error-page {
+    margin-bottom: 150px;
+}
+
+.error-page h1{
+  font-size: 15em;
+}
+
+.error-page p{
+  font-size: 2em;
+}
+
+.error-page > .inline-group{
+  display: inline-flex;
+  padding-left: 10em;
+}
