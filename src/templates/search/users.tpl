@@ -20,34 +20,44 @@
       <div class="row">
         <div class="col-3">
           <a href="#">
-            <img src="images/profile_pic.png" class="img-thumbnail" alt="Profile Picture">
-            <p class="text-center">Name Lastname</p>
+            <div class="card">
+              <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+              <div class="card-body">
+                <h5 class="card-title text-center">Name Lastname</h5>
+              </div>
+            </div>
           </a>
         </div>
         <div class="col-3">
           <a href="#">
-            <img src="images/profile_pic.png" class="img-thumbnail" alt="Profile Picture">
-            <p class="text-center">Name Lastname</p>
+            <div class="card">
+              <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+              <div class="card-body">
+                <h5 class="card-title text-center">Name Lastname</h5>
+              </div>
+            </div>
           </a>
         </div>
         <div class="col-3">
           <a href="#">
-            <img src="images/profile_pic.png" class="img-thumbnail" alt="Profile Picture">
-            <p class="text-center">Name Lastname</p>
-          </a>
-        </div>
-        <div class="col-3">
-          <a href="#">
-            <img src="images/profile_pic.png" class="img-thumbnail" alt="Profile Picture">
-            <p class="text-center">Name Lastname</p>
+            <div class="card">
+              <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+              <div class="card-body">
+                <h5 class="card-title text-center">Name Lastname</h5>
+              </div>
+            </div>
           </a>
         </div>
       </div>
       <div class="row">
         <div class="col-3">
           <a href="#">
-            <img src="images/profile_pic.png" class="img-thumbnail" alt="Profile Picture">
-            <p class="text-center">Name Lastname</p>
+            <div class="card">
+              <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+              <div class="card-body">
+                <h5 class="card-title text-center">Name Lastname</h5>
+              </div>
+            </div>
           </a>
         </div>
       </div>
