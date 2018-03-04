@@ -1,0 +1,15 @@
+.bg-dark{
+    background-color: #50514F !important;
+}
+
+.bg-primary {
+    background-color: #247BA0 !important;
+}
+
+.bg-terciary {
+    background-color: #70C1B3 !important;
+}
+
+.page-container {
+    margin-bottom: 50px;
+}
