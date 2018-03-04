@@ -1,8 +1,8 @@
 
-<link rel="stylesheet" type="text/css" href="templates/common/navbar/navbar.css"/>
+<link rel="stylesheet" type="text/css" href="templates/admin/admin.css"/>
 
 <!-- navbar -->
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-md navbar-white bg-white">
 		<a class="navbar-brand" href="#">
 			<img class="company-icon" src="images/logo.png" alt="Plenum" width="30" height="30"/>
 		</a>
@@ -14,30 +14,16 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="home.php">Home</a>
+					<a class="nav-link" href="admin.php">Administration</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="about.php">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="faq.php">FAQ</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="dashboard_my_projects.php">Dashboard</a>
-				</li>
-				<li>
 			</ul>
-		</div>
-			<!-- search input -->
-			{include file="templates/common/navbar/navbar_search_input.tpl"}
+		</nav>
 
 			<div class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-					Authentification
+					@mpcm
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Sign In</a>
-					<a class="dropdown-item" href="#">Sign Up</a>
+					<a class="dropdown-item" href="#">Logout</a>
 				</div>
 			</div>
-		</nav>

@@ -1,0 +1,11 @@
+body {
+  background-color: #50514f;
+}
+
+#navbarDropdown::before{
+  content: "Logged in as";
+}
+
+#navbarDropdown{
+  color: #247BA0;
+}
