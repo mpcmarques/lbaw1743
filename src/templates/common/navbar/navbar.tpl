@@ -82,51 +82,62 @@
 							</button>
 					</div>
 					<div class="modal-body mx-3">
-							<div class="md-form mb-5">
-									<i class="fa fa-envelope prefix grey-text"></i>
-										<label data-error="wrong" data-success="right" for="defaultForm-email">Full Name</label>
-									<input type="text" class="form-control validate" required>
-							</div>
-							<div class="md-form mb-5">
-									<i class="fa fa-envelope prefix grey-text"></i>
-										<label data-error="wrong" data-success="right" for="defaultForm-email">Username</label>
-									<input type="text" class="form-control validate" required>
-							</div>
-							<div class="md-form mb-5">
-									<i class="fa fa-envelope prefix grey-text"></i>
-										<label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-									<input type="email" class="form-control validate" required>
-							</div>
-							<div class="md-form mb-5">
-									<i class="fa fa-envelope prefix grey-text"></i>
-										<label data-error="wrong" data-success="right" for="defaultForm-email">Password</label>
-									<input type="password" class="form-control validate" required>
-							</div>
-							<div class="md-form mb-5">
-									<i class="fa fa-envelope prefix grey-text"></i>
-										<label data-error="wrong" data-success="right" for="defaultForm-email">Repeat Password</label>
-									<input type="password" class="form-control validate" required>
-							</div>
+							<div class="form-group row">
+						    <label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
+						    <div class="col-sm-10">
+						      <input type="text" class="form-control" placeholder="Full Name" required>
+						    </div>
+						  </div>
+							<div class="form-group row">
+						    <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+						    <div class="col-sm-10">
+						      <input type="text" class="form-control" placeholder="Username" required>
+						    </div>
+						  </div>
+							<div class="form-group row">
+						    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+						    <div class="col-sm-10">
+						      <input type="email" class="form-control" placeholder="Email" required>
+						    </div>
+						  </div>
+							<div class="form-group row">
+						    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+						    <div class="col-sm-10">
+						      <input type="password" class="form-control validate" required>
+						    </div>
+						  </div>
+							<div class="form-group row">
+						    <label for="inputRepeatPassword" class="col-sm-2 col-form-label">Repeat Password</label>
+						    <div class="col-sm-10">
+						      <input type="password" class="form-control validate" required>
+						    </div>
+						  </div>
 							<!--  Gender -->
-							<div class="md-form mb-5">
-									<i class="fa fa-envelope prefix grey-text"></i>
-										<label data-error="wrong" data-success="right" for="defaultForm-email">Institucion / Company</label>
-									<input type="text" class="form-control validate">
-							</div>
-							<div class="md-form mb-5">
-									<i class="fa fa-envelope prefix grey-text"></i>
-										<label data-error="wrong" data-success="right" for="defaultForm-email">Birthday</label>
-									<input type="date" class="form-control validate" required>
-							</div>
+							<div class="form-group row">
+						    <label for="inputInstCompany" class="col-sm-2 col-form-label">Institucion / Company</label>
+						    <div class="col-sm-10">
+						      <input type="text" class="form-control validate" placeholder="Institucion / Company">
+						    </div>
+						  </div>
+							<div class="form-group row">
+						    <label for="inputInstCompany" class="col-sm-2 col-form-label">Birthday</label>
+						    <div class="col-sm-10">
+						      <input type="date" class="form-control validate" required>
+						    </div>
+						  </div>
+							<div class="form-group">
 					</div>
-					<div class="modal-footer d-flex justify-content-center">
-						<label class="form-check-label" for="exampleCheck1">I read and agreed with the Terms of Service and the Privacy Policy</label>
-						<ul class="nav nav-pills justify-content-start">
-			        <li class="nav-item">
-			         <button type="submit" class="btn btn-primary">Sign Up</button>
-			        </li>
+					<div class="modal-footer d-flex justify-content-end">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="agreeCheck">
+							<label class="form-check-label" for="gridCheck">
+								I read and agreed with the Terms of Service and the Privacy Policy
+							</label>
+						</div>
+			      <button type="submit" class="btn btn-primary">Sign Up</button>
 			      </ul>
 					</div>
 			</div>
 	</div>
+</div>
 </div>
