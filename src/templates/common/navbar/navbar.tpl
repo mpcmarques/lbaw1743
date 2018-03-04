@@ -3,7 +3,7 @@
 
 <!-- navbar -->
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="home.php">
 			<img class="company-icon" src="images/logo.png" alt="Plenum" width="30" height="30"/>
 		</a>
 
@@ -13,15 +13,6 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="home.php">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="about.php">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="faq.php">FAQ</a>
-				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="dashboard_my_projects.php">Dashboard</a>
 				</li>
