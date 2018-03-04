@@ -1,11 +1,11 @@
  <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action active">
-        Control Panel
-    </button>
-    <button type="button" class="list-group-item list-group-item-action">
-        Users
-     </button>
-     <button type="button" class="list-group-item list-group-item-action">
-        Projects
-     </button>
+   <li class="list-group-item list-group-item-info" style="background-color: #70C1B3;">
+     Control Panel
+   </li>
+   <a href="#" class="list-group-item list-group-item-action active" role="button">
+     Users
+   </a>
+   <a href="#" class="list-group-item list-group-item-action" role="button">
+     Projects
+   </a>
 </div>
