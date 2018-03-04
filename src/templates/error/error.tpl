@@ -3,7 +3,9 @@
 <div class="container error-page">
   <div class="inline-group">
     <h1 class="text-center">4</h1>
-    <img src="images/logo.png">
+    <a href="index.php">
+      <img src="images/logo.png">
+    </a>
     <h1 class="text-center">4</h1>
   </div>
   <div class="container">
