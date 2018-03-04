@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" type="text/css" href="templates/admin/admin.css"/>
 
+{* if user is logged in*}
 <!-- navbar -->
 	<nav class="navbar navbar-expand-md navbar-white bg-white">
 		<a class="navbar-brand" href="#">
@@ -27,3 +28,5 @@
 			</div>
 		</div>
 	</nav>
+
+	{* if user is not logged in*}
