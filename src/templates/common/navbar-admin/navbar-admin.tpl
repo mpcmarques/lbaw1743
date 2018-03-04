@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" type="text/css" href="templates/admin/admin.css"/>
 
+{* if user is logged in*}
 <!-- navbar -->
 	<nav class="navbar navbar-expand-md navbar-white bg-white">
 		<a class="navbar-brand" href="#">
@@ -17,13 +18,15 @@
 					<a class="nav-link" href="admin.php">Administration</a>
 				</li>
 			</ul>
-		</nav>
 
-			<div class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-					@mpcm
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Logout</a>
-				</div>
+		<div class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				@mpcm
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#">Logout</a>
 			</div>
+		</div>
+	</nav>
+
+	{* if user is not logged in*}
