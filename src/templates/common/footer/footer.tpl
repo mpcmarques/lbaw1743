@@ -1,4 +1,8 @@
-<footer>
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="templates/common/footer/footer.css"/>
+
+<!-- footer -->
+<footer class="Footer">
   <div class="container-fluid bg-primary text-white">
     <div class="container">
       <div class="row border-bottom border-light pt-2 pb-2">
@@ -18,7 +22,7 @@
           </a>
         </div>
       </div>
-      <p class="m-0 p-0">
+      <p class="text-center footer-text">
         Sed blandit libero volutpat sed cras ornare.
         Neque convallis a cras semper auctor neque vitae tempus quam.
         Blandit volutpat maecenas volutpat blandit.
@@ -26,20 +30,22 @@
       </p>
       <div class="row pt-2 pb-2">
         <div class="col-6">
-          <a class="nav-link p-0 m-0" href="https://github.com">
-            <img src="images/octicons/mark-github.svg" class="float-right" alt="Source code">
+          <a class="nav-link" href="https://github.com">
+            <img src="images/octicons/mark-github.svg" class="float-right footer-icon" alt="Source code">
           </a>
         </div>
         <div class="col-6">
-          <a class="nav-link p-0 m-0" href="#">
-            <img src="images/octicons/mortar-board.svg" class="float-left" alt="Bernardo Icon :]">
+          <a class="nav-link" href="#">
+            <img src="images/octicons/mortar-board.svg" class="float-left footer-icon" alt="Bernardo Icon :]">
           </a>
         </div>
       </div>
     </div>
-    <p class="text-center bg-dark text-white pt-2 pb-2">
-      &copy; 2018 Copyright: LBAW 1743
-    </p>
   </div>
+  <div class="container-fluid bg-dark" >
+     <p class="text-center text-white footer-copyright">
+      &copy; 2018 LBAW-1743
+    </p>
+    </div>
 </footer>
 </body>

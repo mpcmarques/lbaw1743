@@ -7,5 +7,5 @@
 
   $smarty->display('templates/common/header.tpl');
   $smarty->display('templates/home/home.tpl');
-  $smarty->display('templates/common/footer.tpl');
+  $smarty->display('templates/common/footer/footer.tpl');
 ?>

@@ -9,5 +9,5 @@ $smarty->cache_lifetime = 120;
 // display it
 $smarty->display('templates/common/header.tpl');
 $smarty->display('templates/project/project.tpl');
-$smarty->display('templates/common/footer.tpl');
+$smarty->display('templates/common/footer/footer.tpl');
 ?>
