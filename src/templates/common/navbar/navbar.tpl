@@ -4,7 +4,7 @@
 
 <!-- navbar -->
 <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
-		<a class="navbar-brand" href="home.php">
+		<a class="navbar-brand" href="index.php">
 			<img class="company-icon" src="images/logo.png" alt="Plenum" width="30" height="30"/>
 		</a>
 
