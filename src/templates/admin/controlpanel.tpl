@@ -6,7 +6,7 @@
       {include file="templates/admin/menu.tpl"}
     </div>
     <div class="col-9">
-      {include file='templates/admin/users.tpl'}
+      {include file='templates/admin/projects.tpl'}
     </div>
   </div>
 </div>
