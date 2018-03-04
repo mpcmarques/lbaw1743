@@ -28,13 +28,13 @@
 				Authentification
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#login-modal">Sign In</a>
-				<a class="dropdown-item" href="#">Sign Up</a>
+				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#signin-modal">Sign In</a>
+				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
 			</div>
 		</div>
 	</nav>
 
-	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
@@ -70,4 +70,63 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+			<div class="modal-content">
+					<div class="modal-header text-center">
+							<h4 class="modal-title w-100 font-weight-bold">Sign Up</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+							</button>
+					</div>
+					<div class="modal-body mx-3">
+							<div class="md-form mb-5">
+									<i class="fa fa-envelope prefix grey-text"></i>
+										<label data-error="wrong" data-success="right" for="defaultForm-email">Full Name</label>
+									<input type="text" class="form-control validate" required>
+							</div>
+							<div class="md-form mb-5">
+									<i class="fa fa-envelope prefix grey-text"></i>
+										<label data-error="wrong" data-success="right" for="defaultForm-email">Username</label>
+									<input type="text" class="form-control validate" required>
+							</div>
+							<div class="md-form mb-5">
+									<i class="fa fa-envelope prefix grey-text"></i>
+										<label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
+									<input type="email" class="form-control validate" required>
+							</div>
+							<div class="md-form mb-5">
+									<i class="fa fa-envelope prefix grey-text"></i>
+										<label data-error="wrong" data-success="right" for="defaultForm-email">Password</label>
+									<input type="password" class="form-control validate" required>
+							</div>
+							<div class="md-form mb-5">
+									<i class="fa fa-envelope prefix grey-text"></i>
+										<label data-error="wrong" data-success="right" for="defaultForm-email">Repeat Password</label>
+									<input type="password" class="form-control validate" required>
+							</div>
+							<!--  Gender -->
+							<div class="md-form mb-5">
+									<i class="fa fa-envelope prefix grey-text"></i>
+										<label data-error="wrong" data-success="right" for="defaultForm-email">Institucion / Company</label>
+									<input type="text" class="form-control validate">
+							</div>
+							<div class="md-form mb-5">
+									<i class="fa fa-envelope prefix grey-text"></i>
+										<label data-error="wrong" data-success="right" for="defaultForm-email">Birthday</label>
+									<input type="date" class="form-control validate" required>
+							</div>
+					</div>
+					<div class="modal-footer d-flex justify-content-center">
+						<label class="form-check-label" for="exampleCheck1">I read and agreed with the Terms of Service and the Privacy Policy</label>
+						<ul class="nav nav-pills justify-content-start">
+			        <li class="nav-item">
+			         <button type="submit" class="btn btn-primary">Sign Up</button>
+			        </li>
+			      </ul>
+					</div>
+			</div>
+	</div>
 </div>
