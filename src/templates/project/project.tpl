@@ -8,10 +8,10 @@
   </div>
   <div class="row">
     <div class="col-2">
-      {include file='templates/project_menu.tpl'}
+      {include file='templates/project/menu.tpl'}
     </div>
     <div class="col-10">
-      {include file='templates/project_members.tpl'}
+      {include file='templates/project/tasks.tpl'}
     </div>
   </div>
 </div>

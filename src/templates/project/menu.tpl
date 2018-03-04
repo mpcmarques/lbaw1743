@@ -4,6 +4,9 @@
       Project
     </li>
     <a href="#" class="list-group-item list-group-item-action" role="button">
+      Tasks
+    </a>
+    <a href="#" class="list-group-item list-group-item-action" role="button">
       Members
     </a>
     <a href="#" class="list-group-item list-group-item-action" role="button">
