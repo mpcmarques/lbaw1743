@@ -3,7 +3,7 @@
 
 <!-- home page -->
 <div class="container home-page text-center">
-      <img src="images/logo.png" alt="Plenum">
+      <img class="logo" src="images/logo.png" alt="Plenum">
       <hr/>
       <div class="home-content">
         <h1>Plenum</h1>
