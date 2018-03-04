@@ -32,13 +32,13 @@
             <div class="card-body text-center">
               <h6 class="card-title">Project name</h6>
               <a href="#">
-                <img src="images/octicons/clippy.svg" style="background-color:#247ba0" class="btn">
+                <span style="background-color:#247ba0" class="btn octicon octicon-clippy btn"/>
               </a>
               <a href="#">
-                <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
+                <span style="background-color:#70c1b3" class="btn octicon octicon-comment-discussion btn"/>
               </a>
               <a href="#">
-                <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
+                <span style="background-color:#f25f5c" class="btn octicon octicon-tools btn"/>
               </a>
             </div>
           </div>
@@ -49,15 +49,15 @@
           <div class="card">
             <img class="card-img-top" src="images/task-placeholder.svg" alt="Project image">
             <div class="card-body text-center">
-              <h6 class="card-title">Project name</h6>
+               <h6 class="card-title">Project name</h6>
               <a href="#">
-                <img src="images/octicons/clippy.svg" style="background-color:#247ba0" class="btn">
+                <span style="background-color:#247ba0" class="btn octicon octicon-clippy"/>
               </a>
               <a href="#">
-                <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
+                <span style="background-color:#70c1b3" class="btn octicon octicon-comment-discussion"/>
               </a>
               <a href="#">
-                <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
+                <span style="background-color:#f25f5c" class="btn octicon octicon-tools"/>
               </a>
             </div>
           </div>

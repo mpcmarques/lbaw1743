@@ -54,13 +54,13 @@
       <ul class="nav nav-pills justify-content-end">
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <img src="images/octicons/pencil.svg">
+            <span class="octicon octicon-pencil"/>
             Edit
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <img src="images/octicons/trashcan.svg">
+            <span class="octicon octicon-trashcan"/>
             Remove
           </a>
         </li>

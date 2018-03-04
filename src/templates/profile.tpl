@@ -10,7 +10,7 @@
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
             <div class="card-footer">
-              <img src="images/octicons/location.svg">
+              <span class="octicon octicon-location"/>
               <b>FEUP</b>
             </div>
           </div>
@@ -29,16 +29,16 @@
             <div class="card">
               <img class="card-img-top" src="images/task-placeholder.svg" alt="Project image">
               <div class="card-body text-center">
-                <h6 class="card-title">Project name</h6>
-                <a href="#">
-                  <img src="images/octicons/clippy.svg" style="background-color:#247ba0" class="btn">
-                </a>
-                <a href="#">
-                <img src="images/octicons/comment-discussion.svg" style="background-color:#70c1b3" class="btn ">
-                </a>
-                <a href="#">
-                <img src="images/octicons/tools.svg" style="background-color:#f25f5c"class="btn">
-                </a>
+                 <h6 class="card-title">Project name</h6>
+              <a href="#">
+                <span style="background-color:#247ba0" class="btn octicon octicon-clippy"/>
+              </a>
+              <a href="#">
+                <span style="background-color:#70c1b3" class="btn octicon octicon-comment-discussion"/>
+              </a>
+              <a href="#">
+                <span style="background-color:#f25f5c" class="btn octicon octicon-tools"/>
+              </a>
               </div>
             </div>
           </div>

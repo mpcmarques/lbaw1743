@@ -11,7 +11,7 @@
           		<input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
           		<div class="input-group-append">
           			<button class="btn navbar-search-input-button" type="button">
-                  <img src="images/octicons/search.svg">
+                  <span class="octicon octicon-search"/>
                 </button>
           		</div>
           	</div>
@@ -92,19 +92,19 @@
       <ul class="nav nav-pills justify-content-end">
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <img src="images/octicons/pencil.svg">
+            <span class="octicon octicon-pencil">
             Edit
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <img src="images/octicons/circle-slash.svg">
+            <span class="octicon octicon-circle-slash"/>
             Ban
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <img src="images/octicons/trashcan.svg">
+            <span class="octicon octicon-trashcan"/>
             Remove
           </a>
         </li>

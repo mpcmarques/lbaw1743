@@ -8,10 +8,10 @@
         <div class="col-6">
           <form>
             <div class="input-group">
-          		<input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+          		<input class="form-control" type="search" placeholder="Search" aria-label="Search">
           		<div class="input-group-append">
-          			<button class="btn navbar-search-input-button" type="button">
-                  <img src="images/octicons/search.svg">
+          			<button class="btn" type="button">
+                  <span class="octicon octicon-search"/>
                 </button>
           		</div>
           	</div>
@@ -91,16 +91,16 @@
     <div class="card-footer mt-0 pt-0">
       <ul class="nav nav-pills justify-content-end">
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="images/octicons/pencil.svg">
+          <button class="btn">
+            <span class="octicon octicon-pencil"/>
             Edit
-          </a>
+          </button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="images/octicons/trashcan.svg">
+          <button  class="btn">
+            <span class="octicon octicon-trashcan"/>
             Remove
-          </a>
+          </button>
         </li>
       </ul>
     </div>

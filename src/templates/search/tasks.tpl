@@ -48,8 +48,8 @@
               </p>
             </div>
             <div class="col-6 text-right">
-              <img src="images/octicons/comment-discussion.svg" alt="Comments">
-              <img src="images/octicons/organization.svg"alt="Contributors">
+              <span class="octicon octicon-comment-discussion"/>
+              <span class="octicon octicon-organization"/>
             </div>
           </div>
         </div>
@@ -85,8 +85,8 @@
               </p>
             </div>
             <div class="col-6 text-right">
-              <img src="images/octicons/comment-discussion.svg" alt="Comments">
-              <img src="images/octicons/organization.svg"alt="Contributors">
+              <span class="octicon octicon-comment-discussion"/>
+              <span class="octicon octicon-organization"/>
             </div>
           </div>
         </div>
