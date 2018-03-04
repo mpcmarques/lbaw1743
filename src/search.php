@@ -8,7 +8,7 @@ $smarty->caching = true;
 $smarty->cache_lifetime = 120;
 
 // display it
-$smarty->display('templates/common/header.tpl');
+$smarty->display('templates/common/header/header.tpl');
 $smarty->display('templates/search/search.tpl');
-$smarty->display('templates/common/footer.tpl');
+$smarty->display('templates/common/footer/footer.tpl');
 ?>
