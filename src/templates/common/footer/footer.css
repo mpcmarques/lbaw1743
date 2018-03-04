@@ -6,6 +6,10 @@
    height: 200px;
 }
 
+#footer hr {
+    color: #70C1B3;
+}
+
 #footer .footer-copyright  {
     padding: 8px;
 }
@@ -15,6 +19,7 @@
     margin-bottom: 0px;
 }
 
-#footer .footer-icon path{
-    fill: #70C1B3;
+#footer .footer-icon {
+    color: #70C1B3;
+    padding: 8px;
 }

@@ -33,13 +33,13 @@
         </p>
         <div class="row pt-2 pb-2">
           <div class="col-6">
-            <a class="nav-link" href="https://github.com">
-              <img src="images/octicons/mark-github.svg" class="float-right footer-icon" alt="Source code">
+            <a href="https://github.com">
+              <span class="octicon octicon-mark-github footer-icon float-right"/>
             </a>
           </div>
           <div class="col-6">
-            <a class="nav-link" href="#">
-              <img src="images/octicons/mortar-board.svg" class="float-left footer-icon" alt="Bernardo Icon :]">
+            <a  href="#">
+              <span class="octicon octicon-mortar-board footer-icon float-left"/>
             </a>
           </div>
         </div>
