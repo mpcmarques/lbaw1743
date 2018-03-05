@@ -14,3 +14,7 @@
 	<script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<div id="navbar">
+	{include file="templates/navbar.tpl"}
+</div>
