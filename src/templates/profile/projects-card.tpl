@@ -6,11 +6,7 @@
     Projects
   </h5>
   <div class="card-body">
-    <div class="row">
-      <div class="col-3">
-        {include file="templates/common/project-card.tpl"}
-      </div>
-    </div>
+    {include file="templates/common/project-card/index.tpl"}
   </div>
 </div>
 <!-- /projects-card -->
