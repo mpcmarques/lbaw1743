@@ -1,5 +1,10 @@
 .bg-dark{
     background-color: #50514F !important;
+    color: white;
+}
+
+.card-title {
+    color: white;
 }
 
 .bg-primary {
@@ -10,9 +15,21 @@
     background-color: #70C1B3 !important;
 }
 
+.btn.btn-terciary {
+    background-color: #70C1B3 !important;
+    border-color: #70C1B3;
+    color: white;
+}
+
 .btn.btn-primary {
     background-color: #F25F5C !important;
     border-color: #F25F5C;
+}
+
+.btn.btn-secondary {
+    background-color: #247BA0 !important;
+    border-color: #247BA0;
+    color: white;
 }
 
 .btn.btn-primary:hover {
