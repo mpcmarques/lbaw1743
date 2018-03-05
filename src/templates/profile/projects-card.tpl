@@ -1,25 +1,4 @@
-<div class="container-fluid page-container">
-  <div class="container">
-    <div class="media">
-      <img src="images/profile_pic.png" alt="Profile Picture" width="200">
-      <div class="media-body">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Profile Name</h5>
-            <p class="card-text">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <div class="card-footer">
-              <span class="octicon octicon-location"/>
-              <b>FEUP</b>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="card">
+<div class="card">
       <div class="card-header text-blue bg-dark">
         Projects
       </div>
@@ -45,5 +24,3 @@
         </div>
       </div>
     </div>
-  </div>
-</div>

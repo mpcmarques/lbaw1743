@@ -49,3 +49,7 @@
 .panel-header .panel-title {
     padding-top: 6px;
 }
+
+.img-round {
+    border-radius: 50%;
+}
