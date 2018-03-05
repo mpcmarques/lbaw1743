@@ -4,7 +4,7 @@
       {include file='templates/search/menu.tpl'}
     </div>
     <div class="col-10">
-      {include file='templates/search/projects.tpl'}
+      {include file='templates/search/tasks_card.tpl'}
     </div>
   </div>
 </div>

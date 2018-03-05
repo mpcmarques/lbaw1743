@@ -9,6 +9,6 @@ $smarty->cache_lifetime = 120;
 
 // display it
 $smarty->display('templates/common/header/header.tpl');
-$smarty->display('templates/search/users.tpl');
+$smarty->display('templates/search/search_tasks.tpl');
 $smarty->display('templates/common/footer/footer.tpl');
 ?>
