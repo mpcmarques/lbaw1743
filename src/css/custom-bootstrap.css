@@ -53,3 +53,27 @@
 .img-round {
     border-radius: 50%;
 }
+
+.breadcrumb {
+    border-color: #70C1B3;
+    border-width: 1px;
+    background-color: transparent;
+    border-style: solid;
+}
+
+.breadcrumb .breadcrumb-item  {
+    color: #70C1B3;
+}
+
+.breadcrumb .breadcrumb-item  a {
+    color: #70C1B3;
+    opacity: 0.6;
+}
+
+.breadcrumb .breadcrumb-item .active #text {
+    color: #70C1B3;
+}
+
+.breadcrumb .breadcrumb-item::before {
+    color: #70C1B3;
+}

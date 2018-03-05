@@ -1,3 +1,4 @@
+<!-- edit-task -->
 <div class="container-fluid page-container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -7,7 +8,7 @@
     </ol>
   </nav>
   <div class="card">
-    <div class="card-header">
+    <div class="card-header panel-header">
       <h5>Edit task</h5>
     </div>
     <div class="card-body">
@@ -18,16 +19,13 @@
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea class="form-control" id="description">
-            Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis.
-            Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque.
-            Vitae sapien pellentesque habitant morbi tristique senectus et netus.
-            Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Lacus laoreet non curabitur gravida.
-            Metus dictum at tempor commodo ullamcorper a lacus. Sapien faucibus et molestie ac feugiat sed lectus.
+          <textarea class="form-control" id="description" style="min-height: 150px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut viverra eros, quis aliquam nibh. Suspendisse potenti. In hac habitasse platea dictumst. Phasellus luctus eget ante hendrerit ultrices. Mauris vel libero quis felis finibus facilisis. Nam sed erat et ipsum scelerisque condimentum. Praesent et mauris porta, ornare metus vitae, sagittis leo. Cras eu volutpat eros, in rhoncus felis. Suspendisse erat leo, blandit in faucibus at, ullamcorper in diam. Sed ut felis ac tellus fermentum accumsan eget nec urna. Etiam fringilla sed lacus ac tristique. Vivamus sed lobortis ex. Vivamus congue magna at diam tempus, sed maximus mi molestie. Mauris id consequat purus. Donec nec enim nec mi consequat feugiat rhoncus sodales neque. 
           </textarea>
         </div>
-        <button type="submit" class="btn">Accept Changes</button>
+        <button type="submit" class="btn btn-primary float-right">Accept Changes</button>
       </form>
     </div>
   </div>
 </div>
+<!-- /edit-task -->
