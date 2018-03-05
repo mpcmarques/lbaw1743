@@ -35,3 +35,17 @@
 .btn.btn-primary:hover {
     background-color: #F25FAA !important;
 }
+
+.panel-header {
+    background-color: #247BA0 !important;
+    border-color: #247BA0;
+    color: white;
+}
+
+.panel-header .panel-button {
+    float: right;
+}
+
+.panel-header .panel-title {
+    padding-top: 6px;
+}
