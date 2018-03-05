@@ -11,7 +11,7 @@
       {include file='templates/project/menu.tpl'}
     </div>
     <div class="col-10">
-      {include file='templates/project/manage_tasks.tpl'}
+      {include file='templates/project/options.tpl'}
     </div>
   </div>
 </div>
