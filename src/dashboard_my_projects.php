@@ -9,6 +9,6 @@
 
   $smarty->assign('page', $page);
   $smarty->display('templates/common/header/header.tpl');
-  $smarty->display('templates/dashboard/dashboard.tpl');
+  $smarty->display('templates/dashboard/my_projects.tpl');
   $smarty->display('templates/common/footer/footer.tpl');
 ?>

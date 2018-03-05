@@ -1,15 +1,15 @@
 <div class="container">
   <div class="list-group">
-    <li class="list-group-item list-group-item-info">
+    <a href="dashboard.php" class="list-group-item list-group-item-action" role="button">
       Dashboard
-    </li>
+    </a>
     <a href="dashboard_my_projects.php" class="list-group-item list-group-item-action" role="button">
       My Projects
     </a>
     <a href="dashboard_tasks.php" class="list-group-item list-group-item-action" role="button">
       Tasks
     </a>
-    <a href="dashboard_public_projects.php" class="list-group-item list-group-item-action" role="button">
+    <a href="#" class="list-group-item list-group-item-action" role="button">
       Public Projects
     </a>
   </div>

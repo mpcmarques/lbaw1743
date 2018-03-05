@@ -5,7 +5,7 @@
       {include file="templates/dashboard/menu.tpl"}
     </div>
     <div class="col-9">
-      {include file="templates/dashboard/tasks.tpl"}
+      {include file="templates/dashboard/dashboard_card.tpl"}
     </div>
   </div>
 </div>
