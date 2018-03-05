@@ -9,3 +9,12 @@
 .bg-terciary {
     background-color: #70C1B3 !important;
 }
+
+.btn.btn-primary {
+    background-color: #F25F5C !important;
+    border-color: #F25F5C;
+}
+
+.btn.btn-primary:hover {
+    background-color: #F25FAA !important;
+}

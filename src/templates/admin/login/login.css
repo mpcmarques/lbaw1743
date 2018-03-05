@@ -1,3 +1,11 @@
-.modal-header{
-  background-color: #247BA0;
+.admin-login{
+  margin-top: 200px;
+}
+
+.admin-login .card {
+  border-color: #247BA0;
+}
+
+.admin-login h4{
+  color: white;
 }

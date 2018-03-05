@@ -10,7 +10,7 @@ $smarty->cache_lifetime = 120;
 
 // Check if user is logged in
 // if he is ->
-$smarty->display('templates/common/header/header.tpl');
+$smarty->display('templates/admin/header.tpl');
 // $smarty->display('templates/admin/controlpanel.tpl');
 // $smarty->display('templates/common/footer/footer.tpl');
 
