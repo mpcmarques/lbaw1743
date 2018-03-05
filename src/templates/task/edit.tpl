@@ -13,22 +13,18 @@
     <div class="card-body">
       <form>
         <div class="form-group">
-          <label>
-            Task name
-            <input type="text" class="form-control" id="task_name" placeholder="Task name">
-          </label>
+          <label for="task_name">Task name</label>
+          <input type="text" class="form-control" id="task_name" placeholder="Task name">
         </div>
         <div class="form-group">
-          <label>
-            Description
-            <textarea class="form-control" id="description">
-              Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis.
-              Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque.
-              Vitae sapien pellentesque habitant morbi tristique senectus et netus.
-              Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Lacus laoreet non curabitur gravida.
-              Metus dictum at tempor commodo ullamcorper a lacus. Sapien faucibus et molestie ac feugiat sed lectus.
-            </textarea>
-          </label>
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description">
+            Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis.
+            Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque.
+            Vitae sapien pellentesque habitant morbi tristique senectus et netus.
+            Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Lacus laoreet non curabitur gravida.
+            Metus dictum at tempor commodo ullamcorper a lacus. Sapien faucibus et molestie ac feugiat sed lectus.
+          </textarea>
         </div>
         <button type="submit" class="btn">Accept Changes</button>
       </form>
