@@ -1,6 +1,9 @@
-<div class="container">
+<!-- menu -->
+<div class="container-fluid dashboard-menu">
+  <link rel="stylesheet" href="templates/dashboard/menu.css"/>
+
   <div class="list-group">
-    <a href="dashboard.php" class="list-group-item list-group-item-action" role="button">
+    <a href="dashboard.php" class="list-group-item list-group-item-action header" role="button">
       Dashboard
     </a>
     <a href="dashboard_my_projects.php" class="list-group-item list-group-item-action" role="button">
@@ -14,3 +17,4 @@
     </a>
   </div>
 </div>
+<!-- /menu -->
