@@ -1,4 +1,4 @@
-  <link rel="stylesheet" type="text/css" href="templates/admin/login/login.css"/>
+<link rel="stylesheet" type="text/css" href="templates/login/login.css"/>
 
 <div class="container admin-login">
     <div class="card">

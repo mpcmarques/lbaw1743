@@ -1,4 +1,9 @@
-<div class="container">
+<link rel="stylesheet" href="templates/projects-card.css"/>
+
+
+<!-- projects card -->
+
+<div class="container projects-card">
   <div class="card">
     <div class="card-header">
       <div class="row">
@@ -8,12 +13,12 @@
         <div class="col-6">
           <form>
             <div class="input-group">
-          		<input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          		<div class="input-group-append">
-          			<button class="btn" type="button">
-                  <span class="octicon octicon-search"/>
-                </button>
-          		</div>
+		          <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
+		          <div class="input-group-append">
+			          <button class="btn search-input-button" type="button">
+			      	    <span class="octicon octicon-search" />
+			          </button>
+		          </div>
           	</div>
           </form>
         </div>
@@ -88,16 +93,16 @@
       </table>
       <button type="button" class="btn btn-block btn-xs m-0 p-0">...</button>
     </div>
-    <div class="card-footer mt-0 pt-0">
+    <div class="card-footer">
       <ul class="nav nav-pills justify-content-end">
         <li class="nav-item">
-          <button class="btn">
+          <button class="btn btn-secondary">
             <span class="octicon octicon-pencil"/>
             Edit
           </button>
         </li>
         <li class="nav-item">
-          <button  class="btn">
+          <button  class="btn btn-primary">
             <span class="octicon octicon-trashcan"/>
             Remove
           </button>
