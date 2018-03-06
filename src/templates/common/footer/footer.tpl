@@ -20,7 +20,7 @@
             </a>
           </div>
           <div class="col-3">
-            <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="home.php">
+            <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.php">
               Contact
             </a>
           </div>
