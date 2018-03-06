@@ -4,20 +4,22 @@
     <div class="card">
         <div class="card-header bg-primary">
             <h4 class="text-center">
-                Administration area
+                Administration Area
             </h4>
         </div>
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <label for="username">Username / email</label>
-                    <input class="form-control"  placeholder="Username / email">
+                    <label for="username">Username / Email</label>
+                    <input class="form-control"  placeholder="Username / Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <div class="nav-item text-center">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </div>
             </form>
         </div>
     </div>
