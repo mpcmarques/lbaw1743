@@ -19,17 +19,18 @@
 			</li>
 			<li>
 			</ul>
-		</div>
-		<!-- search input -->
-		{include file="templates/common/navbar/navbar_search_input.tpl"}
 
-		<div class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-				Authentification
-			</a>
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#signin-modal">Sign In</a>
-				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+			<!-- search input -->
+			{include file="templates/common/navbar/navbar_search_input.tpl"}
+
+			<div class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+					Authentification
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#signin-modal">Sign In</a>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+				</div>
 			</div>
 		</div>
 	</nav>

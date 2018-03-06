@@ -25,12 +25,6 @@
             </a>
           </div>
         </div>
-        <p class="text-center footer-text">
-          Sed blandit libero volutpat sed cras ornare.
-          Neque convallis a cras semper auctor neque vitae tempus quam.
-          Blandit volutpat maecenas volutpat blandit.
-          Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit.
-        </p>
         <div class="row pt-2 pb-2">
           <div class="col-6">
             <a href="https://github.com">
