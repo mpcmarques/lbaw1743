@@ -22,4 +22,5 @@ https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 #### User Requirements specification
 * A1: [Project presentation](/artifacts/A1.md)
 * A2: [Actors and User Stories](/artifacts/A2.md)
-
+* A3: [User Interface Prototype](/artifacts/A3.md)
+* A4: [Conceptual Data Model](/artifacts/A4.md)
