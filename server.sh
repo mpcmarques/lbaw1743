@@ -1,2 +1,2 @@
-cd src
-php -S 0.0.0.0:8080
+cd website
+php artisan serve
