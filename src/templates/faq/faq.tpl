@@ -4,7 +4,7 @@
 <!-- faq page -->
 <div class="container-fluid">
   <h1 class="text-center">F.A.Q.</h1>
-  <div class="container faq-content">
+  <div class="container faq-content text-center">
     <p>Frequently Asked Questions</p>
     <ol class="list-group faq-questions">
       <li class="list-group-item text-justify">

@@ -9,18 +9,18 @@
     <div class="container-fluid bg-primary text-white">
       <div class="container">
         <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
-          <div class="col-2">
-            <a class="nav-link text-uppercase text-right text-white p-0 m-0" href="faq.php">
+          <div class="col-3">
+            <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.php">
               FAQ
             </a>
           </div>
-          <div class="col-2">
+          <div class="col-4">
             <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.php">
               About us
             </a>
           </div>
-          <div class="col-2">
-            <a class="nav-link text-uppercase text-left text-white p-0 m-0" href="home.php">
+          <div class="col-3">
+            <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="home.php">
               Contact
             </a>
           </div>

@@ -3,7 +3,6 @@
    position: absolute;
    bottom: 0;
    width: 100%;
-   height: 200px;
 }
 
 #footer hr {
@@ -22,4 +21,8 @@
 #footer .footer-icon {
     color: #70C1B3;
     padding: 8px;
+}
+
+#footer p{
+  margin:0;
 }
