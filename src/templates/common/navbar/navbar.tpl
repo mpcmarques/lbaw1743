@@ -72,8 +72,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 					<div class="modal-header text-center">
 							<h4 class="modal-title w-100 font-weight-bold">Sign Up</h4>
@@ -81,7 +81,7 @@
 									<span aria-hidden="true">&times;</span>
 							</button>
 					</div>
-					<div class="modal-body mx-3">
+					<div class="modal-body mx-2">
 							<div class="form-group row">
 						    <label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
 						    <div class="col-sm-10">
