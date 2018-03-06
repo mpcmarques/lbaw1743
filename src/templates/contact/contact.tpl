@@ -20,26 +20,7 @@
       </p>
     </div>
     <div class="col-4" id="map" style="width:100%;">
-      <script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {zoom: 8});
-        var geocoder = new google.maps.Geocoder;
-        geocoder.geocode({'address': 'Toledo'}, function(results, status) {
-          if (status === 'OK') {
-            map.setCenter(results[0].geometry.location);
-            new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location
-            });
-          } else {
-            window.alert('Geocode was not successful for the following reason: ' +
-                status);
-          }
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg-dL9OBc70icOOetIjeMoESbT9d2vIc0&callback=initMap"></script>
-        <!--<script>  
+       <script>  
           function myMap() {
           var mapOptions = {
           center: new google.maps.LatLng(51.5, -0.12),
@@ -50,8 +31,8 @@
           }
         </script>
         <script 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg-dL9OBc
-        70icOOetIjeMoESbT9d2vIc0&language=pt&region=PT&callback=myMap"></script> -->
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg-dL9OBc70icOOetIjeMoESbT9d2vIc0&language=pt&region=PT&callback=myMap">
+        </script>
     </div>
   </div>
 </div>
