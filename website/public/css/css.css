@@ -215,6 +215,21 @@ nav#header {
    margin:0;
  }
 
+ /* contact */
+
+#contact .row {
+   padding-top: 30px;
+}
+
+#contact #map {
+    width:100%;
+    height:200px;
+}
+
+#contact .row .text {
+    padding-top: 8px;
+}
+
  /* dashboard */
  .dashboard {
      max-width: 70rem;

@@ -3,17 +3,17 @@
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.php">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.php">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.php">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
                         Contact
                     </a>
                 </div>
