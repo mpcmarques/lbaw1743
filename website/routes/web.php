@@ -23,6 +23,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 /* Register
 Route::get('/register', function () {
     return view('home', ['signupOn' => 'true']);

@@ -230,7 +230,18 @@ nav#header {
     padding-top: 8px;
 }
 
+/* about */
+
+#about-page .text {
+    padding-top: 40px;
+}
+
+#about-page .text {
+    max-width: 50rem;
+}
+
  /* dashboard */
+
  .dashboard {
      max-width: 70rem;
      float: none;
