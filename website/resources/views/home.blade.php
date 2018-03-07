@@ -1,9 +1,6 @@
-<!-- stylesheet 
-<link rel="stylesheet" type="text/css" href="templates/home/home.css"/>
--->
 @extends ('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Dashboard')
 
 @section('content')
 <!-- home page -->

@@ -20,7 +20,7 @@
         @include('layouts.navbar')
         
         <!-- body -->
-        <div id="body" class="container">
+        <div id="body" class="container-fluid">
             @yield('content')
         </div>
         

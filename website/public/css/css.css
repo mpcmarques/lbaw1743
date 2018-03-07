@@ -184,11 +184,6 @@ nav#header {
 #signin-modal .buttons .btn {
     margin-left: 1rem;
 }
-/* signup-modal */
-#signup-modal {
-
-}
-
 
 /* footer */
 
@@ -218,4 +213,11 @@ nav#header {
  
  #footer p{
    margin:0;
+ }
+
+ /* dashboard */
+ .dashboard {
+     max-width: 70rem;
+     float: none;
+     margin: 0 auto;
  }

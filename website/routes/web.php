@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/dashboard', function() {
+    return view('dashboard.dashboard');
+});
+
 /* Register
 Route::get('/register', function () {
     return view('home', ['signupOn' => 'true']);
