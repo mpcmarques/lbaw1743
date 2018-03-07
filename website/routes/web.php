@@ -27,6 +27,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/faq', function(){
+    return view('faq');
+});
+
 /* Register
 Route::get('/register', function () {
     return view('home', ['signupOn' => 'true']);
