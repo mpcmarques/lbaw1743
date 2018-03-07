@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('home');
 });
+
+/* Register
+Route::get('/register', function () {
+    return view('home', ['signupOn' => 'true']);
+});
+*/

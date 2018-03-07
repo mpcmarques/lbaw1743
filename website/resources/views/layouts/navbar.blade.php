@@ -17,6 +17,7 @@
 			
 			{{-- search input --}}
 			@include('layouts.search-input', ['name' => 'navbar-search'])
+			
 			<div class="buttons">
 				<button class="btn btn-outline-terciary" data-toggle="modal" data-target="#signup-modal">
 					Sign up
@@ -70,47 +71,47 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body mx-2">
+				<div class="modal-body">
 					<div class="form-group row">
-						<label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
-						<div class="col-sm-10">
+						<label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
+						<div class="col-sm-8">
 							<input type="text" class="form-control" placeholder="Full Name" required>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
-						<div class="col-sm-10">
+						<label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
+						<div class="col-sm-8">
 							<input type="text" class="form-control" placeholder="Username" required>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-						<div class="col-sm-10">
+						<label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
+						<div class="col-sm-8">
 							<input type="email" class="form-control" placeholder="Email" required>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-						<div class="col-sm-10">
-							<input type="password" class="form-control validate" required>
+						<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+						<div class="col-sm-8">
+							<input type="password" class="form-control validate" placeholder="password" required>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputRepeatPassword" class="col-sm-2 col-form-label">Repeat Password</label>
-						<div class="col-sm-10">
-							<input type="password" class="form-control validate" required>
+						<label for="inputRepeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
+						<div class="col-sm-8">
+							<input type="password" class="form-control validate" placeholder="password" required>
 						</div>
 					</div>
 					<!--  Gender -->
 					<div class="form-group row">
-						<label for="inputInstCompany" class="col-sm-2 col-form-label">Institucion / Company</label>
-						<div class="col-sm-10">
+						<label for="inputInstCompany" class="col-sm-4 col-form-label">Institucion / Company</label>
+						<div class="col-sm-8">
 							<input type="text" class="form-control validate" placeholder="Institucion / Company">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="inputInstCompany" class="col-sm-2 col-form-label">Birthday</label>
-						<div class="col-sm-10">
+						<label for="inputInstCompany" class="col-sm-4 col-form-label">Birthday</label>
+						<div class="col-sm-8">
 							<input type="date" class="form-control validate" required>
 						</div>
 					</div>
