@@ -21,8 +21,6 @@ Route::view('/about', 'contact');
 
 Route::view('/faq', 'faq');
 
-Route::view('/error', 'error');
-
 /* Register
 Route::view('/register', 'home', ['signupOn' => 'true'])
 */
