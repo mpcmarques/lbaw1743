@@ -31,6 +31,10 @@ Route::get('/faq', function(){
     return view('faq');
 });
 
+Route::get('/error', function(){
+    return view('error');
+});
+
 /* Register
 Route::get('/register', function () {
     return view('home', ['signupOn' => 'true']);
