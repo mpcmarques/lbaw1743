@@ -11,28 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home');
 
-Route::get('/dashboard', function() {
-    return view('dashboard.dashboard');
-});
+Route::view('/dashboard', 'dashboard.dashboard');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::view('/contact', 'contact');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::view('/about', 'contact');
 
-Route::get('/faq', function(){
-    return view('faq');
-});
+Route::view('/faq', 'faq');
 
 /* Register
-Route::get('/register', function () {
-    return view('home', ['signupOn' => 'true']);
-});
+Route::view('/register', 'home', ['signupOn' => 'true'])
 */
