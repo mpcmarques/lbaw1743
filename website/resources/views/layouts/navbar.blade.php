@@ -2,33 +2,33 @@
 	<a class="navbar-brand" href="/">
 		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
 	</a>
-	
+
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"/>
 	</button>
-	
+
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
+		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
 				<a class="nav-link" href="dashboard">Dashboard</a>
 			</li>
 			<li>
 			</ul>
-			
+
 			{{-- search input --}}
 			@include('layouts.search-input', ['name' => 'navbar-search'])
-			
-			<div class="buttons">
-				<button class="btn btn-outline-terciary" data-toggle="modal" data-target="#signup-modal">
+
+			<div class="buttons text-center">
+				<button class="btn btn-outline-terciary my-2 my-sm-0" data-toggle="modal" data-target="#signup-modal">
 					Sign up
 				</button>
-				<button class="btn btn-outline-primary"  data-toggle="modal" data-target="#signin-modal">
+				<button class="btn btn-outline-primary my-2 my-sm-0"  data-toggle="modal" data-target="#signin-modal">
 					Sign in
 				</button>
 			</div>
 		</div>
 	</nav>
-	
+
 	<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -43,13 +43,13 @@
 						<label data-error="wrong" data-success="right" for="defaultForm-email">Username / Email</label>
 						<input type="email" id="defaultForm-email" class="form-control validate">
 					</div>
-					
+
 					<div class="md-form mb-4">
 						<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
 						<input type="password" id="defaultForm-pass" class="form-control validate">
 						<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
 					</div>
-					
+
 				</div>
 				<div class="buttons">
 						<button type="submit" class="btn btn-primary">Sign In</button>
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="modal fade bd-example-modal-lg" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -130,5 +130,5 @@
 			</div>
 		</div>
 	</div>
-	
+
 </div>
