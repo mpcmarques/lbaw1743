@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('dashboard')
 
 @section('title', 'My Projects')
 
@@ -31,7 +31,8 @@
       </div>
     </div>
     <div class="card-body">
-      <!-- {include file="templates/common/project-card/index.tpl"} -->
+      {{-- project card --}}
+      @include('layouts.project_card')
     </div>
   </div>
 </div>

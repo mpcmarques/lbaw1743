@@ -9,7 +9,7 @@
                     <img class="img-round" src="images/profile_pic.png" alt="Profile Picture" width="100">
                 </div>
                 <div class="col-9">
-                    <h1 class="display-4">Profile Name</h5>
+                    <h1 class="display-4">Profile Name</h1>
                     <p class="card-text">
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>

@@ -17,6 +17,8 @@ Route::view('/dashboard', 'dashboard.dashboard_card');
 Route::view('/dashboard_tasks', 'dashboard.tasks_card');
 Route::view('/dashboard_my_projects', 'dashboard.my_projects_card');
 
+Route::view('/profile', 'profile');
+
 Route::view('/contact', 'contact');
 
 Route::view('/about', 'contact');
