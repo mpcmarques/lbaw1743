@@ -1,3 +1,9 @@
+@extends('layouts.dashboard')
+
+@section('title', 'My Projects')
+
+@section('card')
+
 <div class="container">
   <div class="card">
     <div class="card-header panel-header">
@@ -29,3 +35,6 @@
     </div>
   </div>
 </div>
+
+
+@endsection
