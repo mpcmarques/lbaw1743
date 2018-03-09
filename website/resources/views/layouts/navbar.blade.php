@@ -52,11 +52,11 @@
 
 				</div>
 				<div class="buttons text-center">
-						<button type="submit" class="btn btn-primary">Login</button>
+						<button type="submit" class="btn btn-terciary">Login</button>
 				</div>
 
-				<div class="modal-footer d-flex justify-content-center">
-					<div class="buttons">
+				<div class="modal-footer">
+					<div class="buttons justify-content-center">
 						<button class="btn facebook">
 							<img src="img/facebook.svg" alt="facebook" width="25">
 							Facebook
@@ -123,7 +123,7 @@
 					<div class="form-group row required">
 						<label for="inputInstCompany" class="col-sm-4 col-form-label">Birthday</label>
 						<div class="col-sm-8">
-							<input type="date" class="form-control validate" required>
+							<input type="date" class="form-control validate" value="2000-01-01" required>
 						</div>
 					</div>
 					<div class="form-group">
