@@ -220,6 +220,7 @@ div.required label:after {
 #dashboard .nav-pills .nav-link{
     margin-right: .5em;
 }
+
 /* small devices */
 @media(max-width: 576px){
     #dashboard .my_projects_search_input{
@@ -227,8 +228,20 @@ div.required label:after {
     }
 }
 
+#dashboard .my_projects_search_input button {
+    background-color: #dc4e42;
+    color: white;
+}
+
 #dashboard .create-new-project-button{
     margin-bottom: 1em;
+}
+
+#dashboard #tasks-nav-pills {
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-bottom: 8px;
 }
 
 /* project page*/
