@@ -4,6 +4,10 @@
 
     @include('layouts.page-with-menu')
 
+    @push('foo')
+        @yield('foo')
+    @endpush
+
     @push('id')
         @yield('id')
     @endpush

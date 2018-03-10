@@ -88,10 +88,12 @@
 
 @endsection
 
-{{--
-  <div class="card-footer mt-0 pt-0">
-    <p class="text-justify">
-      last task activity task name, 2 days ago.
-    </p>
-  </div>
-  --}}
+@section('card-footer')
+
+<div class="card-footer mt-0 pt-0">
+  <p class="text-justify">
+    last task activity task name, 2 days ago.
+  </p>
+</div>
+
+@endsection
