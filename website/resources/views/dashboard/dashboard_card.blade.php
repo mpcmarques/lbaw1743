@@ -28,7 +28,7 @@
   <img class="align-self-center mr-1"src="img/task-placeholder.svg" alt="Dashboard Image">
   <div class="media-body">
     <p class="description">
-      @mateus created task #133 - Finish Design on project Manager.
+      <span class="text-link">@mateus</span> created task <span class="text-link">#133 - Finish Design</span> on <span class="text-link">project Manager</span>.
     </p>
   </div>
 </div>
@@ -36,10 +36,10 @@
   <img class="align-self-center mr-1" src="img/task-placeholder.svg" alt="Dashboard Image">
   <div class="media-body">
     <p class="description">
-      New people invited to project Project name.
+      New people invited to project <span class="text-link">Project name</span>.
     </p>
     <small class="description-footer">
-      @mateus @joao were added to project Project name as members.
+      <span class="text-link">@mateus @joao</span> were added to project <span class="text-link">Project name</span> as members.
     </small>
   </div>
 </div>
@@ -47,7 +47,7 @@
   <img class="align-self-center mr-1" src="img/task-placeholder.svg" alt="Dashboard Image">
   <div class="media-body">
     <p class="description">
-      @mateus closed task #923 - Do this on project Project 2.
+      <span class="text-link">@mateus</span> closed task <span class="text-link">#923 - Do this on project Project</span>.
     </p>
   </div>
 </div>

@@ -203,10 +203,6 @@ div.required label:after {
 
 /* dashboard */
 
-#dashboard #card-body {
-  padding: 0;
-}
-
 #dashboard .card-body .media {
   padding-top: 0.5em;
   padding-bottom: 0.5em;

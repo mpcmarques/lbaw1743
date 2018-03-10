@@ -117,6 +117,12 @@
     color: white;
 }
 
+/* text */
+
+.text-link {
+    color: #247BA0;
+}
+
 /* breadcrumb */
 
 .breadcrumb {
