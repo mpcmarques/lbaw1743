@@ -1,4 +1,9 @@
-<!-- edit-task -->
+@extends ('layouts.app')
+
+@section('title', 'Edit Task')
+
+@section('content')
+
 <div class="container-fluid page-container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -20,7 +25,7 @@
         <div class="form-group">
           <label for="description">Description</label>
           <textarea class="form-control" id="description" style="min-height: 150px;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut viverra eros, quis aliquam nibh. Suspendisse potenti. In hac habitasse platea dictumst. Phasellus luctus eget ante hendrerit ultrices. Mauris vel libero quis felis finibus facilisis. Nam sed erat et ipsum scelerisque condimentum. Praesent et mauris porta, ornare metus vitae, sagittis leo. Cras eu volutpat eros, in rhoncus felis. Suspendisse erat leo, blandit in faucibus at, ullamcorper in diam. Sed ut felis ac tellus fermentum accumsan eget nec urna. Etiam fringilla sed lacus ac tristique. Vivamus sed lobortis ex. Vivamus congue magna at diam tempus, sed maximus mi molestie. Mauris id consequat purus. Donec nec enim nec mi consequat feugiat rhoncus sodales neque. 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut viverra eros, quis aliquam nibh. Suspendisse potenti. In hac habitasse platea dictumst. Phasellus luctus eget ante hendrerit ultrices. Mauris vel libero quis felis finibus facilisis. Nam sed erat et ipsum scelerisque condimentum. Praesent et mauris porta, ornare metus vitae, sagittis leo. Cras eu volutpat eros, in rhoncus felis. Suspendisse erat leo, blandit in faucibus at, ullamcorper in diam. Sed ut felis ac tellus fermentum accumsan eget nec urna. Etiam fringilla sed lacus ac tristique. Vivamus sed lobortis ex. Vivamus congue magna at diam tempus, sed maximus mi molestie. Mauris id consequat purus. Donec nec enim nec mi consequat feugiat rhoncus sodales neque.
           </textarea>
         </div>
         <button type="submit" class="btn btn-primary float-right">Accept Changes</button>
@@ -28,4 +33,5 @@
     </div>
   </div>
 </div>
-<!-- /edit-task -->
+
+@endsection

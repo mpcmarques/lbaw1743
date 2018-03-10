@@ -29,6 +29,9 @@ Route::view('/search_projects', 'search.projects_card');
 Route::view('/search_tasks', 'search.tasks_card');
 Route::view('/search_users', 'search.users_card');
 
+Route::view('/task', 'task');
+Route::view('/task_edit', 'task_edit');
+
 Route::view('/profile', 'profile');
 
 Route::view('/contact', 'contact');

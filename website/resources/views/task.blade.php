@@ -1,3 +1,9 @@
+@extends ('layouts.app')
+
+@section('title', 'Task')
+
+@section('content')
+
 <div class="container-fluid page-container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -107,3 +113,5 @@
     </div>
   </div>
 </div>
+
+@endsection
