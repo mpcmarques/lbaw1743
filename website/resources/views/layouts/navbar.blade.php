@@ -40,7 +40,7 @@
 				<div class="modal-body mx-3">
 					<div class="md-form mb-3">
 						<label data-error="wrong" data-success="right" for="defaultForm-email">Username / Email</label>
-						<input type="email" id="defaultForm-email" class="form-control validate">
+						<input type="text" id="defaultForm-email" class="form-control validate">
 					</div>
 
 					<div class="md-form mb-3">
@@ -66,8 +66,6 @@
 						</button>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
@@ -125,8 +123,7 @@
 							<input type="date" class="form-control validate" value="2000-01-01" required>
 						</div>
 					</div>
-					<div class="form-group">
-					</div>
+
 					<div class="modal-footer d-flex justify-content-end">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" id="agreeCheck">

@@ -1,8 +1,82 @@
 <div id="profile-header-card" class="card">
-  <button class="btn btn-primary btn-circle">
+  <button class="btn btn-primary btn-circle" data-toggle="modal" data-target="#editprofile-modal">
     <span class="octicon octicon-pencil">
     </span>
   </button>
+
+  <div class="modal fade bd-example-modal-lg" id="editprofile-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center bg-primary">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body mx-3">
+
+          <div class="md-form mb-3 required">
+            <label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
+            <input type="text" class="form-control" value="Laboratório de Bases de Dados e Aplicações Web" required>
+          </div>
+
+          <div class="md-form mb-3 required">
+            <label for="inputName" class="col-sm-4 col-form-label">Username</label>
+            <input type="text" class="form-control" value="lbaw" required>
+          </div>
+
+          <div class="md-form mb-3 required">
+            <label for="inputName" class="col-sm-4 col-form-label">Email</label>
+            <input type="text" class="form-control" value="lbaw@fe.up.pt" required>
+            <small>
+              We'll never share your email with anyone else.
+            </small>
+          </div>
+
+          <div class="md-form mb-3 required">
+            <label for="inputName" class="col-sm-4 col-form-label">Password</label>
+            <input type="password" class="form-control" value="********" required>
+          </div>
+
+          <div class="md-form mb-3 required">
+            <label for="inputName" class="col-sm-4 col-form-label">Repeat Password</label>
+            <input type="password" class="form-control" value="********" required>
+          </div>
+
+          <!--  Gender -->
+
+          <div class="md-form mb-3">
+            <label for="inputName" class="col-sm-4 col-form-label">Institucion / Company</label>
+            <input type="text" class="form-control" value="FEUP">
+            <small>
+              Fill if you belong to a company or institution.
+            </small>
+          </div>
+
+          <div class="md-form mb-3 required">
+            <label for="inputName" class="col-sm-4 col-form-label">Birthday</label>
+            <input type="date" class="form-control" value="2018-03-01" required>
+          </div>
+
+          <div class="md-form mb-3">
+            <label for="inputName" class="col-sm-4 col-form-label">Profile Picture</label>
+            <input type="file" name="picture" accept="image/*">
+          </div>
+
+          <div class="modal-footer d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
   <div class="card-body">
     <div class="grid">
       <div class="row">
