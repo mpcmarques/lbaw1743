@@ -177,6 +177,12 @@ div.required label:after {
   animation:spin 2s linear infinite;
 } /*make the image spin*/
 
+@media (min-width: 576px) {
+    #error-page img {
+        margin-top: 20px;
+    }
+}
+
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
