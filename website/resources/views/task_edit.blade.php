@@ -7,8 +7,8 @@
 <div class="container-fluid page-container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Project</a></li>
-      <li class="breadcrumb-item"><a href="#">Task Name</a></li>
+      <li class="breadcrumb-item"><a href="{{ url('project')}}">Project</a></li>
+      <li class="breadcrumb-item"><a href="{{ url('task') }}">Task Name</a></li>
       <li class="breadcrumb-item active" aria-current="page">Edit</li>
     </ol>
   </nav>

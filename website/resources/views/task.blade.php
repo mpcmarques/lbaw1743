@@ -7,18 +7,19 @@
 <div id="task" class="container-fluid">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Project</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Task Name</li>
+      <li class="breadcrumb-item"><a href="project">Project</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="task">Task Name</a></li>
     </ol>
   </nav>
   <div class="card">
     <div class="card-header panel-header">
+      @include('layouts.card-edit-button', ['href' => 'task/edit ', 'extra' => ''])
       <div class="row">
         <div class="col-6">
           <h5 class="panel-title">Task name</h5>
         </div>
         <div class="col-6">
-          <p class="text-right">Status:</p>
+          <p class="text-right status">Status: Assigned</p>
         </div>
       </div>
     </div>
@@ -67,7 +68,7 @@
           Donec lacinia congue felis in faucibus.
           <div class="media mt-3">
             <a class="" href="#">
-            <img src="{{ asset('img/task-placeholder.svg') }}" alt="Generic placeholder image">
+              <img src="{{ asset('img/task-placeholder.svg') }}" alt="Generic placeholder image">
             </a>
             <div class="media-body">
               <h5 class="mt-0">Media heading</h5>

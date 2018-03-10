@@ -1,6 +1,6 @@
 <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
 	<a class="navbar-brand" href="/">
-		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
+		<img class="company-icon" src="{{ asset('img/logo.png')}}" alt="Plenum" width="40" height="40"/>
 	</a>
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,11 +55,11 @@
 				<div class="modal-footer justify-content-center">
 					<div class="buttons text-center">
 						<button class="btn facebook">
-							<img src="img/facebook.svg" alt="facebook" width="30">
+							<img src="{{ asset('img/facebook.svg') }}" alt="facebook" width="30">
 							Facebook
 						</button>
 						<button class="btn google">
-							<img src="img/google.png" alt="google" width="30">
+							<img src="{{ asset('img/google.png') }}" alt="google" width="30">
 							Google+
 						</button>
 					</div>

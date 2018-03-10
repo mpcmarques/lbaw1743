@@ -255,12 +255,6 @@ div.required label:after {
     }
  }
 
- #profile-header-card .btn-circle{
-    position: absolute;
-    right: -20px;
-    top: -20px;
- }
-
 /* project-card */
 .card.project-card {
     width: 10em;
@@ -321,6 +315,12 @@ card.project-card .card-body .btn-group .btn{
 
 #task .card {
     margin-top: 20px;
+}
+
+#task .card .status {
+    margin-top: .45em;
+    margin-right: .45em;
+    color: #FFE066;
 }
 
 #task .card.discussion-card .btn{

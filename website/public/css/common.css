@@ -91,13 +91,30 @@
 }
 
 .btn-circle {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 25px;
+}
+
+.card-edit-button{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 25px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+.card-edit-button a {
+    color: white;
 }
 
 /* breadcrumb */
@@ -129,11 +146,11 @@
 /* nav-links*/
 
 .nav .nav-link.active{
-  background-color: #F25F5C !important;
+    background-color: #F25F5C !important;
 }
 
 .nav .nav-link{
-  background-color: white !important;
+    background-color: white !important;
 }
 
 
@@ -192,7 +209,7 @@ body {
     .page-with-menu .card .card-body{
         overflow: auto;
     }
-
+    
     .page-with-menu .panel {
         padding-left: 0;
         padding-right: 0;
