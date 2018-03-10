@@ -9,8 +9,13 @@
   </div>
   <div class="col-6">
     <form>
-      <div class="form-group text-right">
-        <input type="text" class="form-control" name="search" placeholder="Search">
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
       </div>
     </form>
   </div>
@@ -29,63 +34,64 @@
     <a class="nav-link" href="#">Completed</a>
   </li>
 </ul>
-<table class="table pb-0 mb-0">
-  <thead>
-    <tr>
-      <th scope="col-1">
-        <p class="text-left font-weight-bold">#</p>
-      </th>
-      <th scope="col-4">
-        <p class="text-left font-weight-bold">Task Name</p>
-      </th>
-      <th scope="col-4">
-        <p class="text-left font-weight-bold">Category</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Project</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">
-        <p class"text-left">123</p>
-      </th>
-      <td>
-        <p class="text-left">Bug Correction</p>
-      </td>
-      <td>
-        <p class="text-left">Bug fix</p>
-      </td>
-      <td>
-        <p class="text-left">Project name</p>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">
-        <p class"text-left">142</p>
-      </th>
-      <td>
-        <p class="text-left">UI Improvement</p>
-      </td>
-      <td>
-        <p class="text-left">Design</p>
-      </td>
-      <td>
-        <p class="text-left">Project name</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<button type="button" class="btn btn-block btn-xs m-0 p-0">...</button>
+<div class="card-body p-0 m-0">
+  <table class="table pb-0 mb-0">
+    <thead>
+      <tr>
+        <th scope="col-1">
+          <p class="text-left font-weight-bold">#</p>
+        </th>
+        <th scope="col-4">
+          <p class="text-left font-weight-bold">Task Name</p>
+        </th>
+        <th scope="col-4">
+          <p class="text-left font-weight-bold">Category</p>
+        </th>
+        <th scope="col-3">
+          <p class="text-left font-weight-bold">Project</p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <p class"text-left">123</p>
+        </th>
+        <td>
+          <p class="text-left">Bug Correction</p>
+        </td>
+        <td>
+          <p class="text-left">Bug fix</p>
+        </td>
+        <td>
+          <p class="text-left">Project name</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <p class"text-left">142</p>
+        </th>
+        <td>
+          <p class="text-left">UI Improvement</p>
+        </td>
+        <td>
+          <p class="text-left">Design</p>
+        </td>
+        <td>
+          <p class="text-left">Project name</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button type="button" class="btn btn-terciary btn-block m-0 p-0">...</button>
+
 @endsection
 
-{{-- 
+{{--
   <div class="card-footer mt-0 pt-0">
     <p class="text-justify">
       last task activity task name, 2 days ago.
     </p>
   </div>
   --}}
-  
-  

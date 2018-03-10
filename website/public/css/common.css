@@ -136,3 +136,9 @@ body {
   padding-bottom: 250px;
   max-width: 70em;
 }
+
+/* card body */
+
+.card-body{
+  overflow: auto;
+}

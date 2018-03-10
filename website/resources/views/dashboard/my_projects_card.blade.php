@@ -30,4 +30,3 @@
 @section('card-body')
   @include('layouts.project_card')
 @endsection
-
