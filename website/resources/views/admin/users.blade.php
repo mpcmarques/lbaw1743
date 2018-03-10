@@ -1,5 +1,7 @@
 @extends('layouts.admin-page')
 
+@section('title', 'Administration Users')
+
 @section('content')
 
 <div class="container page-container admin">

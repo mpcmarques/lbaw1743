@@ -28,16 +28,8 @@ html, body {
 
 /* cards */
 
-.card-body{
-  overflow: auto;
-}
-
 .list-group {
   margin-top: 20px;
-}
-
-.card-body button{
-
 }
 
 /* users card */
