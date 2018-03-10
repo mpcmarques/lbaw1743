@@ -26,18 +26,23 @@ html, body {
   color: white;
 }
 
-/* users card */
+/* cards */
 
 .card-body{
   overflow: auto;
 }
 
-.users-card .card-footer .btn {
-    margin-right: 5px;
-}
-
 .list-group {
   margin-top: 20px;
+}
+
+.card-body button{
+
+}
+
+/* users card */
+.users-card .card-footer .btn {
+    margin-right: 5px;
 }
 
 .users-card{
@@ -51,12 +56,6 @@ html, body {
 .projects-card .card-header {
     background-color: #247ba0;
     border-color: #247ba0;
-    color: white;
-}
-
-.projects-card .search-input-button {
-    background-color: #f25f5c;
-    border-color: #f25f5c;
     color: white;
 }
 

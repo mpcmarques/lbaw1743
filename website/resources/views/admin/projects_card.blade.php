@@ -2,16 +2,16 @@
   <div class="card">
     <div class="card-header">
       <div class="row">
-        <div class="col-6">
-          <h5>Projects</h5>
+        <div class="col-4">
+          <h5 class="card-title">Projects</h5>
         </div>
-        <div class="col-6">
+        <div class="col-8">
           <form>
             <div class="input-group">
               <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
-                <button class="btn search-input-button" type="button">
-                  <span class="octicon octicon-search" />
+                <button class="btn btn-primary" type="button">
+                  <span class="octicon octicon-search"/>
                 </button>
               </div>
             </div>
@@ -86,7 +86,7 @@
           </tr>
         </tbody>
       </table>
-      <button type="button" class="btn btn-block btn-xs m-0 p-0">...</button>
+      <button type="button" class="btn btn-terciary btn-block m-0 p-0">...</button>
     </div>
     <div class="card-footer">
       <ul class="nav nav-pills justify-content-end">
