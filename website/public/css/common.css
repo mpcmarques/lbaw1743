@@ -153,4 +153,9 @@ body {
     .page-with-menu .card .card-body{
         overflow: auto;
     }
+
+    .page-with-menu .panel {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
