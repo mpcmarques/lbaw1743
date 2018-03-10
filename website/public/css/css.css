@@ -62,17 +62,9 @@ nav#header {
 }
 
 /* signin-modal */
-#signin-modal .buttons{
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-}
 
 #signin-modal .buttons .btn {
-    margin-left: 1rem;
-}
-
-#signin-modal .modal-footer .btn {
-    margin-top: 10px;
+    margin-left: 1em;
 }
 
 div.required label:after {

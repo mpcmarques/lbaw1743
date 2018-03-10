@@ -49,8 +49,6 @@
 						<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
 					</div>
 
-				</div>
-				<div class="buttons text-center">
 					<button type="submit" class="btn btn-secondary">Login</button>
 				</div>
 
