@@ -1,8 +1,8 @@
 
 {{-- page with menu --}}
-<div id=@yield('id') >
+<div id=@yield('id') class="page-with-menu">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 menu">
       @yield('menu')
     </div>
     <div class="col-md-10">

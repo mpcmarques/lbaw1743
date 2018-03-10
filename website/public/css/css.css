@@ -205,9 +205,6 @@ div.required label:after {
 
 /* dashboard */
 
-#dashboard-menu{
-  padding:0;
-}
 
 #dashboard-card .card-body .media {
   padding-top: 0.5em;
