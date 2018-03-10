@@ -20,6 +20,8 @@ html, body {
 
 .admin-login .card {
   border-color: #247BA0;
+  max-width: 30em;
+  margin: 0 auto;
 }
 
 .admin-login h4{
