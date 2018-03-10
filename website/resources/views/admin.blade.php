@@ -1,13 +1,13 @@
-@extends ('layouts.app')
+@extends ('layouts.page-layout')
 
 @section('title', 'Administration')
 
+@section('header')
+  @include('layouts.navbar_admin')
+@endsection
+
 @section('content')
 
-{{-- @if (logged) --}}
-  {{-- @include('admin.users') --}}
-{{-- @else --}}
    @include('admin.login_admin')
-{{-- @endif --}}
 
 @endsection
