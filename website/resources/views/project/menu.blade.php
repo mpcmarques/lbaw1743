@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="list-group">
     <li class="list-group-item list-group-item-info">
       Project
