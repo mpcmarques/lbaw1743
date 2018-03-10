@@ -1,4 +1,4 @@
-@extends ('layouts.page-with-menu')
+@extends ('layouts.app-page-with-menu')
 
 {{-- dashboard --}}
 @section('id', 'dashboard')

@@ -1,6 +1,3 @@
-@extends ('layouts.app')
-
-@section('content')
 
 {{-- page with menu --}}
 <div id=@yield('id') >
@@ -23,4 +20,3 @@
   </div>
 </div>
 
-@endsection
