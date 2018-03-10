@@ -3,12 +3,12 @@
 @section('title', 'Page Not Found')
 
 @section('content')
-<!-- error page -->
-<div class="container error-page">
+
+<div id="error-page" class="container">
   <div class="grid">
       <div class="row">
         <div class="col">
-          <h1>4</h1>
+          <h1 class="text-right">4</h1>
         </div>
         <div class="col">
           <a href="index.php">
@@ -26,4 +26,5 @@
     </p>
   </div>
 </div>
+
 @endsection

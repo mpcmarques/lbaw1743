@@ -259,6 +259,33 @@ div.required label:after {
     max-width: 50rem;
 }
 
+/* 404 page */
+#error-page h1{
+  font-size: 15em;
+}
+
+#error-page p{
+  padding-top: 20px;
+  font-size: 2em;
+}
+
+#error-page img{
+  cursor: pointer;
+  -webkit-animation:spin 2s linear infinite;
+  -moz-animation:spin 2s linear infinite;
+  animation:spin 2s linear infinite;
+} /*make the image spin*/
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#error-page img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} /* center the image*/
+
  /* dashboard */
 
  .dashboard {
