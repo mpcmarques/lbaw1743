@@ -277,13 +277,40 @@ div.required label:after {
     margin-top: -.5em;
 }
 
-.card.card.project-card .card-body .btn-group {
+.card.project-card .card-body .btn-group {
     width: 100%;
     height: 2.5em;
 }
 
-.card.card.project-card .card-body .btn-group .btn{
+card.project-card .card-body .btn-group .btn{
     width: 33.3%;
     display: inline-block;
     padding: 0;
+}
+
+/* user card */
+
+.card.user-card  {
+    width: 7em;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card.user-card img {
+    height: 5em;
+    object-fit: cover;
+    border-color: #247BA0;
+    border-bottom-style: solid;
+}
+.card.user-card .card-body {
+    padding: .5em;
+}
+
+.card.user-card .card-title {
+    margin-bottom: 0;
+}
+.card.user-card .card-body h5 {
+    color: #50514F;
+    font-size: .8em;
 }
