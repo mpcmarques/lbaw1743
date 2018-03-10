@@ -1,4 +1,4 @@
-<div class="card projects-card">
+<div id="profile-projects-card" class="card">
   <h5 class="card-header panel-header">
     Projects
   </h5>
