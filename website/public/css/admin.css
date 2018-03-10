@@ -1,0 +1,25 @@
+html, body {
+  background-color: #50514f;
+}
+
+#navbar img {
+  margin-right: 8px;
+}
+
+.container-fluid .bg-dark{
+  background-color: #70C1B3 !important;
+}
+
+/* administration login */
+
+.admin-login{
+  margin-top: 100px;
+}
+
+.admin-login .card {
+  border-color: #247BA0;
+}
+
+.admin-login h4{
+  color: white;
+}

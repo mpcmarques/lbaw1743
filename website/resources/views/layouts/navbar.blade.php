@@ -52,13 +52,13 @@
 
 				</div>
 				<div class="buttons text-center">
-						<button type="submit" class="btn btn-terciary">Login</button>
+						<button type="submit" class="btn btn-secondary">Login</button>
 				</div>
 
-				<div class="modal-footer">
-					<div class="buttons justify-content-center">
+				<div class="modal-footer justify-content-center">
+					<div class="buttons text-center">
 						<button class="btn facebook">
-							<img src="img/facebook.svg" alt="facebook" width="25">
+							<img src="img/facebook.svg" alt="facebook" width="30">
 							Facebook
 						</button>
 						<button class="btn google">
