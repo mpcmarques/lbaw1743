@@ -58,6 +58,8 @@
 
 @endsection
 
+@section('card-footer')
+
 <div class="card-footer">
   <ul class="nav nav-pills justify-content-end">
     <li class="nav-item">
@@ -74,3 +76,5 @@
     </li>
   </ul>
 </div>
+
+@endsection

@@ -3,8 +3,8 @@
 {{-- project page --}}
 @section('id', 'project-page')
 
-@section('foo')
-  @include('project.foo')
+@section('content-top')
+  @include('project.project_media')
 @endsection
 
 @section('menu')
