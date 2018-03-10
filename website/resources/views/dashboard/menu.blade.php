@@ -1,6 +1,6 @@
-<div class="container-fluid dashboard-menu">
+<div id="dashboard-menu" class="container-fluid">
   <div class="list-group">
-    <a href="dashboard" class="list-group-item list-group-item-action header" role="button">
+    <a href="dashboard" class="list-group-item list-group-item-action" role="button">
       Dashboard
     </a>
     <a href="dashboard_my_projects" class="list-group-item list-group-item-action" role="button">

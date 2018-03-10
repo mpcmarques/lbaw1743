@@ -328,13 +328,25 @@ div.required label:after {
   margin-right: auto;
 } /* center the image*/
 
- /* dashboard */
+/* dashboard */
 
- .dashboard {
-     max-width: 70rem;
-     float: none;
-     margin: 0 auto;
- }
+#dashboard-menu{
+  padding:0;
+}
+
+#dashboard-card .card-body .media {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#dashboard-card .card-body .media .media-body{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#dashboard-card .card-body .media .media-body .description{
+  margin: 0;
+}
 
  /* profile */
 
@@ -348,7 +360,7 @@ div.required label:after {
 
 
 /* Small devices (landscape phones, 576px and up) */
- @media (max-width: 576px) { 
+ @media (max-width: 576px) {
     #profile #profile-header-card{
         text-align: center;
     }
