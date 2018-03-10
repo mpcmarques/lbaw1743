@@ -12,7 +12,7 @@
 */
 
 Route::view('/', 'home');
-Route::view('/admin', 'admin');
+Route::view('/admin', 'admin.index');
 
 Route::view('/dashboard', 'dashboard.dashboard_card');
 Route::view('/dashboard_tasks', 'dashboard.tasks_card');

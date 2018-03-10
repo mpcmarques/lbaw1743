@@ -1,13 +1,7 @@
-@extends ('layouts.page-layout')
+@extends ('layouts.admin-page')
 
 @section('title', 'Administration')
 
-@section('header')
-  @include('layouts.navbar_admin')
-@endsection
-
 @section('content')
-
    @include('admin.login_admin')
-
 @endsection
