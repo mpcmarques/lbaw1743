@@ -230,6 +230,15 @@ div.required label:after {
   margin-bottom: 1em;
 }
 
+ /* project page*/
+
+#project-page #project_media img{
+  width: 150px;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
  /* profile */
 
  #profile #profile-header-card img {
