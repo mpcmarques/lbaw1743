@@ -223,6 +223,14 @@ div.required label:after {
   margin: 0;
 }
 
+#dashboard .card-body .media{
+  padding-bottom: 10px;
+}
+
+#dashboard .card-body .media .media-body .description{
+  margin-bottom: 0;
+}
+
  /* profile */
 
  #profile #profile-header-card img {
