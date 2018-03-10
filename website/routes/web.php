@@ -36,7 +36,7 @@ Route::view('/profile', 'profile');
 
 Route::view('/contact', 'contact');
 
-Route::view('/about', 'contact');
+Route::view('/about', 'about');
 
 Route::view('/faq', 'faq');
 
