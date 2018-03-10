@@ -314,3 +314,15 @@ card.project-card .card-body .btn-group .btn{
     color: #50514F;
     font-size: .8em;
 }
+
+/* task */
+
+#task .card {
+    margin-top: 20px;
+}
+
+#task .card.discussion-card .btn{
+    margin-top: 1em !important;
+    background-color: gray;
+    color: white;
+}

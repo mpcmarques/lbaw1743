@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container-fluid page-container">
+<div id="task" class="container-fluid">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#">Project</a></li>
@@ -12,7 +12,7 @@
     </ol>
   </nav>
   <div class="card">
-    <div class="card-header">
+    <div class="card-header panel-header">
       <div class="row">
         <div class="col-6">
           <h5>Task name</h5>
@@ -36,57 +36,28 @@
       </pre>
     </div>
     <div class="card-footer">
-      <p class="text-right">
+      <small>
         created by @jotapsa on 30, February :<
-      </p>
+      </small>
     </div>
   </div>
   <div class="card">
-    <div class="card-header">
+    <div class="card-header panel-header">
       <h5>Assigned</h5>
     </div>
     <div class="card-body">
-      <div class="row">
-        <div class="col-3">
-          <a href="#">
-            <div class="card">
-              <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
-              <div class="card-body">
-                <h5 class="card-title text-center">Name Lastname</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-3">
-          <a href="#">
-            <div class="card">
-              <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
-              <div class="card-body">
-                <h5 class="card-title text-center">Name Lastname</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-3">
-          <a href="#">
-            <div class="card">
-              <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
-              <div class="card-body">
-                <h5 class="card-title text-center">Name Lastname</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      @include('layouts.user-card')
+      @include('layouts.user-card')
+      @include('layouts.user-card')
     </div>
   </div>
-  <div class="card">
-    <div class="card-header">
+  <div class="card discussion-card">
+    <div class="card-header panel-header">
       <h5>Discussion</h5>
     </div>
     <div class="card-body">
       <div class="media">
-        <img class="mr-3" src="images/task-placeholder.svg" alt="Generic placeholder image">
+        <img class="mr-3" src="{{ asset('img/task-placeholder.svg') }}" alt="Generic placeholder image">
         <div class="media-body">
           <h5 class="mt-0">Media heading</h5>
           Cras sit amet nibh libero, in gravida nulla.
@@ -96,7 +67,7 @@
           Donec lacinia congue felis in faucibus.
           <div class="media mt-3">
             <a class="" href="#">
-              <img src="images/task-placeholder.svg" alt="Generic placeholder image">
+            <img src="{{ asset('img/task-placeholder.svg') }}" alt="Generic placeholder image">
             </a>
             <div class="media-body">
               <h5 class="mt-0">Media heading</h5>
