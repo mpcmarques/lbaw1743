@@ -1,3 +1,12 @@
+@extends ('layouts.app')
+
+@section('title')
+@yield('title')
+@endsection
+
+@section('content')
+
+{{-- project page --}}
 <div class="container-fluid page-container">
   <div class="media">
     <img src="images/project_placeholder.png" class="mr-3" alt="Profile Picture" width="200">
@@ -8,10 +17,12 @@
   </div>
   <div class="row">
     <div class="col-2">
-      {include file='templates/project/menu.tpl'}
+      @include('project.menu')
     </div>
     <div class="col-10">
-      {include file='templates/project/forum_card.tpl'}
+      @yield('card')
     </div>
   </div>
 </div>
+
+@endsection

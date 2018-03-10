@@ -1,9 +1,15 @@
+@extends('project')
+
+@section('title', 'Manage Tasks')
+
+@section('card')
+
 <div class="container">
   <div class="card">
     <div class="card-header">
       <div class="row">
         <div class="col-6">
-          <h5>Manage users</h5>
+          <h5>Manage tasks</h5>
         </div>
         <div class="col-6">
           <form>
@@ -19,32 +25,32 @@
         <thead>
           <tr>
             <th scope="col-3">
-              <p class="text-left font-weight-bold">Username</p>
-            </th>
-            <th scope="col-3">
-              <p class="text-left font-weight-bold">Tasks assigned</p>
-            </th>
-            <th scope="col-3">
               <p class="text-left font-weight-bold">Name</p>
             </th>
             <th scope="col-3">
-              <p class="text-left font-weight-bold">Role</p>
+              <p class="text-left font-weight-bold">Members assigned</p>
+            </th>
+            <th scope="col-3">
+              <p class="text-left font-weight-bold">Status</p>
+            </th>
+            <th scope="col-3">
+              <p class="text-left font-weight-bold">Close request</p>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">
-              <p class"text-left">jotapsa</p>
+              <p class"text-left">UI Design</p>
             </th>
             <td>
-              <p class="text-left">5</p>
+              <p class="text-left">11</p>
             </td>
             <td>
-              <p class="text-left">João Sá</p>
+              <p class="text-left">Assigned</p>
             </td>
             <td>
-              <p class="text-left">Member</p>
+              <p class="text-left">No</p>
             </td>
           </tr>
         </tbody>
@@ -68,3 +74,5 @@
     </div>
   </div>
 </div>
+
+@endsection

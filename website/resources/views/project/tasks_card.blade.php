@@ -1,3 +1,9 @@
+@extends('project')
+
+@section('title', 'Tasks')
+
+@section('card')
+
 <div class="container">
   <div class="card">
     <div class="card-header">
@@ -78,3 +84,5 @@
     </div>
   </div>
 </div>
+
+@endsection
