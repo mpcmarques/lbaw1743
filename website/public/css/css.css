@@ -39,12 +39,12 @@ nav#header {
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
-
+    
     #header .navbar-search {
         margin: 0;
         width: 100%;
     }
-
+    
     #header .buttons .btn {
         margin: 0;
     }
@@ -52,13 +52,13 @@ nav#header {
 
 /* modals */
 .facebook {
-  background-color: #3b5998;
-  color: white;
+    background-color: #3b5998;
+    color: white;
 }
 
 .google {
-  background-color: #dc4e42;
-  color: white;
+    background-color: #dc4e42;
+    color: white;
 }
 
 /* signin-modal */
@@ -78,34 +78,34 @@ div.required label:after {
     position: absolute;
     bottom: 0;
     width: 100%;
- }
+}
 
- #footer hr {
-     color: #70C1B3;
- }
+#footer hr {
+    color: #70C1B3;
+}
 
- #footer .footer-copyright  {
-     padding: 8px;
- }
+#footer .footer-copyright  {
+    padding: 8px;
+}
 
- #footer .footer-text {
-     padding-top: 8px;
-     margin-bottom: 0px;
- }
+#footer .footer-text {
+    padding-top: 8px;
+    margin-bottom: 0px;
+}
 
- #footer .footer-icon {
-     color: #70C1B3;
-     padding: 8px;
- }
+#footer .footer-icon {
+    color: #70C1B3;
+    padding: 8px;
+}
 
- #footer p{
-   margin:0;
- }
+#footer p{
+    margin:0;
+}
 
- /* contact */
+/* contact */
 
 #contact .row {
-   padding-top: 30px;
+    padding-top: 30px;
 }
 
 #contact #map {
@@ -120,29 +120,29 @@ div.required label:after {
 /* home */
 
 #home-page .logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-  margin-top: 2em;
-  margin-bottom: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 #home-page .home-content {
-  display: block;
-  font-weight: lighter
+    display: block;
+    font-weight: lighter
 }
 
 #home-page .project-name {
-  font-size: 3em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 0;
-  margin-right: 0;
+    font-size: 3em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #home-page .description {
-  margin: 0;
+    margin: 0;
 }
 
 /* about */
@@ -158,23 +158,23 @@ div.required label:after {
 /* 404 page */
 
 #error-page{
-  padding: 100px 10px 100px 10px;
+    padding: 100px 10px 100px 10px;
 }
 
 #error-page h1{
-  font-size: 15em;
+    font-size: 15em;
 }
 
 #error-page p{
-  padding-top: 20px;
-  font-size: 2em;
+    padding-top: 20px;
+    font-size: 2em;
 }
 
 #error-page img{
-  cursor: pointer;
-  -webkit-animation:spin 2s linear infinite;
-  -moz-animation:spin 2s linear infinite;
-  animation:spin 2s linear infinite;
+    cursor: pointer;
+    -webkit-animation:spin 2s linear infinite;
+    -moz-animation:spin 2s linear infinite;
+    animation:spin 2s linear infinite;
 } /*make the image spin*/
 
 @media (min-width: 576px) {
@@ -188,77 +188,82 @@ div.required label:after {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 #error-page img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 } /* center the image*/
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
-  #error-page h1{
-    font-size: 5em;
-  }
+    #error-page h1{
+        font-size: 5em;
+    }
 }
 
 /* dashboard */
 
 #dashboard .card-body .media {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 #dashboard .card-body .media .media-body{
-  padding-top: 1em;
-  padding-bottom: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 #dashboard .card-body .media .media-body .description{
-  margin: 0;
+    margin: 0;
 }
 
 #dashboard .nav-pills .nav-link{
-  margin: auto;
+    margin-right: .5em;
+}
+/* small devices */
+@media(max-width: 576px){
+    #dashboard .my_projects_search_input{
+        margin-top: .5em;
+    }
 }
 
-#dashboard .create_new_project{
-  margin-top: 1em;
-  margin-bottom: 1em;
+#dashboard .create-new-project-button{
+    margin-bottom: 1em;
 }
 
- /* project page*/
+/* project page*/
 
 #project-page #project_media img{
-  width: 150px;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+    width: 150px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
 }
- /* profile */
+/* profile */
 
- #profile #profile-header-card img {
+#profile #profile-header-card img {
     margin-top: 1em;
- }
+}
 
- #profile #profile-header-card .company {
+#profile #profile-header-card .company {
     color: #247BA0;
- }
+}
 /* Small devices (landscape phones, 576px and up) */
- @media (max-width: 576px) {
+@media (max-width: 576px) {
     #profile #profile-header-card{
         text-align: center;
     }
-
+    
     #profile  #profile-projects-card {
         text-align: center;
     }
-
+    
     #profile #profile-projects-card .card-body {
         display: inline-block;
         margin: auto;
     }
- }
+}
 
 /* project-card */
 .card.project-card {
