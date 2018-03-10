@@ -5,7 +5,7 @@
 @section('card-header')
 <div class="row">
   <div class="col-6">
-    <h5>Projects</h5>
+    <h5 class="panel-title">Projects</h5>
   </div>
   <div class="col-6">
     <form>

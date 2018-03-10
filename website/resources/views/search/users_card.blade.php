@@ -5,7 +5,7 @@
 @section('card-header')
 <div class="row">
   <div class="col-7">
-    <h5>Users</h5>
+    <h5 class="panel-title">Users</h5>
   </div>
   <div class="col-5">
     <div class="dropdown panel-button">
