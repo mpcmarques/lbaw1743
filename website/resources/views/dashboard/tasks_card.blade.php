@@ -23,9 +23,9 @@
 @endsection
 
 @section('card-body')
-<ul class="nav nav-pills justify-content-end">
+<ul id="tasks_nav-pills" class="nav nav-pills justify-content-end bg-primary">
   <li class="nav-item">
-    <a class="nav-link active " href="#">Active</a>
+    <a class="nav-link active " href="#">Assigned</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Unassigned</a>
@@ -84,7 +84,7 @@
     </tbody>
   </table>
 </div>
-<button type="button" class="btn btn-terciary btn-block m-0 p-0">...</button>
+<button type="button" class="btn btn-white btn-block m-0 p-0">...</button>
 
 @endsection
 

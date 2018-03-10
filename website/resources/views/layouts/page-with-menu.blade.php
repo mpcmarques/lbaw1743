@@ -11,7 +11,7 @@
           <div class="card-header panel-header">
             @yield('card-header')
           </div>
-          <div class="card-body">
+          <div id="card-body" class="card-body">
             @yield('card-body')
           </div>
         </div>
@@ -19,4 +19,3 @@
     </div>
   </div>
 </div>
-
