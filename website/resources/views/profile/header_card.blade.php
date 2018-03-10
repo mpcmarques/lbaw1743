@@ -1,4 +1,8 @@
 <div id="profile-header-card" class="card">
+  <button class="btn btn-primary btn-circle">
+    <span class="octicon octicon-pencil">
+    </span>
+  </button>
   <div class="card-body">
     <div class="grid">
       <div class="row">

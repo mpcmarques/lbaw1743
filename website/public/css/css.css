@@ -253,6 +253,12 @@ div.required label:after {
     }
  }
 
+ #profile-header-card .btn{
+    position: absolute;
+    right: -20px;
+    top: -20px;
+ }
+
 /* project-card */
 .card.project-card {
     width: 10em;
