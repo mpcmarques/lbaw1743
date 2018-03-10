@@ -1,4 +1,4 @@
-@extends('search')
+@extends('search.search-layout')
 
 @section('title', 'Users')
 
