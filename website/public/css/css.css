@@ -48,7 +48,7 @@ nav#header {
     #header .buttons .btn {
         margin: 0;
     }
-  }
+}
 
 /* modals */
 .facebook {
@@ -164,6 +164,11 @@ div.required label:after {
 }
 
 /* 404 page */
+
+#error-page{
+  padding: 100px 10px 100px 10px;
+}
+
 #error-page h1{
   font-size: 15em;
 }
@@ -188,7 +193,15 @@ div.required label:after {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 } /* center the image*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  #error-page h1{
+    font-size: 5em;
+  }
+}
 
 /* dashboard */
 
@@ -263,5 +276,3 @@ div.required label:after {
     display: inline-block;
     padding: 0;
 }
-
-
