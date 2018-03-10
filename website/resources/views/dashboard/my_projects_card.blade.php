@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('dashboard.dashboard-layout')
 
 @section('title', 'My Projects')
 
@@ -8,19 +8,20 @@
     <h5 class="panel-title">My Projects</h5>
   </div>
   <div class="col-4">
-    <ul class="nav nav-pills panel-button">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Last seen</a>
-      </li>
-      <li class="nav-item panel-button">
-        <a class="nav-link" href="#">All</a>
-      </li>
-    </ul>
+    <nav class="nav nav-pills">
+      <a class="nav-link active" href="#">Last seen</a>
+      <a class="nav-link" href="#">All</a>
+    </nav>
   </div>
   <div class="col-4">
     <form>
-      <div class="form-group text-right panel-button">
-        <input type="text" class="form-control" name="search" placeholder="Search">
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
       </div>
     </form>
   </div>
@@ -28,5 +29,6 @@
 @endsection
 
 @section('card-body')
+  <button type="button" class="btn btn-outline-light btn-block create_new_project">+ create new project</button>
   @include('layouts.project_card')
 @endsection

@@ -204,26 +204,26 @@ div.required label:after {
 /* dashboard */
 
 
-#dashboard-card .card-body .media {
+#dashboard .card-body .media {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
-#dashboard-card .card-body .media .media-body{
+#dashboard .card-body .media .media-body{
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
-#dashboard-card .card-body .media .media-body .description{
+#dashboard .card-body .media .media-body .description{
   margin: 0;
 }
 
-#dashboard .card-body .media{
-  padding-bottom: 10px;
+#dashboard .nav-pills .nav-link{
+  margin: auto;
 }
 
-#dashboard .card-body .media .media-body .description{
-  margin-bottom: 0;
+#dashboard .create_new_project{
+  margin-bottom: 1em;
 }
 
  /* profile */
@@ -317,7 +317,7 @@ card.project-card .card-body .btn-group .btn{
 
 #task .card {
     margin-top: 20px;
-} 
+}
 
 #task .card.discussion-card .btn{
     margin-top: 1em !important;

@@ -6,8 +6,3 @@
 @section('menu')
       @include('dashboard.menu')
 @endsection
-
-
-
-
-

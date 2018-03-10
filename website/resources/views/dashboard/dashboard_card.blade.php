@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('dashboard.dashboard-layout')
 
 @section('title', 'Dashboard')
 
@@ -52,4 +52,3 @@
   </div>
 </div>
 @endsection
-

@@ -1,6 +1,5 @@
 @extends ('layouts.app-page-with-menu')
 
-
 {{-- search page --}}
 @section('id', 'search')
 
