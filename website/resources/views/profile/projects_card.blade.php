@@ -1,5 +1,5 @@
 <div class="card projects-card">
-  <h5 class="card-header bg-dark">
+  <h5 class="card-header panel-header">
     Projects
   </h5>
   <div class="card-body">

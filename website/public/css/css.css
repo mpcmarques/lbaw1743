@@ -293,3 +293,22 @@ div.required label:after {
      float: none;
      margin: 0 auto;
  }
+
+ /* profile */
+
+ #profile #profile-header-card img {
+    margin-top: 1em;
+ }
+
+ #profile #profile-header-card .company {
+    color: #247BA0;
+ }
+
+/* Small devices (landscape phones, 576px and up) */
+ @media (max-width: 576px) { 
+    
+
+    #profile #profile-header-card{
+        text-align: center;
+    }
+ }

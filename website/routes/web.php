@@ -32,7 +32,7 @@ Route::view('/search_users', 'search.users_card');
 Route::view('/task', 'task');
 Route::view('/task_edit', 'task_edit');
 
-Route::view('/profile', 'profile');
+Route::view('/profile', 'profile.index');
 
 Route::view('/contact', 'contact');
 
