@@ -10,8 +10,13 @@
   </div>
   <div class="col-6">
     <form>
-      <div class="form-group text-right">
-        <input type="text" class="form-control" name="search" placeholder="Search">
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
       </div>
     </form>
   </div>

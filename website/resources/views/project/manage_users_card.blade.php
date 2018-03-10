@@ -10,8 +10,13 @@
   </div>
   <div class="col-6">
     <form>
-      <div class="form-group text-right">
-        <input type="text" class="form-control" name="search" placeholder="Search">
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
       </div>
     </form>
   </div>
@@ -20,61 +25,64 @@
 @endsection
 
 @section('card-body')
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Username</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Tasks assigned</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Name</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Role</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">
-        <p class"text-left">jotapsa</p>
-      </th>
-      <td>
-        <p class="text-left">5</p>
-      </td>
-      <td>
-        <p class="text-left">João Sá</p>
-      </td>
-      <td>
-        <p class="text-left">Member</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+<div class="nopadding">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-1">
+        </th>
+        <th scope="col-3">
+          <p class="text-left font-weight-bold">Username</p>
+        </th>
+        <th scope="col-3">
+          <p class="text-left font-weight-bold">Tasks assigned</p>
+        </th>
+        <th scope="col-2">
+          <p class="text-left font-weight-bold">Name</p>
+        </th>
+        <th scope="col-3">
+          <p class="text-left font-weight-bold">Role</p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <div class="checkbox">
+            <label><input type="checkbox" value="">
+          </div>
+        </th>
+        <td>
+          <p class"text-left">jotapsa</p>
+        </td>
+        <td>
+          <p class="text-left">5</p>
+        </td>
+        <td>
+          <p class="text-left">João Sá</p>
+        </td>
+        <td>
+          <p class="text-left">Member</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 @endsection
 
 @section('card-footer')
 
 <div class="card-footer">
-  <ul class="nav nav-pills justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span class="octicon octicon-pencil"/>
-        Edit
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span class="octicon octicon-trashcan"/>
-        Remove
-      </a>
-    </li>
-  </ul>
+  <div class="float-right">
+    <a class="btn btn-terciary" href="#" role="button">
+      <span class="octicon octicon-pencil"/>
+      Edit
+    </a>
+    <a class="btn btn-primary" href="#" role="button">
+      <span class="octicon octicon-trashcan"/>
+      Remove
+    </a>
+  </div>
 </div>
 
 @endsection
