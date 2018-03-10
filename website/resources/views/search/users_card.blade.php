@@ -25,7 +25,7 @@
   <div class="col-3">
     <a href="#">
       <div class="card">
-        <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
         <div class="card-body">
           <h5 class="card-title text-center">Name Lastname</h5>
         </div>
@@ -35,7 +35,7 @@
   <div class="col-3">
     <a href="#">
       <div class="card">
-        <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
         <div class="card-body">
           <h5 class="card-title text-center">Name Lastname</h5>
         </div>
@@ -45,7 +45,7 @@
   <div class="col-3">
     <a href="#">
       <div class="card">
-        <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
         <div class="card-body">
           <h5 class="card-title text-center">Name Lastname</h5>
         </div>
@@ -57,7 +57,7 @@
   <div class="col-3">
     <a href="#">
       <div class="card">
-        <img src="images/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
         <div class="card-body">
           <h5 class="card-title text-center">Name Lastname</h5>
         </div>
