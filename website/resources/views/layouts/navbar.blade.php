@@ -40,12 +40,12 @@
 				<div class="modal-body mx-3">
 					<div class="md-form mb-3">
 						<label data-error="wrong" data-success="right" for="defaultForm-email">Username / Email</label>
-						<input type="text" id="defaultForm-email" class="form-control validate">
+						<input type="text" id="defaultForm-email" class="form-control validate" placeholder="Username">
 					</div>
 
 					<div class="md-form mb-3">
 						<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
-						<input type="password" id="defaultForm-pass" class="form-control validate">
+						<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
 						<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
 					</div>
 
