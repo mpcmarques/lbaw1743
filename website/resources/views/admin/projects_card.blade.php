@@ -86,8 +86,8 @@
           </tr>
         </tbody>
       </table>
-      <button type="button" class="btn btn-terciary btn-block m-0 p-0">...</button>
     </div>
+    <button type="button" class="btn btn-terciary btn-block m-0 p-0">...</button>
     <div class="card-footer">
       <ul class="nav nav-pills justify-content-end">
         <li class="nav-item">
