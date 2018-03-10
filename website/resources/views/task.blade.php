@@ -15,7 +15,7 @@
     <div class="card-header panel-header">
       <div class="row">
         <div class="col-6">
-          <h5>Task name</h5>
+          <h5 class="panel-title">Task name</h5>
         </div>
         <div class="col-6">
           <p class="text-right">Status:</p>
@@ -43,7 +43,7 @@
   </div>
   <div class="card">
     <div class="card-header panel-header">
-      <h5>Assigned</h5>
+      <h5 class="panel-title">Assigned</h5>
     </div>
     <div class="card-body">
       @include('layouts.user-card')
@@ -53,7 +53,7 @@
   </div>
   <div class="card discussion-card">
     <div class="card-header panel-header">
-      <h5>Discussion</h5>
+      <h5 class="panel-title">Discussion</h5>
     </div>
     <div class="card-body">
       <div class="media">

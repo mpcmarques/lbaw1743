@@ -119,7 +119,7 @@
     float: right;
 }
 
-.panel-header .panel-title {
+.panel-header h5, .panel-header .panel-title {
     padding-top: 6px;
 }
 
