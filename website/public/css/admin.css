@@ -2,7 +2,7 @@ html, body {
   background-color: #50514f;
 }
 
-#navbar img {
+.navbar img {
   margin-right: 8px;
 }
 
@@ -22,4 +22,42 @@ html, body {
 
 .admin-login h4{
   color: white;
+}
+
+/* users card */
+
+.card-body{
+  overflow: auto;
+}
+
+.users-card .card-footer .btn {
+    margin-right: 5px;
+}
+
+.list-group {
+  margin-top: 20px;
+}
+
+.users-card{
+  padding: 0;
+  margin:0;
+  margin-top: 20px;
+}
+
+/* projects card */
+
+.projects-card .card-header {
+    background-color: #247ba0;
+    border-color: #247ba0;
+    color: white;
+}
+
+.projects-card .search-input-button {
+    background-color: #f25f5c;
+    border-color: #f25f5c;
+    color: white;
+}
+
+.projects-card .card-footer .btn.btn-secondary {
+    margin-right: 8px;
 }
