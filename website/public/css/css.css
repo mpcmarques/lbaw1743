@@ -135,6 +135,7 @@ body {
 #body {
   padding: 10px;
   padding-bottom: 250px;
+  max-width: 70em;
 }
 
 /* navbar (header) */
