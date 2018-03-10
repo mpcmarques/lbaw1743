@@ -212,6 +212,11 @@ body {
     padding: 0;
 }
 
+/* nopadding div */
+.nopadding{
+  margin: -20px;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
     .page-with-menu .card{
@@ -222,7 +227,7 @@ body {
     .page-with-menu .card .card-body{
         overflow: auto;
     }
-    
+
     .page-with-menu .panel {
         padding-left: 0;
         padding-right: 0;
