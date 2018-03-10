@@ -6,19 +6,20 @@
 
 <div class="container">
   <div class="card">
-    <div class="card-header">
+    <div class="card-header panel-header">
       <div class="row">
-        <div class="col-6">
+        <div class="col-7">
           <h5>Users</h5>
         </div>
-        <div class="col-6">
-          <form>
-            <div class="form-group text-right">
-              <select class="form-control" id="sel_filter">
-                <option>Best match</option>
-              </select>
+        <div class="col-5">
+          <div class="dropdown panel-button">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort by
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Best results</a>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
