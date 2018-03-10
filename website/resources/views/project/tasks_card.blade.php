@@ -1,4 +1,4 @@
-@extends('project')
+@extends('project.project-layout')
 
 @section('title', 'Tasks')
 
