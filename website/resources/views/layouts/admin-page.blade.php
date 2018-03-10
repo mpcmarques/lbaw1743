@@ -1,6 +1,8 @@
 @extends ('layouts.page-layout')
 
-@section('css', 'css/admin.css')
+@section('css')
+  "{{ asset('css/admin.css') }}"
+@endsection
 
 @section('header')
   @include('layouts.navbar_admin')

@@ -1,6 +1,8 @@
 @extends('layouts.page-layout')
 
-@section('css', "css/css.css")
+@section('css')
+"{{ asset('css/css.css') }}"
+@endsection
 
 @section('header')
     @include('layouts.navbar')
