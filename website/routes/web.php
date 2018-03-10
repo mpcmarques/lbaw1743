@@ -25,6 +25,10 @@ Route::view('/project_options', 'project.options_card');
 Route::view('/project_manage_tasks', 'project.manage_tasks_card');
 Route::view('/project_manage_users', 'project.manage_users_card');
 
+Route::view('/search_projects', 'search.projects_card');
+Route::view('/search_tasks', 'search.tasks_card');
+Route::view('/search_users', 'search.users_card');
+
 Route::view('/profile', 'profile');
 
 Route::view('/contact', 'contact');
