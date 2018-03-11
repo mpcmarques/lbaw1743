@@ -43,6 +43,8 @@ Route::view('/about', 'about');
 
 Route::view('/faq', 'faq.faq');
 
+Route::view('/dashboard/new-project', 'new-project');
+
 /* Register
 Route::view('/register', 'home', ['signupOn' => 'true'])
 */
