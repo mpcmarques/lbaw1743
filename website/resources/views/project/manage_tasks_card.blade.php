@@ -26,56 +26,81 @@
 
 @section('card-body')
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Name</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Members assigned</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Status</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Close request</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">
-        <p class"text-left">UI Design</p>
-      </th>
-      <td>
-        <p class="text-left">11</p>
-      </td>
-      <td>
-        <p class="text-left">Assigned</p>
-      </td>
-      <td>
-        <p class="text-left">No</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="nopadding">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-1">
+        </th>
+        <th scope="col-3">
+          <div class="text-left font-weight-bold">
+            Name
+          </div>
+        </th>
+        <th scope="col-3">
+          <div class="text-left font-weight-bold">
+            Members assigned
+          </div>
+        </th>
+        <th scope="col-3">
+          <div class="text-left font-weight-bold">
+            Status
+          </div>
+        </th>
+        <th scope="col-2">
+          <div class="text-left font-weight-bold">
+            Close Request
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <div class="checkbox">
+            <input type="checkbox" value="">
+          </div>
+        </th>
+        <td>
+          <div class="text-left">
+            UI Design
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            11
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            Assigned
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            No
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 @endsection
 
+@section('card-footer')
+
 <div class="card-footer">
-  <ul class="nav nav-pills justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span class="octicon octicon-pencil"/>
-        Edit
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span class="octicon octicon-trashcan"/>
-        Remove
-      </a>
-    </li>
-  </ul>
+  <div class="float-right">
+    <a class="btn btn-terciary" href="#" role="button">
+      <span class="octicon octicon-pencil"/>
+      Edit
+    </a>
+    <a class="btn btn-primary" href="#" role="button">
+      <span class="octicon octicon-trashcan"/>
+      Remove
+    </a>
+  </div>
 </div>
+
+@endsection

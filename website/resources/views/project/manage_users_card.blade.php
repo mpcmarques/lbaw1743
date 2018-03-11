@@ -41,12 +41,12 @@
             Tasks assigned
           </div>
         </th>
-        <th scope="col-2">
+        <th scope="col-3">
           <div class="text-left font-weight-bold">
             Name
           </div>
         </th>
-        <th scope="col-3">
+        <th scope="col-2">
           <div class="text-left font-weight-bold">
             Role
           </div>
@@ -57,48 +57,48 @@
       <tr>
         <th scope="row">
           <div class="checkbox">
-            <label><input type="checkbox" value="">
-            </div>
-          </th>
-          <td>
-            <div class="text-left">
-              jotapsa
-            </div>
-          </td>
-          <td>
-            <div class="text-left">
-              11
-            </div>
-          </td>
-          <td>
-            <div class="text-left">
-              João Sá
-            </div>
-          </td>
-          <td>
-            <div class="text-left">
-              Member
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <input type="checkbox" value="">
+          </div>
+        </th>
+        <td>
+          <div class="text-left">
+            jotapsa
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            11
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            João Sá
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            Member
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+@endsection
+
+@section('card-footer')
+
+<div class="card-footer">
+  <div class="float-right">
+    <a class="btn btn-terciary" href="#" role="button">
+      <span class="octicon octicon-pencil"/>
+      Edit
+    </a>
+    <a class="btn btn-primary" href="#" role="button">
+      <span class="octicon octicon-trashcan"/>
+      Remove
+    </a>
   </div>
-  @endsection
+</div>
 
-  @section('card-footer')
-
-  <div class="card-footer">
-    <div class="float-right">
-      <a class="btn btn-terciary" href="#" role="button">
-        <span class="octicon octicon-pencil"/>
-        Edit
-      </a>
-      <a class="btn btn-primary" href="#" role="button">
-        <span class="octicon octicon-trashcan"/>
-        Remove
-      </a>
-    </div>
-  </div>
-
-  @endsection
+@endsection
