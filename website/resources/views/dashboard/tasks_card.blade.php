@@ -23,7 +23,7 @@
 @endsection
 
 @section('card-body')
-<div class="my-tasks-card no-padding">
+<div class="my-tasks-card nopadding">
   <ul id="tasks-nav-pills" class="nav nav-pills justify-content-end bg-primary">
     <li class="nav-item">
       <a class="nav-link active " href="#">Assigned</a>
@@ -40,16 +40,16 @@
       <thead>
         <tr>
           <th scope="col-1">
-            <p class="text-left font-weight-bold">#</p>
+            #
           </th>
           <th scope="col-4">
-            <p class="text-left font-weight-bold">Task Name</p>
+            Task Name
           </th>
           <th scope="col-4">
-            <p class="text-left font-weight-bold">Category</p>
+            Category
           </th>
           <th scope="col-3">
-            <p class="text-left font-weight-bold">Project</p>
+            Project
           </th>
         </tr>
       </thead>

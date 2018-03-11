@@ -177,7 +177,6 @@
 
 @media(max-width: 576px){
     .panel-header h5, .panel-header .panel-title {
-        text-align: center;
         padding-bottom: 6px;
     }
 }

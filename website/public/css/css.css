@@ -237,11 +237,16 @@ div.required label:after {
     margin-bottom: 1em;
 }
 
-#dashboard #tasks-nav-pills {
-    margin-top: -20px;
-    margin-left: -20px;
-    margin-right: -20px;
+#dashboard .my-tasks-card #tasks-nav-pills {
     padding-bottom: 8px;
+}
+
+#dashboard .my-tasks-card .card-body {
+    padding: 0;
+}
+
+#dashboard .my-tasks-card button {
+    border-radius: 0;
 }
 
 /* project page*/
