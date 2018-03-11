@@ -5,19 +5,21 @@
 @section('card-header')
 
 <div class="row">
-  <div class="col-6">
+  <div class="col-8">
     <h5>Forum</h5>
   </div>
-  <div class="col-6">
-    <form>
-      <div class="form-group text-right">
-        <select class="form-control" id="sel_filter">
-          <option>Recently Updated</option>
-          <option>Most Replys</option>
-          <option>Last Updated</option>
-        </select>
-      </div>
-    </form>
+  <div class="col-4">
+    <div class="float-right">
+      <form>
+        <div class="form-group">
+          <select class="form-control slct-primary" id="sel_filter">
+            <option class="slct-primary">Recently Updated</option>
+            <option class="slct-primary">Most Replys</option>
+            <option class="slct-primary">Last Updated</option>
+          </select>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 

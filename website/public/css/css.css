@@ -231,11 +231,11 @@ div.required label:after {
     margin-bottom: 1em;
 }
 
-#dashboard .my-tasks-card #tasks-nav-pills {
+#dashboard .tasks-card #tasks-nav-pills {
     padding-bottom: 8px;
 }
 
-#dashboard .my-tasks-card .card-body {
+#dashboard .tasks-card .card-body {
     padding: 0;
 }
 
@@ -260,6 +260,10 @@ div.required label:after {
 #project-page textarea{
   font-size: 0.8em;
   height: 15em;
+}
+
+#project-page .nav-pills .nav-link{
+    margin-right: .5em;
 }
 
  /* profile */

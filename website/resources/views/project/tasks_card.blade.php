@@ -9,17 +9,13 @@
     <h5>Tasks</h5>
   </div>
   <div class="col-6">
-    <ul class="nav nav-pills justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link active " href="#">Active</a>
-      </li>
-      <li class="nav-item">
+    <div class="float-right">
+      <nav class="nav nav-pills">
+        <a class="nav-link active" href="#">Active</a>
         <a class="nav-link" href="#">Unassigned</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="#">Completed</a>
-      </li>
-    </ul>
+      </nav>
+    </div>
   </div>
 </div>
 
