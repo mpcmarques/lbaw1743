@@ -13,10 +13,10 @@
 <form>
   <div class="form-group">
     <div class="row">
-      <div class="col-2">
+      <div class="col-md-2">
         <img src="img/project_placeholder.png" alt="Project current image" class="thumbnail">
       </div>
-      <div class="col-10">
+      <div class="col-md-10">
         <div id="upload-image" class="input-group">
           <div class="custom-file">
             <label class="custom-file-label" for="new_image">Choose file</label>

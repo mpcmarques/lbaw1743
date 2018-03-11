@@ -5,10 +5,10 @@
 @section('card-header')
 
 <div class="row">
-  <div class="col-8">
+  <div class="col-md-8">
     <h5>Members</h5>
   </div>
-  <div class="col-4">
+  <div class="col-md-4">
     <div class="float-right">
       <form>
         <div class="form-group">
