@@ -25,7 +25,7 @@
 @endsection
 
 @section('card-body')
-<div class="card-body p-0 m-0">
+<div class="nopadding">
   <table class="table pb-0 mb-0">
     <thead>
       <tr>
