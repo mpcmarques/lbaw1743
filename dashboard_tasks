@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#50514F">
+    <link rel="shortcut icon" href="http://0.0.0.0:8000/icons/logo32.ico">
+
+    <link rel="stylesheet" href="http://0.0.0.0:8000/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href= "http://0.0.0.0:8000/css/css.css"
+ />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="http://0.0.0.0:8000/js/bootstrap.min.js"></script>
+
+    <title>Plenum - Tasks</title>
+</head>
+<body>
+    <div id="container" class="container-fluid">
+        <!-- navbar -->
+            <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
+	<a class="navbar-brand" href="http://0.0.0.0:8000">
+		<img class="company-icon" src="http://0.0.0.0:8000/img/logo.png" alt="Plenum" width="40" height="40"/>
+	</a>
+	
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"/>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
+			<li class="nav-item">
+				<a class="nav-link" href="http://0.0.0.0:8000/dashboard">Dashboard</a>
+			</li>
+		</ul>
+		
+		
+		<!-- search input -->
+<div class="navbar-search">
+    <form class="form-inline">
+        <div class="input-group">
+            <input class="form-control input" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn input-button" type="button">
+                    <span class="octicon octicon-search" />
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+		
+		<div class="buttons">
+			<button class="btn btn-outline-terciary my-2 my-sm-0" data-toggle="modal" data-target="#signup-modal">
+				Register
+			</button>
+			<button class="btn btn-outline-primary my-2 my-sm-0"  data-toggle="modal" data-target="#signin-modal">
+				Login
+			</button>
+		</div>
+	</div>
+</nav>
+
+<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header text-center bg-primary">
+				<h4 class="modal-title w-100 font-weight-bold">Login</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body mx-3">
+				<div class="md-form mb-3">
+					<label data-error="wrong" data-success="right" for="defaultForm-email">Username / Email</label>
+					<input type="text" id="defaultForm-email" class="form-control validate" placeholder="Username">
+				</div>
+				
+				<div class="md-form mb-3">
+					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
+					<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
+					<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
+				</div>
+				
+				<button type="submit" class="btn btn-secondary">Login</button>
+			</div>
+			
+			<div class="modal-footer justify-content-center">
+				<div class="buttons text-center">
+					<button class="btn facebook">
+						<img src="http://0.0.0.0:8000/img/facebook.svg" alt="facebook" width="30">
+						Facebook
+					</button>
+					<button class="btn google">
+						<img src="http://0.0.0.0:8000/img/google.png" alt="google" width="30">
+						Google+
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header text-center bg-primary">
+				<h4 class="modal-title w-100 font-weight-bold">Register</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group row required">
+					<label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" placeholder="Full Name" required>
+					</div>
+				</div>
+				<div class="form-group row required">
+					<label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" placeholder="Username" required>
+					</div>
+				</div>
+				<div class="form-group row required">
+					<label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
+					<div class="col-sm-8">
+						<input type="email" class="form-control" placeholder="Email" required>
+					</div>
+				</div>
+				<div class="form-group row required">
+					<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+					<div class="col-sm-8">
+						<input type="password" class="form-control validate" placeholder="password" required>
+					</div>
+				</div>
+				<div class="form-group row required">
+					<label for="inputRepeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
+					<div class="col-sm-8">
+						<input type="password" class="form-control validate" placeholder="password" required>
+					</div>
+				</div>
+				<!--  Gender -->
+				<div class="form-group row">
+					<label for="inputInstCompany" class="col-sm-4 col-form-label">Institucion / Company</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control validate" placeholder="Institucion / Company">
+					</div>
+				</div>
+				<div class="form-group row required">
+					<label for="inputInstCompany" class="col-sm-4 col-form-label">Birthday</label>
+					<div class="col-sm-8">
+						<input type="date" class="form-control validate" value="2000-01-01" required>
+					</div>
+				</div>
+				
+				<div class="modal-footer d-flex justify-content-end">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="agreeCheck">
+						<label class="form-check-label" for="gridCheck">
+							I read and agreed with the Terms of Service and the Privacy Policy
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Register</button>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+        <!-- body -->
+        <div id="body" class="container-fluid">
+            
+    <div id=dashboard class="page-with-menu">
+   <!-- optional -->
+  <div class="row">
+    <div class="col-md-3 menu">
+      <div class="container-fluid panel">
+              <div class="list-group">
+  <a href="dashboard" class="list-group-item list-group-item-action" role="button">
+    Dashboard
+  </a>
+  <a href="dashboard_my_projects" class="list-group-item list-group-item-action" role="button">
+    My Projects
+  </a>
+  <a href="dashboard_tasks" class="list-group-item list-group-item-action" role="button">
+    Tasks
+  </a>
+</div>
+      </div>
+    </div>
+    <div class="col-md-9 content-body">
+      <div class="container-fluid panel">
+        <div class="card">
+          <div class="card-header panel-header">
+            <div class="row">
+  <div class="col-md-6">
+    <h5>My Tasks</h5>
+  </div>
+  <div class="col-md-6">
+    <form>
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+          </div>
+          <div id="card-body" class="card-body">
+            <div class="tasks-card nopadding">
+  <div class="container-fluid">
+    <div class="row bg-primary">
+      <div class="col-md-12">
+        <div class="float-right">
+          <div class="nav nav-pills">
+            <a class="nav-link active" href="#">Assigned</a>
+            <a class="nav-link" href="#">Unassigned</a>
+            <a class="nav-link" href="#">Completed</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col-1">
+            #
+          </th>
+          <th scope="col-4">
+            Task Name
+          </th>
+          <th scope="col-4">
+            Category
+          </th>
+          <th scope="col-3">
+            Project
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <p class"text-left">123</p>
+          </th>
+          <td>
+            <p class="text-left">Bug Correction</p>
+          </td>
+          <td>
+            <p class="text-left">Bug fix</p>
+          </td>
+          <td>
+            <p class="text-left">Project name</p>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <p class"text-left">142</p>
+          </th>
+          <td>
+            <p class="text-left">UI Improvement</p>
+          </td>
+          <td>
+            <p class="text-left">Design</p>
+          </td>
+          <td>
+            <p class="text-left">Project name</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button type="button" class="btn btn-white btn-block m-0 p-0">...</button>
+</div>
+          </div>
+          
+<div class="card-footer">
+  <small>
+    last task activity <span class="text-link">task name</span>, 2 days ago.
+  </small>
+</div>
+
+ <!-- optional so you have to create the div -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+    
+    
+    
+        </div>
+
+        <!-- footer -->
+            <footer id="footer" class="Footer">
+    <div class="container-fluid bg-primary text-white">
+        <div class="container">
+            <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
+                <div class="col-3">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
+                        FAQ
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
+                        About us
+                    </a>
+                </div>
+                <div class="col-3">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
+                        Contact
+                    </a>
+                </div>
+            </div>
+            <div class="row pt-2 pb-2">
+                <div class="col-6">
+                    <a href="https://github.com">
+                        <span class="octicon octicon-mark-github footer-icon float-right"/>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a  href="https://sigarra.up.pt/feup/pt/web_page.inicial">
+                        <span class="octicon octicon-mortar-board footer-icon float-left"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark" >
+        <p class="text-center text-white footer-copyright">
+            &copy; 2018 LBAW-1743
+        </p>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

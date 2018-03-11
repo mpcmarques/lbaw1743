@@ -1,8 +1,0 @@
-#Ignore "rendered" artifacts
-*.pdf
-
-.DS_Store
-
-#Smarty stuff
-**/templates_c/
-**/cache/

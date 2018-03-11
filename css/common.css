@@ -1,0 +1,278 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css");
+
+/* bootstrap */
+
+/* bg */
+.bg-dark{
+    background-color: #50514F !important;
+    color: white;
+}
+
+.bg-primary {
+    background-color: #247BA0 !important;
+    color: white;
+}
+
+.bg-terciary {
+    background-color: #70C1B3 !important;
+    color: white;
+}
+
+/* select option colors*/
+select.slct-primary {
+  background-color: #F25F5C;
+  color: white;
+}
+
+select.slct-primary:active {
+  background-color: #F25F5C;
+  color: white;
+}
+
+option.slct-primary {
+  background-color: #F25F5C;
+  color: white;
+}
+
+/* btn colors */
+
+.btn.btn-primary {
+    background-color: #F25F5C !important;
+    border-color: #F25F5C;
+}
+.btn.btn-primary:hover {
+    background-color: #F25FAA !important;
+}
+
+.btn.btn-secondary {
+    background-color: #247BA0 !important;
+    border-color: #247BA0;
+    color: white;
+}
+
+.btn.btn-terciary {
+    background-color: #70C1B3 !important;
+    border-color: #70C1B3;
+    color: white;
+}
+
+.btn.btn-light {
+    background-color: white !important;
+    border-color: white;
+    color: #70C1B3;
+}
+
+/* btn outline colors */
+.btn.btn-outline-primary {
+    border-color: #F25F5C;
+    color: #F25F5C;
+}
+.btn.btn-outline-primary:hover {
+    border-color: #F25F5C;
+    background-color: #F25F5C;
+    color: white;
+}
+
+.btn.btn-outline-secondary {
+    border-color: #247BA0;
+    color: #247BA0;
+}
+.btn.btn-outline-secondary:hover {
+    border-color: #247BA0;
+    background-color: #247BA0;
+    color: white;
+}
+
+.btn.btn-outline-terciary {
+    border-color: #70C1B3;
+    background-color: transparent;
+    color: #70C1B3;
+}
+
+.btn.btn-outline-terciary:hover {
+    border-color: #70C1B3;
+    background-color: #70C1B3;;
+    color: white;
+}
+
+.btn.btn-outline-light{
+    border-color: #70C1B3;
+    color: #70C1B3;
+}
+
+.btn.btn-outline-light:hover {
+    border-color: #70C1B3;
+    background-color: #70C1B3;
+    color: white;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 25px;
+}
+
+.card-edit-button{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 25px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+.card-edit-button a {
+    color: white;
+}
+
+/* text */
+
+.text-link {
+    color: #247BA0;
+}
+
+/* breadcrumb */
+
+.breadcrumb {
+    border-color: #70C1B3;
+    border-width: 1px;
+    background-color: transparent;
+    border-style: solid;
+}
+
+.breadcrumb .breadcrumb-item  {
+    color: #70C1B3;
+}
+
+.breadcrumb .breadcrumb-item  a {
+    color: #70C1B3;
+    opacity: 0.6;
+}
+
+.breadcrumb .breadcrumb-item .active #text {
+    color: #70C1B3;
+}
+
+.breadcrumb .breadcrumb-item::before {
+    color: #70C1B3;
+}
+
+/* nav-links*/
+
+.nav .nav-link.active{
+    background-color: #F25F5C !important;
+}
+
+.nav .nav-link{
+    background-color: white !important;
+}
+
+
+/* panel */
+.panel-header {
+    background-color: #247BA0 !important;
+    border-color: #247BA0;
+    color: white;
+}
+
+.panel-header .panel-button {
+    float: right;
+}
+
+.panel-header h5, .panel-header .panel-title {
+    padding-top: 6px;
+}
+
+@media(max-width: 728px){
+    .panel-header h5, .panel-header .panel-title {
+        padding-bottom: 6px;
+    }
+}
+
+/* image */
+
+.img-round {
+    border-radius: 50%;
+}
+
+/* app */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#container {
+    min-height: 100%;
+    padding: 0;
+    position: relative;
+}
+
+#body {
+    padding: 35px;
+    padding-bottom: 200px;
+    max-width: 70em;
+}
+
+/* page with menu */
+
+.page-with-menu .menu {
+  padding: 0;
+}
+
+.page-with-menu .content-body {
+  padding: 0;
+}
+
+/* Small devices (landscape phones, 768px and up) */
+@media (max-width: 768px) {
+    .page-with-menu .card{
+        padding: 0;
+        margin:0;
+        margin-top: 20px;
+    }
+    .page-with-menu .card .card-body{
+        overflow: auto;
+    }
+
+    .page-with-menu .panel {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* nopadding div */
+.nopadding{
+  margin: -20px;
+}
+
+/* thumbnail */
+.thumbnail-small{
+  width: 50px;
+}
+
+.thumbnail{
+  width: 100px;
+}
+
+.thumbnail-big{
+  width: 150px;
+}
+
+/* .img-center */
+
+.img-center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
