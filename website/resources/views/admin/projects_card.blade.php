@@ -39,12 +39,12 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">
+        <td scope="row">
           <div class="text-center">
             <input type="checkbox" value="">
           </div>
-        </th>
-        <th>1</th>
+        </td>
+        <td>1</td>
         <td>Atom</td>
         <td><span class="text-link" href="#">@mateus</span></td>
         <td>22</td>
@@ -52,12 +52,12 @@
         <td>01/02/2018</td>
       </tr>
       <tr>
-        <th scope="row">
+        <td scope="row">
           <div class="text-center">
             <input type="checkbox" value="">
           </div>
-        </th>
-        <th>2</th>
+        </td>
+        <td>2</td>
         <td>Yarn</td>
         <td><span class="text-link" href="#">@jotapsa</span></td>
         <td>5</td>

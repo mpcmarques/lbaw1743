@@ -41,25 +41,25 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">
+        <td scope="row">
           <div class="text-center">
             <input type="checkbox" value="">
           </div>
-        </th>
-        <th>1</th>
+        </td>
+        <td>1</td>
         <td><span class="text-link" href="#">@mateus</span></td>
-        <td>Mateus Pedroza</td>
-        <td>mpcm@lbaw.com</td>
-        <td>01/01/2018</td>
-        <td>01/03/2018</td>
+        <td>Mateus Pedroza</th>
+        <td>mpcm@lbaw.com</th>
+        <td>01/01/2018</th>
+        <td>01/03/2018</th>
       </tr>
       <tr>
-        <th scope="row">
+        <td scope="row">
           <div class="text-center">
             <input type="checkbox" value="">
           </div>
-        </th>
-        <th>2</th>
+        </td>
+        <td>2</td>
         <td><span class="text-link" href="#">@bmcb</span></td>
         <td>Bernardo Barbosa</td>
         <td>bmcb@lbaw.com</td>
