@@ -14,13 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <title>Plenum - Manage Tasks</title>
+    <title>Plenum - My Projects</title>
 </head>
 <body>
     <div id="container" class="container-fluid">
         <!-- navbar -->
             <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="http://0.0.0.0:8000">
+	<a class="navbar-brand" href="index.html">
 		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
 	</a>
 	
@@ -31,7 +31,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
-				<a class="nav-link" href="dashboard">Dashboard</a>
+				<a class="nav-link" href="dashboard.html">Dashboard</a>
 			</li>
 		</ul>
 		
@@ -79,7 +79,7 @@
 				<div class="md-form mb-3">
 					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
 					<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
-					<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
+					<small><a id="forgotPassword" href="http://0.0.0.0:8000/forgot_password.php">Forgot Password?</a></small>
 				</div>
 				
 				<button type="submit" class="btn btn-secondary">Login</button>
@@ -174,52 +174,20 @@
         <!-- body -->
         <div id="body" class="container-fluid">
             
-    <div id=project-page class="page-with-menu">
-    <div id="project-card" class="card">
-  <div class="card-header">
-    <h3 class="text-center">Project Name</h3>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-3">
-        <img src="img/project_placeholder.png" class="img-round img-center thumbnail-big" alt="Project Picture">
-      </div>
-      <div class="col-md-9">
-        <div class="text-left">
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- <!-- optional -->
+    <div id=dashboard class="page-with-menu">
+   <!-- optional -->
   <div class="row">
     <div class="col-md-3 menu">
       <div class="container-fluid panel">
-          <div class="list-group">
-  <li class="list-group-item list-group-item-info">
-    Project
-  </li>
-  <a href="project_tasks" class="list-group-item list-group-item-action" role="button">
+              <div class="list-group">
+  <a href="dashboard.html" class="list-group-item list-group-item-action" role="button">
+    Dashboard
+  </a>
+  <a href="dashboard_my_projects.html" class="list-group-item list-group-item-action" role="button">
+    My Projects
+  </a>
+  <a href="dashboard_tasks.html" class="list-group-item list-group-item-action" role="button">
     Tasks
-  </a>
-  <a href="project_members" class="list-group-item list-group-item-action" role="button">
-    Members
-  </a>
-  <a href="project_forum" class="list-group-item list-group-item-action" role="button">
-    Forum
-  </a>
-  <a href="project_options" class="list-group-item list-group-item-action" role="button">
-    Options
-  </a>
-  <li class="list-group-item list-group-item-info">
-    Administration
-  </li>
-  <a href="project_manage_tasks" class="list-group-item list-group-item-action" role="button">
-    Manage tasks
-  </a>
-  <a href="project_manage_users" class="list-group-item list-group-item-action" role="button">
-    Manage users
   </a>
 </div>
       </div>
@@ -228,41 +196,66 @@
       <div class="container-fluid panel">
         <div class="card">
           <div class="card-header panel-header">
-            
-<h5>Options</h5>
-
+            <div class="row">
+  <div class="col-md-4">
+    <h5 class="panel-title">My Projects</h5>
+  </div>
+  <div class="col-md-4">
+    <nav class="nav nav-pills">
+      <a class="nav-link active" href="dashboard_my_projects.html#">Last seen</a>
+      <a class="nav-link" href="dashboard_my_projects.html#">All</a>
+    </nav>
+  </div>
+  <div class="col md-4">
+    
+    <!-- search input -->
+<div class="my_projects_search_input">
+    <form class="form-inline">
+        <div class="input-group">
+            <input class="form-control input" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn input-button" type="button">
+                    <span class="octicon octicon-search" />
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+  </div>
+</div>
           </div>
           <div id="card-body" class="card-body">
+            <a class="create-new-project" href="dashboard/new-project.html">
+  <button type="button" class="btn btn-outline-light btn-block create-new-project-button">
+    + create new project
+  </button>
+</a>
+  
+  <div class="card project-card">
+    <img class="card-img-top img-responsive" src="img/task-placeholder.svg">
+    <div class="card-body text-center">
+        <h5>Project Name</h5>
+        <div class="btn-group">
             
-<form>
-  <div class="form-group">
-    <div class="row">
-      <div class="col-md-2">
-        <img src="img/project_placeholder.png" alt="Project current image" class="img-center thumbnail">
-      </div>
-      <div class="col-md-10">
-        <div id="upload-image" class="input-group">
-          <div class="custom-file">
-            <label class="custom-file-label" for="new_image">Choose file</label>
-            <input type="file" class="custom-file-input" id="new_image">
-          </div>
-          <div class="input-group-append">
-            <span class="input-group-text" id="">Upload</span>
-          </div>
+            <button type="button" class="btn btn-terciary">
+                <a href="http://0.0.0.0:8000/projects_tasks">
+                    <span  class="octicon octicon-clippy"></span>
+                </a>
+            </button>
+            
+            <button type="button" class="btn btn-secondary">
+                <a href="project_forum.html">
+                    <span  class="octicon octicon-comment-discussion"></span>
+                </a>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <a href="project_options.html">
+                    <span  class="octicon octicon-tools"></span>
+                </a>
+            </button>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <input type="text" id="projectname" class="form-control" value="Project Name" required>
-    <label class="form-check-label" for="description">Description</label>
-    <textarea class="form-control" id="description">
-Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis. Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque. Vitae sapien pellentesque habitant morbi tristique senectus et netus.
-    </textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Save Changes</button>
-</form>
-
+</div>
           </div>
            <!-- optional so you have to create the div -->
         </div>
@@ -284,17 +277,17 @@ Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis. 
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.html">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.html">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.html">
                         Contact
                     </a>
                 </div>

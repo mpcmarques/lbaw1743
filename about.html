@@ -14,13 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <title>Plenum - My Projects</title>
+    <title>Plenum - About</title>
 </head>
 <body>
     <div id="container" class="container-fluid">
         <!-- navbar -->
             <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="http://0.0.0.0:8000">
+	<a class="navbar-brand" href="index.html">
 		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
 	</a>
 	
@@ -31,7 +31,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
-				<a class="nav-link" href="dashboard">Dashboard</a>
+				<a class="nav-link" href="dashboard.html">Dashboard</a>
 			</li>
 		</ul>
 		
@@ -79,7 +79,7 @@
 				<div class="md-form mb-3">
 					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
 					<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
-					<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
+					<small><a id="forgotPassword" href="http://0.0.0.0:8000/forgot_password.php">Forgot Password?</a></small>
 				</div>
 				
 				<button type="submit" class="btn btn-secondary">Login</button>
@@ -174,101 +174,45 @@
         <!-- body -->
         <div id="body" class="container-fluid">
             
-    <div id=dashboard class="page-with-menu">
-   <!-- optional -->
-  <div class="row">
-    <div class="col-md-3 menu">
-      <div class="container-fluid panel">
-              <div class="list-group">
-  <a href="dashboard" class="list-group-item list-group-item-action" role="button">
-    Dashboard
-  </a>
-  <a href="dashboard_my_projects" class="list-group-item list-group-item-action" role="button">
-    My Projects
-  </a>
-  <a href="dashboard_tasks" class="list-group-item list-group-item-action" role="button">
-    Tasks
-  </a>
-</div>
-      </div>
-    </div>
-    <div class="col-md-9 content-body">
-      <div class="container-fluid panel">
-        <div class="card">
-          <div class="card-header panel-header">
-            <div class="row">
-  <div class="col-md-4">
-    <h5 class="panel-title">My Projects</h5>
-  </div>
-  <div class="col-md-4">
-    <nav class="nav nav-pills">
-      <a class="nav-link active" href="#">Last seen</a>
-      <a class="nav-link" href="#">All</a>
-    </nav>
-  </div>
-  <div class="col md-4">
-    
-    <!-- search input -->
-<div class="my_projects_search_input">
-    <form class="form-inline">
-        <div class="input-group">
-            <input class="form-control input" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-                <button class="btn input-button" type="button">
-                    <span class="octicon octicon-search" />
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-  </div>
-</div>
-          </div>
-          <div id="card-body" class="card-body">
-            <a class="create-new-project" href="dashboard/new-project">
-  <button type="button" class="btn btn-outline-light btn-block create-new-project-button">
-    + create new project
-  </button>
-</a>
-  
-  <div class="card project-card">
-    <img class="card-img-top img-responsive" src="img/task-placeholder.svg">
-    <div class="card-body text-center">
-        <h5>Project Name</h5>
-        <div class="btn-group">
-            
-            <button type="button" class="btn btn-terciary">
-                <a href="projects_tasks">
-                    <span  class="octicon octicon-clippy"></span>
-                </a>
-            </button>
-            
-            <button type="button" class="btn btn-secondary">
-                <a href="project_forum">
-                    <span  class="octicon octicon-comment-discussion"></span>
-                </a>
-            </button>
-            <button type="button" class="btn btn-primary">
-                <a href="project_options">
-                    <span  class="octicon octicon-tools"></span>
-                </a>
-            </button>
+<div id="about-page" class="container about-page">
+    <h1 class="text-center">About</h1>
+    <div class="container developers text-center">
+      <a href="about.html#">
+    <div class="card user-card">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <div class="card-body">
+            <h5 class="card-title text-center">Name Lastname</h5>
         </div>
     </div>
-</div>
-          </div>
-           <!-- optional so you have to create the div -->
+</a>      <a href="about.html#">
+    <div class="card user-card">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <div class="card-body">
+            <h5 class="card-title text-center">Name Lastname</h5>
         </div>
-      </div>
     </div>
-  </div>
+</a>      <a href="about.html#">
+    <div class="card user-card">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <div class="card-body">
+            <h5 class="card-title text-center">Name Lastname</h5>
+        </div>
+    </div>
+</a>      <a href="about.html#">
+    <div class="card user-card">
+        <img src="img/profile_pic.png" class="card-img-top" alt="Profile Picture">
+        <div class="card-body">
+            <h5 class="card-title text-center">Name Lastname</h5>
+        </div>
+    </div>
+</a>    </div>
+    <div class="container text">
+        <p class="text-center">
+            Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.
+        </p>
+    </div>
 </div>
 
-    
-    
-    
-    
-    
         </div>
 
         <!-- footer -->
@@ -277,17 +221,17 @@
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.html">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.html">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.html">
                         Contact
                     </a>
                 </div>

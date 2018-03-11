@@ -14,13 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <title>Plenum - Members</title>
+    <title>Plenum - Manage Tasks</title>
 </head>
 <body>
     <div id="container" class="container-fluid">
         <!-- navbar -->
             <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="http://0.0.0.0:8000">
+	<a class="navbar-brand" href="index.html">
 		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
 	</a>
 	
@@ -31,7 +31,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
-				<a class="nav-link" href="dashboard">Dashboard</a>
+				<a class="nav-link" href="dashboard.html">Dashboard</a>
 			</li>
 		</ul>
 		
@@ -79,7 +79,7 @@
 				<div class="md-form mb-3">
 					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
 					<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
-					<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
+					<small><a id="forgotPassword" href="http://0.0.0.0:8000/forgot_password.php">Forgot Password?</a></small>
 				</div>
 				
 				<button type="submit" class="btn btn-secondary">Login</button>
@@ -200,25 +200,25 @@
   <li class="list-group-item list-group-item-info">
     Project
   </li>
-  <a href="project_tasks" class="list-group-item list-group-item-action" role="button">
+  <a href="project_tasks.html" class="list-group-item list-group-item-action" role="button">
     Tasks
   </a>
-  <a href="project_members" class="list-group-item list-group-item-action" role="button">
+  <a href="project_members.html" class="list-group-item list-group-item-action" role="button">
     Members
   </a>
-  <a href="project_forum" class="list-group-item list-group-item-action" role="button">
+  <a href="project_forum.html" class="list-group-item list-group-item-action" role="button">
     Forum
   </a>
-  <a href="project_options" class="list-group-item list-group-item-action" role="button">
+  <a href="project_options.html" class="list-group-item list-group-item-action" role="button">
     Options
   </a>
   <li class="list-group-item list-group-item-info">
     Administration
   </li>
-  <a href="project_manage_tasks" class="list-group-item list-group-item-action" role="button">
+  <a href="project_manage_tasks.html" class="list-group-item list-group-item-action" role="button">
     Manage tasks
   </a>
-  <a href="project_manage_users" class="list-group-item list-group-item-action" role="button">
+  <a href="project_manage_users.html" class="list-group-item list-group-item-action" role="button">
     Manage users
   </a>
 </div>
@@ -229,111 +229,42 @@
         <div class="card">
           <div class="card-header panel-header">
             
-<div class="row">
-  <div class="col-md-8">
-    <h5>Members</h5>
-  </div>
-  <div class="col-md-4">
-    <div class="float-right">
-      <form>
-        <div class="form-group">
-          <select class="form-control slct-primary" id="sel_filter">
-            <option class="slct-primary">Show all</option>
-            <option class="slct-primary">Show only Managers</option>
-            <option class="slct-primary">Show only Members</option>
-          </select>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+<h5>Options</h5>
 
           </div>
           <div id="card-body" class="card-body">
             
-<div class="nopadding">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col-3">
-        </th>
-        <th scope="col-3">
-          <div class="text-left font-weight-bold">
-            Username
+<form>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2">
+        <img src="img/project_placeholder.png" alt="Project current image" class="img-center thumbnail">
+      </div>
+      <div class="col-md-10">
+        <div id="upload-image" class="input-group">
+          <div class="custom-file">
+            <label class="custom-file-label" for="new_image">Choose file</label>
+            <input type="file" class="custom-file-input" id="new_image">
           </div>
-        </th>
-        <th scope="col-3">
-          <div class="text-left font-weight-bold">
-            Name
+          <div class="input-group-append">
+            <span class="input-group-text" id="">Upload</span>
           </div>
-        </th>
-        <th scope="col-3">
-          <div class="text-left font-weight-bold">
-            Role
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">
-          <img src="img/profile_pic.png" class="img-round img-center thumbnail-small" alt="Profile Picture">
-        </th>
-        <td>
-          <div class="text-left">
-            jotapsa
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            João Sá
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            Member
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">
-          <img src="img/profile_pic.png" class="img-round img-center thumbnail-small" alt="Profile Picture">
-        </th>
-        <td>
-          <div class="text-left">
-            mpcm
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            Mateus Pedroza
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            Member
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-          </div>
-          
-<div class="card-footer">
-  <div class="float-right">
-    <a class="btn btn-terciary" href="#" role="button">
-      <span class="octicon octicon-pencil"/>
-      Edit
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
-      <span class="octicon octicon-trashcan"/>
-      Remove
-    </a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="form-group">
+    <input type="text" id="projectname" class="form-control" value="Project Name" required>
+    <label class="form-check-label" for="description">Description</label>
+    <textarea class="form-control" id="description">
+Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis. Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque. Vitae sapien pellentesque habitant morbi tristique senectus et netus.
+    </textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
 
- <!-- optional so you have to create the div -->
+          </div>
+           <!-- optional so you have to create the div -->
         </div>
       </div>
     </div>
@@ -353,17 +284,17 @@
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.html">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.html">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.html">
                         Contact
                     </a>
                 </div>

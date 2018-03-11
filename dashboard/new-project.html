@@ -5,23 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#50514F">
-    <link rel="shortcut icon" href="icons/logo32.ico">
+    <link rel="shortcut icon" href="../icons/logo32.ico">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href= "css/css.css"
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href= "../css/css.css"
  />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
-    <title>Plenum - Home</title>
+    <title>Plenum - New Project</title>
 </head>
 <body>
     <div id="container" class="container-fluid">
         <!-- navbar -->
             <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="index.html">
-		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
+	<a class="navbar-brand" href="../index.html">
+		<img class="company-icon" src="../img/logo.png" alt="Plenum" width="40" height="40"/>
 	</a>
 	
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
-				<a class="nav-link" href="dashboard.html">Dashboard</a>
+				<a class="nav-link" href="../dashboard.html">Dashboard</a>
 			</li>
 		</ul>
 		
@@ -79,7 +79,7 @@
 				<div class="md-form mb-3">
 					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
 					<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
-					<small><a id="forgotPassword" href="http://0.0.0.0:8000/forgot_password.php">Forgot Password?</a></small>
+					<small><a id="forgotPassword" href="http://0.0.0.0:8000/dashboard/forgot_password.php">Forgot Password?</a></small>
 				</div>
 				
 				<button type="submit" class="btn btn-secondary">Login</button>
@@ -88,11 +88,11 @@
 			<div class="modal-footer justify-content-center">
 				<div class="buttons text-center">
 					<button class="btn facebook">
-						<img src="img/facebook.svg" alt="facebook" width="30">
+						<img src="../img/facebook.svg" alt="facebook" width="30">
 						Facebook
 					</button>
 					<button class="btn google">
-						<img src="img/google.png" alt="google" width="30">
+						<img src="../img/google.png" alt="google" width="30">
 						Google+
 					</button>
 				</div>
@@ -173,15 +173,77 @@
 
         <!-- body -->
         <div id="body" class="container-fluid">
-            <!-- home page -->
-<div id="home-page" class="container">
-  <img class="logo" src="img/logo.png" alt="Plenum">
-  <div class="home-content">
-    <p class="text-center project-name">Plenum</p>
-    <p class="text-center description">
-      Welcome to your go to online project manager. Build your dream team, split your tasks and get to work!
-    </p>
-  </div>
+            
+<div id="new-project" class="container-fluid">
+    
+    
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">New Project</li>
+        </ol>
+    </nav>
+    
+    
+    <div class="card">
+        <div class="card-header panel-header">
+            <h5>New Project</h5>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="Project name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="exampleTextarea">Description</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Project description"></textarea>
+                    </div>
+                </div>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-3">Type</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                Public
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                Private
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <div class="form-group row">
+                    <label class="col-sm-3">Image</label>
+                    <div class="col-sm-9">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group row" style="margin-bottom: 0;">
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="octicon octicon-plus"></span>
+                            Create
+                        </button>
+                        <div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
         </div>
 
@@ -191,17 +253,17 @@
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.html">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="http://0.0.0.0:8000/dashboard/faq">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.html">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="http://0.0.0.0:8000/dashboard/about">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.html">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="http://0.0.0.0:8000/dashboard/contact">
                         Contact
                     </a>
                 </div>

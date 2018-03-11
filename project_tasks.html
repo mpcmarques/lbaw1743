@@ -14,13 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <title>Plenum - Tasks</title>
+    <title>Plenum - Manage Tasks</title>
 </head>
 <body>
     <div id="container" class="container-fluid">
         <!-- navbar -->
             <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="http://0.0.0.0:8000">
+	<a class="navbar-brand" href="index.html">
 		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
 	</a>
 	
@@ -31,7 +31,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
-				<a class="nav-link" href="dashboard">Dashboard</a>
+				<a class="nav-link" href="dashboard.html">Dashboard</a>
 			</li>
 		</ul>
 		
@@ -79,7 +79,7 @@
 				<div class="md-form mb-3">
 					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
 					<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
-					<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
+					<small><a id="forgotPassword" href="http://0.0.0.0:8000/forgot_password.php">Forgot Password?</a></small>
 				</div>
 				
 				<button type="submit" class="btn btn-secondary">Login</button>
@@ -174,20 +174,52 @@
         <!-- body -->
         <div id="body" class="container-fluid">
             
-    <div id=dashboard class="page-with-menu">
-   <!-- optional -->
+    <div id=project-page class="page-with-menu">
+    <div id="project-card" class="card">
+  <div class="card-header">
+    <h3 class="text-center">Project Name</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="img/project_placeholder.png" class="img-round img-center thumbnail-big" alt="Project Picture">
+      </div>
+      <div class="col-md-9">
+        <div class="text-left">
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- optional -->
   <div class="row">
     <div class="col-md-3 menu">
       <div class="container-fluid panel">
-              <div class="list-group">
-  <a href="dashboard" class="list-group-item list-group-item-action" role="button">
-    Dashboard
-  </a>
-  <a href="dashboard_my_projects" class="list-group-item list-group-item-action" role="button">
-    My Projects
-  </a>
-  <a href="dashboard_tasks" class="list-group-item list-group-item-action" role="button">
+          <div class="list-group">
+  <li class="list-group-item list-group-item-info">
+    Project
+  </li>
+  <a href="project_tasks.html" class="list-group-item list-group-item-action" role="button">
     Tasks
+  </a>
+  <a href="project_members.html" class="list-group-item list-group-item-action" role="button">
+    Members
+  </a>
+  <a href="project_forum.html" class="list-group-item list-group-item-action" role="button">
+    Forum
+  </a>
+  <a href="project_options.html" class="list-group-item list-group-item-action" role="button">
+    Options
+  </a>
+  <li class="list-group-item list-group-item-info">
+    Administration
+  </li>
+  <a href="project_manage_tasks.html" class="list-group-item list-group-item-action" role="button">
+    Manage tasks
+  </a>
+  <a href="project_manage_users.html" class="list-group-item list-group-item-action" role="button">
+    Manage users
   </a>
 </div>
       </div>
@@ -196,97 +228,82 @@
       <div class="container-fluid panel">
         <div class="card">
           <div class="card-header panel-header">
-            <div class="row">
-  <div class="col-md-6">
-    <h5>My Tasks</h5>
+            
+<div class="row">
+  <div class="col-md-4">
+    <h5>Tasks</h5>
   </div>
-  <div class="col-md-6">
-    <form>
-      <div class="input-group">
-        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"/>
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-          </div>
-          <div id="card-body" class="card-body">
-            <div class="tasks-card nopadding">
-  <div class="container-fluid">
-    <div class="row bg-primary">
-      <div class="col-md-12">
-        <div class="float-right">
-          <div class="nav nav-pills">
-            <a class="nav-link active" href="#">Assigned</a>
-            <a class="nav-link" href="#">Unassigned</a>
-            <a class="nav-link" href="#">Completed</a>
-          </div>
-        </div>
-      </div>
+  <div class="col-md-8">
+    <div class="float-right">
+      <nav class="nav nav-pills">
+        <a class="nav-link active" href="project_tasks.html#">Active</a>
+        <a class="nav-link" href="project_tasks.html#">Unassigned</a>
+        <a class="nav-link" href="project_tasks.html#">Completed</a>
+      </nav>
     </div>
   </div>
-  <div class="card-body">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col-1">
-            #
-          </th>
-          <th scope="col-4">
-            Task Name
-          </th>
-          <th scope="col-4">
-            Category
-          </th>
-          <th scope="col-3">
-            Project
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">
-            <p class"text-left">123</p>
-          </th>
-          <td>
-            <p class="text-left">Bug Correction</p>
-          </td>
-          <td>
-            <p class="text-left">Bug fix</p>
-          </td>
-          <td>
-            <p class="text-left">Project name</p>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <p class"text-left">142</p>
-          </th>
-          <td>
-            <p class="text-left">UI Improvement</p>
-          </td>
-          <td>
-            <p class="text-left">Design</p>
-          </td>
-          <td>
-            <p class="text-left">Project name</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <button type="button" class="btn btn-white btn-block m-0 p-0">...</button>
 </div>
+
+          </div>
+          <div id="card-body" class="card-body">
+            
+<div class="nopadding">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-1">
+          <p class="text-left font-weight-bold">#</p>
+        </th>
+        <th scope="col-4">
+          <p class="text-left font-weight-bold">Task Name</p>
+        </th>
+        <th scope="col-4">
+          <p class="text-left font-weight-bold">Category</p>
+        </th>
+        <th scope="col-3">
+          <p class="text-left font-weight-bold">Assigned</p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <p class"text-left">123</p>
+        </th>
+        <td>
+          <p class="text-left">Bug Correction</p>
+        </td>
+        <td>
+          <p class="text-left">Bug fix</p>
+        </td>
+        <td>
+          <p class="text-left">@jotapsa</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <p class"text-left">142</p>
+        </th>
+        <td>
+          <p class="text-left">UI Improvement</p>
+        </td>
+        <td>
+          <p class="text-left">Design</p>
+        </td>
+        <td>
+          <p class="text-left">@mpcm</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
           </div>
           
 <div class="card-footer">
-  <small>
-    last task activity <span class="text-link">task name</span>, 2 days ago.
-  </small>
+  <p class="text-center">
+    last task activity task name, 2 days ago.
+  </p>
 </div>
 
  <!-- optional so you have to create the div -->
@@ -309,17 +326,17 @@
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.html">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.html">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.html">
                         Contact
                     </a>
                 </div>

@@ -14,13 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <title>Plenum - Faq</title>
+    <title>Plenum - Tasks</title>
 </head>
 <body>
     <div id="container" class="container-fluid">
         <!-- navbar -->
             <nav id="header" class="navbar navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="http://0.0.0.0:8000">
+	<a class="navbar-brand" href="index.html">
 		<img class="company-icon" src="img/logo.png" alt="Plenum" width="40" height="40"/>
 	</a>
 	
@@ -31,7 +31,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
-				<a class="nav-link" href="dashboard">Dashboard</a>
+				<a class="nav-link" href="dashboard.html">Dashboard</a>
 			</li>
 		</ul>
 		
@@ -79,7 +79,7 @@
 				<div class="md-form mb-3">
 					<label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
 					<input placeholder="Password" type="password" id="defaultForm-pass" class="form-control validate">
-					<small><a id="forgotPassword" href="forgot_password.php">Forgot Password?</a></small>
+					<small><a id="forgotPassword" href="http://0.0.0.0:8000/forgot_password.php">Forgot Password?</a></small>
 				</div>
 				
 				<button type="submit" class="btn btn-secondary">Login</button>
@@ -174,63 +174,133 @@
         <!-- body -->
         <div id="body" class="container-fluid">
             
-<div id="faq" class="container-fluid">
-    <h1 class="text-center">F.A.Q.</h1>
-    <div class="container faq-content text-center">
-        <p>Frequently Asked Questions</p>
-        
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Cras justo odio?
-                        </button>
-                    </h5>
-                </div>
-                
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit amet. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Quis vel eros donec ac odio. Non curabitur gravida arcu ac tortor. Lobortis elementum nibh tellus molestie nunc non blandit massa. Urna condimentum mattis pellentesque id nibh tortor id. Libero id faucibus nisl tincidunt eget. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id venenatis a condimentum vitae sapien.
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Dapibus ac facilisis in?
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit amet. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Quis vel eros donec ac odio. Non curabitur gravida arcu ac tortor. Lobortis elementum nibh tellus molestie nunc non blandit massa. Urna condimentum mattis pellentesque id nibh tortor id. Libero id faucibus nisl tincidunt eget. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id venenatis a condimentum vitae sapien.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Morbi leo risus?
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit amet. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Quis vel eros donec ac odio. Non curabitur gravida arcu ac tortor. Lobortis elementum nibh tellus molestie nunc non blandit massa. Urna condimentum mattis pellentesque id nibh tortor id. Libero id faucibus nisl tincidunt eget. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id venenatis a condimentum vitae sapien.
-                </div>
-            </div>
-        </div>
-    </div>
-    <ol class="list-group faq-questions">
-    </ol>
+    <div id=dashboard class="page-with-menu">
+   <!-- optional -->
+  <div class="row">
+    <div class="col-md-3 menu">
+      <div class="container-fluid panel">
+              <div class="list-group">
+  <a href="dashboard.html" class="list-group-item list-group-item-action" role="button">
+    Dashboard
+  </a>
+  <a href="dashboard_my_projects.html" class="list-group-item list-group-item-action" role="button">
+    My Projects
+  </a>
+  <a href="dashboard_tasks.html" class="list-group-item list-group-item-action" role="button">
+    Tasks
+  </a>
 </div>
+      </div>
+    </div>
+    <div class="col-md-9 content-body">
+      <div class="container-fluid panel">
+        <div class="card">
+          <div class="card-header panel-header">
+            <div class="row">
+  <div class="col-md-6">
+    <h5>My Tasks</h5>
+  </div>
+  <div class="col-md-6">
+    <form>
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+          </div>
+          <div id="card-body" class="card-body">
+            <div class="tasks-card nopadding">
+  <div class="container-fluid">
+    <div class="row bg-primary">
+      <div class="col-md-12">
+        <div class="float-right">
+          <div class="nav nav-pills">
+            <a class="nav-link active" href="dashboard_tasks.html#">Assigned</a>
+            <a class="nav-link" href="dashboard_tasks.html#">Unassigned</a>
+            <a class="nav-link" href="dashboard_tasks.html#">Completed</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col-1">
+            #
+          </th>
+          <th scope="col-4">
+            Task Name
+          </th>
+          <th scope="col-4">
+            Category
+          </th>
+          <th scope="col-3">
+            Project
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <p class"text-left">123</p>
+          </th>
+          <td>
+            <p class="text-left">Bug Correction</p>
+          </td>
+          <td>
+            <p class="text-left">Bug fix</p>
+          </td>
+          <td>
+            <p class="text-left">Project name</p>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <p class"text-left">142</p>
+          </th>
+          <td>
+            <p class="text-left">UI Improvement</p>
+          </td>
+          <td>
+            <p class="text-left">Design</p>
+          </td>
+          <td>
+            <p class="text-left">Project name</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button type="button" class="btn btn-white btn-block m-0 p-0">...</button>
+</div>
+          </div>
+          
+<div class="card-footer">
+  <small>
+    last task activity <span class="text-link">task name</span>, 2 days ago.
+  </small>
 </div>
 
+ <!-- optional so you have to create the div -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+    
+    
+    
         </div>
 
         <!-- footer -->
@@ -239,17 +309,17 @@
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq.html">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about.html">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact.html">
                         Contact
                     </a>
                 </div>
