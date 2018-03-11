@@ -52,7 +52,7 @@
                 </fieldset>
                 
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="exampleTextarea">Picture</label>
+                    <label class="col-sm-3">Image</label>
                     <div class="col-sm-9">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="inputGroupFile01">
@@ -60,6 +60,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="form-group row" style="margin-bottom: 0;">
                     <div class="container-fluid">
                         <button type="submit" class="btn btn-primary">
@@ -72,4 +73,6 @@
                 </div>
             </div>
         </div>
-        @endsection
+    </div>
+</div>
+@endsection

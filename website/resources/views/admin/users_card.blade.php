@@ -1,4 +1,61 @@
-<div class="container users-card">
+@extends('admin.admin-layout')
+
+@section('title', 'Administration Users')
+
+@section('card-header')
+
+<div class="row">
+  <div class="col-4">
+    <h5 class="card-title">Users</h5>
+  </div>
+  <div class="col-8">
+    <form>
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+@endsection
+
+@section('card-body')
+
+@endsection
+
+@section('card-footer')
+<div class="card-footer">
+  <ul class="nav nav-pills justify-content-end">
+    <li class="nav-item">
+      <button class="btn btn-terciary">
+        <span class="octicon octicon-pencil">
+          Edit
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-secondary">
+          <span class="octicon octicon-circle-slash"/>
+          Ban
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" href="#">
+          <span class="octicon octicon-trashcan"/>
+          Remove
+        </button>
+      </li>
+    </ul>
+  </div>
+@endsection
+
+
+
+<!-- <div class="container users-card">
   <div class="card">
     <div class="card-header bg-primary">
       <div class="row">
@@ -111,4 +168,4 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
