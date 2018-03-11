@@ -70,10 +70,10 @@
   </table>
   </div>
 </div>
-<button type="button" class="btn btn-terciary btn-block more">...</button>
 @endsection
 
 @section('card-footer')
+<button type="button" class="btn btn-terciary btn-block more">...</button>
 <div class="card-footer">
   <div class="float-right">
     <a class="btn btn-terciary" href="#" role="button">
