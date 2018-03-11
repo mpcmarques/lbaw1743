@@ -7,7 +7,7 @@
       @yield('menu')
     </div>
     <div class="col-md-9">
-      <div class="container panel">
+      <div class="container-fluid panel">
         <div class="card">
           <div class="card-header panel-header">
             @yield('card-header')

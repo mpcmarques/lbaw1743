@@ -227,7 +227,7 @@ body {
 /* page with menu */
 
 .page-with-menu .menu {
-    padding: 0;
+    padding-right: 0;
 }
 
 /* nopadding div */
