@@ -21,7 +21,11 @@
 @endsection
 
 @section('card-body')
-  <button type="button" class="btn btn-outline-light btn-block create-new-project-button">+ create new project</button>
+<a class="create-new-project" href="{{ url('dashboard/new-project')}}">
+  <button type="button" class="btn btn-outline-light btn-block create-new-project-button">
+    + create new project
+  </button>
+</a>
   {{-- projects card --}}
   @include('layouts.project_card')
 @endsection

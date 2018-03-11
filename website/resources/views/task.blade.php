@@ -5,12 +5,14 @@
 @section('content')
 
 <div id="task" class="container-fluid">
+  {{-- breadcrumb --}}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="project">Project</a></li>
       <li class="breadcrumb-item active" aria-current="page"><a href="task">Task Name</a></li>
     </ol>
   </nav>
+  {{-- card --}}
   <div class="card">
     <div class="card-header panel-header">
       @include('layouts.card-edit-button', ['href' => 'task/edit ', 'extra' => ''])

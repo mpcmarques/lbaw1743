@@ -233,6 +233,10 @@ div.required label:after {
     margin-bottom: 1em;
 }
 
+#dashboard .create-new-project {
+    text-decoration: none;
+}
+
 #dashboard .tasks-card .nav-pills {
     padding-bottom: 8px;
 }
