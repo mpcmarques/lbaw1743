@@ -233,8 +233,18 @@ div.required label:after {
     margin-bottom: 1em;
 }
 
-#dashboard .tasks-card #tasks-nav-pills {
+#dashboard .tasks-card .nav-pills {
     padding-bottom: 8px;
+}
+
+@media(max-width: 576px){
+    #dashboard .tasks-card .nav-link {
+        font-size: 13px;
+    }
+    
+    #dashboard .tasks-card .nav-link {
+        margin-top: 8px;
+    }
 }
 
 #dashboard .tasks-card .card-body {

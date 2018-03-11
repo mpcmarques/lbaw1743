@@ -5,7 +5,7 @@
 @section('content')
 
 <div id="contact" class="container contact-page">
-    <h1 class="display-3 text-center">Contact</h1>
+    <h1 class="text-center">Contact</h1>
 
 
     <div class="row justify-content-center">
