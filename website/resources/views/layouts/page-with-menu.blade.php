@@ -6,7 +6,7 @@
     <div class="col-md-3 menu">
       @yield('menu')
     </div>
-    <div class="col-md-9 content-body">
+    <div class="col-md-9">
       <div class="container-fluid panel">
         <div class="card">
           <div class="card-header panel-header">
