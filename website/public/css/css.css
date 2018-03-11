@@ -273,6 +273,10 @@ div.required label:after {
     margin-left: -15px;
     margin-right: -15px;
   }
+
+  #project-page #project-card img{
+    margin-bottom: 1em;
+  }
 }
 
 #project-page #project_media img{
@@ -294,6 +298,20 @@ div.required label:after {
 
 #project-page .nav-pills .nav-link{
     margin-right: .5em;
+}
+
+#project-page .nav-pills {
+    padding-bottom: 8px;
+}
+
+@media(max-width: 576px){
+    #project-page .nav-link {
+        font-size: 13px;
+    }
+
+    #project-page .nav-link {
+        margin-top: 8px;
+    }
 }
 
 #project-page #projectname{

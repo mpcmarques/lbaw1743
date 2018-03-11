@@ -1,6 +1,6 @@
 <div id="project-card" class="card">
   <div class="card-header">
-    <h3>Project Name</h3>
+    <h3 class="text-center">Project Name</h3>
   </div>
   <div class="card-body">
     <div class="row">
