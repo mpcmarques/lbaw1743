@@ -41,7 +41,7 @@ Route::view('/contact', 'contact');
 
 Route::view('/about', 'about');
 
-Route::view('/faq', 'faq');
+Route::view('/faq', 'faq.faq');
 
 /* Register
 Route::view('/register', 'home', ['signupOn' => 'true'])

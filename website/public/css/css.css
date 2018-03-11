@@ -370,3 +370,13 @@ card.project-card .card-body .btn-group .btn{
     background-color: gray;
     color: white;
 }
+
+/* faq */
+
+#faq h5 {
+    text-align: left;
+}
+
+#faq .btn.btn-link {
+    color: #50514F;
+}
