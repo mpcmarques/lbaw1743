@@ -40,7 +40,7 @@
     </div>
     <div class="card-footer">
       <small>
-        created by @jotapsa on 30, February :<
+        created by @jotapsa on 20, February 2018
       </small>
     </div>
   </div>
