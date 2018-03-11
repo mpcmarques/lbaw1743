@@ -5,10 +5,10 @@
 @section('card-header')
 
 <div class="row">
-  <div class="col-6">
+  <div class="col-md-6">
     <h5>Tasks</h5>
   </div>
-  <div class="col-6">
+  <div class="col-md-6">
     <div class="float-right">
       <nav class="nav nav-pills">
         <a class="nav-link active" href="#">Active</a>
@@ -78,7 +78,7 @@
 
 @section('card-footer')
 
-<div class="card-footer mt-0 pt-0">
+<div class="card-footer">
   <p class="text-justify">
     last task activity task name, 2 days ago.
   </p>

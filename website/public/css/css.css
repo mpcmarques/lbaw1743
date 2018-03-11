@@ -286,6 +286,16 @@ div.required label:after {
   margin-bottom: 1em;
 }
 
+#project-page #forum-card-footer{
+  padding: 0;
+}
+
+#project-page #forum-button{
+  margin-top: 1em !important;
+  background-color: gray;
+  color: white;
+}
+
  /* profile */
 
 #profile #profile-header-card img {
