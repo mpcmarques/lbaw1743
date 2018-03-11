@@ -1,3 +1,52 @@
+@extends('admin.admin-layout')
+
+@section('title', 'Administration Projects')
+
+@section('card-header')
+<div class="row">
+  <div class="col-5">
+    <h5 class="card-title">Projects</h5>
+  </div>
+  <div class="col-7">
+    <form>
+      <div class="input-group">
+        <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+@endsection
+
+@section('card-body')
+
+@endsection
+
+@section('card-footer')
+<div class="card-footer">
+  <ul class="nav nav-pills justify-content-end">
+    <li class="nav-item">
+      <button class="btn btn-secondary">
+        <span class="octicon octicon-pencil"/>
+        Edit
+      </button>
+    </li>
+    <li class="nav-item">
+      <button  class="btn btn-primary">
+        <span class="octicon octicon-trashcan"/>
+        Remove
+      </button>
+    </li>
+  </ul>
+</div>
+@endsection
+
+
+<!--
 <div class="container projects-card">
   <div class="card">
     <div class="card-header">
@@ -105,4 +154,4 @@
       </ul>
     </div>
   </div>
-</div>
+</div> -->

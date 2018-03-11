@@ -348,7 +348,7 @@ div.required label:after {
     height: 2.5em;
 }
 
-card.project-card .card-body .btn-group .btn{
+.card.project-card .card-body .btn-group .btn{
     width: 33.3%;
     display: inline-block;
     padding: 0;
