@@ -1,4 +1,4 @@
-<div id="admin-users">
+<div id="admin-panel">
   <div class="list-group">
     <li class="list-group-item list-group-item-info" style="background-color: #70C1B3; color: #50514f;">
       Control Panel
