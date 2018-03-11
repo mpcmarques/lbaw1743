@@ -32,16 +32,24 @@
         <th scope="col-1">
         </th>
         <th scope="col-3">
-          <p class="text-left font-weight-bold">Username</p>
+          <div class="text-left font-weight-bold">
+            Username
+          </div>
         </th>
         <th scope="col-3">
-          <p class="text-left font-weight-bold">Tasks assigned</p>
+          <div class="text-left font-weight-bold">
+            Tasks assigned
+          </div>
+        </th>
+        <th scope="col-3">
+          <div class="text-left font-weight-bold">
+            Name
+          </div>
         </th>
         <th scope="col-2">
-          <p class="text-left font-weight-bold">Name</p>
-        </th>
-        <th scope="col-3">
-          <p class="text-left font-weight-bold">Role</p>
+          <div class="text-left font-weight-bold">
+            Role
+          </div>
         </th>
       </tr>
     </thead>
@@ -49,20 +57,28 @@
       <tr>
         <th scope="row">
           <div class="checkbox">
-            <label><input type="checkbox" value="">
+            <input type="checkbox" value="">
           </div>
         </th>
         <td>
-          <p class"text-left">jotapsa</p>
+          <div class="text-left">
+            jotapsa
+          </div>
         </td>
         <td>
-          <p class="text-left">5</p>
+          <div class="text-left">
+            11
+          </div>
         </td>
         <td>
-          <p class="text-left">João Sá</p>
+          <div class="text-left">
+            João Sá
+          </div>
         </td>
         <td>
-          <p class="text-left">Member</p>
+          <div class="text-left">
+            Member
+          </div>
         </td>
       </tr>
     </tbody>
