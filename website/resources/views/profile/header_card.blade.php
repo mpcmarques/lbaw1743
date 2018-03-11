@@ -41,14 +41,14 @@
           </div>
           
           <div class="md-form mb-3 required">
-            <label for="inputName" class="col-sm-4 col-form-label">Repeat Password</label>
+            <label for="inputName" class="col-sm-6 col-form-label">Repeat Password</label>
             <input type="password" class="form-control" value="********" required>
           </div>
           
           <!--  Gender -->
           
           <div class="md-form mb-3">
-            <label for="inputName" class="col-sm-4 col-form-label">Institucion / Company</label>
+            <label for="inputName" class="col-sm-6 col-form-label">Institucion / Company</label>
             <input type="text" class="form-control" value="FEUP">
             <small>
               Fill if you belong to a company or institution.
@@ -62,10 +62,13 @@
           
           <div class="md-form mb-3">
             <label for="inputName" class="col-sm-4 col-form-label">Profile Picture</label>
-            <input type="file" name="picture" accept="image/*">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
           </div>
           
-          <div class="modal-footer d-flex justify-content-end">
+          <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Save Changes</button>
           </ul>
         </div>

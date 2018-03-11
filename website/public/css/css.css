@@ -103,8 +103,8 @@ div.required label:after {
 }
 
 #contact #map {
-    width:100%;
-    height:200px;
+    width:20em;
+    height:20em;
 }
 
 #contact .row .text {
@@ -362,6 +362,11 @@ div.required label:after {
     width: 33.3%;
     display: inline-block;
     padding: 0;
+}
+
+.card.project-card .card-body  a {
+    text-decoration: none;
+    color: white;
 }
 
 /* user card */
