@@ -246,14 +246,13 @@ div.required label:after {
 /* project page*/
 
 #project-page #project_media img{
-    width: 150px;
     padding-top: 2em;
     padding-bottom: 2em;
     padding-left: 2em;
     padding-right: 2em;
 }
 
-#project-page .input-group{
+#project-page #upload-image{
   padding-top: 1.25em;
   padding-bottom:1.25em;
 }

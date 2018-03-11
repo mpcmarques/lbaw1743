@@ -5,20 +5,21 @@
 @section('card-header')
 
 <div class="row">
-  <div class="col-6">
-    <h5>Manage users</h5>
+  <div class="col-8">
+    <h5>Members</h5>
   </div>
-  <div class="col-6">
-    <form>
-      <div class="input-group">
-        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"/>
-          </button>
+  <div class="col-4">
+    <div class="float-right">
+      <form>
+        <div class="form-group">
+          <select class="form-control slct-primary" id="sel_filter">
+            <option class="slct-primary">Show all</option>
+            <option class="slct-primary">Show only Managers</option>
+            <option class="slct-primary">Show only Members</option>
+          </select>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
 
@@ -26,60 +27,88 @@
 
 @section('card-body')
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Username</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Tasks assigned</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Name</p>
-      </th>
-      <th scope="col-3">
-        <p class="text-left font-weight-bold">Role</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">
-        <p class"text-left">jotapsa</p>
-      </th>
-      <td>
-        <p class="text-left">5</p>
-      </td>
-      <td>
-        <p class="text-left">João Sá</p>
-      </td>
-      <td>
-        <p class="text-left">Member</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+<div class="nopadding">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-3">
+        </th>
+        <th scope="col-3">
+          <div class="text-left font-weight-bold">
+            Username
+          </div>
+        </th>
+        <th scope="col-3">
+          <div class="text-left font-weight-bold">
+            Name
+          </div>
+        </th>
+        <th scope="col-3">
+          <div class="text-left font-weight-bold">
+            Role
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <img src="{{ asset('img/profile_pic.png')}}" class="img-round img-center thumbnail-small" alt="Profile Picture">
+        </th>
+        <td>
+          <div class="text-left">
+            jotapsa
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            João Sá
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            Member
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <img src="{{ asset('img/profile_pic.png')}}" class="img-round img-center thumbnail-small" alt="Profile Picture">
+        </th>
+        <td>
+          <div class="text-left">
+            mpcm
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            Mateus Pedroza
+          </div>
+        </td>
+        <td>
+          <div class="text-left">
+            Member
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 @endsection
 
 @section('card-footer')
 
 <div class="card-footer">
-  <ul class="nav nav-pills justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span class="octicon octicon-pencil"/>
-        Edit
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span class="octicon octicon-trashcan"/>
-        Remove
-      </a>
-    </li>
-  </ul>
+  <div class="float-right">
+    <a class="btn btn-terciary" href="#" role="button">
+      <span class="octicon octicon-pencil"/>
+      Edit
+    </a>
+    <a class="btn btn-primary" href="#" role="button">
+      <span class="octicon octicon-trashcan"/>
+      Remove
+    </a>
+  </div>
 </div>
 
 @endsection

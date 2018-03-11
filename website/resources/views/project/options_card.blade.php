@@ -17,7 +17,7 @@
         <img src="img/project_placeholder.png" alt="Project current image" class="thumbnail">
       </div>
       <div class="col-10">
-        <div class="input-group">
+        <div id="upload-image" class="input-group">
           <div class="custom-file">
             <label class="custom-file-label" for="new_image">Choose file</label>
             <input type="file" class="custom-file-input" id="new_image">
