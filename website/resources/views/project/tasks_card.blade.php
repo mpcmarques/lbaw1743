@@ -79,7 +79,7 @@
 @section('card-footer')
 
 <div class="card-footer">
-  <p class="text-justify">
+  <p class="text-center">
     last task activity task name, 2 days ago.
   </p>
 </div>
