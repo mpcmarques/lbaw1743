@@ -56,7 +56,7 @@
     <tbody>
       <tr>
         <th scope="row">
-          <div class="checkbox">
+          <div class="text-center">
             <input type="checkbox" value="">
           </div>
         </th>
