@@ -4,7 +4,7 @@
 @section('id', 'project-page')
 
 @section('content-top')
-  @include('project.project_media')
+  @include('project.project_container')
 @endsection
 
 @section('menu')

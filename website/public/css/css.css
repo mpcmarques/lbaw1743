@@ -245,7 +245,7 @@ div.required label:after {
     #dashboard .tasks-card .nav-link {
         font-size: 13px;
     }
-    
+
     #dashboard .tasks-card .nav-link {
         margin-top: 8px;
     }
@@ -260,6 +260,10 @@ div.required label:after {
 }
 
 /* project page*/
+
+#project-page #project-container{
+  padding-bottom: 20px;
+}
 
 #project-page #project_media img{
     padding-top: 2em;
