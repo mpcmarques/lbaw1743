@@ -3,14 +3,22 @@
     <div class="card-body text-center">
         <h5>Project Name</h5>
         <div class="btn-group">
+            
             <button type="button" class="btn btn-terciary">
-                <span  class="octicon octicon-clippy"/>
+                <a href="{{ url('projects_tasks')}}">
+                    <span  class="octicon octicon-clippy"></span>
+                </a>
             </button>
+            
             <button type="button" class="btn btn-secondary">
-                <span  class="octicon octicon-comment-discussion"/>
+                <a href="{{ url('project_forum')}}">
+                    <span  class="octicon octicon-comment-discussion"></span>
+                </a>
             </button>
             <button type="button" class="btn btn-primary">
-                <span  class="octicon octicon-tools"/>
+                <a href="{{ url('project_options') }}">
+                    <span  class="octicon octicon-tools"></span>
+                </a>
             </button>
         </div>
     </div>
