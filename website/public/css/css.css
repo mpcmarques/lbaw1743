@@ -151,6 +151,15 @@ div.required label:after {
     max-width: 50rem;
 }
 
+#about-page .developers{
+  padding-top: 30px;
+}
+
+#about-page .developers .user-card{
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
 /* 404 page */
 
 #error-page{
