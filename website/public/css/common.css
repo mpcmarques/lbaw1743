@@ -230,6 +230,9 @@ body {
   padding: 0;
 }
 
+.page-with-menu .content-body {
+  padding: 0;
+}
 /* nopadding div */
 .nopadding{
   margin: -20px;
