@@ -36,6 +36,16 @@ html, body {
   }
 }
 
+/* admin-panel */
+
+#admin-panel .nopadding .card-body{
+  padding: 0;
+}
+
+#admin-panel .more{
+  padding: 0;
+}
+
 /* cards */
 
 .list-group {

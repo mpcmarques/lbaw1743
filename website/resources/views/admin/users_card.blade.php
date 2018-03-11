@@ -26,214 +26,68 @@
 
 @section('card-body')
 <div class="nopadding">
-  <table class="table pb-0 mb-0">
+  <div class="card-body">
+    <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col-1">
-          <p class="text-left font-weight-bold">ID</p>
-        </th>
-        <th scope="col-4">
-          <p class="text-left font-weight-bold">Username</p>
-        </th>
-        <th scope="col-4">
-          <p class="text-left font-weight-bold">Full Name</p>
-        </th>
-        <th scope="col-4">
-          <p class="text-left font-weight-bold">Email</p>
-        </th>
-        <th scope="col-3">
-          <p class="text-left font-weight-bold">Joined at date</p>
-        </th>
-        <th scope="col-3">
-          <p class="text-left font-weight-bold">Last session</p>
-        </th>
+        <th scope="col"></th>
+        <th scope="col">ID</th>
+        <th scope="col">Username</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Joined at</th>
+        <th scope="col">Last Session</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">
-          <p class"text-left">1</p>
+          <div class="text-center">
+            <input type="checkbox" value="">
+          </div>
         </th>
-        <td>
-          <p class="text-left">@mpcm</p>
-        </td>
-        <td>
-          <p class="text-left">Mateus Pedroza</p>
-        </td>
-        <td>
-          <p class="text-left">mpcm@lbaw.com</p>
-        </td>
-        <td>
-          <p class="text-left">01/01/2018</p>
-        </td>
-        <td>
-          <p class="text-left">01/03/2018</p>
-        </td>
+        <th>1</th>
+        <td><span class="text-link" href="#">@mateus</span></td>
+        <td>Mateus Pedroza</td>
+        <td>mpcm@lbaw.com</td>
+        <td>01/01/2018</td>
+        <td>01/03/2018</td>
       </tr>
       <tr>
         <th scope="row">
-          <p class"text-left">2</p>
+          <div class="text-center">
+            <input type="checkbox" value="">
+          </div>
         </th>
-        <td>
-          <p class="text-left">@bmcb</p>
-        </td>
-        <td>
-          <p class="text-left">Bernardo Barbosa</p>
-        </td>
-        <td>
-          <p class="text-left">bmcb@lbaw.com</p>
-        </td>
-        <td>
-          <p class="text-left">05/02/2018</p>
-        </td>
-        <td>
-          <p class="text-left">02/03/2018</p>
-        </td>
+        <th>2</th>
+        <td><span class="text-link" href="#">@bmcb</span></td>
+        <td>Bernardo Barbosa</td>
+        <td>bmcb@lbaw.com</td>
+        <td>05/02/2018</td>
+        <td>02/03/2018</td>
       </tr>
     </tbody>
   </table>
+  </div>
 </div>
-<button type="button" class="btn btn-terciary btn-block m-0 p-0">...</button>
+<button type="button" class="btn btn-terciary btn-block more">...</button>
 @endsection
 
 @section('card-footer')
 <div class="card-footer">
-  <ul class="nav nav-pills justify-content-end">
-    <li class="nav-item">
-      <button class="btn btn-terciary">
-        <span class="octicon octicon-pencil">
-          Edit
-        </button>
-      </li>
-      <li class="nav-item">
-        <button class="btn btn-secondary">
-          <span class="octicon octicon-circle-slash"/>
+  <div class="float-right">
+    <a class="btn btn-terciary" href="#" role="button">
+      <span class="octicon octicon-pencil">
+        Edit
+      </span></a>
+    <a class="btn btn-secondary" href="#" role="button">
+        <span class="octicon octicon-circle-slash">
           Ban
-        </button>
-      </li>
-      <li class="nav-item">
-        <button class="btn btn-primary" href="#">
-          <span class="octicon octicon-trashcan"/>
-          Remove
-        </button>
-      </li>
-    </ul>
+        </span></a>
+    <a class="btn btn-primary" href="#" role="button">
+          <span class="octicon octicon-trashcan">
+            Remove
+          </span></a>
   </div>
+</div>
 @endsection
-
-
-
-<!-- <div class="container users-card">
-  <div class="card">
-    <div class="card-header bg-primary">
-      <div class="row">
-        <div class="col-4">
-          <h5 class="card-title">Users</h5>
-        </div>
-        <div class="col-8">
-          <form>
-            <div class="input-group">
-              <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <span class="octicon octicon-search"/>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="card-body p-0 m-0">
-      <table class="table pb-0 mb-0">
-        <thead>
-          <tr>
-            <th scope="col-1">
-              <p class="text-left font-weight-bold">ID</p>
-            </th>
-            <th scope="col-4">
-              <p class="text-left font-weight-bold">Username</p>
-            </th>
-            <th scope="col-4">
-              <p class="text-left font-weight-bold">Full Name</p>
-            </th>
-            <th scope="col-4">
-              <p class="text-left font-weight-bold">Email</p>
-            </th>
-            <th scope="col-3">
-              <p class="text-left font-weight-bold">Joined at date</p>
-            </th>
-            <th scope="col-3">
-              <p class="text-left font-weight-bold">Last session</p>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">
-              <p class"text-left">1</p>
-            </th>
-            <td>
-              <p class="text-left">@mpcm</p>
-            </td>
-            <td>
-              <p class="text-left">Mateus Pedroza</p>
-            </td>
-            <td>
-              <p class="text-left">mpcm@lbaw.com</p>
-            </td>
-            <td>
-              <p class="text-left">01/01/2018</p>
-            </td>
-            <td>
-              <p class="text-left">01/03/2018</p>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <p class"text-left">2</p>
-            </th>
-            <td>
-              <p class="text-left">@bmcb</p>
-            </td>
-            <td>
-              <p class="text-left">Bernardo Barbosa</p>
-            </td>
-            <td>
-              <p class="text-left">bmcb@lbaw.com</p>
-            </td>
-            <td>
-              <p class="text-left">05/02/2018</p>
-            </td>
-            <td>
-              <p class="text-left">02/03/2018</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <button type="button" class="btn btn-terciary btn-block m-0 p-0">...</button>
-    <div class="card-footer">
-      <ul class="nav nav-pills justify-content-end">
-        <li class="nav-item">
-          <button class="btn btn-terciary">
-            <span class="octicon octicon-pencil">
-              Edit
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-secondary">
-              <span class="octicon octicon-circle-slash"/>
-              Ban
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-primary" href="#">
-              <span class="octicon octicon-trashcan"/>
-              Remove
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
