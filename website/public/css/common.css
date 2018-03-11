@@ -191,7 +191,7 @@ option.slct-primary {
     padding-top: 6px;
 }
 
-@media(max-width: 576px){
+@media(max-width: 728px){
     .panel-header h5, .panel-header .panel-title {
         padding-bottom: 6px;
     }
