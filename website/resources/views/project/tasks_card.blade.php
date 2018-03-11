@@ -72,7 +72,7 @@
       </tr>
     </tbody>
   </table>
-  <button type="button" id="forum-button" class="btn btn-block btn-xs m-0 p-0">+ create new task</button>
+  <a id="newtask-button" class="btn btn-block btn-xs m-0 p-0" href="#" role="button">+ create new task</a>
 </div>
 
 @endsection
