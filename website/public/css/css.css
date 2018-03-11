@@ -327,8 +327,8 @@ div.required label:after {
   margin-bottom: 1em;
 }
 
-#project-page #forum-card-footer{
-  padding: 0;
+#project-page .forum-card{
+  margin-bottom: 1em;
 }
 
 #project-page #forum-button{

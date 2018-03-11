@@ -27,7 +27,7 @@
 
 @section('card-body')
 
-<div class="card">
+<div class="card forum-card">
   <div class="card-header">
     <p>UI Design discussion</p>
   </div>
@@ -50,7 +50,7 @@
     </p>
   </div>
 </div>
-<div class="card">
+<div class="card forum-card">
   <div class="card-header">
     <p>General ideas</p>
   </div>
