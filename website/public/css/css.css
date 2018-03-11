@@ -120,6 +120,8 @@ div.required label:after {
 
     margin-top: 2em;
     margin-bottom: 2em;
+
+    width: 50%;
 }
 
 #home-page .home-content {
