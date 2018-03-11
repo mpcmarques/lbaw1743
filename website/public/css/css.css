@@ -1,11 +1,5 @@
 @import url("common.css");
 
-/* navbar (header) */
-
-nav#header {
-    margin-bottom: 20px;
-}
-
 /* navbar search-input */
 
 #header .navbar-search .input {
