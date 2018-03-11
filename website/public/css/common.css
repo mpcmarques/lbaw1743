@@ -234,8 +234,8 @@ body {
   padding: 0;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) {
+/* Small devices (landscape phones, 768px and up) */
+@media (max-width: 768px) {
     .page-with-menu .card{
         padding: 0;
         margin:0;
