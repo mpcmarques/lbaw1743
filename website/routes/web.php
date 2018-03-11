@@ -14,8 +14,8 @@
 Route::view('/', 'home');
 
 Route::view('/admin', 'admin.index');
-Route::view('/admin/users', 'admin.users');
-Route::view('/admin/projects', 'admin.projects');
+Route::view('/admin/users', 'admin.users_card');
+Route::view('/admin/projects', 'admin.projects_card');
 
 Route::view('/dashboard', 'dashboard.dashboard_card');
 Route::view('/dashboard_tasks', 'dashboard.tasks_card');
