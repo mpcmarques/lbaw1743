@@ -5,10 +5,10 @@
 @section('card-header')
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h5>Tasks</h5>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-8">
     <div class="float-right">
       <nav class="nav nav-pills">
         <a class="nav-link active" href="#">Active</a>

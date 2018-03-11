@@ -230,6 +230,27 @@ body {
   padding: 0;
 }
 
+.page-with-menu .content-body {
+  padding: 0;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .page-with-menu .card{
+        padding: 0;
+        margin:0;
+        margin-top: 20px;
+    }
+    .page-with-menu .card .card-body{
+        overflow: auto;
+    }
+
+    .page-with-menu .panel {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 /* nopadding div */
 .nopadding{
   margin: -20px;
@@ -254,21 +275,4 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) {
-    .page-with-menu .card{
-        padding: 0;
-        margin:0;
-        margin-top: 20px;
-    }
-    .page-with-menu .card .card-body{
-        overflow: auto;
-    }
-
-    .page-with-menu .panel {
-        padding-left: 0;
-        padding-right: 0;
-    }
 }

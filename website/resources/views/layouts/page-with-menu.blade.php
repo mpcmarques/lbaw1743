@@ -4,9 +4,11 @@
   @yield('content-top') <!-- optional -->
   <div class="row">
     <div class="col-md-3 menu">
-      @yield('menu')
+      <div class="container-fluid panel">
+        @yield('menu')
+      </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 content-body">
       <div class="container-fluid panel">
         <div class="card">
           <div class="card-header panel-header">
