@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div id="project-container" class="container-fluid">
   <div class="card">
     <div class="card-header">
       <h3>Project Name</h3>

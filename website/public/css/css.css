@@ -261,7 +261,8 @@ div.required label:after {
 
 /* project page*/
 
-#project-page #project-content{
+#project-page #project-container{
+  padding-bottom: 20px;
 }
 
 #project-page #project_media img{
