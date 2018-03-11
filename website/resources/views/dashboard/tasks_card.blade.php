@@ -23,18 +23,20 @@
 @endsection
 
 @section('card-body')
-<div class="my-tasks-card nopadding">
-  <ul id="tasks-nav-pills" class="nav nav-pills justify-content-end bg-primary">
-    <li class="nav-item">
-      <a class="nav-link active " href="#">Assigned</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Unassigned</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Completed</a>
-    </li>
-  </ul>
+<div class="tasks-card nopadding">
+  <div class="container-fluid">
+    <div class="row bg-primary">
+      <div class="col-md-12">
+        <div class="float-right">
+          <div class="nav nav-pills">
+            <a class="nav-link active" href="#">Assigned</a>
+            <a class="nav-link" href="#">Unassigned</a>
+            <a class="nav-link" href="#">Completed</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="card-body">
     <table class="table">
       <thead>

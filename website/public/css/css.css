@@ -268,6 +268,10 @@ div.required label:after {
     margin-right: .5em;
 }
 
+#project-page #projectname{
+  margin-bottom: 1em;
+}
+
  /* profile */
 
 #profile #profile-header-card img {

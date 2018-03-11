@@ -30,6 +30,7 @@
     </div>
   </div>
   <div class="form-group">
+    <input type="text" id="projectname" class="form-control" value="Project Name" required>
     <label class="form-check-label" for="description">Description</label>
     <textarea class="form-control" id="description">
 Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis. Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque. Vitae sapien pellentesque habitant morbi tristique senectus et netus.
