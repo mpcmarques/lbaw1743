@@ -253,6 +253,16 @@ div.required label:after {
     padding-right: 2em;
 }
 
+#project-page .input-group{
+  padding-top: 1.25em;
+  padding-bottom:1.25em;
+}
+
+#project-page textarea{
+  font-size: 0.8em;
+  height: 15em;
+}
+
  /* profile */
 
 #profile #profile-header-card img {

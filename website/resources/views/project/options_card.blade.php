@@ -14,7 +14,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-2">
-        <img src="img/project_placeholder.png" alt="Project current image" width="100">
+        <img src="img/project_placeholder.png" alt="Project current image" class="thumbnail">
       </div>
       <div class="col-10">
         <div class="input-group">
@@ -32,14 +32,10 @@
   <div class="form-group">
     <label class="form-check-label" for="description">Description</label>
     <textarea class="form-control" id="description">
-      Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis.
-      Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque.
-      Vitae sapien pellentesque habitant morbi tristique senectus et netus.
-      Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Lacus laoreet non curabitur gravida.
-      Metus dictum at tempor commodo ullamcorper a lacus. Sapien faucibus et molestie ac feugiat sed lectus.
+Senectus et netus et malesuada fames ac turpis. Cras adipiscing enim eu turpis. Donec pretium vulputate sapien nec. Molestie a iaculis at erat pellentesque. Vitae sapien pellentesque habitant morbi tristique senectus et netus.
     </textarea>
   </div>
-  <button type="submit" class="btn">Save Changes</button>
+  <button type="submit" class="btn btn-primary">Save Changes</button>
 </form>
 
 @endsection

@@ -219,6 +219,11 @@ body {
   margin: -20px;
 }
 
+/* thumbnail */
+.thumbnail{
+  width: 100px;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
     .page-with-menu .card{
