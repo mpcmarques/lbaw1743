@@ -46,6 +46,10 @@ html, body {
   padding: 0;
 }
 
+#admin-panel .table{
+  margin:0;
+}
+
 /* cards */
 
 .list-group {
