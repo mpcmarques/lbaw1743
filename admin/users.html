@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#50514F">
+    <link rel="shortcut icon" href="http://0.0.0.0:8000/icons/logo32.ico">
+
+    <link rel="stylesheet" href="http://0.0.0.0:8000/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href=   "http://0.0.0.0:8000/css/admin.css"
+ />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="http://0.0.0.0:8000/js/bootstrap.min.js"></script>
+
+    <title>Plenum - Administration Users</title>
+</head>
+<body>
+    <div id="container" class="container-fluid">
+        <!-- navbar -->
+          <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="http://0.0.0.0:8000/admin">
+  <img  src="http://0.0.0.0:8000/img/logo.png" alt="Plenum" width="40" height="40"/>
+  Administration
+  </a>
+  <!-- if logged in -->
+  <div class="nav-item dropdown text-right">
+			<a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+        Logged in as
+        <span class="text-link" href="#">@admin</span>
+			</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="http://0.0.0.0:8000/admin">Logout</a>
+			</div>
+	</div>
+</nav>
+
+        <!-- body -->
+        <div id="body" class="container-fluid">
+            
+    <div id=admin-panel class="page-with-menu">
+   <!-- optional -->
+  <div class="row">
+    <div class="col-md-3 menu">
+      <div class="container-fluid panel">
+              <div id="admin-panel">
+  <div class="list-group">
+    <li class="list-group-item list-group-item-info" style="background-color: #70C1B3; color: #50514f;">
+      Control Panel
+    </li>
+    <a href="users.html" class="list-group-item list-group-item-action" role="button">
+      Users
+    </a>
+    <a href="projects.html" class="list-group-item list-group-item-action" role="button">
+      Projects
+    </a>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="col-md-9 content-body">
+      <div class="container-fluid panel">
+        <div class="card">
+          <div class="card-header panel-header">
+            
+<div class="row">
+  <div class="col-4">
+    <h5 class="card-title">Users</h5>
+  </div>
+  <div class="col-8">
+    <form>
+      <div class="input-group">
+        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <span class="octicon octicon-search"/>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+          </div>
+          <div id="card-body" class="card-body">
+            <div class="nopadding">
+  <div class="card-body">
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">ID</th>
+        <th scope="col">Username</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Joined at</th>
+        <th scope="col">Last Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">
+          <div class="text-center">
+            <input type="checkbox" value="">
+          </div>
+        </td>
+        <td>1</td>
+        <td><span class="text-link" href="#">@mateus</span></td>
+        <td>Mateus Pedroza</th>
+        <td>mpcm@lbaw.com</th>
+        <td>01/01/2018</th>
+        <td>01/03/2018</th>
+      </tr>
+      <tr>
+        <td scope="row">
+          <div class="text-center">
+            <input type="checkbox" value="">
+          </div>
+        </td>
+        <td>2</td>
+        <td><span class="text-link" href="#">@bmcb</span></td>
+        <td>Bernardo Barbosa</td>
+        <td>bmcb@lbaw.com</td>
+        <td>05/02/2018</td>
+        <td>02/03/2018</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+          </div>
+          <button type="button" class="btn btn-terciary btn-block more">...</button>
+<div class="card-footer">
+  <div class="float-right">
+    <a class="btn btn-terciary" href="users.html#" role="button">
+      <span class="octicon octicon-pencil">
+        Edit
+      </span></a>
+    <a class="btn btn-secondary" href="users.html#" role="button">
+        <span class="octicon octicon-circle-slash">
+          Ban
+        </span></a>
+    <a class="btn btn-primary" href="users.html#" role="button">
+          <span class="octicon octicon-trashcan">
+            Remove
+          </span></a>
+  </div>
+</div>
+ <!-- optional so you have to create the div -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+    
+        </div>
+
+        <!-- footer -->
+            </div>
+</body>
+</html>

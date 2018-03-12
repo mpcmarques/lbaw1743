@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#50514F">
+    <link rel="shortcut icon" href="icons/logo32.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href=   "css/admin.css"
+ />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Plenum - Administration</title>
+</head>
+<body>
+    <div id="container" class="container-fluid">
+        <!-- navbar -->
+          <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="admin.html">
+  <img  src="img/logo.png" alt="Plenum" width="40" height="40"/>
+  Administration
+  </a>
+  <!-- if logged in -->
+  <div class="nav-item dropdown text-right">
+			<a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+        Logged in as
+        <span class="text-link" href="#">@admin</span>
+			</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="admin.html">Logout</a>
+			</div>
+	</div>
+</nav>
+
+        <!-- body -->
+        <div id="body" class="container-fluid">
+               <div class="container admin-login">
+    <div class="card">
+        <div class="card-header bg-primary">
+            <h4 class="text-center">
+                Administration Area
+            </h4>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="username">Username / Email</label>
+                    <input class="form-control"  placeholder="Username / Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="nav-item">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+        </div>
+
+        <!-- footer -->
+            </div>
+</body>
+</html>
