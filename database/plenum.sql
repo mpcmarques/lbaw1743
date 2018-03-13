@@ -63,7 +63,8 @@ CREATE TABLE public.Users
 	institution varchar(1000),
     description varchar(1000),
     birthdate DATE,
-	CONSTRAINT valid_date CHECK (birthdate < current_date)
+	CONSTRAINT valid_date CHECK (birthdate < current_date),
+    FOREIGN KEY(idCity) REFERENCES City(idCity)
 );
 
 
@@ -94,7 +95,7 @@ CREATE TABLE public.Joined
 (
 	idJoined serial PRIMARY KEY,
 	joinedDate timestamp NOT NULL
-    FOREIGN KEY(idJoined) REFERENCES User(idUser)
+    FOREIGN KEY(idJoined) REFERENCES User(idRole)
 );
 
 
@@ -129,7 +130,7 @@ CREATE TABLE public.Post_Reply
 	FOREIGN KEY(idReply) REFERENCES Forum_Post(idPost)
 );
 
-CREATE TABLE public.BaNOT NULLed
+CREATE TABLE public.Banned
 (
 	startDate timestamp NOT NULL,
     duration INTEGER,
@@ -142,8 +143,7 @@ CREATE TABLE public.BaNOT NULLed
 CREATE TABLE public.Role
 (
 	idRole serial PRIMARY KEY,
-	title varchar(1000) NOT NULL,
-    FOREIGN KEY(idRole) REFERENCES Joined(idJoined)
+	title varchar(1000) NOT NULL
 );
 
 CREATE TABLE public.Task
@@ -154,6 +154,7 @@ CREATE TABLE public.Task
     creationDate timestamp NOT NULL,
     deadline timestamp,
     lastEditDate timestamp,
+
     CONSTRAINT lastEditDate CHECK (lastEditDate > creationDate)
 );
 
