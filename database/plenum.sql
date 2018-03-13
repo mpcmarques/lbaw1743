@@ -62,7 +62,7 @@ CREATE TABLE public.Users
     name varchar(1000) NOT NULL,
 	institution varchar(1000),
     description varchar(1000),
-    birthdate date,
+    birthdate DATE,
 	CONSTRAINT valid_date CHECK (birthdate < current_date)
 );
 
@@ -101,9 +101,9 @@ CREATE TABLE public.Joined
 CREATE TABLE public.Project
 (	
 	idProject serial PRIMARY KEY,
-    creationDate timestamp NN,
+    creationDate timestamp NOT NULL,
 	name VARCHAR(1000) NOT NULL,
-	private BOOL NN,
+	private BOOL NOT NULL,
 );
 
 CREATE TABLE public.Project_Forum
@@ -115,7 +115,7 @@ CREATE TABLE public.Project_Forum
 CREATE TABLE public.Forum_Post
 (
     idPost serial PRIMARY KEY,
-    startDate timestamp NN,
+    startDate timestamp NOT NULL,
     title varchar(1000),
     text varchar(1000),
     FOREIGN KEY (idPost) REFERENCES Project_Forum(idForum)
@@ -129,9 +129,9 @@ CREATE TABLE public.Post_Reply
 	FOREIGN KEY(idReply) REFERENCES Forum_Post(idPost)
 );
 
-CREATE TABLE public.Banned
+CREATE TABLE public.BaNOT NULLed
 (
-	startDate timestamp NN,
+	startDate timestamp NOT NULL,
     duration INTEGER,
     motive TEXT,
     CONSTRAINT duration CHECK (duration > 0)
@@ -142,16 +142,16 @@ CREATE TABLE public.Banned
 CREATE TABLE public.Role
 (
 	idRole serial PRIMARY KEY,
-	title varchar(1000) NN,
+	title varchar(1000) NOT NULL,
     FOREIGN KEY(idRole) REFERENCES Joined(idJoined)
 );
 
 CREATE TABLE public.Task
 (
     idTask serial PRIMARY KEY,
-    title varchar(1000) NN,
+    title varchar(1000) NOT NULL,
     description TEXT,
-    creationDate timestamp NN,
+    creationDate timestamp NOT NULL,
     deadline timestamp,
     lastEditDate timestamp,
     CONSTRAINT lastEditDate CHECK (lastEditDate > creationDate)
@@ -159,22 +159,22 @@ CREATE TABLE public.Task
 
 CREATE TABLE public.Comments
 (
-	idComment integer PRIMARY KEY,
-	creationDate timestamp NN,
-	text TEXT NN,
+	idComment INTEGER PRIMARY KEY,
+	creationDate timestamp NOT NULL,
+	text TEXT NOT NULL,
 );
 
 
 CREATE TABLE public.Tag
 (
 	idTag serial PRIMARY KEY,
-	name varchar(1000) NN,
+	name varchar(1000) NOT NULL,
 	FOREIGN KEY(idTag) REFERENCES Task(idTask)
 );
 
 CREATE TABLE public.Completed_Task
 (
-	completionDate timestamp NN,
+	completionDate timestamp NOT NULL,
 );
 
 CREATE TABLE public.Close_Request
