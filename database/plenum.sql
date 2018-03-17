@@ -5,183 +5,255 @@ SET SCHEMA 'public';
 GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO public;
 
+/* admin */
 DROP TABLE IF EXISTS Admin;
 
+/* user */
 DROP TABLE IF EXISTS User;
 
-DROP TABLE IF EXISTS Premium;
+/* premium signature*/
+DROP TABLE IF EXISTS PremiumSignature;
 
+/* country */
 DROP TABLE IF EXISTS Country;
 
-DROP TABLE IF EXISTS City;
-
+/* joined */
 DROP TABLE IF EXISTS Joined;
 
+/* project */
 DROP TABLE IF EXISTS Project;
 
-DROP TABLE IF EXISTS Project_Forum;
+/* project forum */
+DROP TABLE IF EXISTS ProjectForum;
 
-DROP TABLE IF EXISTS Forum_Post;
+/* forum post*/
+DROP TABLE IF EXISTS ForumPost;
 
-DROP TABLE IF EXISTS Post_Reply;
+/* reply */
+DROP TABLE IF EXISTS Reply;
 
-DROP TABLE IF EXISTS Banned;
+/* banned record */
+DROP TABLE IF EXISTS BannedRecord;
 
-DROP TABLE IF EXISTS Role;
-
+/* task */
 DROP TABLE IF EXISTS Task;
 
-DROP TABLE IF EXISTS Comments;
-
+/* tag */
 DROP TABLE IF EXISTS Tag;
+
+/* tagged */
+DROP TABLE IF Exists Tagged;
+
+/* comment */
+DROP TABLE IF EXISTS Comment;
+
+/* edit comment info */
+DROP TABLE IF EXISTS EditCommentInfo;
+
+/* thread */
+DROP TABLE IF EXISTS Thread;
 
 DROP TABLE IF EXISTS Completed_Task;
 
-DROP TABLE IF EXISTS Close_Request;
+/* close request */
+DROP TABLE IF EXISTS CloseRequest;
 
+/* edit task info */
+DROP TABLE IF EXISTS EditTaskInfo;
 
+/* assigned */
+DROP TABLE IF EXISTS Assigned;
 
 CREATE FUNCTION XOR(bool,bool) RETURNS bool AS '
 SELECT ($1 AND NOT $2) OR (NOT $1 AND $2);
 ' LANGUAGE 'sql';
 
+/* Admin */
 CREATE TABLE public.Admin
 (
 	idAdmin PRIMARY KEY,
-	username varchar(1000) UNIQUE NOT NULL,
-	email varchar(1000) UNIQUE NOT NULL,
-	password varchar(1000) NOT NULL,
-
-CREATE TABLE public.Users
-(
-	idUser serial PRIMARY KEY,
-	username varchar(1000) UNIQUE NOT NULL,
-    password varchar(1000) NOT NULL,
-	email varchar(1000) UNIQUE NOT NULL,
-    gender ENUM('M', 'F'),
-    name varchar(1000) NOT NULL,
-	institution varchar(1000),
-    description varchar(1000),
-    birthdate DATE,
-	CONSTRAINT valid_date CHECK (birthdate < current_date),
-    FOREIGN KEY(idCity) REFERENCES City(idCity)
+	username text UNIQUE NOT NULL,
+	email text UNIQUE NOT NULL,
+	password text NOT NULL,
 );
 
+/* User */
+CREATE TABLE public.User
+(
+	idUser serial PRIMARY KEY,
+	username text UNIQUE NOT NULL,
+    password text NOT NULL,
+	email text UNIQUE NOT NULL,
+    gender ENUM('M', 'F'),
+    name text NOT NULL,
+	address text,
+	institution text,
+    description text,
+    birthDate date,
+	CONSTRAINT valid_date CHECK (birthdate < current_date),
+    FOREIGN KEY(idCountry) REFERENCES Country(idCountry)
+);
 
-CREATE TABLE public.Premium
+/* premium signature */
+CREATE TABLE public.PremiumSignature
 (
 	idPremium serial PRIMARY KEY,
 	startDate timestamp NOT NULL,
-	duration  INTEGER,
+	duration  INTEGER NOT NULL,
 	CONSTRAINT min_size CHECK (duration > 0),
-    FOREIGN KEY(idPremium) REFERENCES User(idUser)
+    FOREIGN KEY(idUser) REFERENCES User(idUser)
 );
 
+/* country */
 CREATE TABLE public.Country
 (
 	idCountry serial PRIMARY KEY,
-	name varchar(1000) UNIQUE NOT NULL
+	name text UNIQUE NOT NULL
 );
 
-CREATE TABLE public.City
-(
-	idCity serial PRIMARY KEY,
-	name varchar(1000) NOT NULL,
-	idCountry INTEGER,
-	FOREIGN KEY(idCity) REFERENCES Country(idCountry)
-);
-
+/* joined */
 CREATE TABLE public.Joined
 (
-	idJoined serial PRIMARY KEY,
-	joinedDate timestamp NOT NULL
-    FOREIGN KEY(idJoined) REFERENCES User(idRole)
+    FOREIGN KEY(idJoined) REFERENCES User(IdJoined)
+	FOREIGN KEY(idProject) REFERENCES Project(idProject),
+	joinedDate timestamp NOT NULL,
+	leftDate timestamp,
+	role Role NOT NULL
 );
 
-
+/* project */
 CREATE TABLE public.Project
 (	
 	idProject serial PRIMARY KEY,
     creationDate timestamp NOT NULL,
-	name VARCHAR(1000) NOT NULL,
-	private BOOL NOT NULL,
+	name text NOT NULL,
+	description text NOT NULL,
+	private boolean NOT NULL,
+	FOREIGN KEY(idForum) REFERENCES ProjectForum(idForum) UNIQUE,
 );
 
-CREATE TABLE public.Project_Forum
+/* project forum */
+CREATE TABLE public.ProjectForum
 (
     idForum serial PRIMARY KEY,
-    FOREIGN KEY(idForum) REFERENCES Project(idProject)
+    FOREIGN KEY(idProject) REFERENCES Project(idProject)
 );
 
-CREATE TABLE public.Forum_Post
+/* forum post */
+CREATE TABLE public.ForumPost
 (
     idPost serial PRIMARY KEY,
-    startDate timestamp NOT NULL,
-    title varchar(1000),
-    text varchar(1000),
-    FOREIGN KEY (idPost) REFERENCES Project_Forum(idForum)
+    creationDate timestamp NOT NULL,
+    title text NOT NULL,
+    content text NOT NULL,
+    FOREIGN KEY(idForum) REFERENCES ProjectForum(idForum),
+	FOREIGN KEY(idUser) REFERENCES User(idUser)
 );
 
-CREATE TABLE public.Post_Reply
+/* TODO: Reply deve ter uma foreign key para o post do forum tambem */
+CREATE TABLE public.Reply
 (
 	idReply serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
-	text TEXT NOT NULL,
-	FOREIGN KEY(idReply) REFERENCES Forum_Post(idPost)
+	content text NOT NULL,
+	FOREIGN KEY(idUser) REFERENCES User(idUser)
 );
 
-CREATE TABLE public.Banned
+/* Banned record */
+CREATE TABLE public.BannedRecord
 (
+	idBan serial PRIMARY KEY,
 	startDate timestamp NOT NULL,
-    duration INTEGER,
-    motive TEXT,
-    CONSTRAINT duration CHECK (duration > 0)
-    FOREIGN KEY(idUser) REFERENCES User(idUser)
+	duration integer NOT NULL,
+	motive text,
+	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idAdmin) REFERENCES Admin(idAdmin)
+	CONSTRAINT min_time check (duration > 0)
 );
 
-
-CREATE TABLE public.Role
-(
-	idRole serial PRIMARY KEY,
-	title varchar(1000) NOT NULL
-);
-
+/* task */
 CREATE TABLE public.Task
 (
     idTask serial PRIMARY KEY,
-    title varchar(1000) NOT NULL,
-    description TEXT,
+    title text NOT NULL,
+    description text,
     creationDate timestamp NOT NULL,
     deadline timestamp,
-    lastEditDate timestamp,
+	completed boolean NOT NULL,
+	completedDate timestamp,
+	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idProject) REFERENCES Project(idProject),
 
-    CONSTRAINT lastEditDate CHECK (lastEditDate > creationDate)
+    CONSTRAINT completedDate CHECK (completedDate > creationDate)
 );
 
-CREATE TABLE public.Comments
+/* assigned */
+CREATE TABLE public.Assigned
 (
-	idComment INTEGER PRIMARY KEY,
-	creationDate timestamp NOT NULL,
-	text TEXT NOT NULL,
+	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
 
+/* edit task info */
+CREATE TABLE public.EditTaskInfo
+(
+	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idTask) REFERENCES Task(idTask),
+	editDate date NOT NULL,
+	oldTitle text NOT NULL,
+	oldDescription text,
+	oldDeadline timestamp
+);
 
+/* comment */
+CREATE TABLE public.Comment
+(
+	idComment serial PRIMARY KEY,
+	creationDate timestamp NOT NULL,
+	content TEXT NOT NULL,
+	FOREIGN KEY(idTask) REFERENCES Task(idTask),
+	FOREIGN KEY(idUser) REFERENCES User(idUser)
+);
+
+/* edit comment info */
+CREATE TABLE public.EditCommentInfo
+(
+	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idComment) REFERENCES Comment(idComment),
+	editDate timestamp NOT NULL,
+	oldContent text NOT NULL
+);
+
+/* tag */
 CREATE TABLE public.Tag
 (
 	idTag serial PRIMARY KEY,
 	name varchar(1000) NOT NULL,
-	FOREIGN KEY(idTag) REFERENCES Task(idTask)
 );
 
-CREATE TABLE public.Completed_Task
+/* tagged */
+CREATE TABLE public.Tagged
 (
-	completionDate timestamp NOT NULL,
+	FOREIGN KEY(idTask) REFERENCES Task(idTask),
+	FOREIGN KEY(idTag) REFERENCES Tag(idTag)
 );
 
-CREATE TABLE public.Close_Request
+/* thread */
+CREATE TABLE public.Thread
+(
+	FOREIGN KEY(parent) REFERENCES Comment(parent),
+	FOREIGN KEY(son) REFERENCES Comment(son)
+)
+
+/* close request */
+CREATE TABLE public.CloseRequest
 (
 	idRequest serial PRIMARY KEY,
-	title varchar(1000) NOT NULL,
-	description TEXT,
+	creationDate timestamp NOT NULL,
+	title text NOT NULL,
+	description text,
+	aproved boolean NOT NULL,
+	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
 
