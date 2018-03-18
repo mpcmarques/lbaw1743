@@ -1,0 +1,2 @@
+\i <path> - to read sql files
+\dt - to show tables
