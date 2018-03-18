@@ -4,8 +4,8 @@ CREATE SCHEMA public;
 /* admin */
 DROP TABLE IF EXISTS public.Admin;
 
-/* user */
-DROP TABLE IF EXISTS public.User;
+/* UserTable */
+DROP TABLE IF EXISTS public.UserTable;
 
 /* premium signature*/
 DROP TABLE IF EXISTS public.PremiumSignature;
@@ -63,9 +63,11 @@ DROP TABLE IF EXISTS public.Assigned;
 
 /* dropping old data types*/
 DROP TYPE IF EXISTS public.gender;
+DROP TYPE IF EXISTS public.role;
 
 /* creating data types */
-CREATE TYPE public.gender AS ENUM('male', 'female', 'other');
+CREATE TYPE public.gender AS ENUM('Male', 'Female', 'Other');
+CREATE TYPE public.role AS ENUM('Owner' , 'Coordinator', 'Member');
 
 /* country */
 CREATE TABLE public.Country(
@@ -73,13 +75,13 @@ CREATE TABLE public.Country(
 	name text UNIQUE NOT NULL
 );
 
-/* User */
-CREATE TABLE public.User(
+/* UserTable */
+CREATE TABLE public.UserTable(
 	idUser serial PRIMARY KEY,
-	username text UNIQUE NOT NULL,
+	UserTablename text UNIQUE NOT NULL,
 	password text NOT NULL,
 	email text UNIQUE NOT NULL,
-	gender public.gender,
+	gender gender,
 	name text NOT NULL,
 	address text,
 	institution text,
@@ -93,9 +95,9 @@ CREATE TABLE public.User(
 CREATE TABLE public.PremiumSignature(
 	idPremium serial PRIMARY KEY,
 	startDate timestamp NOT NULL,
-	duration  interval NOT NULL CHECK (duration > 0),
+	duration  interval NOT NULL CHECK (duration > interval '0'),
 	idUser integer,
-	FOREIGN KEY(idUser) REFERENCES User(idUser)
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
 );
 
 /* project forum */
@@ -115,16 +117,17 @@ CREATE TABLE public.Project(
 	FOREIGN KEY(idForum) REFERENCES ProjectForum(idForum)
 );
 
-/* joined
+/* joined */
 CREATE TABLE public.Joined(
-
-joinedDate timestamp NOT NULL,
-leftDate timestamp,
-role Role NOT NULL,
-FOREIGN KEY(idJoined) REFERENCES User(IdJoined)
-FOREIGN KEY(idProject) REFERENCES Project(idProject)
+	idUser integer,
+	idProject integer,
+	joinedDate timestamp NOT NULL,
+	leftDate timestamp,
+	role Role NOT NULL,
+	PRIMARY KEY(idUser, idProject),
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
+	FOREIGN KEY(idProject) REFERENCES Project(idProject)
 );
-*/
 
 /* forum post */
 CREATE TABLE public.ForumPost(
@@ -135,7 +138,7 @@ CREATE TABLE public.ForumPost(
 	idForum integer NOT NULL,
 	idUser integer NOT NULL,
 	FOREIGN KEY(idForum) REFERENCES ProjectForum(idForum),
-	FOREIGN KEY(idUser) REFERENCES User(idUser)
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
 );
 
 /* reply */
@@ -146,7 +149,7 @@ CREATE TABLE public.Reply(
 	idPost integer NOT NULL,
 	idUser integer NOT NULL,
 	FOREIGN KEY(idPost) REFERENCES ForumPost(idPost),
-	FOREIGN KEY(idUser) REFERENCES User(idUser)
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
 );
 
 /* task */
@@ -158,9 +161,11 @@ CREATE TABLE public.Task(
 	deadline timestamp,
 	completed boolean NOT NULL,
 	completedDate timestamp,
+	idUser integer,
+	idProject integer,
 	CONSTRAINT completedDate_valid CHECK (completedDate > creationDate),
-	FOREIGN KEY(idUser) REFERENCES User(idUser),
-	FOREIGN KEY(idProject) REFERENCES Project(idProject),
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
+	FOREIGN KEY(idProject) REFERENCES Project(idProject)
 );
 
 /* assigned */
@@ -168,7 +173,7 @@ CREATE TABLE public.Assigned(
 	idUser integer,
 	idTask integer,
 	PRIMARY KEY(idUser, idTask),
-	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
 
@@ -181,7 +186,7 @@ CREATE TABLE public.EditTaskInfo(
 	oldDescription text,
 	oldDeadline timestamp,
 	PRIMARY KEY(idUser, idTask),
-	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
 
@@ -193,7 +198,7 @@ CREATE TABLE public.Comment(
 	idTask integer NOT NULL,
 	idUser integer NOT NULL,
 	FOREIGN KEY(idTask) REFERENCES Task(idTask),
-	FOREIGN KEY(idUser) REFERENCES User(idUser)
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
 );
 
 /* edit comment info */
@@ -203,7 +208,7 @@ CREATE TABLE public.EditCommentInfo(
 	editDate timestamp NOT NULL,
 	oldContent text NOT NULL,
 	PRIMARY KEY(idUser, idComment),
-	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idComment) REFERENCES Comment(idComment)
 );
 
@@ -228,7 +233,7 @@ CREATE TABLE public.Thread(
 	idParent integer,
 	FOREIGN KEY(idParent) REFERENCES Comment(idComment),
 	FOREIGN KEY(idSon) REFERENCES Comment(idComment)
-)
+);
 
 /* close request */
 CREATE TABLE public.CloseRequest(
@@ -239,14 +244,14 @@ CREATE TABLE public.CloseRequest(
 	aproved boolean NOT NULL,
 	idUser integer,
 	idTask integer,
-	FOREIGN KEY(idUser) REFERENCES User(idUser),
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
 
 /* Admin */
 CREATE TABLE public.Admin(
 	idAdmin serial PRIMARY KEY,
-	username text UNIQUE NOT NULL,
+	UserTablename text UNIQUE NOT NULL,
 	email text UNIQUE NOT NULL,
 	password text NOT NULL
 );
@@ -257,7 +262,9 @@ CREATE TABLE public.BannedRecord(
 	startDate timestamp NOT NULL,
 	duration integer NOT NULL,
 	motive text,
-	FOREIGN KEY(idUser) REFERENCES User(idUser),
-	FOREIGN KEY(idAdmin) REFERENCES Admin(idAdmin)
+	idUser integer NOT NULL,
+	idAdmin integer NOT NULL,
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
+	FOREIGN KEY(idAdmin) REFERENCES Admin(idAdmin),
 	CONSTRAINT min_time check (duration > 0)
 );
