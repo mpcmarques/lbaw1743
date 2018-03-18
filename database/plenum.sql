@@ -43,9 +43,6 @@ DROP TABLE IF Exists public.Tagged;
 /* comment */
 DROP TABLE IF EXISTS public.Comment;
 
-/* edit comment info */
-DROP TABLE IF EXISTS public.EditCommentInfo;
-
 /* thread */
 DROP TABLE IF EXISTS public.Thread;
 
@@ -199,17 +196,6 @@ CREATE TABLE public.Comment(
 	idUser integer NOT NULL,
 	FOREIGN KEY(idTask) REFERENCES Task(idTask),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
-);
-
-/* edit comment info */
-CREATE TABLE public.EditCommentInfo(
-	idUser integer,
-	idComment integer,
-	editDate timestamp NOT NULL,
-	oldContent text NOT NULL,
-	PRIMARY KEY(idUser, idComment),
-	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
-	FOREIGN KEY(idComment) REFERENCES Comment(idComment)
 );
 
 /* tag */
