@@ -24,3 +24,4 @@ https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 * A2: [Actors and User Stories](/artifacts/A2/A2.md)
 * A3: [User Interface Prototype](/artifacts/A3/A3.md)
 * A4: [Conceptual Data Model](/artifacts/A4/A4.md)
+* A5: [Relational Schema, Validation and Schema Refinement](/artifacts/A5/A5.md)
