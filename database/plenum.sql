@@ -130,6 +130,7 @@ CREATE TABLE public.Joined(
 CREATE TABLE public.ForumPost(
 	idPost serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
+	lastEditDate timestamp,
 	title text NOT NULL,
 	content text NOT NULL,
 	idForum integer NOT NULL,
@@ -142,6 +143,7 @@ CREATE TABLE public.ForumPost(
 CREATE TABLE public.Reply(
 	idReply serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
+	lastEditDate timestamp,
 	content text NOT NULL,
 	idPost integer NOT NULL,
 	idUser integer NOT NULL,
@@ -153,6 +155,7 @@ CREATE TABLE public.Reply(
 CREATE TABLE public.Task(
 	idTask serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
+	lastEditDate timestamp,
 	title text NOT NULL,
 	description text,
 	deadline timestamp,
@@ -191,6 +194,7 @@ CREATE TABLE public.EditTaskInfo(
 CREATE TABLE public.Comment(
 	idComment serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
+	lastEditDate timestamp,
 	content TEXT NOT NULL,
 	idTask integer NOT NULL,
 	idUser integer NOT NULL,
