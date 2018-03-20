@@ -1,7 +1,8 @@
 DROP SCHEMA IF EXISTS plenum CASCADE;
 CREATE SCHEMA plenum;
-SET search_path TO plenum,plubic;
+SET search_path TO plenum,public;
 
+/* every table should already be dropped, we are just making sure :) */
 /* admin */
 DROP TABLE IF EXISTS Admin;
 
@@ -19,9 +20,6 @@ DROP TABLE IF EXISTS Joined;
 
 /* project */
 DROP TABLE IF EXISTS Project;
-
-/* project forum */
-DROP TABLE IF EXISTS ProjectForum;
 
 /* forum post*/
 DROP TABLE IF EXISTS ForumPost;
@@ -43,9 +41,6 @@ DROP TABLE IF Exists Tagged;
 
 /* comment */
 DROP TABLE IF EXISTS Comment;
-
-/* thread */
-DROP TABLE IF EXISTS Thread;
 
 /* completed task*/
 DROP TABLE IF EXISTS Completed_Task;
@@ -76,7 +71,7 @@ CREATE TABLE Country(
 /* UserTable */
 CREATE TABLE UserTable(
 	idUser serial PRIMARY KEY,
-	UserTablename text UNIQUE NOT NULL,
+	userName text UNIQUE NOT NULL,
 	password text NOT NULL,
 	email text UNIQUE NOT NULL,
 	gender gender,
@@ -98,21 +93,13 @@ CREATE TABLE PremiumSignature(
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
 );
 
-/* project forum */
-CREATE TABLE ProjectForum(
-	idForum serial PRIMARY KEY
-);
-
-
 /* project */
 CREATE TABLE Project(
 	idProject serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	name text NOT NULL,
 	description text NOT NULL,
-	private boolean NOT NULL,
-	idForum integer UNIQUE NOT NULL,
-	FOREIGN KEY(idForum) REFERENCES ProjectForum(idForum)
+	private boolean NOT NULL
 );
 
 /* joined */
@@ -134,9 +121,9 @@ CREATE TABLE ForumPost(
 	lastEditDate timestamp,
 	title text NOT NULL,
 	content text NOT NULL,
-	idForum integer NOT NULL,
+	idProject integer NOT NULL,
 	idUser integer NOT NULL,
-	FOREIGN KEY(idForum) REFERENCES ProjectForum(idForum),
+	FOREIGN KEY(idProject) REFERENCES Project(idProject),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
 );
 
@@ -216,14 +203,6 @@ CREATE TABLE Tagged(
 	PRIMARY KEY(idTask, idTag),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask),
 	FOREIGN KEY(idTag) REFERENCES Tag(idTag)
-);
-
-/* thread */
-CREATE TABLE Thread(
-	idSon integer PRIMARY KEY,
-	idParent integer,
-	FOREIGN KEY(idParent) REFERENCES Comment(idComment),
-	FOREIGN KEY(idSon) REFERENCES Comment(idComment)
 );
 
 /* close request */
