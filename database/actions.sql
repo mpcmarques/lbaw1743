@@ -2,12 +2,12 @@
 
  /*Get All Users*/
   SELECT userName, email, gender, description
-  FROM "UserTable"; 
- 
+  FROM "UserTable";
+
  /*Get User Data*/
  SELECT userName, email, gender, description
-  FROM "UserTable" 
-  WHERE "UserTable".idUser= $idUser; 
+  FROM "UserTable"
+  WHERE "UserTable".idUser= $idUser;
 
 /*Get Non Completed Tasks From a Project*/
 SELECT title, creationDate,lastEditDate, description, deadline
@@ -22,7 +22,7 @@ SELECT title, creationDate,lastEditDate, description, deadline
 /*Get All Comments From Task*/
 SELECT creationDate, lastEditDate, content, userName
     FROM "Comment"
-    INNER JOIN UserTable ON "UserTable".idUser= "Comment".idUser  
+    INNER JOIN UserTable ON "UserTable".idUser= "Comment".idUser
     INNER JOIN Task ON "Task".idTask = "Comment".idTask;
 
 /*Get Post Data*/
@@ -33,8 +33,8 @@ SELECT creationDate, lastEditDate, title, content, userName
 /*Get All Post Replies*/
 SELECT creationDate, lastEditDate, content, userName
     FROM "Reply"
-    INNER JOIN "UserTable" ON "UserTable".idUser = "Reply".idUser 
-    INNER JOIN "ForumPost" ON "ForumPost".idPost = "ForumPost".idPost; 
+    INNER JOIN "UserTable" ON "UserTable".idUser = "Reply".idUser
+    INNER JOIN "ForumPost" ON "ForumPost".idPost = "ForumPost".idPost;
 
 /*Get All Premium Users*/
 SELECT startDate, duration, userName
@@ -52,17 +52,21 @@ SELECT userName, startDate, duration, motive
         /*-------------EDITS-------------*/
 
 UPDATE "UserTable"
-    SET email = $email, userName = $userName, descrition = $description 
-    WHERE idUser = $idUser; 
+    SET email = $email, userName = $userName, descrition = $description
+    WHERE idUser = $idUser;
+
+UPDATE "Project"
+    SET name = $name, description = $description, private = $private
+    WHERE idTask = $idTask;
 
 UPDATE "Task"
-    SET lastEditDate = $lastEditDate, title = $title, description = $descrition, deadline = $deadline, completed = $completed
+    SET lastEditDate = $lastEditDate, title = $title, description = $description, deadline = $deadline, completed = $completed
     WHERE idTask = $idTask;
 
          /*-------------REGISTER/CREATE-------------*/
 
-INSERT INTO "UserTable"(userName, password, email, gender, name, address, institution, description, birthDate, idCountry, imgUrl) 
-    VALUES($userName, $password, $email, $gender, $name, $address, $institution, $description, $birthDate, $idCountry, $imgUrl); 
+INSERT INTO "UserTable"(userName, password, email, gender, name, address, institution, description, birthDate, idCountry)
+    VALUES($userName, $password, $email, $gender, $name, $address, $institution, $description, $birthDate, $idCountry);
 
 INSERT INTO "Project"(creationDate, name, description, private)
     VALUES($creationDate, $name, $description, $private);
