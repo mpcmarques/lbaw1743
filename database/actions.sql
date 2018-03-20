@@ -65,14 +65,29 @@ UPDATE Task
 
          /*-------------REGISTER/CREATE-------------*/
 
+INSERT INTO Country(name)
+  VALUES($name);
+
 INSERT INTO UserTable(userName, password, email, gender, name, address, institution, description, birthDate, idCountry)
-    VALUES($userName, $password, $email, $gender, $name, $address, $institution, $description, $birthDate, $idCountry);
+  VALUES($userName, $password, $email, $gender, $name, $address, $institution, $description, $birthDate, $idCountry);
+
+INSERT INTO PremiumSignature(startDate, duration, idUser)
+  VALUES($startDate, $duration, $idUser);
 
 INSERT INTO Project(creationDate, name, description, private)
-    VALUES($creationDate, $name, $description, $private);
+  VALUES($creationDate, $name, $description, $private);
+
+INSERT INTO Joined(idUser, idProject, joinedDate, leftDate, role)
+  VALUES($idUser, $idProject, $joinedDate, $leftDate, $role);
+
+INSERT INTO ForumPost(idUser, idProject, joinedDate, leftDate, role)
+  VALUES($idUser, $idProject, $joinedDate, $leftDate, $role);
+
+INSERT INTO Reply(idUser, idProject, joinedDate, leftDate, role)
+  VALUES($idUser, $idProject, $joinedDate, $leftDate, $role);
 
 INSERT INTO Task(creationDate, title, description, deadline)
-    VALUES($creationDate, $title, $description, $deadline);
+  VALUES($creationDate, $title, $description, $deadline);
 
 INSERT INTO Comment(idComment, creationDate, content)
     VALUES($idComment, $creationDate, $content);

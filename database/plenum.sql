@@ -111,8 +111,6 @@ CREATE TABLE Project(
 	name text NOT NULL,
 	description text NOT NULL,
 	private boolean NOT NULL,
-	idForum integer UNIQUE NOT NULL,
-	FOREIGN KEY(idForum) REFERENCES ProjectForum(idForum)
 );
 
 /* joined */
