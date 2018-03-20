@@ -1,79 +1,80 @@
-DROP SCHEMA IF EXISTS public CASCADE;
-CREATE SCHEMA public;
+DROP SCHEMA IF EXISTS plenum CASCADE;
+CREATE SCHEMA plenum;
+SET search_path TO plenum,plubic;
 
 /* admin */
-DROP TABLE IF EXISTS public.Admin;
+DROP TABLE IF EXISTS Admin;
 
 /* UserTable */
-DROP TABLE IF EXISTS public.UserTable;
+DROP TABLE IF EXISTS UserTable;
 
 /* premium signature*/
-DROP TABLE IF EXISTS public.PremiumSignature;
+DROP TABLE IF EXISTS PremiumSignature;
 
 /* country */
-DROP TABLE IF EXISTS public.Country;
+DROP TABLE IF EXISTS Country;
 
 /* joined */
-DROP TABLE IF EXISTS public.Joined;
+DROP TABLE IF EXISTS Joined;
 
 /* project */
-DROP TABLE IF EXISTS public.Project;
+DROP TABLE IF EXISTS Project;
 
 /* project forum */
-DROP TABLE IF EXISTS public.ProjectForum;
+DROP TABLE IF EXISTS ProjectForum;
 
 /* forum post*/
-DROP TABLE IF EXISTS public.ForumPost;
+DROP TABLE IF EXISTS ForumPost;
 
 /* reply */
-DROP TABLE IF EXISTS public.Reply;
+DROP TABLE IF EXISTS Reply;
 
 /* banned record */
-DROP TABLE IF EXISTS public.BannedRecord;
+DROP TABLE IF EXISTS BannedRecord;
 
 /* task */
-DROP TABLE IF EXISTS public.Task;
+DROP TABLE IF EXISTS Task;
 
 /* tag */
-DROP TABLE IF EXISTS public.Tag;
+DROP TABLE IF EXISTS Tag;
 
 /* tagged */
-DROP TABLE IF Exists public.Tagged;
+DROP TABLE IF Exists Tagged;
 
 /* comment */
-DROP TABLE IF EXISTS public.Comment;
+DROP TABLE IF EXISTS Comment;
 
 /* thread */
-DROP TABLE IF EXISTS public.Thread;
+DROP TABLE IF EXISTS Thread;
 
 /* completed task*/
-DROP TABLE IF EXISTS public.Completed_Task;
+DROP TABLE IF EXISTS Completed_Task;
 
 /* close request */
-DROP TABLE IF EXISTS public.CloseRequest;
+DROP TABLE IF EXISTS CloseRequest;
 
 /* edit task info */
-DROP TABLE IF EXISTS public.EditTaskInfo;
+DROP TABLE IF EXISTS EditTaskInfo;
 
 /* assigned */
-DROP TABLE IF EXISTS public.Assigned;
+DROP TABLE IF EXISTS Assigned;
 
 /* dropping old data types*/
-DROP TYPE IF EXISTS public.gender;
-DROP TYPE IF EXISTS public.role;
+DROP TYPE IF EXISTS gender;
+DROP TYPE IF EXISTS role;
 
 /* creating data types */
-CREATE TYPE public.gender AS ENUM('Male', 'Female', 'Other');
-CREATE TYPE public.role AS ENUM('Owner' , 'Coordinator', 'Member');
+CREATE TYPE gender AS ENUM('Male', 'Female', 'Other');
+CREATE TYPE role AS ENUM('Owner' , 'Coordinator', 'Member');
 
 /* country */
-CREATE TABLE public.Country(
+CREATE TABLE Country(
 	idCountry serial PRIMARY KEY,
 	name text UNIQUE NOT NULL
 );
 
 /* UserTable */
-CREATE TABLE public.UserTable(
+CREATE TABLE UserTable(
 	idUser serial PRIMARY KEY,
 	UserTablename text UNIQUE NOT NULL,
 	password text NOT NULL,
@@ -89,7 +90,7 @@ CREATE TABLE public.UserTable(
 );
 
 /* premium signature */
-CREATE TABLE public.PremiumSignature(
+CREATE TABLE PremiumSignature(
 	idPremium serial PRIMARY KEY,
 	startDate timestamp NOT NULL,
 	duration  interval NOT NULL CHECK (duration > interval '0'),
@@ -98,13 +99,13 @@ CREATE TABLE public.PremiumSignature(
 );
 
 /* project forum */
-CREATE TABLE public.ProjectForum(
+CREATE TABLE ProjectForum(
 	idForum serial PRIMARY KEY
 );
 
 
 /* project */
-CREATE TABLE public.Project(
+CREATE TABLE Project(
 	idProject serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	name text NOT NULL,
@@ -115,7 +116,7 @@ CREATE TABLE public.Project(
 );
 
 /* joined */
-CREATE TABLE public.Joined(
+CREATE TABLE Joined(
 	idUser integer,
 	idProject integer,
 	joinedDate timestamp NOT NULL,
@@ -127,7 +128,7 @@ CREATE TABLE public.Joined(
 );
 
 /* forum post */
-CREATE TABLE public.ForumPost(
+CREATE TABLE ForumPost(
 	idPost serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	lastEditDate timestamp,
@@ -140,7 +141,7 @@ CREATE TABLE public.ForumPost(
 );
 
 /* reply */
-CREATE TABLE public.Reply(
+CREATE TABLE Reply(
 	idReply serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	lastEditDate timestamp,
@@ -152,7 +153,7 @@ CREATE TABLE public.Reply(
 );
 
 /* task */
-CREATE TABLE public.Task(
+CREATE TABLE Task(
 	idTask serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	lastEditDate timestamp,
@@ -169,7 +170,7 @@ CREATE TABLE public.Task(
 );
 
 /* assigned */
-CREATE TABLE public.Assigned(
+CREATE TABLE Assigned(
 	idUser integer,
 	idTask integer,
 	PRIMARY KEY(idUser, idTask),
@@ -178,7 +179,7 @@ CREATE TABLE public.Assigned(
 );
 
 /* edit task info */
-CREATE TABLE public.EditTaskInfo(
+CREATE TABLE EditTaskInfo(
 	idUser integer,
 	idTask integer,
 	editDate timestamp NOT NULL,
@@ -191,7 +192,7 @@ CREATE TABLE public.EditTaskInfo(
 );
 
 /* comment */
-CREATE TABLE public.Comment(
+CREATE TABLE Comment(
 	idComment serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	lastEditDate timestamp,
@@ -203,13 +204,13 @@ CREATE TABLE public.Comment(
 );
 
 /* tag */
-CREATE TABLE public.Tag(
+CREATE TABLE Tag(
 	idTag serial PRIMARY KEY,
 	name text UNIQUE NOT NULL
 );
 
 /* tagged */
-CREATE TABLE public.Tagged(
+CREATE TABLE Tagged(
 	idTask integer,
 	idTag integer,
 	PRIMARY KEY(idTask, idTag),
@@ -218,7 +219,7 @@ CREATE TABLE public.Tagged(
 );
 
 /* thread */
-CREATE TABLE public.Thread(
+CREATE TABLE Thread(
 	idSon integer PRIMARY KEY,
 	idParent integer,
 	FOREIGN KEY(idParent) REFERENCES Comment(idComment),
@@ -226,7 +227,7 @@ CREATE TABLE public.Thread(
 );
 
 /* close request */
-CREATE TABLE public.CloseRequest(
+CREATE TABLE CloseRequest(
 	idRequest serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	title text NOT NULL,
@@ -239,7 +240,7 @@ CREATE TABLE public.CloseRequest(
 );
 
 /* Admin */
-CREATE TABLE public.Admin(
+CREATE TABLE Admin(
 	idAdmin serial PRIMARY KEY,
 	UserTablename text UNIQUE NOT NULL,
 	email text UNIQUE NOT NULL,
@@ -247,7 +248,7 @@ CREATE TABLE public.Admin(
 );
 
 /* Banned record */
-CREATE TABLE public.BannedRecord(
+CREATE TABLE BannedRecord(
 	idBan serial PRIMARY KEY,
 	startDate timestamp NOT NULL,
 	duration integer NOT NULL,
