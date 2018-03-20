@@ -74,7 +74,19 @@ INSERT INTO Project(creationDate, name, description, private)
 INSERT INTO Task(creationDate, title, description, deadline)
     VALUES($creationDate, $title, $description, $deadline);
 
-INSERT INTO Comment()
+INSERT INTO Comment(idComment, creationDate, content)
+    VALUES($idComment, $creationDate, $content);
+
+        /*-------------DELETE/REMOVE-------------*/
+
+DELETE FROM Project 
+  WHERE idProject = $idProject; 
+
+DELETE FROM Task 
+  WHERE idTask = $idTask; 
+
+DELETE FROM Comment 
+  WHERE idComment = $idComment;
 
 
         /*-------------POPULATION-------------*/
