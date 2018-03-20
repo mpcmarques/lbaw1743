@@ -76,7 +76,7 @@ CREATE TABLE Country(
 /* UserTable */
 CREATE TABLE UserTable(
 	idUser serial PRIMARY KEY,
-	UserTablename text UNIQUE NOT NULL,
+	userName text UNIQUE NOT NULL,
 	password text NOT NULL,
 	email text UNIQUE NOT NULL,
 	gender gender,
