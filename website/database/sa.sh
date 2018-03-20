@@ -1,2 +1,2 @@
 sudo systemctl start postgresql.service
-psql plenum
+psql -d plenum
