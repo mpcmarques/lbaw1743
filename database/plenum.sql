@@ -71,7 +71,7 @@ CREATE TABLE Country(
 /* UserTable */
 CREATE TABLE UserTable(
 	idUser serial PRIMARY KEY,
-	userName text UNIQUE NOT NULL,
+	username text UNIQUE NOT NULL,
 	password text NOT NULL,
 	email text UNIQUE NOT NULL,
 	gender gender,
@@ -183,7 +183,7 @@ CREATE TABLE Comment(
 	idComment serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
 	lastEditDate timestamp,
-	content TEXT NOT NULL,
+	content text NOT NULL,
 	idTask integer NOT NULL,
 	idUser integer NOT NULL,
 	FOREIGN KEY(idTask) REFERENCES Task(idTask),
@@ -221,7 +221,7 @@ CREATE TABLE CloseRequest(
 /* Admin */
 CREATE TABLE Admin(
 	idAdmin serial PRIMARY KEY,
-	UserTablename text UNIQUE NOT NULL,
+	username text UNIQUE NOT NULL,
 	email text UNIQUE NOT NULL,
 	password text NOT NULL
 );
