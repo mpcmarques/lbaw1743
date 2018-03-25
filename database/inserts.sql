@@ -306,6 +306,11 @@ insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProj
 insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-18', '2017-10-27', 'Re-contextualized multi-tasking process improvement', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 5, 5);
 
 --Reply
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-30', '2018-03-16', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 1, 6);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2018-03-21', '2017-07-03', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 2, 7);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-12', '2017-05-07', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 3, 8);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-09-23', '2017-09-19', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 4, 9);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-08-09', '2017-11-08', 'Fusce consequat. Nulla nisl. Nunc nisl.', 5, 10);
 
 --Task
 insert into plenum.task (creationDate, lastEditDate, title, description, deadline, completed, completedDate, idUser, idProject) values ('2017-07-05', '2017-04-15', 'Customizable neutral circuit', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2018-05-04', true, '2018-05-13', 1, 1);
@@ -318,6 +323,8 @@ insert into plenum.task (creationDate, lastEditDate, title, description, deadlin
 insert into plenum.assigned (idUser, idTask) values (1, 1);
 insert into plenum.assigned (idUser, idTask) values (2, 2);
 insert into plenum.assigned (idUser, idTask) values (3, 3);
+insert into plenum.assigned (idUser, idTask) values (4, 4);
+insert into plenum.assigned (idUser, idTask) values (5, 5);
 
 --EditTaskInfo
 
@@ -348,8 +355,13 @@ insert into plenum.tagged (idTask, idTag) values (2, 2);
 insert into plenum.tagged (idTask, idTag) values (3, 3);
 insert into plenum.tagged (idTask, idTag) values (4, 4);
 insert into plenum.tagged (idTask, idTag) values (5, 5);
-  
+
 --CloseRequest
+insert into plenum.closerequest (creationDate, title, description, aproved, idUser, idTask) values ('2017-11-04', 'Distributed demand-driven forecast', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false, 1, 1);
+insert into plenum.closerequest (creationDate, title, description, aproved, idUser, idTask) values ('2017-10-02', 'Progressive upward-trending hierarchy', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', false, 2, 2);
+insert into plenum.closerequest (creationDate, title, description, aproved, idUser, idTask) values ('2018-01-06', 'Switchable leading edge pricing structure', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', false, 3, 3);
+insert into plenum.closerequest (creationDate, title, description, aproved, idUser, idTask) values ('2018-03-11', 'Digitized high-level analyzer', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', false, 4, 4);
+insert into plenum.closerequest (creationDate, title, description, aproved, idUser, idTask) values ('2017-09-14', 'Profit-focused demand-driven workforce', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', true, 5, 5);
 
 --Admin
 insert into plenum.admin (username, email, password) values ('barbosa','up201503477@fe.up.pt' ,'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
@@ -358,3 +370,4 @@ insert into plenum.admin (username, email, password) values ('mateus','up2016018
 insert into plenum.admin (username, email, password) values ('jotapsa','up201506252@fe.up.pt' ,'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
 
 --BannedRecord
+insert into plenum.bannedrecord (startDate, duration, motive, idUser, idAdmin) values ('2017-07-06', 3, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 6, 1);
