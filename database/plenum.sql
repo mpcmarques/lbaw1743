@@ -59,7 +59,7 @@ DROP TYPE IF EXISTS gender;
 DROP TYPE IF EXISTS role;
 
 /* creating data types */
-CREATE TYPE gender AS ENUM('Male', 'Female', 'Other');
+CREATE TYPE gender AS ENUM('Male', 'Female');
 CREATE TYPE role AS ENUM('Owner' , 'Coordinator', 'Member');
 
 /* country */

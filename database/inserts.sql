@@ -250,25 +250,27 @@ insert into plenum.country (name) values ('Zambia');
 insert into plenum.country (name) values ('Zimbabwe');
 
 --Users
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('gsignorelli0', 'eMQ40cPHVgr', 'gsignorelli0@cloudflare.com', 'Gloriana Signorelli', 'Female', '9065 Miller Avenue', 'Kayveo', '8/8/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('aburdis1', 'eVruY8rB9us', 'aburdis1@linkedin.com', 'Ardine Burdis', 'Female', '12750 Heffernan Center', 'Brainsphere', '9/26/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('ckerfut2', 'xiZtGm1', 'ckerfut2@intel.com', 'Cairistiona Kerfut', 'Female', '09 Cody Trail', 'Topicstorm', '11/26/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('sduffet3', '6Jrygh', 'sduffet3@elegantthemes.com', 'Sheffy Duffet', 'Male', '71 Dottie Junction', 'Wikivu', '4/16/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('llanger4', '34G1lulS7Bz', 'llanger4@google.co.uk', 'Lindsay Langer', 'Female', '20 David Street', 'Agimba', '1/1/2018');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('mbauer5', 'E4rkY8tnvt7', 'mbauer5@dion.ne.jp', 'Meredithe Bauer', 'Female', '90 Ridgeview Crossing', 'Topdrive', '11/1/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('nwinkett6', 'tytfyuUdd', 'nwinkett6@dot.gov', 'Noel Winkett', 'Female', '9277 Schmedeman Junction', 'Zoombeat', '3/8/2018');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('anairn7', 'Tc2grOjvvRQB', 'anairn7@webnode.com', 'Agretha Nairn', 'Female', '0 2nd Place', 'Mybuzz', '5/16/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('mvala8', 'yi4KQi', 'mvala8@fotki.com', 'Maria Vala', 'Female', '0636 Atwood Circle', 'Zazio', '8/23/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('brappoport9', 'GGKIFksZmm', 'brappoport9@time.com', 'Bryana Rappoport', 'Female', '5311 Cody Court', 'Rhyloo', '12/1/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('bwardalea', 'mjrQImo', 'bwardalea@accuweather.com', 'Blythe Wardale', 'Female', '4927 Magdeline Lane', 'Centizu', '9/1/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('aeloyb', 'qcs2Rfl', 'aeloyb@google.com.br', 'Axel Eloy', 'Male', '72370 Orin Plaza', 'Realcube', '5/9/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('bsmoughtonc', 'axi3uln', 'bsmoughtonc@rakuten.co.jp', 'Beverley Smoughton', 'Female', '10480 Village Junction', 'Quimm', '6/11/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('lkibblewhited', 'MMNDkEZoYnp', 'lkibblewhited@hubpages.com', 'Liz Kibblewhite', 'Female', '81273 Southridge Plaza', 'Realfire', '6/10/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('kgrigolone', 'WZvFapm3ukr', 'kgrigolone@goo.ne.jp', 'Kayla Grigolon', 'Female', '033 Springs Circle', 'Photobug', '7/24/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('ymcf', 'UTBv8n', 'ymcf@etsy.com', 'Yulma Mc Ilwrick', 'Male', '86 Onsgard Street', 'Livetube', '12/7/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('kdaunayg', 'L2SQz3', 'kdaunayg@wp.com', 'Ketty Daunay', 'Female', '08 Talisman Terrace', 'Devcast', '10/14/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('dmunganh', 'Je4GrmjgHj', 'dmunganh@phoca.cz', 'Drucie Mungan', 'Female', '815 Del Sol Street', 'Aimbu', '8/7/2017');
-insert into UserTable (username, password, email, name, gender, address, institution, description, imgUrl) values ('dpiochi', '03INlP', 'dpiochi@businessweek.com', 'Dorian Pioch', 'Male', '600 Buell Court', 'Eidel', '6/7/2017');
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('cvan0', '4jAtpsZY', 'cvan0@lycos.com', 'Male', 'Corney Van Schafflaer', '935 Tomscot Park', 'Zava', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '2000-02-08', 1);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('gtesto1', '3Jw68wOFCZIP', 'gtesto1@earthlink.net', 'Male', 'Gayler Testo', '4 Randy Center', 'Wikizz', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', '1997-05-24', 2);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('acartmer2', 'LZgP01WfKVX7', 'acartmer2@buzzfeed.com', 'Female', 'Aloise Cartmer', '31 Arapahoe Pass', 'Innojam', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', '1997-09-22', 3);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('ablasli3', 'Dcc1P1ndl', 'ablasli3@delicious.com', 'Female', 'Aloise Blasli', '3873 Sherman Terrace', 'Tagchat', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '1992-10-22', 4);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('madel4', 'LqbPMsUHStSX', 'madel4@ed.gov', 'Female', 'Myra Adel', '82937 Onsgard Terrace', 'Centizu', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.', '1999-10-02', 5);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('sjailler5', 'yfhsQL', 'sjailler5@github.io', 'Female', 'Sheri Jailler', '9167 Graedel Trail', 'Talane', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', '1994-05-19', 6);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('askirvane6', 'TgAeiP5yFT', 'askirvane6@123-reg.co.uk', 'Male', 'Alric Skirvane', '0222 Debra Trail', 'Jatri', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', '1991-10-29', 7);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('bmaylour7', 'GbH6caE', 'bmaylour7@google.fr', 'Female', 'Bunni Maylour', '81 Burrows Circle', 'Bluezoom', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', '1992-09-07', 8);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('jklimashevich8', 'mRTJTe3G', 'jklimashevich8@sphinn.com', 'Female', 'Johnath Klimashevich', '7689 Oriole Crossing', 'Quaxo', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', '1996-06-21', 9);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('tcullagh9', 'hCDirTpBU8A', 'tcullagh9@marriott.com', 'Male', 'Templeton Cullagh', '2264 Di Loreto Alley', 'Wordware', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '1995-03-25', 10);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('pkarpea', 'Lfr5UXUx', 'pkarpea@vk.com', 'Female', 'Pauly Karpe', '99 Milwaukee Alley', 'Twiyo', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '1997-02-27', 11);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('hthorsbyb', 'X009rkG', 'hthorsbyb@hc360.com', 'Male', 'Hugh Thorsby', '3349 Holy Cross Plaza', 'Skiba', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', '1998-01-13', 12);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('gbenechc', 'kX04ckWux', 'gbenechc@sina.com.cn', 'Male', 'Giraldo Benech', '40180 La Follette Plaza', 'Kwideo', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', '1995-11-14', 13);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('hdalld', 'RHkOfnA', 'hdalld@blogtalkradio.com', 'Male', 'Hamid Dall', '7086 Montana Place', 'Edgepulse', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', '1991-06-29', 14);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('hkenninghane', 'e3fbqu', 'hkenninghane@cnet.com', 'Male', 'Hewet Kenninghan', '20 Arizona Hill', 'Chatterpoint', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '1997-10-18', 15);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('deggintonf', 'vPgfLvqQt', 'deggintonf@feedburner.com', 'Male', 'Delbert Egginton', '7124 Helena Place', 'Yozio', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '1996-07-13', 16);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('tcochraneg', 'Zel43XQ', 'tcochraneg@virginia.edu', 'Female', 'Terrie Cochrane', '663 Shelley Trail', 'Yotz', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '1998-04-22', 17);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('lkinzeh', 'FJWEo7EJ9hlj', 'lkinzeh@topsy.com', 'Male', 'Lucien Kinze', '2 Macpherson Terrace', 'Divape', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '1999-04-10', 18);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('soldalei', 'GEIAXzUa', 'soldalei@hexun.com', 'Female', 'Shannah Oldale', '1 Algoma Pass', 'Bluezoom', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', '1994-10-14', 19);
+insert into plenum.usertable (username, password, email, gender, name, address, institution, description, birthDate, idCountry) values ('charstonj', 'qSktpJ0wB', 'charstonj@microsoft.com', 'Male', 'Cornell Harston', '2 Charing Cross Avenue', 'Rhynyx', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '1995-06-01', 20);
+
 
 --PremiumSignature
 insert into plenum.premiumsignature (startDate, duration, idUser) values ('2017-02-25', '2017-10-19', 1);
@@ -285,8 +287,23 @@ insert into premium.project (creationDate, name, description, private) values ('
 insert into premium.project (creationDate, name, description, private) values ('2018-02-09', 'Voltsillam', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', true);
 
 --Joined
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (1, 1, '2017-10-22', '2017-04-22', 'Owner');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (2, 2, '2017-11-07', '2017-12-18', 'Owner');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (3, 3, '2017-06-21', '2017-05-09', 'Owner');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (4, 4, '2018-03-06', '2017-04-13', 'Owner');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (5, 5, '2017-07-19', '2017-08-01', 'Owner');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (6, 1, '2017-09-22', '2017-11-13', 'Member');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (7, 2, '2017-04-27', '2017-11-18', 'Member');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (8, 3, '2017-04-27', '2018-01-13', 'Member');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (9, 4, '2018-01-03', '2018-01-09', 'Coordinator');
+insert into plenum.joined (idUser, idProject, joinedDate, leftDate, role) values (10, 5, '2017-06-29', '2017-11-09', 'Coordinator');
 
 --ForumPost
+insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-17', '2018-01-17', 'Enhanced global customer loyalty', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', 1, 1);
+insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-06', '2017-07-15', 'Triple-buffered secondary product', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 2, 2);
+insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-19', '2018-02-25', 'Devolved dynamic structure', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 3, 3);
+insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2018-02-23', '2017-12-29', 'Automated bottom-line challenge', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 4, 4);
+insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-18', '2017-10-27', 'Re-contextualized multi-tasking process improvement', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 5, 5);
 
 --Reply
 
@@ -298,6 +315,9 @@ insert into plenum.task (creationDate, lastEditDate, title, description, deadlin
 insert into plenum.task (creationDate, lastEditDate, title, description, deadline, completed, completedDate, idUser, idProject) values ('2017-03-25', '2017-05-29', 'Multi-tiered upward-trending hardware', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', '2018-05-08', false, NULL, 5, 5);
 
 --Assigned
+insert into plenum.assigned (idUser, idTask) values (1, 1);
+insert into plenum.assigned (idUser, idTask) values (2, 2);
+insert into plenum.assigned (idUser, idTask) values (3, 3);
 
 --EditTaskInfo
 
@@ -309,7 +329,7 @@ insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser)
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-07-12', '2017-07-10', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 5, 5);
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2018-03-02', '2017-07-19', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 6, 6);
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-10-01', '2017-12-27', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 7, 7);
-  
+
 --Tag
 insert into plenum.tag (name) values ('full-range');
 insert into plenum.tag (name) values ('moderator');
@@ -321,8 +341,14 @@ insert into plenum.tag (name) values ('interactive');
 insert into plenum.tag (name) values ('moratorium');
 insert into plenum.tag (name) values ('contextually-based');
 insert into plenum.tag (name) values ('system engine');
---Tagged
 
+--Tagged
+insert into plenum.tagged (idTask, idTag) values (1, 1);
+insert into plenum.tagged (idTask, idTag) values (2, 2);
+insert into plenum.tagged (idTask, idTag) values (3, 3);
+insert into plenum.tagged (idTask, idTag) values (4, 4);
+insert into plenum.tagged (idTask, idTag) values (5, 5);
+  
 --CloseRequest
 
 --Admin
@@ -330,4 +356,5 @@ insert into plenum.admin (username, email, password) values ('barbosa','up201503
 insert into plenum.admin (username, email, password) values ('mario','up201503406@fe.up.pt' ,'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
 insert into plenum.admin (username, email, password) values ('mateus','up201601876@fe.up.pt' ,'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
 insert into plenum.admin (username, email, password) values ('jotapsa','up201506252@fe.up.pt' ,'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
+
 --BannedRecord
