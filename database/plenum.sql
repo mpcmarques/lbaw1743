@@ -74,8 +74,10 @@ CREATE TABLE UserTable(
 	username text UNIQUE NOT NULL,
 	password text NOT NULL,
 	email text UNIQUE NOT NULL,
-	gender gender,
+	premium boolean NOT NULL,
+	banned boolean NOT NULL,
 	name text NOT NULL,
+	gender gender,
 	address text,
 	institution text,
 	description text,
@@ -89,7 +91,7 @@ CREATE TABLE PremiumSignature(
 	idPremium serial PRIMARY KEY,
 	startDate timestamp NOT NULL,
 	duration  interval NOT NULL CHECK (duration > interval '0'),
-	idUser integer,
+	idUser integer NOT NULL,
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
 );
 
@@ -107,7 +109,6 @@ CREATE TABLE Joined(
 	idUser integer,
 	idProject integer,
 	joinedDate timestamp NOT NULL,
-	leftDate timestamp,
 	role Role NOT NULL,
 	PRIMARY KEY(idUser, idProject),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
@@ -148,10 +149,10 @@ CREATE TABLE Task(
 	description text,
 	deadline timestamp,
 	completed boolean NOT NULL,
-	completedDate timestamp,
-	idUser integer,
-	idProject integer,
-	CONSTRAINT completedDate_valid CHECK (completedDate > creationDate),
+	completetionDate timestamp,
+	idUser integer NOT NULL,
+	idProject integer NOT NULL,
+	CONSTRAINT completionDate_valid CHECK (completetionDate > creationDate),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idProject) REFERENCES Project(idProject)
 );
@@ -170,9 +171,6 @@ CREATE TABLE EditTaskInfo(
 	idUser integer,
 	idTask integer,
 	editDate timestamp NOT NULL,
-	oldTitle text NOT NULL,
-	oldDescription text,
-	oldDeadline timestamp,
 	PRIMARY KEY(idUser, idTask),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
@@ -186,8 +184,10 @@ CREATE TABLE Comment(
 	content text NOT NULL,
 	idTask integer NOT NULL,
 	idUser integer NOT NULL,
+	idParent integer,
 	FOREIGN KEY(idTask) REFERENCES Task(idTask),
-	FOREIGN KEY(idUser) REFERENCES UserTable(idUser)
+	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
+	FOREIGN KEY(idParent) REFERENCES Comment(idComment)
 );
 
 /* tag */
@@ -211,9 +211,9 @@ CREATE TABLE CloseRequest(
 	creationDate timestamp NOT NULL,
 	title text NOT NULL,
 	description text,
-	aproved boolean NOT NULL,
-	idUser integer,
-	idTask integer,
+	approved boolean NOT NULL,
+	idUser integer NOT NULL,
+	idTask integer NOT NULL,
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
