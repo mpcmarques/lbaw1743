@@ -1,51 +1,121 @@
     /*-------------QUERIES-------------*/
 
- /*Get All Users*/
-  SELECT userName, email, gender, description
-  FROM UserTable;
+        /*-------------USERS-------------*/
 
- /*Get User Data*/
- SELECT userName, email, gender, description
-  FROM UserTable
-  WHERE UserTable.idUser= $idUser;
+/*Get Users*/
+SELECT userName, email, gender, description
+FROM UserTable;
 
-/*Get Non Completed Tasks From a Project*/
+/*Get User Data*/
+SELECT userName, email, gender, description
+FROM UserTable
+WHERE UserTable.idUser= $idUser;
+
+/*Select User's Tasks*/
+SELECT title 
+FROM Task
+WHERE Task.idUser=$idUser
+ORDER BY deadline ASC; 
+
+/*Select User Projects*/
+SELECT Project.name FROM Project, Joined, UserTable
+WHERE Project.idProject=Joined.idProject
+AND Joined.idUser=UserTable.idUser
+AND UserTable.idUser = $idUser;
+
+/*Select Premium User*/
+SELECT name
+FROM UserTable, PremiumSignature
+WHERE PremiumSignature.idPremium = $idPremium
+AND UserTable.idUser= PremiumSignature.idUser;
+
+/*Select Premium Users*/
+SELECT startDate, duration, name
+FROM PremiumSignature, UserTable
+WHERE UserTable.idUser= PremiumSignature.idUser;
+
+/*Select Banned Users*/
+SELECT UserTable.name, startDate, duration, motive
+FROM UserTable, BannedRecord
+WHERE UserTable.idUser = BannedRecord.idUser;
+
+/*Select Banned User*/
+SELECT UserTable.name, startDate, duration, motive
+FROM UserTable, BannedRecord
+WHERE BannedRecord.idUser = $idUser 
+AND UserTable.idUser = BannedRecord.idUser;
+
+        /*-------------PROJECTS-------------*/
+
+/*Select Project Name*/
+SELECT name FROM Project
+WHERE idProject = $idProject;
+
+/*Select Project Description*/
+SELECT description FROM Project
+WHERE idProject = $idProject;
+
+/*Select Project Team Coordinators*/
+SELECT DISTINCT name, email
+FROM UserTable, Joined, Project
+WHERE Joined.idProject=$idProject
+AND Joined.role!='Member'
+AND Joined.idUser=UserTable.idUser;
+
+/*Select Project Team Members*/
+SELECT DISTINCT name, email
+FROM UserTable, Joined, Project
+WHERE Joined.idProject=$idProject
+AND Joined.role!='Coordinator'
+AND Joined.idUser=UserTable.idUser;
+
+        /*-------------FORUMS-------------*/
+
+/*Select Forum Post*/
+SELECT title, lastEditDate, name
+FROM ForumPost, UserTable
+WHERE ForumPost.idUser = UserTable.idUser
+AND UserTable.idUser = $idUser;
+
+/*Select Forum Post ordered by last edit date*/
+SELECT title, lastEditDate, name
+FROM ForumPost, UserTable
+WHERE ForumPost.idUser = UserTable.idUser
+AND UserTable.idUser = $idUser;
+ORDER BY ForumPost.lastEditDate;
+
+/*Select Post Replies*/
+SELECT UserTable.name, Reply.creationDate, Reply.content, Reply.idPost
+FROM Reply, ForumPost, UserTable
+WHERE Reply.idPost = $idPost
+AND Reply.idUser = UserTable.idUser;
+
+/*Select Tasks ordered by earliest deadline*/
+SELECT title, deadline
+WHERE deadline > CURRENT_DATE
+ORDER BY deadline ASC;
+
+/*SELECT Non Completed Tasks From a Project*/
+SELECT Task.title
+FROM Task, Project
+WHERE Project.idProject = $idProject
+AND Task.idProject = Project.idProject
+AND Task.completed=FALSE;
+
+/*Select Task Data*/
 SELECT title, creationDate,lastEditDate, description, deadline
-    FROM Task
-    INNER JOIN Project ON Task.idProject = Project.idProject;
+FROM Task
+WHERE Task.idTask= $idTask;
 
-/*Get Task Data*/
-SELECT title, creationDate,lastEditDate, description, deadline
-    FROM Task
-    WHERE Task.idTask= $idTask;
+/*Select Task Comments*/
+SELECT Comment.creationDate, Comment.lastEditDate, Comment.content, name
+FROM Comment, UserTable, Task
+WHERE Task.idTask = $idTask
+AND Comment.idUser = UserTable.idUser
+AND Comment.idTask = Task.idTask;
 
-/*Get All Comments From Task*/
-SELECT creationDate, lastEditDate, content, userName
-    FROM Comment
-    INNER JOIN UserTable ON UserTable.idUser= Comment.idUser
-    INNER JOIN Task ON Task.idTask = Comment.idTask;
 
-/*Get Post Data*/
-SELECT creationDate, lastEditDate, title, content, userName
-    FROM ForumPost
-    INNER JOIN UserTable ON UserTable.idUser= ForumPost.idUser;
 
-/*Get All Post Replies*/
-SELECT creationDate, lastEditDate, content, userName
-    FROM Reply
-    INNER JOIN UserTable ON UserTable.idUser = Reply.idUser
-    INNER JOIN ForumPost ON ForumPost.idPost = ForumPost.idPost;
-
-/*Get All Premium Users*/
-SELECT startDate, duration, userName
-    FROM PremiumSignature
-    INNER JOIN UserTable ON UserTable.idUser= PremiumSignature.idUser;
-
-/*Get All Banned Users*/
-SELECT userName, startDate, duration, motive
-    FROM BannedRecord
-    INNER JOIN UserTable ON UserTable.idUser = BannedRecord.idUser
-    INNER JOIN Admin
 
     /*-------------UPDATES-------------*/
 
