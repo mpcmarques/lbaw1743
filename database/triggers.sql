@@ -1,0 +1,110 @@
+
+CREATE FUNCTION ProjectPrivate() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER onCreateProject BEFORE INSERT OR UPDATE ON Project
+FOR EACH ROW
+WHEN (NEW.private IS TRUE)
+EXECUTE PROCEDURE ProjectPrivate();
+
+CREATE FUNCTION CreateComment() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canCreateComment BEFORE INSERT ON Comment
+FOR EACH ROW
+EXECUTE PROCEDURE CreateComment();
+
+CREATE FUNCTION createCLoseRequest() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canCreateCLoseRequest BEFORE INSERT ON CloseRequest
+FOR EACH ROW
+EXECUTE PROCEDURE createCLoseRequest();
+
+CREATE FUNCTION approveCloseRequest() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canApprove BEFORE UPDATE ON CloseRequest
+FOR EACH ROW
+EXECUTE PROCEDURE approveCloseRequest();
+
+CREATE FUNCTION createPost() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canPostInForum BEFORE INSERT ON ForumPost
+FOR EACH ROW
+EXECUTE PROCEDURE createPost();
+
+CREATE FUNCTION createReply() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canReplyInForum BEFORE INSERT ON Reply
+FOR EACH ROW
+EXECUTE PROCEDURE createReply();
+
+
+CREATE FUNCTION createTask() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canCreateTask BEFORE INSERT ON Task
+FOR EACH ROW
+EXECUTE PROCEDURE createTask();
+
+CREATE FUNCTION AssignedToTask() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canBeAssigned BEFORE INSERT ON Assigned
+FOR EACH ROW
+EXECUTE PROCEDURE AssignedToTask();
+
+CREATE FUNCTION editTask() RETURNS TRIGGER AS $$
+  BEGIN
+    SELECT idUser
+    FROM Joined
+    WHERE
+  END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER canEditTask BEFORE INSERT ON EditTaskInfo
+FOR EACH ROW
+EXECUTE PROCEDURE editTask();
