@@ -12,10 +12,10 @@ FROM UserTable
 WHERE UserTable.idUser= $idUser;
 
 /*Select User's Tasks*/
-SELECT title 
+SELECT title
 FROM Task
 WHERE Task.idUser=$idUser
-ORDER BY deadline ASC; 
+ORDER BY deadline ASC;
 
 /*Select User Projects*/
 SELECT Project.name FROM Project, Joined, UserTable
@@ -42,7 +42,7 @@ WHERE UserTable.idUser = BannedRecord.idUser;
 /*Select Banned User*/
 SELECT UserTable.name, startDate, duration, motive
 FROM UserTable, BannedRecord
-WHERE BannedRecord.idUser = $idUser 
+WHERE BannedRecord.idUser = $idUser
 AND UserTable.idUser = BannedRecord.idUser;
 
         /*-------------PROJECTS-------------*/
@@ -164,15 +164,11 @@ INSERT INTO Comment(idComment, creationDate, content)
 
         /*-------------DELETE/REMOVE-------------*/
 
-DELETE FROM Project 
-  WHERE idProject = $idProject; 
+DELETE FROM Project
+  WHERE idProject = $idProject;
 
-DELETE FROM Task 
-  WHERE idTask = $idTask; 
+DELETE FROM Task
+  WHERE idTask = $idTask;
 
-DELETE FROM Comment 
+DELETE FROM Comment
   WHERE idComment = $idComment;
-
-
-        /*-------------POPULATION-------------*/
-INSERT INTO UserTable()
