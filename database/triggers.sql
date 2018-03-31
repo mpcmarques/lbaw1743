@@ -7,7 +7,7 @@ CREATE OR REPLACE FUNCTION insertPost() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
-      SELECT * FROM Joined
+      SELECT Joined.idJoined FROM Joined
       WHERE (new.idUser = idUser AND new.idProject = idProject))
     THEN
       RAISE EXCEPTION 'Only a user who joined a project can post in its forum.';
@@ -48,46 +48,129 @@ CREATE TRIGGER onCreateReply BEFORE INSERT ON Reply
 FOR EACH ROW
 EXECUTE PROCEDURE insertReply();
 
--- -- Only a user who has Joined a Project can create Comments for a Project Task
--- CREATE FUNCTION CreateComment() RETURNS TRIGGER AS $$
---   BEGIN
---     SELECT idUser
---     FROM Joined
---     WHERE
---   END;
--- $$ LANGUAGE plpgsql;
---
--- CREATE TRIGGER canCreateComment BEFORE INSERT ON Comment
--- FOR EACH ROW
--- EXECUTE PROCEDURE CreateComment();
+-- Only a user who has Joined a Project can create Comments for a Project Task
+DROP TRIGGER IF EXISTS onCreateComment ON Comment;
 
--- -- A Project can only be private while the Owner is a Premium User
--- CREATE FUNCTION ProjectPrivate() RETURNS TRIGGER AS $$
---   BEGIN
---     SELECT idUser
---     FROM Joined
---     WHERE
---   END;
--- $$ LANGUAGE plpgsql;
+CREATE OR REPLACE FUNCTION insertComent() RETURNS TRIGGER AS
+$BODY$
+  BEGIN
+    IF NOT EXISTS (
+      SELECT idJoined FROM Joined, Task
+      WHERE (new.idTask = Task.idTask AND Task.idProject = Joined.idProject AND new.idUser = Joined.idUser))
+    THEN
+      RAISE EXCEPTION 'Only a user who joined a project can create comments for a Project Task.';
+    ELSE
+      INSERT INTO Comment(creationDate, lastEditDate, idTask, idUser, idParent)
+      VALUES (new.creationDate, new.lastEditDate, new.idTask, new.idUser, new.idParent);
+    END IF;
+    RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER onCreateComment BEFORE INSERT ON Comment
+FOR EACH ROW
+EXECUTE PROCEDURE insertComent();
+
+-- Only a User who was Assigned to a Task can create a Close Request for it.
+DROP TRIGGER IF EXISTS onCreateCloseRequest ON CloseRequest;
+
+CREATE OR REPLACE FUNCTION insertCloseRequest() RETURNS TRIGGER AS
+$BODY$
+  BEGIN
+    IF NOT EXISTS (
+      SELECT * FROM Assigned
+      WHERE (new.idTask = Assigned.idTask AND new.idUser = Assigned.idUser))
+    THEN
+      RAISE EXCEPTION 'Only a user who joined a project can create comments for a Project Task.';
+    ELSE
+      INSERT INTO Comment(creationDate, lastEditDate, idTask, idUser, idParent)
+      VALUES (new.creationDate, new.lastEditDate, new.idTask, new.idUser, new.idParent);
+    END IF;
+    RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER onCreateCloseRequest BEFORE INSERT ON CloseRequest
+FOR EACH ROW
+EXECUTE PROCEDURE insertCloseRequest();
+
+-- Only a User who Joined a Project can create Tasks for It
+DROP TRIGGER IF EXISTS onCreateTask ON Task;
+
+CREATE OR REPLACE FUNCTION insertTask() RETURNS TRIGGER AS
+$BODY$
+  BEGIN
+    IF NOT EXISTS (
+      SELECT Joined.idJoined FROM Joined
+      WHERE (new.idUser = Joined.idUser AND new.idProject = Joined.idProject))
+    THEN
+      RAISE EXCEPTION 'Only a user who joined a project can create tasks for it.';
+    ELSE
+      INSERT INTO Task(creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject)
+      VALUES (new.creationDate, new.lastEditDate, new.title, new.description, new.deadline, new.completed, new.completetionDate, new.idUser, new.idProject);
+    END IF;
+    RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER onCreateTask BEFORE INSERT ON Task
+FOR EACH ROW
+EXECUTE PROCEDURE insertTask();
+
+-- Only a User who Joined a Project can be assigned to it's Tasks
+DROP TRIGGER IF EXISTS onCreateAssigned ON Assigned;
+
+CREATE OR REPLACE FUNCTION insertAssigned() RETURNS TRIGGER AS
+$BODY$
+  BEGIN
+    IF NOT EXISTS (
+      SELECT Joined.idJoined FROM Joined, Task
+      WHERE (new.idUser = Joined.idUser AND new.idTask = Task.idTask AND Task.idProject = Joined.idProject))
+    THEN
+      RAISE EXCEPTION 'Only a user who joined a project can be assigned to its tasks.';
+    ELSE
+      INSERT INTO Assigned(idUser, idTask)
+      VALUES (new.idUser, new.idTask);
+    END IF;
+    RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER onCreateAssigned BEFORE INSERT ON Assigned
+FOR EACH ROW
+EXECUTE PROCEDURE insertAssigned();
 --
--- CREATE TRIGGER onCreateProject BEFORE INSERT OR UPDATE ON Project
--- FOR EACH ROW
--- WHEN (NEW.private IS TRUE)
--- EXECUTE PROCEDURE ProjectPrivate();
---
--- -- Only a User who was Assigned to a Task can create a Close Request for it.
--- CREATE FUNCTION createCLoseRequest() RETURNS TRIGGER AS $$
---   BEGIN
---     SELECT idUser
---     FROM Joined
---     WHERE
---   END;
--- $$ LANGUAGE plpgsql;
---
--- CREATE TRIGGER canCreateCLoseRequest BEFORE INSERT ON CloseRequest
--- FOR EACH ROW
--- EXECUTE PROCEDURE createCLoseRequest();
---
+
+-- A Project can only be private while the Owner is a Premium User
+DROP TRIGGER IF EXISTS onCreateProject ON Project;
+
+CREATE OR REPLACE FUNCTION canProjectBePrivate() RETURNS TRIGGER AS
+$BODY$
+  BEGIN
+  IF NOT EXISTS (
+    SELECT * FROM Joined, UserTable
+    WHERE new.idProject = Joined.idProject AND Joined.role = 'Owner' AND Joined.idUser = UserTable.idUser AND UserTable.premium = true)
+  THEN
+    RAISE EXCEPTION 'A Project can only be private while the Owner is a Premium User.';
+  ELSE
+    INSERT INTO Project(idProject, creationDate, name, description, private)
+    VALUES (new.idProject, new.creationDate, new.name, new.description, new.private);
+  END IF;
+  RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER onCreateProject BEFORE INSERT OR UPDATE ON Project
+FOR EACH ROW
+WHEN (NEW.private IS TRUE)
+EXECUTE PROCEDURE canProjectBePrivate();
+-- TODO: on update user.
+-- 
 -- -- Only a Project Manager (or above) can approve for a Task to be closed.
 -- CREATE FUNCTION approveCloseRequest() RETURNS TRIGGER AS $$
 --   BEGIN
@@ -100,33 +183,7 @@ EXECUTE PROCEDURE insertReply();
 -- CREATE TRIGGER canApprove BEFORE UPDATE ON CloseRequest
 -- FOR EACH ROW
 -- EXECUTE PROCEDURE approveCloseRequest();
---
--- -- Only a User who Joined a Project can create Tasks for It
--- CREATE FUNCTION createTask() RETURNS TRIGGER AS $$
---   BEGIN
---     SELECT idUser
---     FROM Joined
---     WHERE
---   END;
--- $$ LANGUAGE plpgsql;
---
--- CREATE TRIGGER canCreateTask BEFORE INSERT ON Task
--- FOR EACH ROW
--- EXECUTE PROCEDURE createTask();
---
--- -- Only a User who Joined a Project can be assigned to it's Tasks
--- CREATE FUNCTION AssignedToTask() RETURNS TRIGGER AS $$
---   BEGIN
---     SELECT idUser
---     FROM Joined
---     WHERE
---   END;
--- $$ LANGUAGE plpgsql;
---
--- CREATE TRIGGER canBeAssigned BEFORE INSERT ON Assigned
--- FOR EACH ROW
--- EXECUTE PROCEDURE AssignedToTask();
---
+
 -- -- Only the User who created the task and the Project Manager can edit a task
 -- CREATE FUNCTION editTask() RETURNS TRIGGER AS $$
 --   BEGIN
