@@ -143,9 +143,8 @@ LANGUAGE plpgsql;
 CREATE TRIGGER onCreateAssigned BEFORE INSERT ON Assigned
 FOR EACH ROW
 EXECUTE PROCEDURE insertAssigned();
---
 
--- A Project can only be private while the Owner is a Premium User
+-- A Project can only be private while the Owner is a Premium User.
 DROP TRIGGER IF EXISTS onCreateProject ON Project;
 
 CREATE OR REPLACE FUNCTION canProjectBePrivate() RETURNS TRIGGER AS
@@ -169,30 +168,27 @@ CREATE TRIGGER onCreateProject BEFORE INSERT OR UPDATE ON Project
 FOR EACH ROW
 WHEN (NEW.private IS TRUE)
 EXECUTE PROCEDURE canProjectBePrivate();
--- TODO: on update user.
--- 
--- -- Only a Project Manager (or above) can approve for a Task to be closed.
--- CREATE FUNCTION approveCloseRequest() RETURNS TRIGGER AS $$
---   BEGIN
---     SELECT idUser
---     FROM Joined
---     WHERE
---   END;
--- $$ LANGUAGE plpgsql;
---
--- CREATE TRIGGER canApprove BEFORE UPDATE ON CloseRequest
--- FOR EACH ROW
--- EXECUTE PROCEDURE approveCloseRequest();
 
--- -- Only the User who created the task and the Project Manager can edit a task
--- CREATE FUNCTION editTask() RETURNS TRIGGER AS $$
---   BEGIN
---     SELECT idUser
---     FROM Joined
---     WHERE
---   END;
--- $$ LANGUAGE plpgsql;
---
--- CREATE TRIGGER canEditTask BEFORE INSERT ON EditTaskInfo
--- FOR EACH ROW
--- EXECUTE PROCEDURE editTask();
+DROP TRIGGER IF EXISTS onUpdateUser ON UserTable;
+
+CREATE OR REPLACE FUNCTION updateUserTable() RETURNS TRIGGER AS
+$BODY$
+  BEGIN
+  IF EXISTS (
+    SELECT * FROM Joined, Project
+    WHERE new.idUser = Joined.idUser AND Joined.role = 'Owner' AND new.idProject = Joined.idProject AND new.idProject = Project.idProject AND Project.private = true)
+  THEN
+    RAISE EXCEPTION 'A Project can only be private while the Owner is a Premium User.';
+  ELSE
+    INSERT INTO UserTable(username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry)
+    VALUES (new.username, new.password, new.email, new.premium, new.banned, new.name, new.gender, new.address, new.institution, new.description, new.birthDate, new.idCountry);
+  END IF;
+  RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER onUpdateUser BEFORE INSERT OR UPDATE ON UserTable
+FOR EACH ROW
+WHEN (new.premium = false)
+EXECUTE PROCEDURE updateUserTable();
