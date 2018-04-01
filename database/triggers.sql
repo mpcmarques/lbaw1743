@@ -3,7 +3,7 @@
 -- Only a User who Joined a Project can create Posts in it's Forum
 DROP TRIGGER IF EXISTS onCreatePost ON plenum.ForumPost;
 
-CREATE OR REPLACE FUNCTION insertPost() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.insertPost() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
@@ -22,12 +22,12 @@ LANGUAGE plpgsql;
 
 CREATE TRIGGER onCreatePost BEFORE INSERT ON plenum.ForumPost
 FOR EACH ROW
-EXECUTE PROCEDURE insertPost();
+EXECUTE PROCEDURE plenum.insertPost();
 
 -- Only a User who Joined a Project can Reply in it's Forum
 DROP TRIGGER IF EXISTS onCreateReply ON plenum.Reply;
 
-CREATE OR REPLACE FUNCTION insertReply() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.insertReply() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
@@ -46,12 +46,12 @@ LANGUAGE plpgsql;
 
 CREATE TRIGGER onCreateReply BEFORE INSERT ON plenum.Reply
 FOR EACH ROW
-EXECUTE PROCEDURE insertReply();
+EXECUTE PROCEDURE plenum.insertReply();
 
 -- Only a user who has Joined a Project can create Comments for a Project Task
 DROP TRIGGER IF EXISTS onCreateComment ON plenum.Comment;
 
-CREATE OR REPLACE FUNCTION insertComent() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.insertComent() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
@@ -70,12 +70,12 @@ LANGUAGE plpgsql;
 
 CREATE TRIGGER onCreateComment BEFORE INSERT ON plenum.Comment
 FOR EACH ROW
-EXECUTE PROCEDURE insertComent();
+EXECUTE PROCEDURE plenum.insertComent();
 
 -- Only a User who was Assigned to a Task can create a Close Request for it.
 DROP TRIGGER IF EXISTS onCreateCloseRequest ON plenum.CloseRequest;
 
-CREATE OR REPLACE FUNCTION insertCloseRequest() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.insertCloseRequest() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
@@ -94,12 +94,12 @@ LANGUAGE plpgsql;
 
 CREATE TRIGGER onCreateCloseRequest BEFORE INSERT ON plenum.CloseRequest
 FOR EACH ROW
-EXECUTE PROCEDURE insertCloseRequest();
+EXECUTE PROCEDURE plenum.insertCloseRequest();
 
 -- Only a User who Joined a Project can create Tasks for It
 DROP TRIGGER IF EXISTS onCreateTask ON plenum.Task;
 
-CREATE OR REPLACE FUNCTION insertTask() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.insertTask() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
@@ -118,12 +118,12 @@ LANGUAGE plpgsql;
 
 CREATE TRIGGER onCreateTask BEFORE INSERT ON plenum.Task
 FOR EACH ROW
-EXECUTE PROCEDURE insertTask();
+EXECUTE PROCEDURE plenum.insertTask();
 
 -- Only a User who Joined a Project can be assigned to it's Tasks
 DROP TRIGGER IF EXISTS onCreateAssigned ON plenum.Assigned;
 
-CREATE OR REPLACE FUNCTION insertAssigned() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.insertAssigned() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
@@ -142,12 +142,12 @@ LANGUAGE plpgsql;
 
 CREATE TRIGGER onCreateAssigned BEFORE INSERT ON plenum.Assigned
 FOR EACH ROW
-EXECUTE PROCEDURE insertAssigned();
+EXECUTE PROCEDURE plenum.insertAssigned();
 
 -- A Project can only be private while the Owner is a Premium User.
 DROP TRIGGER IF EXISTS onCreateProject ON plenum.Project;
 
-CREATE OR REPLACE FUNCTION canProjectBePrivate() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.canProjectBePrivate() RETURNS TRIGGER AS
 $BODY$
   BEGIN
   IF NOT EXISTS (
@@ -167,11 +167,11 @@ LANGUAGE plpgsql;
 CREATE TRIGGER onCreateProject BEFORE INSERT OR UPDATE ON plenum.Project
 FOR EACH ROW
 WHEN (NEW.private IS TRUE)
-EXECUTE PROCEDURE canProjectBePrivate();
+EXECUTE PROCEDURE plenum.canProjectBePrivate();
 
 DROP TRIGGER IF EXISTS onUpdateUser ON plenum.UserTable;
 
-CREATE OR REPLACE FUNCTION updateUserTable() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION plenum.updateUserTable() RETURNS TRIGGER AS
 $BODY$
   BEGIN
   IF EXISTS (
@@ -191,4 +191,4 @@ LANGUAGE plpgsql;
 CREATE TRIGGER onUpdateUser BEFORE INSERT OR UPDATE ON plenum.UserTable
 FOR EACH ROW
 WHEN (new.premium = false)
-EXECUTE PROCEDURE updateUserTable();
+EXECUTE PROCEDURE plenum.updateUserTable();
