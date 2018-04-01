@@ -1,6 +1,4 @@
-
-
--- Only a User who Joined a Project can create Posts in it's Forum
+-- Only a User who Joined a Project can create Posts in it's Forum.
 DROP TRIGGER IF EXISTS onCreatePost ON plenum.ForumPost;
 
 CREATE OR REPLACE FUNCTION plenum.insertPost() RETURNS TRIGGER AS
@@ -24,7 +22,7 @@ CREATE TRIGGER onCreatePost BEFORE INSERT ON plenum.ForumPost
 FOR EACH ROW
 EXECUTE PROCEDURE plenum.insertPost();
 
--- Only a User who Joined a Project can Reply in it's Forum
+-- Only a User who Joined a Project can Reply in it's Forum.
 DROP TRIGGER IF EXISTS onCreateReply ON plenum.Reply;
 
 CREATE OR REPLACE FUNCTION plenum.insertReply() RETURNS TRIGGER AS
@@ -48,7 +46,7 @@ CREATE TRIGGER onCreateReply BEFORE INSERT ON plenum.Reply
 FOR EACH ROW
 EXECUTE PROCEDURE plenum.insertReply();
 
--- Only a user who has Joined a Project can create Comments for a Project Task
+-- Only a user who has Joined a Project can create Comments for a Project Task.
 DROP TRIGGER IF EXISTS onCreateComment ON plenum.Comment;
 
 CREATE OR REPLACE FUNCTION plenum.insertComent() RETURNS TRIGGER AS
@@ -96,7 +94,7 @@ CREATE TRIGGER onCreateCloseRequest BEFORE INSERT ON plenum.CloseRequest
 FOR EACH ROW
 EXECUTE PROCEDURE plenum.insertCloseRequest();
 
--- Only a User who Joined a Project can create Tasks for It
+-- Only a User who Joined a Project can create Tasks for It.
 DROP TRIGGER IF EXISTS onCreateTask ON plenum.Task;
 
 CREATE OR REPLACE FUNCTION plenum.insertTask() RETURNS TRIGGER AS
@@ -120,7 +118,7 @@ CREATE TRIGGER onCreateTask BEFORE INSERT ON plenum.Task
 FOR EACH ROW
 EXECUTE PROCEDURE plenum.insertTask();
 
--- Only a User who Joined a Project can be assigned to it's Tasks
+-- Only a User who Joined a Project can be assigned to it's Tasks.
 DROP TRIGGER IF EXISTS onCreateAssigned ON plenum.Assigned;
 
 CREATE OR REPLACE FUNCTION plenum.insertAssigned() RETURNS TRIGGER AS
