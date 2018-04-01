@@ -141,7 +141,7 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateProject BEFORE INSERT OR UPDATE ON plenum.Project
+CREATE TRIGGER onCreateProject BEFORE UPDATE ON plenum.Project
 FOR EACH ROW
 WHEN (NEW.private IS TRUE)
 EXECUTE PROCEDURE plenum.canProjectBePrivate();
