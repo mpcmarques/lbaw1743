@@ -166,3 +166,26 @@ CREATE TRIGGER onUpdateUser BEFORE UPDATE ON plenum.UserTable
 FOR EACH ROW
 WHEN (new.premium = false)
 EXECUTE PROCEDURE plenum.updateUserTable();
+
+--Project can only have one owner
+
+DROP TRIGGER IF EXISTS onCreateJoined ON plenum.UserTable;
+
+CREATE OR REPLACE FUNCTION plenum.onlyOneOwner() RETURNS TRIGGER AS
+$BODY$
+  BEGIN
+  IF EXISTS (
+    SELECT * FROM plenum.Joined
+    WHERE new.idProject = Joined.idProject AND Joined.role = 'Owner')
+  THEN
+    RAISE EXCEPTION 'A Project can only have one owner.';
+  END IF;
+  RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER onCreateJoined BEFORE INSERT ON plenum.Joined
+FOR EACH ROW
+WHEN (new.role = 'Owner')
+EXECUTE PROCEDURE plenum.onlyOneOwner();
