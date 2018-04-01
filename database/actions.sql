@@ -3,11 +3,11 @@
         /*-------------USERS-------------*/
 
 /*Get Users*/
-SELECT userName, email, gender, description
+SELECT username, email, gender, description
 FROM UserTable;
 
 /*Get User Data*/
-SELECT userName, email, gender, description
+SELECT username, email, gender, description
 FROM UserTable
 WHERE UserTable.idUser= $idUser;
 
@@ -23,18 +23,22 @@ WHERE Project.idProject=Joined.idProject
 AND Joined.idUser=UserTable.idUser
 AND UserTable.idUser = $idUser;
 
-/*Select Premium User*/
-SELECT name
-FROM UserTable, PremiumSignature
-WHERE PremiumSignature.idPremium = $idPremium
-AND UserTable.idUser= PremiumSignature.idUser;
+/*Check User PremiumSignature*/
+SELECT premium
+FROM UserTable
+WHERE UserTable.idUser= $idUser;
 
-/*Select Premium Users*/
+/*Select User PremiumSignature Information*/
 SELECT startDate, duration, name
 FROM PremiumSignature, UserTable
 WHERE UserTable.idUser= PremiumSignature.idUser;
 
-/*Select Banned Users*/
+/*Check User BannedRecord*/
+SELECT banned
+FROM UserTable
+WHERE UserTable.idUser= $idUser;
+
+/*Select Get User BannedRecord Information*/
 SELECT UserTable.name, startDate, duration, motive
 FROM UserTable, BannedRecord
 WHERE UserTable.idUser = BannedRecord.idUser;
@@ -47,31 +51,40 @@ AND UserTable.idUser = BannedRecord.idUser;
 
         /*-------------PROJECTS-------------*/
 
-/*Select Project Name*/
-SELECT name FROM Project
+/*Select Project Information*/
+SELECT creationDate, name, description
+FROM Project
 WHERE idProject = $idProject;
 
-/*Select Project Description*/
-SELECT description FROM Project
+/*Check Project Public/Private*/
+SELECT private
+FROM Project
 WHERE idProject = $idProject;
 
-/*Select Project Team Coordinators*/
-SELECT DISTINCT name, email
+/*Select Project Team Owner*/
+SELECT DISTINCT username, name, email
 FROM UserTable, Joined, Project
 WHERE Joined.idProject=$idProject
-AND Joined.role!='Member'
+AND Joined.role == 'Owner'
+AND Joined.idUser=UserTable.idUser;
+
+/*Select Project Team Coordinators*/
+SELECT DISTINCT username, name, email
+FROM UserTable, Joined, Project
+WHERE Joined.idProject=$idProject
+AND Joined.role =='Coordinator'
 AND Joined.idUser=UserTable.idUser;
 
 /*Select Project Team Members*/
-SELECT DISTINCT name, email
+SELECT DISTINCT username, name, email
 FROM UserTable, Joined, Project
 WHERE Joined.idProject=$idProject
-AND Joined.role!='Coordinator'
+AND Joined.role =='Member'
 AND Joined.idUser=UserTable.idUser;
 
         /*-------------FORUMS-------------*/
 
-/*Select Forum Post*/
+/*Select User's Forum Post*/
 SELECT title, lastEditDate, name
 FROM ForumPost, UserTable
 WHERE ForumPost.idUser = UserTable.idUser
@@ -92,7 +105,10 @@ AND Reply.idUser = UserTable.idUser;
 
 /*Select Tasks ordered by earliest deadline*/
 SELECT title, deadline
-WHERE deadline > CURRENT_DATE
+FROM UserTable, Task, Assigned,
+WHERE Assigned.idUser = $idUser
+AND Assigned.idUser = UserTable.idUser
+AND deadline > CURRENT_DATE
 ORDER BY deadline ASC;
 
 /*SELECT Non Completed Tasks From a Project*/
