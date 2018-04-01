@@ -167,7 +167,7 @@ FOR EACH ROW
 WHEN (new.premium = false)
 EXECUTE PROCEDURE plenum.updateUserTable();
 
---Project can only have one owner
+-- A Project can only have one owner.
 
 DROP TRIGGER IF EXISTS onCreateJoined ON plenum.UserTable;
 
