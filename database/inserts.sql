@@ -273,58 +273,58 @@ insert into plenum.usertable (username, password, email, premium, banned, name, 
 
 
 --PremiumSignature
-insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (1, '2018-03-18', interval '5 year', 1);
-insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (2, '2018-01-14', interval '5 year', 2);
-insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (3, '2017-09-07', interval '5 year', 3);
-insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (4, '2017-10-24', interval '5 year', 4);
-insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (5, '2017-03-13', interval '5 year', 5);
+insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (1, '2017-10-20', interval '5 year', 1);
+insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (2, '2017-11-05', interval '5 year', 2);
+insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (3, '2017-06-17', interval '5 year', 3);
+insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (4, '2017-03-01', interval '5 year', 4);
+insert into plenum.premiumsignature (idPremium, startDate, duration, idUser) values (5, '2017-07-10', interval '5 year', 5);
 
 --Project
-insert into plenum.project (creationDate, name, description, private) values ('2018-03-05', 'Tin', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', true);
-insert into plenum.project (creationDate, name, description, private) values ('2018-03-03', 'Treeflex', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', true);
-insert into plenum.project (creationDate, name, description, private) values ('2018-03-18', 'Sub-Ex', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', false);
-insert into plenum.project (creationDate, name, description, private) values ('2018-03-14', 'Bamity', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false);
-insert into plenum.project (creationDate, name, description, private) values ('2018-02-09', 'Voltsillam', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', true);
+insert into plenum.project (creationDate, name, description, private) values ('2017-03-05', 'Tin', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', true);
+insert into plenum.project (creationDate, name, description, private) values ('2017-03-03', 'Treeflex', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', true);
+insert into plenum.project (creationDate, name, description, private) values ('2017-03-18', 'Sub-Ex', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', false);
+insert into plenum.project (creationDate, name, description, private) values ('2017-03-14', 'Bamity', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false);
+insert into plenum.project (creationDate, name, description, private) values ('2017-02-09', 'Voltsillam', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', true);
 
 --Joined
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (1, 1, '2017-10-22', 'Owner');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (2, 2, '2017-11-07', 'Owner');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (3, 3, '2017-06-21', 'Owner');
-insert into plenum.joined (idUser, idProject, joinedDate, role) values (4, 4, '2018-03-06', 'Owner');
+insert into plenum.joined (idUser, idProject, joinedDate, role) values (4, 4, '2017-03-06', 'Owner');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (5, 5, '2017-07-19', 'Owner');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (6, 1, '2017-09-22', 'Coordinator');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (7, 2, '2017-04-27', 'Coordinator');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (8, 3, '2017-04-27', 'Coordinator');
-insert into plenum.joined (idUser, idProject, joinedDate, role) values (9, 4, '2018-01-03', 'Coordinator');
+insert into plenum.joined (idUser, idProject, joinedDate, role) values (9, 4, '2017-07-03', 'Coordinator');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (10, 5, '2017-06-29', 'Coordinator');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (11, 1, '2017-09-22', 'Member');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (12, 2, '2017-09-22', 'Member');
-insert into plenum.joined (idUser, idProject, joinedDate, role) values (13, 3, '2017-09-22', 'Member');
+insert into plenum.joined (idUser, idProject, joinedDate, role) values (13, 3, '2017-09-25', 'Member');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (14, 4, '2017-09-22', 'Member');
-insert into plenum.joined (idUser, idProject, joinedDate, role) values (15, 5, '2017-09-22', 'Member');
+insert into plenum.joined (idUser, idProject, joinedDate, role) values (15, 5, '2017-09-23', 'Member');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (16, 1, '2017-09-22', 'Member');
-insert into plenum.joined (idUser, idProject, joinedDate, role) values (17, 2, '2017-09-22', 'Member');
+insert into plenum.joined (idUser, idProject, joinedDate, role) values (17, 2, '2017-09-21', 'Member');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (18, 3, '2017-09-22', 'Member');
-insert into plenum.joined (idUser, idProject, joinedDate, role) values (19, 4, '2017-09-22', 'Member');
+insert into plenum.joined (idUser, idProject, joinedDate, role) values (19, 4, '2017-09-20', 'Member');
 insert into plenum.joined (idUser, idProject, joinedDate, role) values (20, 5, '2017-09-22', 'Member');
 
 
 --ForumPost
 insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-17', '2018-01-17', 'Enhanced global customer loyalty', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', 1, 1);
-insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-06', '2017-07-15', 'Triple-buffered secondary product', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 2, 2);
+insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-06', NULL, 'Triple-buffered secondary product', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 2, 2);
 insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-19', '2018-02-25', 'Devolved dynamic structure', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 3, 3);
-insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2018-02-23', '2017-12-29', 'Automated bottom-line challenge', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 4, 4);
+insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2018-02-23', NULL, 'Automated bottom-line challenge', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 4, 4);
 insert into plenum.forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-18', '2017-10-27', 'Re-contextualized multi-tasking process improvement', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 5, 5);
 
 --Reply
-insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-30', '2018-03-16', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 1, 6);
-insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2018-03-21', '2017-07-03', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 2, 7);
-insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-12', '2017-05-07', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 3, 8);
-insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-09-23', '2017-09-19', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 4, 9);
-insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-08-09', '2017-11-08', 'Fusce consequat. Nulla nisl. Nunc nisl.', 5, 10);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-30', NULL, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 1, 6);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2018-03-21', NULL, 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 2, 7);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-12', NULL, 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 3, 8);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-09-23', '2017-09-25', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 4, 9);
+insert into plenum.reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-08-09', NULL, 'Fusce consequat. Nulla nisl. Nunc nisl.', 5, 10);
 
 --Task
-insert into plenum.task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2017-07-05', '2017-04-15', 'Customizable neutral circuit', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2018-05-04', true, '2018-05-13', 1, 1);
+insert into plenum.task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2017-07-03', '2017-07-05', 'Customizable neutral circuit', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2018-05-04', true, '2018-05-13', 1, 1);
 insert into plenum.task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2017-06-18', '2017-08-19', 'De-engineered multi-state structure', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', '2018-05-01', false, NULL, 2, 2);
 insert into plenum.task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2017-06-29', '2017-06-25', 'Face to face foreground migration', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', '2018-05-20', false, NULL, 3, 3);
 insert into plenum.task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2018-01-19', '2017-04-25', 'Polarised secondary challenge', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '2018-05-25', true, '2018-05-29', 4, 4);
@@ -341,12 +341,12 @@ insert into plenum.assigned (idUser, idTask) values (5, 5);
 insert into plenum.edittaskinfo (idUser, idTask, editDate) values (1, 1, '2017-07-05');
 
 --Comment
-insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2018-01-12', '2017-09-12', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 1, 1);
+insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-01-12', '2017-09-12', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 1, 1);
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-04-03', '2017-05-07', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 2, 2);
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-10-01', NULL, 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 3, 3);
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-09-25', '2018-03-12', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 4, 4);
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-07-12', NULL, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 5, 5);
-insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2018-03-02', '2017-07-19', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 1, 6);
+insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-03-02', '2017-07-19', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 1, 6);
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-10-01', NULL, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 2, 7);
 
 insert into plenum.comment (creationDate, lastEditDate, content, idTask, idUser, idParent) values ('2018-03-03', NULL, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 1, 1, 6);
@@ -370,11 +370,11 @@ insert into plenum.tagged (idTask, idTag) values (4, 4);
 insert into plenum.tagged (idTask, idTag) values (5, 5);
 
 --CloseRequest
-insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2017-11-04', 'Distributed demand-driven forecast', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false, 1, 1);
-insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2017-10-02', 'Progressive upward-trending hierarchy', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', false, 2, 2);
+insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-04', 'Distributed demand-driven forecast', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false, 1, 1);
+insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-02', 'Progressive upward-trending hierarchy', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', false, 2, 2);
 insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-01-06', 'Switchable leading edge pricing structure', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', false, 3, 3);
 insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-11', 'Digitized high-level analyzer', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', false, 4, 4);
-insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2017-09-14', 'Profit-focused demand-driven workforce', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', true, 5, 5);
+insert into plenum.closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-14', 'Profit-focused demand-driven workforce', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', true, 5, 5);
 
 --Admin
 insert into plenum.admin (username, email, password) values ('barbosa','up201503477@fe.up.pt' ,'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
@@ -383,4 +383,4 @@ insert into plenum.admin (username, email, password) values ('mateus','up2016018
 insert into plenum.admin (username, email, password) values ('jotapsa','up201506252@fe.up.pt' ,'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
 
 --BannedRecord
-insert into plenum.bannedrecord (startDate, duration, motive, idUser, idAdmin) values ('2017-07-06', 3, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 6, 1);
+insert into plenum.bannedrecord (startDate, duration, motive, idUser, idAdmin) values ('2018-01-20', interval '6 months', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 6, 1);

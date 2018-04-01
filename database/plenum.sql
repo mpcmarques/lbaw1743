@@ -230,11 +230,11 @@ CREATE TABLE Admin(
 CREATE TABLE BannedRecord(
 	idBan serial PRIMARY KEY,
 	startDate timestamp NOT NULL,
-	duration integer NOT NULL,
+	duration interval NOT NULL,
 	motive text,
 	idUser integer NOT NULL,
 	idAdmin integer NOT NULL,
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idAdmin) REFERENCES Admin(idAdmin),
-	CONSTRAINT min_time check (duration > 0)
+	CONSTRAINT min_time check (duration > interval '0 second')
 );
