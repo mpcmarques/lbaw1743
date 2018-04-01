@@ -12,9 +12,9 @@
 
 /*Full-text Search Indexes*/
 
-    CREATE INDEX search_username ON User USING GIN (to_tsvector('english', username));
-    CREATE INDEX search_user_name ON User USING GIN (to_tsvector('english', name));
+    CREATE INDEX search_username ON UserTable USING GIN (to_tsvector('english', username));
+    CREATE INDEX search_user_name ON UserTable USING GIN (to_tsvector('english', name));
     CREATE INDEX search_project_name ON Project USING GIN (to_tsvector('english', name));
     CREATE INDEX search_project_description ON Project USING GIST (to_tsvector('english', description));
-    CREATE INDEX search_task_name ON Task USING GIN (to_tsvector('english', name));
-    CREATE INDEX search_task_description ON Task USING GIST (to_tsvector('english', name));
+    CREATE INDEX search_task_name ON Task USING GIN (to_tsvector('english', title));
+    CREATE INDEX search_task_description ON Task USING GIST (to_tsvector('english', description));
