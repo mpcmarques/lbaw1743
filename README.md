@@ -4,7 +4,7 @@
 Group 1743
 
 
-### THEME: 
+### THEME:
 
 7.Project management
 
@@ -25,3 +25,5 @@ https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 * A3: [User Interface Prototype](/artifacts/A3/A3.md)
 * A4: [Conceptual Data Model](/artifacts/A4/A4.md)
 * A5: [Relational Schema, Validation and Schema Refinement](/artifacts/A5/A5.md)
+* A6: [Integrity constraints. Indexes, triggers, user functions and database populated with data](/artifacts/A6/A6.md)
+<!-- * A7: [Web Resources Documentation](/artifacts/A7/A7.md) -->
