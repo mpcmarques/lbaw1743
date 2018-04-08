@@ -1,11 +1,13 @@
--- Only a User who Joined a Project can create Posts in it's Forum.
-DROP TRIGGER IF EXISTS onCreatePost ON plenum.ForumPost;
+SET SCHEMA 'plenum';
 
-CREATE OR REPLACE FUNCTION plenum.insertPost() RETURNS TRIGGER AS
+-- Only a User who Joined a Project can create Posts in it's Forum.
+DROP TRIGGER IF EXISTS onCreatePost ON ForumPost;
+
+CREATE OR REPLACE FUNCTION insertPost() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
-      SELECT * FROM plenum.Joined
+      SELECT * FROM Joined
       WHERE new.idUser = Joined.idUser AND new.idProject = Joined.idProject)
     THEN
       RAISE EXCEPTION 'Only a user who joined a project can post in its forum.';
@@ -15,18 +17,18 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreatePost BEFORE INSERT ON plenum.ForumPost
+CREATE TRIGGER onCreatePost BEFORE INSERT ON ForumPost
 FOR EACH ROW
-EXECUTE PROCEDURE plenum.insertPost();
+EXECUTE PROCEDURE insertPost();
 
 -- Only a User who Joined a Project can Reply in it's Forum.
-DROP TRIGGER IF EXISTS onCreateReply ON plenum.Reply;
+DROP TRIGGER IF EXISTS onCreateReply ON Reply;
 
-CREATE OR REPLACE FUNCTION plenum.insertReply() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION insertReply() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
-      SELECT * FROM plenum.Joined, plenum.ForumPost
+      SELECT * FROM Joined, ForumPost
       WHERE new.idPost = ForumPost.idPost AND ForumPost.idProject = Joined.idProject AND new.idUser = Joined.idUser)
     THEN
       RAISE EXCEPTION 'Only a user who joined a project can reply to posts in its forum.';
@@ -36,18 +38,18 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateReply BEFORE INSERT ON plenum.Reply
+CREATE TRIGGER onCreateReply BEFORE INSERT ON Reply
 FOR EACH ROW
-EXECUTE PROCEDURE plenum.insertReply();
+EXECUTE PROCEDURE insertReply();
 
 -- Only a user who has Joined a Project can create Comments for a Project Task.
-DROP TRIGGER IF EXISTS onCreateComment ON plenum.Comment;
+DROP TRIGGER IF EXISTS onCreateComment ON Comment;
 
-CREATE OR REPLACE FUNCTION plenum.insertComent() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION insertComent() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
-      SELECT * FROM plenum.Joined, plenum.Task
+      SELECT * FROM Joined, Task
       WHERE new.idTask = Task.idTask AND Task.idProject = Joined.idProject AND new.idUser = Joined.idUser)
     THEN
       RAISE EXCEPTION 'Only a user who joined a project can create comments for a Project Task.';
@@ -57,18 +59,18 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateComment BEFORE INSERT ON plenum.Comment
+CREATE TRIGGER onCreateComment BEFORE INSERT ON Comment
 FOR EACH ROW
-EXECUTE PROCEDURE plenum.insertComent();
+EXECUTE PROCEDURE insertComent();
 
 -- Only a User who was Assigned to a Task can create a Close Request for it.
-DROP TRIGGER IF EXISTS onCreateCloseRequest ON plenum.CloseRequest;
+DROP TRIGGER IF EXISTS onCreateCloseRequest ON CloseRequest;
 
-CREATE OR REPLACE FUNCTION plenum.insertCloseRequest() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION insertCloseRequest() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
-      SELECT * FROM plenum.Assigned
+      SELECT * FROM Assigned
       WHERE new.idTask = Assigned.idTask AND new.idUser = Assigned.idUser)
     THEN
       RAISE EXCEPTION 'Only a user who joined a project can create comments for a Project Task.';
@@ -78,18 +80,18 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateCloseRequest BEFORE INSERT ON plenum.CloseRequest
+CREATE TRIGGER onCreateCloseRequest BEFORE INSERT ON CloseRequest
 FOR EACH ROW
-EXECUTE PROCEDURE plenum.insertCloseRequest();
+EXECUTE PROCEDURE insertCloseRequest();
 
 -- Only a User who Joined a Project can create Tasks for It.
-DROP TRIGGER IF EXISTS onCreateTask ON plenum.Task;
+DROP TRIGGER IF EXISTS onCreateTask ON Task;
 
-CREATE OR REPLACE FUNCTION plenum.insertTask() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION insertTask() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
-      SELECT * FROM plenum.Joined
+      SELECT * FROM Joined
       WHERE new.idUser = Joined.idUser AND new.idProject = Joined.idProject)
     THEN
       RAISE EXCEPTION 'Only a user who joined a project can create tasks for it.';
@@ -99,18 +101,18 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateTask BEFORE INSERT ON plenum.Task
+CREATE TRIGGER onCreateTask BEFORE INSERT ON Task
 FOR EACH ROW
-EXECUTE PROCEDURE plenum.insertTask();
+EXECUTE PROCEDURE insertTask();
 
 -- Only a User who Joined a Project can be assigned to it's Tasks.
-DROP TRIGGER IF EXISTS onCreateAssigned ON plenum.Assigned;
+DROP TRIGGER IF EXISTS onCreateAssigned ON Assigned;
 
-CREATE OR REPLACE FUNCTION plenum.insertAssigned() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION insertAssigned() RETURNS TRIGGER AS
 $BODY$
   BEGIN
     IF NOT EXISTS (
-      SELECT * FROM plenum.Joined, plenum.Task
+      SELECT * FROM Joined, Task
       WHERE new.idUser = Joined.idUser AND new.idTask = Task.idTask AND Task.idProject = Joined.idProject)
     THEN
       RAISE EXCEPTION 'Only a user who joined a project can be assigned to its tasks.';
@@ -120,18 +122,18 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateAssigned BEFORE INSERT ON plenum.Assigned
+CREATE TRIGGER onCreateAssigned BEFORE INSERT ON Assigned
 FOR EACH ROW
-EXECUTE PROCEDURE plenum.insertAssigned();
+EXECUTE PROCEDURE insertAssigned();
 
 -- A Project can only be private while the Owner is a Premium User.
-DROP TRIGGER IF EXISTS onCreateProject ON plenum.Project;
+DROP TRIGGER IF EXISTS onCreateProject ON Project;
 
-CREATE OR REPLACE FUNCTION plenum.canProjectBePrivate() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION canProjectBePrivate() RETURNS TRIGGER AS
 $BODY$
   BEGIN
   IF NOT EXISTS (
-    SELECT * FROM plenum.Joined, plenum.UserTable
+    SELECT * FROM Joined, UserTable
     WHERE new.idProject = Joined.idProject AND Joined.role = 'Owner' AND Joined.idUser = UserTable.idUser AND UserTable.premium = true)
   THEN
     RAISE EXCEPTION 'A Project can only be private while the Owner is a Premium User.';
@@ -141,18 +143,18 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateProject BEFORE UPDATE ON plenum.Project
+CREATE TRIGGER onCreateProject BEFORE UPDATE ON Project
 FOR EACH ROW
 WHEN (NEW.private IS TRUE)
-EXECUTE PROCEDURE plenum.canProjectBePrivate();
+EXECUTE PROCEDURE canProjectBePrivate();
 
-DROP TRIGGER IF EXISTS onUpdateUser ON plenum.UserTable;
+DROP TRIGGER IF EXISTS onUpdateUser ON UserTable;
 
-CREATE OR REPLACE FUNCTION plenum.updateUserTable() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION updateUserTable() RETURNS TRIGGER AS
 $BODY$
   BEGIN
   IF EXISTS (
-    SELECT * FROM plenum.Joined, plenum.Project
+    SELECT * FROM Joined, Project
     WHERE new.idUser = Joined.idUser AND Joined.role = 'Owner' AND Project.idProject = Joined.idProject AND Project.private = true)
   THEN
     RAISE EXCEPTION 'A Project can only be private while the Owner is a Premium User.';
@@ -162,20 +164,20 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onUpdateUser BEFORE UPDATE ON plenum.UserTable
+CREATE TRIGGER onUpdateUser BEFORE UPDATE ON UserTable
 FOR EACH ROW
 WHEN (new.premium = false)
-EXECUTE PROCEDURE plenum.updateUserTable();
+EXECUTE PROCEDURE updateUserTable();
 
 -- A Project can only have one owner.
 
-DROP TRIGGER IF EXISTS onCreateJoined ON plenum.UserTable;
+DROP TRIGGER IF EXISTS onCreateJoined ON UserTable;
 
-CREATE OR REPLACE FUNCTION plenum.onlyOneOwner() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION onlyOneOwner() RETURNS TRIGGER AS
 $BODY$
   BEGIN
   IF EXISTS (
-    SELECT * FROM plenum.Joined
+    SELECT * FROM Joined
     WHERE new.idProject = Joined.idProject AND Joined.role = 'Owner')
   THEN
     RAISE EXCEPTION 'A Project can only have one owner.';
@@ -185,7 +187,7 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER onCreateJoined BEFORE INSERT ON plenum.Joined
+CREATE TRIGGER onCreateJoined BEFORE INSERT ON Joined
 FOR EACH ROW
 WHEN (new.role = 'Owner')
-EXECUTE PROCEDURE plenum.onlyOneOwner();
+EXECUTE PROCEDURE onlyOneOwner();
