@@ -261,19 +261,13 @@ CREATE TABLE BannedRecord(
 
 /*Full-text Search Indexes*/
 
-    DROP INDEX IF EXISTS search_username;
-    DROP INDEX IF EXISTS search_user_name;
-    DROP INDEX IF EXISTS search_project_name;
-    DROP INDEX IF EXISTS search_project_description;
-    DROP INDEX IF EXISTS search_task_name;
-    DROP INDEX IF EXISTS search_task_description;
+    DROP INDEX IF EXISTS search_user;
+    DROP INDEX IF EXISTS search_project;
+    DROP INDEX IF EXISTS search_task;
 
-    CREATE INDEX search_username ON UserTable USING GIN (to_tsvector('english', username));
-    CREATE INDEX search_user_name ON UserTable USING GIN (to_tsvector('english', name));
-    CREATE INDEX search_project_name ON Project USING GIN (to_tsvector('english', name));
-    CREATE INDEX search_project_description ON Project USING GIST (to_tsvector('english', description));
-    CREATE INDEX search_task_name ON Task USING GIN (to_tsvector('english', title));
-    CREATE INDEX search_task_description ON Task USING GIST (to_tsvector('english', description));
+    CREATE INDEX search_user ON UserTable USING GIN (to_tsvector('english', username || name));
+    CREATE INDEX search_project ON Project USING GIN (to_tsvector('english', name || description));
+    CREATE INDEX search_task ON Task USING GIN (to_tsvector('english', title || description));
 
 -- Only a User who Joined a Project can create Posts in it's Forum.
 DROP TRIGGER IF EXISTS onCreatePost ON ForumPost;
