@@ -11,11 +11,15 @@
 |
 */
 
-Route::view('/', 'home');
+/* admin */
+Route::get('/admin', 'Admin\AdminController@show');
 
-Route::view('/admin', 'admin.index');
-Route::view('/admin/users', 'admin.users_card');
-Route::view('/admin/projects', 'admin.projects_card');
+Route::get('/admin/users', 'Admin\AdminUsersController@show');
+
+Route::get('/admin/projects', 'Admin\AdminProjectsController@show');
+
+/* page */
+Route::get('/','HomeController@show');
 
 Route::view('/dashboard', 'dashboard.dashboard_card');
 Route::view('/dashboard_tasks', 'dashboard.tasks_card');
