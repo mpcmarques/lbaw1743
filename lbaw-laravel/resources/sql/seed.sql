@@ -1,8 +1,3 @@
-DROP SCHEMA IF EXISTS plenum CASCADE;
-CREATE SCHEMA plenum;
-SET search_path TO plenum,public;
-SET SCHEMA 'plenum';
-
 /* every table should already be dropped, we are just making sure :) */
 /* admin */
 DROP TABLE IF EXISTS Admin;
