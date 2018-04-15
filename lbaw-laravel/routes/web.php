@@ -35,6 +35,8 @@ Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@sh
 
 // project
 
+Route::get('/project', 'Project\ProjectTasksController@show');
+
 Route::get('/project/tasks', 'Project\ProjectTasksController@show');
 
 Route::get('/project/members', 'Project\ProjectMembersController@show');
@@ -57,9 +59,9 @@ Route::get('/search/users', 'Search\SearchUsersController@show');
 
 // task
 
-Route::view('/task', 'task');
+Route::get('/task', 'Task\TaskController@show');
 
-Route::view('/task/edit', 'task_edit');
+Route::get('/task/edit', 'Task\TaskEditController@show');
 
 // profile
 
