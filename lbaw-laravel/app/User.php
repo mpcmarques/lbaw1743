@@ -9,6 +9,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // Don't add create and update timestamps in database.
+    public $timestamps  = false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,4 +29,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * The cards this user owns.
+     */
+     public function cards() {
+      return $this->hasMany('App\Card');
+    }
 }
