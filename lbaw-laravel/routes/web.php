@@ -65,19 +65,19 @@ Route::get('/task/edit', 'Task\TaskEditController@show');
 
 // profile
 
-Route::view('/profile', 'profile.index');
+Route::get('/profile', 'ProfileController@show');
 
 // contact
 
-Route::view('/contact', 'contact');
+Route::get('/contact', 'ContactController@show');
 
 // about
 
-Route::view('/about', 'about');
+Route::get('/about', 'AboutController@show');
 
 // faq
 
-Route::view('/faq', 'faq.faq');
+Route::get('/faq', 'FaqController@show');
 
 /* Register
 Route::view('/register', 'home', ['signupOn' => 'true'])
