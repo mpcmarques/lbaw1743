@@ -27,6 +27,8 @@ Route::get('/dashboard/tasks', 'Dashboard\DashboardTasksController@show');
 
 Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show');
 
+Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@show');
+
 Route::view('/project_tasks', 'project.tasks_card');
 Route::view('/project_members', 'project.members_card');
 Route::view('/project_forum', 'project.forum_card');
@@ -48,8 +50,6 @@ Route::view('/contact', 'contact');
 Route::view('/about', 'about');
 
 Route::view('/faq', 'faq.faq');
-
-Route::view('/dashboard/new-project', 'new-project');
 
 /* Register
 Route::view('/register', 'home', ['signupOn' => 'true'])
