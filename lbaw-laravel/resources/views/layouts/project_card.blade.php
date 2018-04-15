@@ -1,5 +1,5 @@
 <div class="card project-card">
-    <img class="card-img-top img-responsive" src="img/task-placeholder.svg">
+    <img class="card-img-top img-responsive" src="{{ asset('img/task-placeholder.svg') }}">
     <div class="card-body text-center">
         <h5>Project Name</h5>
         <div class="btn-group">

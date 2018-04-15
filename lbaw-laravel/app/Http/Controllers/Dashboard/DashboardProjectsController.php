@@ -8,6 +8,6 @@ class DashboardProjectsController extends Controller
 {
     public function show()
     {
-      return view('dashboard.tasks_card');
+      return view('dashboard.my_projects_card');
     }
 }
