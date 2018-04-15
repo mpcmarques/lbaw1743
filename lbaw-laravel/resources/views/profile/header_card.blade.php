@@ -1,4 +1,9 @@
 <div id="profile-header-card" class="card">
+
+ @if (empty($profile))
+    <h1>Perfil não encontrado></h1>
+ @else
+
   <button class="btn btn-primary card-edit-button" data-toggle="modal" data-target="#editprofile-modal">
     <span class="octicon octicon-pencil">
     </span>
@@ -88,16 +93,21 @@
         <img class="img-round" src="{{ asset('img/profile_pic.png') }}" alt="Profile Picture" width="100">
       </div>
       <div class="col-md-9">
-        <h1 class="display-4">Profile Name</h1>
+        <h1 class="display-4">{{$profile->username}}</h1>
         <p class="card-text">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          {{$profile->description}}
         </p>
         <div class="company">
           <span class="octicon octicon-location"/>
-          <strong>FEUP</strong>
+          <strong>{{$profile->institution}}</strong>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+@endif
+
 </div>
+
+
