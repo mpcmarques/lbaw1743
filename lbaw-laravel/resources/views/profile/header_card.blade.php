@@ -85,7 +85,7 @@
   <div class="grid">
     <div class="row">
       <div class="col-md-3 text-center">
-        <img class="img-round" src="img/profile_pic.png" alt="Profile Picture" width="100">
+        <img class="img-round" src="{{ asset('img/profile_pic.png') }}" alt="Profile Picture" width="100">
       </div>
       <div class="col-md-9">
         <h1 class="display-4">Profile Name</h1>

@@ -1,10 +1,16 @@
 <?php
+
 namespace App\Http\Controllers;
+
+use App\UserTable;
 
 class ProfileController extends Controller
 {
-    public function show()
+    public function show($id)
     {
-      return view('profile.index');
+    
+      $profile = UserTable::find($id);
+
+      return view('profile.index', ['profile' => $profile]);
     }
 }

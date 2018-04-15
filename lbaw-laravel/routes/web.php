@@ -65,7 +65,7 @@ Route::get('/task/edit', 'Task\TaskEditController@show');
 
 // profile
 
-Route::get('/profile', 'ProfileController@show');
+Route::get('/profile/{id}', 'ProfileController@show');
 
 // contact
 
