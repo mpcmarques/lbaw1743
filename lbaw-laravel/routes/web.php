@@ -49,18 +49,31 @@ Route::get('/project/manage_users', 'Project\ProjectManageUsersController@show')
 
 // search
 
-Route::view('/search_projects', 'search.projects_card');
-Route::view('/search_tasks', 'search.tasks_card');
-Route::view('/search_users', 'search.users_card');
+Route::get('/search/projects', 'Search\SearchProjectsController@show');
+
+Route::get('/search/tasks', 'Search\SearchTasksController@show');
+
+Route::get('/search/users', 'Search\SearchUsersController@show');
+
+// task
 
 Route::view('/task', 'task');
+
 Route::view('/task/edit', 'task_edit');
+
+// profile
 
 Route::view('/profile', 'profile.index');
 
+// contact
+
 Route::view('/contact', 'contact');
 
+// about
+
 Route::view('/about', 'about');
+
+// faq
 
 Route::view('/faq', 'faq.faq');
 
