@@ -21,9 +21,11 @@ Route::get('/admin/projects', 'Admin\AdminProjectsController@show');
 /* page */
 Route::get('/','HomeController@show');
 
-Route::view('/dashboard', 'dashboard.dashboard_card');
-Route::view('/dashboard_tasks', 'dashboard.tasks_card');
-Route::view('/dashboard_my_projects', 'dashboard.my_projects_card');
+Route::get('/dashboard', 'Dashboard\DashboardController@show');
+
+Route::get('/dashboard/tasks', 'Dashboard\DashboardTasksController@show');
+
+Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show');
 
 Route::view('/project_tasks', 'project.tasks_card');
 Route::view('/project_members', 'project.members_card');

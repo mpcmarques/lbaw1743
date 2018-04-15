@@ -12,7 +12,7 @@
         </div>
         <div class="col">
           <a href="index.php">
-            <img src="img/logo.png">
+            <img src="{{ assets('img/logo.png') }}">
           </a>
         </div>
         <div class="col">
