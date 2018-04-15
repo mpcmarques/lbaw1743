@@ -1,54 +1,54 @@
 /* every table should already be dropped, we are just making sure :) */
 /* admin */
-DROP TABLE IF EXISTS Admin;
+DROP TABLE IF EXISTS Admin CASCADE;
 
 /* UserTable */
-DROP TABLE IF EXISTS UserTable;
+DROP TABLE IF EXISTS UserTable CASCADE ;
 
 /* premium signature*/
-DROP TABLE IF EXISTS PremiumSignature;
+DROP TABLE IF EXISTS PremiumSignature CASCADE;
 
 /* country */
-DROP TABLE IF EXISTS Country;
+DROP TABLE IF EXISTS Country CASCADE;
 
 /* joined */
-DROP TABLE IF EXISTS Joined;
+DROP TABLE IF EXISTS Joined CASCADE;
 
 /* project */
-DROP TABLE IF EXISTS Project;
+DROP TABLE IF EXISTS Project CASCADE;
 
 /* forum post*/
-DROP TABLE IF EXISTS ForumPost;
+DROP TABLE IF EXISTS ForumPost CASCADE;
 
 /* reply */
-DROP TABLE IF EXISTS Reply;
+DROP TABLE IF EXISTS Reply CASCADE;
 
 /* banned record */
-DROP TABLE IF EXISTS BannedRecord;
+DROP TABLE IF EXISTS BannedRecord CASCADE;
 
 /* task */
-DROP TABLE IF EXISTS Task;
+DROP TABLE IF EXISTS Task CASCADE;
 
 /* tag */
-DROP TABLE IF EXISTS Tag;
+DROP TABLE IF EXISTS Tag CASCADE;
 
 /* tagged */
-DROP TABLE IF Exists Tagged;
+DROP TABLE IF Exists Tagged CASCADE;
 
 /* comment */
-DROP TABLE IF EXISTS Comment;
+DROP TABLE IF EXISTS Comment CASCADE;
 
 /* completed task*/
-DROP TABLE IF EXISTS Completed_Task;
+DROP TABLE IF EXISTS Completed_Task CASCADE;
 
 /* close request */
-DROP TABLE IF EXISTS CloseRequest;
+DROP TABLE IF EXISTS CloseRequest CASCADE;
 
 /* edit task info */
-DROP TABLE IF EXISTS EditTaskInfo;
+DROP TABLE IF EXISTS EditTaskInfo CASCADE;
 
 /* assigned */
-DROP TABLE IF EXISTS Assigned;
+DROP TABLE IF EXISTS Assigned CASCADE;
 
 /* dropping old data types*/
 DROP TYPE IF EXISTS gender;

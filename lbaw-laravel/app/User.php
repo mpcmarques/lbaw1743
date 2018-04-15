@@ -31,9 +31,12 @@ class User extends Authenticatable
     ];
 
     /**
-     * The cards this user owns.
+     * The table associated with the model.
      */
-     public function cards() {
-      return $this->hasMany('App\Card');
-    }
+    protected $table = 'usertable';
+
+    /* 
+    *   Primary key
+    */
+    protected $primaryKey = 'iduser';
 }
