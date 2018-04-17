@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Task;
 
 use App\Http\Controllers\Controller;
 
-use App\Task;
-use App\Project;
+use App\Model\Task;
+use App\Model\Project;
 
 class TaskEditController extends Controller
 {

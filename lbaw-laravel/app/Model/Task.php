@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
-use App\BaseModel;
+use App\Model\BaseModel;
 
 class Task extends BaseModel
 {
