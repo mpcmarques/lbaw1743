@@ -15,6 +15,19 @@
 
 Route::get('/admin', 'Admin\AdminController@show');
 
+// route to show the login form
+Route::get('/admin/login', 'Admin\AdminController@show');
+
+// logout
+Route::get('/admin/logout', function(){
+    Auth::logout();
+
+    return redirect('/admin');
+});
+
+// route to process the login form
+Route::post('/admin/login', 'Admin\AdminController@login')->name('/admin/login');
+
 Route::get('/admin/users', 'Admin\AdminUsersController@show');
 
 Route::get('/admin/projects', 'Admin\AdminProjectsController@show');

@@ -6,15 +6,31 @@
             </h4>
         </div>
         <div class="card-body">
-            <form>
+            <form method="POST" action="{{ route('/admin/login') }}">
+                {{ csrf_field() }}
+
                 <div class="form-group">
-                    <label for="username">Username / Email</label>
-                    <input class="form-control"  placeholder="Username / Email">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" class="form-control"  placeholder="Email" required>
+
+                    @if ($errors->has('email'))
+                    <div class="card text-white bg-danger">
+                        <div class="card-header">{{ $errors->first('email') }}</div>
+                    </div>
+                    @endif
+
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+                    @if ($errors->has('password'))
+                        <div class="card text-white bg-danger">
+                            <div class="card-header">{{ $errors->first('password') }}</div>
+                        </div>
+                    @endif
                 </div>
+
                 <div class="nav-item">
                   <button type="submit" class="btn btn-primary">Login</button>
                 </div>
