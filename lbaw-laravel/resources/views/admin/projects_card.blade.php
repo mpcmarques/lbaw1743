@@ -26,46 +26,40 @@
 <div class="nopadding">
   <div class="card-body">
     <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Owner</th>
-        <th scope="col">Members</th>
-        <th scope="col">Tasks</th>
-        <th scope="col">Created at</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row">
-          <div class="text-center">
-            <input type="checkbox" value="">
-          </div>
-        </td>
-        <td>1</td>
-        <td>Atom</td>
-        <td><span class="text-link" href="#">@mateus</span></td>
-        <td>22</td>
-        <td>177</td>
-        <td>01/02/2018</td>
-      </tr>
-      <tr>
-        <td scope="row">
-          <div class="text-center">
-            <input type="checkbox" value="">
-          </div>
-        </td>
-        <td>2</td>
-        <td>Yarn</td>
-        <td><span class="text-link" href="#">@jotapsa</span></td>
-        <td>5</td>
-        <td>58</td>
-        <td>20/01/2018</td>
-      </tr>
-    </tbody>
-  </table>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Owner</th>
+          <th scope="col">Members</th>
+          <th scope="col">Tasks</th>
+          <th scope="col">Created at</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for($i = 0; $i < count($projects); $i++)
+        <tr>
+          <td scope="row">
+            <div class="text-center">
+              <input type="checkbox" value="">
+            </div>
+          </td>
+          <td>{{$projects[$i]->idproject}}</td>
+          <td>{{$projects[$i]->name}}</td>
+          <td>
+            <span class="text-link" href="#">
+              @mateus
+            </span>
+          </td>
+          <td>22</td>
+          <td>177</td>
+          <td>{{$projects[$i]->creationdate}}</td>
+        </tr>
+        @endfor
+    
+      </tbody>
+    </table>
   </div>
 </div>
 @endsection
@@ -78,10 +72,11 @@
       <span class="octicon octicon-pencil">
         Edit
       </span></a>
-    <a class="btn btn-primary" href="#" role="button">
-          <span class="octicon octicon-trashcan">
-            Remove
-          </span></a>
-  </div>
-</div>
-@endsection
+      <a class="btn btn-primary" href="#" role="button">
+        <span class="octicon octicon-trashcan">
+          Remove
+        </span></a>
+      </div>
+    </div>
+    @endsection
+    

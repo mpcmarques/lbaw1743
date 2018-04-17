@@ -40,6 +40,7 @@
       </tr>
     </thead>
     <tbody>
+      @for($i = 0; $i < count($users); $i++)
       <tr>
         <td scope="row">
           <div class="text-center">
@@ -47,25 +48,18 @@
           </div>
         </td>
         <td>1</td>
-        <td><span class="text-link" href="#">@mateus</span></td>
-        <td>Mateus Pedroza</th>
-        <td>mpcm@lbaw.com</th>
+        <td>
+          <span class="text-link" href="#">
+            {{$users[$i]->username}}
+          </span>
+        </td>
+        <td>{{$users[$i]->name}}</th>
+        <td>{{$users[$i]->email}}</th>
         <td>01/01/2018</th>
         <td>01/03/2018</th>
       </tr>
-      <tr>
-        <td scope="row">
-          <div class="text-center">
-            <input type="checkbox" value="">
-          </div>
-        </td>
-        <td>2</td>
-        <td><span class="text-link" href="#">@bmcb</span></td>
-        <td>Bernardo Barbosa</td>
-        <td>bmcb@lbaw.com</td>
-        <td>05/02/2018</td>
-        <td>02/03/2018</td>
-      </tr>
+      @endfor
+      
     </tbody>
   </table>
   </div>
