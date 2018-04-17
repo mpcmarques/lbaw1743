@@ -2,7 +2,7 @@
 
 namespace App;
 
-use BaseModel;
+use App\BaseModel;
 
 class Project extends BaseModel
 {

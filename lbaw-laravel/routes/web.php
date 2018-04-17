@@ -71,9 +71,9 @@ Route::get('/search/users', 'Search\SearchUsersController@show');
 
 // task
 
-Route::get('/task', 'Task\TaskController@show');
+Route::get('project/{idProject}/task/{idTask}', 'Task\TaskController@show');
 
-Route::get('/task/edit', 'Task\TaskEditController@show');
+Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@show');
 
 // profile
 

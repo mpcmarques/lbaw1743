@@ -4,10 +4,16 @@ namespace App\Http\Controllers\Task;
 
 use App\Http\Controllers\Controller;
 
+use App\Task;
+use App\Project;
+
 class TaskController extends Controller
 {
-    public function show()
+    public function show($idProject, $idTask)
     {
-      return view('task');
+      $project = Project::find($idProject);
+      $task = Task::find($idTask);
+
+      return view('task', ['task'=> $task, 'project' => $project]);
     }
 }

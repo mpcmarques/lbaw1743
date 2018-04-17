@@ -1,6 +1,6 @@
-<button class="btn btn-primary card-edit-button" {{ $extra }}>
-    <a href="{{$href}}">
+<a href="{{$href}}">
+    <button class="btn btn-primary card-edit-button" {{ $extra }}>
         <span class="octicon octicon-pencil">
         </span>
-    </a>
-</button>
+    </button>
+</a>
