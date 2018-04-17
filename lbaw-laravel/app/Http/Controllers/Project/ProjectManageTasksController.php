@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Project;
 
-use App\Http\Controllers\Controller;
+use App\Project;
 
 class ProjectManageTasksController extends Controller
 {

@@ -47,20 +47,19 @@ Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show');
 Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@show');
 
 // project
+//TODO: redirecte project/id to project/id/tasks
 
-Route::get('/project', 'Project\ProjectTasksController@show');
+Route::get('/project/{id}/tasks', 'Project\ProjectTasksController@show');
 
-Route::get('/project/tasks', 'Project\ProjectTasksController@show');
+Route::get('/project/{id}/members', 'Project\ProjectMembersController@show');
 
-Route::get('/project/members', 'Project\ProjectMembersController@show');
+Route::get('/project/{id}/forum', 'Project\ProjectForumController@show');
 
-Route::get('/project/forum', 'Project\ProjectForumController@show');
+Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show');
 
-Route::get('/project/options', 'Project\ProjectOptionsController@show');
+Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show');
 
-Route::get('/project/manage_tasks', 'Project\ProjectManageTasksController@show');
-
-Route::get('/project/manage_users', 'Project\ProjectManageUsersController@show');
+Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show');
 
 // search
 
