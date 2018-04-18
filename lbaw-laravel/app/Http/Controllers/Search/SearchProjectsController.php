@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class SearchProjectsController extends Controller
 {
-    public function show()
+    public function show($text)
     {
       return view('search.projects_card');
     }

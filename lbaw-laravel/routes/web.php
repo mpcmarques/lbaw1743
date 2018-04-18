@@ -64,13 +64,16 @@ Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@s
 
 Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show');
 
-// search
+// TODO: search 
+Route::post('/search', 'Search\SearchController@search')->name('/search');
 
-Route::get('/search/projects', 'Search\SearchProjectsController@show');
+Route::get('/search/{text}', 'Search\SearchController@show');
 
-Route::get('/search/tasks', 'Search\SearchTasksController@show');
+Route::get('/search/{text}/projects', 'Search\SearchProjectsController@show');
 
-Route::get('/search/users', 'Search\SearchUsersController@show');
+Route::get('/search/{text}/tasks', 'Search\SearchTasksController@show');
+
+Route::get('/search/{text}/users', 'Search\SearchUsersController@show');
 
 // task
 

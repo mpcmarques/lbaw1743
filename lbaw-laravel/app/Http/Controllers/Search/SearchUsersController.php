@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class SearchUsersController extends Controller
 {
-    public function show()
+    public function show($text)
     {
       return view('search.users_card');
     }

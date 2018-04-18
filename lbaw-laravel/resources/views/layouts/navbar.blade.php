@@ -15,8 +15,29 @@
 		</ul>
 		
 		{{-- search input --}}
-		@include('layouts.search-input', ['name' => 'navbar-search'])
+		<div class="navbar-search">
+			<form class="form-inline" method="POST" action="{{ route('/search') }}">
+				{{ csrf_field() }}
+				
+				<div class="input-group">
+					<input id="search-text"
+					name="search-text"
+					class="form-control input"
+					type="search"
+					placeholder="Search"
+					aria-label="Search"
+					value="{{ old('search-text') }}"
+					>
+					<div class="input-group-append">
+						<button  type="submit" class="btn input-button" type="button">
+							<span class="octicon octicon-search" />
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
 		
+		{{-- buttons --}}
 		<div class="buttons">
 			<button class="btn btn-outline-terciary my-2 my-sm-0" data-toggle="modal" data-target="#signup-modal">
 				Register
