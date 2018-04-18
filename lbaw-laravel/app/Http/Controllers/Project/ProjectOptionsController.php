@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Project;
 
 use App\Http\Controllers\Controller;
+use App\Model\Project;
 
 class ProjectOptionsController extends Controller
 {
-    public function show()
+    public function show($id)
     {
-      return view('project.options_card');
+      $project = Project::find($id);
+
+      return view('project.options_card', ['project' => $project]);
     }
 }

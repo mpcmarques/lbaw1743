@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Project;
 
-use App\Project;
+use App\Http\Controllers\Controller;
+use App\Model\Project;
 
 class ProjectManageTasksController extends Controller
 {
-    public function show()
+    public function show($id)
     {
-      return view('project.manage_tasks_card');
+      $project = Project::find($id);
+
+      return view('project.manage_tasks_card', ['project' => $project]);
     }
 }
