@@ -36,7 +36,7 @@ Route::get('/admin/projects', 'Admin\AdminProjectsController@show');
 
 Route::get('/','HomeController@show');
 
-Route::get('/login', 'HomeController@show');
+Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@login')->name('/login');
 
 // dashboard

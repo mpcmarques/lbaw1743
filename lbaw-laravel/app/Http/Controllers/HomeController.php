@@ -13,6 +13,10 @@ class HomeController extends Controller
   {
     return view('home');
   }
+
+  public function showLogin(){
+    return view('home', ['login' => true]);
+  }
   
   /**
   * Where to redirect users after login.
