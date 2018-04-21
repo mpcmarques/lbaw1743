@@ -9,4 +9,25 @@ class Task extends BaseModel
   function __construct(){
     parent::__construct('task', 'idtask');
   }
+  
+  /**
+  * Get the users assigned to the task
+  */
+  public function assigned() {
+    return $this->belongsToMany('\App\Model\User', 'assigned', 'idtask', 'iduser');
+  }
+  
+  /**
+   * Get the user that created the task
+   */
+  public function creator(){
+    return $this->belongsTo('App\Model\User', 'iduser');
+  }
+
+  /**
+  * Tasks comments
+   */
+  public function comments() {
+    return $this->hasMany('App\Model\Comment', 'idtask');
+  }
 }
