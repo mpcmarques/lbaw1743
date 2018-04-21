@@ -24,21 +24,22 @@
 </div>
 
 @endsection
+<!-- TODO:creationDate -->
+<!--  TODO:show more button-->
+<!-- TODO: Last message -->
 
 @section('card-body')
-
+@foreach($project->posts as $post)
 <div class="card forum-card">
   <div class="card-header">
-    <p>UI Design discussion</p>
+    <p>{{$post->title}}</p>
   </div>
   <div class="card-body">
     <p>
       <b>Last message by @mpcm:</b>
     </p>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Molestie nunc non blandit massa enim.
-      At volutpat diam ut venenatis.
+      {{$post->content}}
     </p>
     <p>
       show more...
@@ -46,33 +47,11 @@
   </div>
   <div class="card-footer mt-0 pt-0">
     <p class="text-justify">
-      2 days ago.
+      {{$post->creationDate}}
     </p>
   </div>
 </div>
-<div class="card forum-card">
-  <div class="card-header">
-    <p>General ideas</p>
-  </div>
-  <div class="card-body">
-    <p>
-      <b>Last message by @jotapsa:</b>
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Molestie nunc non blandit massa enim.
-      At volutpat diam ut venenatis.
-    </p>
-    <p>
-      show more...
-    </p>
-  </div>
-  <div class="card-footer mt-0 pt-0">
-    <p class="text-justify">
-      10 days ago.
-    </p>
-  </div>
-</div>
+@endforeach
 <button type="button" id="forum-button" class="btn btn-block btn-xs m-0 p-0">...</button>
 
 @endsection

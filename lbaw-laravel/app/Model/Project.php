@@ -21,6 +21,14 @@ class Project extends BaseModel
    /**
      * Get the members for the project.
      */
+    public function posts()
+    {
+        return $this->hasMany('\App\Model\Post', 'idpost', 'idproject');
+    }
+
+   /**
+     * Get the members for the project.
+     */
     public function members()
     {
         return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role');
