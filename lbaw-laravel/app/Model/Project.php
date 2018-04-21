@@ -17,4 +17,12 @@ class Project extends BaseModel
    {
        return $this->hasMany('App\Model\Task', 'idtask', 'idproject');
    }
+
+   /**
+     * Get the members for the project.
+     */
+    public function members()
+    {
+        return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role');
+    }
 }

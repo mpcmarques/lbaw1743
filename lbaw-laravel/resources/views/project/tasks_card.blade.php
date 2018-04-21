@@ -43,7 +43,6 @@
     </thead>
     <tbody>
       @foreach($project->tasks as $task)
-      {{$task}}
       <tr>
         <th scope="row">
           <p class"text-left">{{$task->idTask}}</p>

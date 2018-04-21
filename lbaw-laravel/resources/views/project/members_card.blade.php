@@ -51,46 +51,28 @@
       </tr>
     </thead>
     <tbody>
+      @foreach ($project->members as $member)
       <tr>
         <th scope="row">
           <img src="{{ asset('img/profile_pic.png')}}" class="img-round img-center thumbnail-small" alt="Profile Picture">
         </th>
         <td>
           <div class="text-left">
-            jotapsa
+            {{$member->username}}
           </div>
         </td>
         <td>
           <div class="text-left">
-            João Sá
+            {{$member->name}}
           </div>
         </td>
         <td>
           <div class="text-left">
-            Member
+            {{$member->pivot->role}}
           </div>
         </td>
       </tr>
-      <tr>
-        <th scope="row">
-          <img src="{{ asset('img/profile_pic.png')}}" class="img-round img-center thumbnail-small" alt="Profile Picture">
-        </th>
-        <td>
-          <div class="text-left">
-            mpcm
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            Mateus Pedroza
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            Member
-          </div>
-        </td>
-      </tr>
+      @endforeach
     </tbody>
   </table>
 </div>
