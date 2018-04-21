@@ -9,14 +9,14 @@ class Task extends BaseModel
   function __construct(){
     parent::__construct('task', 'idtask');
   }
-  
+
   /**
   * Get the users assigned to the task
   */
   public function assigned() {
     return $this->belongsToMany('\App\Model\User', 'assigned', 'idtask', 'iduser');
   }
-  
+
   /**
    * Get the user that created the task
    */
@@ -30,4 +30,12 @@ class Task extends BaseModel
   public function comments() {
     return $this->hasMany('App\Model\Comment', 'idtask');
   }
+
+  /**
+   * Get the close requests for the task
+   */
+  public function closeRequest(){
+    return $this->hasMany('App\Model\CloseRequest', 'idtask');
+  }
+
 }

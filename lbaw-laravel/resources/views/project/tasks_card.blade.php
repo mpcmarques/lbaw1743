@@ -45,7 +45,7 @@
       @foreach($project->tasks as $task)
       <tr>
         <th scope="row">
-          <p class"text-left">{{$task->idTask}}</p>
+          <p class"text-left">{{$task->idtask}}</p>
         </th>
         <td>
           <p class="text-left">{{$task->title}}</p>
@@ -54,7 +54,13 @@
           <p class="text-left">{{$task->title}}</p>
         </td>
         <td>
-          <p class="text-left">{{$task->title}}</p>
+          <p class="text-left">
+            @if (count($task->assigned))
+              Yes
+            @else
+              No
+            @endif
+          </p>
         </td>
       </tr>
       @endforeach

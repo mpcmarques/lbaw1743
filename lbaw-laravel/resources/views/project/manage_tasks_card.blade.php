@@ -55,6 +55,7 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($project->tasks as $task)
       <tr>
         <th scope="row">
           <div class="text-center">
@@ -62,26 +63,32 @@
           </div>
         </th>
         <td>
-          <div class="text-left">
-            UI Design
+          <div class="text-left">{{$task->title}}</div>
+        </td>
+        <td>
+          <div class="text-left">{{count($task->assigned)}}</div>
           </div>
         </td>
         <td>
           <div class="text-left">
-            11
+            @if (count($task->assigned))
+              Assigned
+            @else
+              Not Assigned
+            @endif
           </div>
         </td>
         <td>
           <div class="text-left">
-            Assigned
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            No
+            @if (count($task->closeRequest))
+              Yes
+            @else
+              No
+            @endif
           </div>
         </td>
       </tr>
+      @endforeach
     </tbody>
   </table>
 </div>

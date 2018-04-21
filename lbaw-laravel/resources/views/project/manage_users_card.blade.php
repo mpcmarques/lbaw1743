@@ -54,6 +54,7 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($project->members as $member)
       <tr>
         <th scope="row">
           <div class="text-center">
@@ -61,26 +62,19 @@
           </div>
         </th>
         <td>
-          <div class="text-left">
-            jotapsa
-          </div>
+          <div class="text-left">{{$member->username}}</div>
         </td>
         <td>
-          <div class="text-left">
-            11
-          </div>
+          <div class="text-left">{{count($member->assignedTasksForProject)}}</div>
         </td>
         <td>
-          <div class="text-left">
-            João Sá
-          </div>
+          <div class="text-left">{{$member->name}}</div>
         </td>
         <td>
-          <div class="text-left">
-            Member
-          </div>
+          <div class="text-left">{{$member->pivot->role}}</div>
         </td>
       </tr>
+      @endforeach
     </tbody>
   </table>
 </div>

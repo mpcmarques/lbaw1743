@@ -35,7 +35,7 @@ class User extends Authenticatable
      */
     protected $table = 'usertable';
 
-    /* 
+    /*
     *   Primary key
     */
     protected $primaryKey = 'iduser';
@@ -45,5 +45,12 @@ class User extends Authenticatable
      */
     public function publicProjects() {
         return $this->belongsToMany('\App\Model\Project', 'joined', 'iduser', 'idproject');
+    }
+
+    /**
+     * Get the assigned tasks of the user for a project
+     */
+    public function assignedTasksForProject() {
+        return $this->belongsToMany('\App\Model\Task', 'assigned', 'idtask', 'iduser');
     }
 }
