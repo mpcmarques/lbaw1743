@@ -42,7 +42,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($project->tasks() as $task)
+      @foreach($project->tasks as $task)
       {{$task}}
       <tr>
         <th scope="row">

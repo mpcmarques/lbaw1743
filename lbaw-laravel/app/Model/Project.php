@@ -15,6 +15,6 @@ class Project extends BaseModel
     */
    public function tasks()
    {
-       return $this->hasMany('App\Model\Task', 'idproject', 'idtask');
+       return $this->hasMany('App\Model\Task', 'idtask', 'idproject');
    }
 }

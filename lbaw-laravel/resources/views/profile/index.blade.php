@@ -11,7 +11,7 @@
   </div>
   <div class="container-fluid">
     {{-- projects card--}}
-    @include('profile.projects_card')
+    @include('profile.projects_card', ['projects' => $profile->publicProjects])
   </div>
 </div>
 
