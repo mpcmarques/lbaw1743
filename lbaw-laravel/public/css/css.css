@@ -394,7 +394,6 @@ div.required label:after {
 .card.project-card .card-body .btn-group .btn{
     width: 33.3%;
     display: inline-block;
-    padding: 0;
 }
 
 .card.project-card .card-body  a {
