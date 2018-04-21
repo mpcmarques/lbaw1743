@@ -7,10 +7,10 @@ use App\Model\Project;
 
 class ProjectForumController extends Controller
 {
-    public function show($id)
-    {
-      $project = Project::find($id);
+  public function show($id)
+  {
+    $project = Project::findOrFail($id);
 
-      return view('project.forum_card', ['project' => $project]);
-    }
+    return view('project.forum_card', ['project' => $project]);
+  }
 }

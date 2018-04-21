@@ -1,6 +1,6 @@
 @extends('project.project-layout')
 
-@section('title', 'Manage Tasks')
+@section('title', 'Tasks')
 
 @section('card-header')
 
@@ -42,34 +42,23 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($project->tasks() as $task)
+      {{$task}}
       <tr>
         <th scope="row">
-          <p class"text-left">123</p>
+          <p class"text-left">{{$task->idTask}}</p>
         </th>
         <td>
-          <p class="text-left">Bug Correction</p>
+          <p class="text-left">{{$task->title}}</p>
         </td>
         <td>
-          <p class="text-left">Bug fix</p>
+          <p class="text-left">{{$task->title}}</p>
         </td>
         <td>
-          <p class="text-left">@jotapsa</p>
+          <p class="text-left">{{$task->title}}</p>
         </td>
       </tr>
-      <tr>
-        <th scope="row">
-          <p class"text-left">142</p>
-        </th>
-        <td>
-          <p class="text-left">UI Improvement</p>
-        </td>
-        <td>
-          <p class="text-left">Design</p>
-        </td>
-        <td>
-          <p class="text-left">@mpcm</p>
-        </td>
-      </tr>
+      @endforeach
     </tbody>
   </table>
   <a id="newtask-button" class="btn btn-block btn-xs m-0 p-0" href="#" role="button">+ create new task</a>
