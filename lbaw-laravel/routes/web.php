@@ -11,7 +11,7 @@
 |
 */
 
-/* ==> Mark admin */
+/* ========> Mark admin */
 
 Route::get('/admin', 'Admin\AdminController@show');
 
@@ -32,10 +32,11 @@ Route::get('/admin/users', 'Admin\AdminUsersController@show');
 
 Route::get('/admin/projects', 'Admin\AdminProjectsController@show');
 
-/* ==> MARK: app */
+/* =========> MARK: app */
 
 Route::get('/','HomeController@show');
 
+// login 
 Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@login')->name('/login');
 
@@ -96,17 +97,3 @@ Route::get('/about', 'AboutController@show');
 // faq
 
 Route::get('/faq', 'FaqController@show');
-
-/* Register
-Route::view('/register', 'home', ['signupOn' => 'true'])
-*/
-
-// Authentication
-/*
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-
-Route::post('login', 'Auth\LoginController@login');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
-*/
