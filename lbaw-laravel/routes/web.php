@@ -40,6 +40,9 @@ Route::get('/','HomeController@show');
 Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@login')->name('/login');
 
+// register
+Route::post('register', 'HomeController@register')->name('register');
+
 // dashboard
 
 Route::get('/dashboard', 'Dashboard\DashboardController@show');
