@@ -4,11 +4,12 @@
     <h1>Perfil não encontrado></h1>
  @else
 
+ @if(Auth::check() && Auth::user() == $profile)
   <button class="btn btn-primary card-edit-button" data-toggle="modal" data-target="#editprofile-modal">
     <span class="octicon octicon-pencil">
     </span>
   </button>
-
+@endif
 
   <div class="modal fade bd-example-modal-lg" id="editprofile-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
