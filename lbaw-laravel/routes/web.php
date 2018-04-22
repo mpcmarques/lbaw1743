@@ -41,6 +41,7 @@ Route::get('login', 'HomeController@showLogin');
 Route::post('login', 'HomeController@login')->name('login');
 
 // register
+Route::get('register', 'HomeController@showRegisterModal');
 Route::post('register', 'HomeController@register')->name('register');
 
 // logout

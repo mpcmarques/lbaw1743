@@ -40,6 +40,10 @@ class HomeController extends Controller {
   public function showLogin(){
     return view('home', ['login' => true]);
   }
+
+  public function showRegisterModal(){
+    return view('home', ['showRegisterModal' => true]);
+  }
   
   /**
   * Get the failed login response instance.

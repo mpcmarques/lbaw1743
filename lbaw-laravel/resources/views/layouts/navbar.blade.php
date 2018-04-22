@@ -44,9 +44,9 @@
 			<button class="btn btn-outline-terciary my-2 my-sm-0" data-toggle="modal" data-target="#signup-modal">
 				Register
 			</button>
-			<a href="{{ url('/login') }}" class="btn btn-outline-primary my-2 my-sm-0">
+			<button class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#signin-modal">
 				Login
-			</a>
+			</button>
 			
 			@else
 			
@@ -127,6 +127,17 @@
 		</div>
 	</div>
 </div>
+
+{{-- Show login when $login is not empty and true --}}
+@if( ! empty($showRegisterModal) && $showRegisterModal)
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#signup-modal").modal({show: true});
+	});
+</script>
+
+@endif
 
 <div class="modal fade bd-example-modal-lg" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
