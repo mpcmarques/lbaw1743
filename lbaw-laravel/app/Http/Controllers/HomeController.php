@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller {
   
@@ -16,13 +17,21 @@ class HomeController extends Controller {
   
   
   /**
+  * Create a new controller instance.
+  *
+  * @return void
+  */
+  public function __construct()
+  {
+    $this->middleware('guest');
+  }
+  
+  /**
   * Where to redirect users after registration.
   *
   * @var string
   */
-  protected $redirectTo = '/dashboard';
-  
-  
+  protected $redirectTo = 'dashboard';
   
   public function show() {
     return view('home');
@@ -30,6 +39,34 @@ class HomeController extends Controller {
   
   public function showLogin(){
     return view('home', ['login' => true]);
+  }
+  
+  /**
+  * Get the failed login response instance.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Symfony\Component\HttpFoundation\Response
+  *
+  * @throws ValidationException
+  */
+  protected function sendFailedLoginResponse(Request $request)
+  {
+    
+    $user = User::where($this->username(), $request->email)->first();
+    
+    if (!$user){
+      $message = [$this->username() => trans('auth.email')];
+    }
+
+    else if ($user->password != $request->password){
+      $message = ['password' => trans('auth.password')];
+    }
+
+    else {
+      $message = [$this->username() => trans('auth.failed')];
+    }
+  
+    throw ValidationException::withMessages($message);
   }
   
   protected function validator(array $data){
