@@ -37,8 +37,8 @@ Route::get('/admin/projects', 'Admin\AdminProjectsController@show');
 Route::get('/','HomeController@show');
 
 // login
-Route::get('/login', 'HomeController@showLogin');
-Route::post('/login', 'HomeController@login')->name('/login');
+Route::get('login', 'HomeController@showLogin');
+Route::post('login', 'HomeController@login')->name('login');
 
 // register
 Route::post('register', 'HomeController@register')->name('register');
@@ -51,13 +51,13 @@ Route::get('/logout', function(){
 
 // dashboard
 
-Route::get('/dashboard', 'Dashboard\DashboardController@show');
+Route::get('/dashboard', 'Dashboard\DashboardController@show')->middleware('auth');
 
-Route::get('/dashboard/tasks', 'Dashboard\DashboardTasksController@show');
+Route::get('/dashboard/tasks', 'Dashboard\DashboardTasksController@show')->middleware('auth');
 
-Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show');
+Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show')->middleware('auth');
 
-Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@show');
+Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@show')->middleware('auth');
 
 // project
 //TODO: redirecte project/id to project/id/tasks
