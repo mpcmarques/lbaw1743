@@ -43,6 +43,12 @@ Route::post('/login', 'HomeController@login')->name('/login');
 // register
 Route::post('register', 'HomeController@register')->name('register');
 
+// logout
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect('/');
+});
+
 // dashboard
 
 Route::get('/dashboard', 'Dashboard\DashboardController@show');

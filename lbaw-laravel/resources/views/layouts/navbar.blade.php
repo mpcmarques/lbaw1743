@@ -39,12 +39,21 @@
 		
 		{{-- buttons --}}
 		<div class="buttons">
+			
+			@if(!Auth::check())
 			<button class="btn btn-outline-terciary my-2 my-sm-0" data-toggle="modal" data-target="#signup-modal">
 				Register
 			</button>
 			<a href="{{ url('/login') }}" class="btn btn-outline-primary my-2 my-sm-0">
 				Login
 			</a>
+			
+			@else
+			
+			Logged as <a href="{{ url('/logout') }}">{{Auth::user()->username}}</a>
+			
+			@endif
+			
 		</div>
 	</div>
 </nav>
@@ -78,7 +87,7 @@
 						<label for="email">Email</label>
 						<input id="email" type="email" name="email" class="form-control"  placeholder="Email" required>
 						
-						@if ($errors->has('email'))
+						@if (isset($errors) && $errors->has('email'))
 						<div class="card text-white bg-danger">
 							<div class="card-header">{{ $errors->first('email') }}</div>
 						</div>
@@ -89,7 +98,7 @@
 					<div class="form-group">
 						<label for="password">Password</label>
 						<input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
-						@if ($errors->has('password'))
+						@if (isset($errors)  && $errors->has('password'))
 						<div class="card text-white bg-danger">
 							<div class="card-header">{{ $errors->first('password') }}</div>
 						</div>
@@ -139,7 +148,7 @@
 						<div class="col-sm-8">
 							<input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus class="form-control">
 						</div>
-						@if ($errors->has('name'))
+						@if (isset($errors) && $errors->has('name'))
 						<span class="error">
 							{{ $errors->first('name') }}
 						</span>
@@ -151,7 +160,7 @@
 						<div class="col-sm-8">
 							<input id="username" name="username" type="text" class="form-control" value="{{ old('username') }}" required>
 						</div>
-						@if ($errors->has('username'))
+						@if (isset($errors) && $errors->has('username'))
 						<span class="error">
 							{{ $errors->first('username') }}
 						</span>
@@ -163,7 +172,7 @@
 						<div class="col-sm-8">
 							<input  id="email" type="email" name="email" value="{{ old('email') }}" class="form-control" required>
 						</div>
-						@if ($errors->has('email'))
+						@if (isset($errors) && $errors->has('email'))
 						<span class="error">
 							{{ $errors->first('email') }}
 						</span>
@@ -175,7 +184,7 @@
 						<div class="col-sm-8">
 							<input id="password" type="password" name="password" class="form-control validate" required>
 						</div>
-						@if ($errors->has('password'))
+						@if (isset($errors) && $errors->has('password'))
 						<span class="error">
 							{{ $errors->first('password') }}
 						</span>
@@ -195,7 +204,7 @@
 							<input id="institution_company" name="institution_company" type="text" class="form-control validate">
 						</div>
 					</div>
-					@if ($errors->has('institution_company'))
+					@if (isset($errors) && $errors->has('institution_company'))
 					<span class="error">
 						{{ $errors->first('institution_company') }}
 					</span>
@@ -206,7 +215,7 @@
 						<div class="col-sm-8">
 							<input id="birthday" name="birthday" type="date" class="form-control validate" value="2000-01-01" required>
 						</div>
-						@if ($errors->has('birthday'))
+						@if (isset($errors) && $errors->has('birthday'))
 						<span class="error">
 							{{ $errors->first('birthday') }}
 						</span>
@@ -219,7 +228,7 @@
 							<label class="form-check-label" for="gridCheck">
 								I read and agreed with the Terms of Service and the Privacy Policy
 							</label>
-							@if ($errors->has('checkbox'))
+							@if (isset($errors) && $errors->has('checkbox'))
 							<span class="error">
 								{{ $errors->first('checkbox') }}
 							</span>
