@@ -11,26 +11,36 @@ class Project extends BaseModel
   }
 
   /**
-    * Get the tasks for the project.
-    */
-   public function tasks()
-   {
-       return $this->hasMany('App\Model\Task', 'idtask', 'idproject');
-   }
+  * Get the tasks for the project.
+  */
+  public function tasks()
+  {
+    return $this->hasMany('App\Model\Task', 'idtask', 'idproject');
+  }
 
-   /**
-     * Get the members for the project.
-     */
-    public function posts()
-    {
-        return $this->hasMany('\App\Model\Post', 'idpost', 'idproject');
-    }
+  /**
+  * Get the members for the project.
+  */
+  public function posts()
+  {
+    return $this->hasMany('\App\Model\Post', 'idpost', 'idproject');
+  }
 
-   /**
-     * Get the members for the project.
-     */
-    public function members()
-    {
-        return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role');
-    }
+  /**
+  * Get the members for the project.
+  */
+  public function members()
+  {
+    return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role');
+  }
+
+  public function scopeName($query, $text)
+  {
+    return $query->where('name', 'like', "%{$text}%");
+  }
+
+  public function scopeDescription($query, $text)
+  {
+    return $query->where('description', 'like', "%{$text}%");
+  }
 }
