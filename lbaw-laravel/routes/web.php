@@ -74,7 +74,7 @@ Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@s
 
 Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show');
 
-// TODO: search
+// search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 
 //TODO: redirecte search/text to search/text/projects

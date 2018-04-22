@@ -6,14 +6,14 @@
 
 <div id="about-page" class="container about-page">
     <h1 class="text-center">About</h1>
-    {{-- 
-        
+    {{--
+
         <div class="container developers text-center">
             @include('layouts.user-card')
             @include('layouts.user-card')
             @include('layouts.user-card')
             @include('layouts.user-card')
-        </div> 
+        </div>
         --}}
         <div class="container text">
             <p class="text-center">
@@ -21,6 +21,5 @@
             </p>
         </div>
     </div>
-    
+
     @endsection
-    

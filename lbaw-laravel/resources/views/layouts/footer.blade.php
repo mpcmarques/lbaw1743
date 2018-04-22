@@ -3,17 +3,17 @@
         <div class="container">
             <div class="row border-bottom border-light pt-2 pb-2 justify-content-center">
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="faq">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="{{ url('/faq') }}">
                         FAQ
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="about">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="{{ url('/about') }}">
                         About us
                     </a>
                 </div>
                 <div class="col-3">
-                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="contact">
+                    <a class="nav-link text-uppercase text-center text-white p-0 m-0" href="{{ url('/contact') }}">
                         Contact
                     </a>
                 </div>
@@ -38,4 +38,3 @@
         </p>
     </div>
 </footer>
-
