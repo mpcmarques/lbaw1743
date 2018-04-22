@@ -43,8 +43,13 @@ class User extends Authenticatable
     
     /**
     * Get the public projects of the user
+    * TODO: check if the project is public before showing it
     */
     public function publicProjects() {
+        return $this->belongsToMany('\App\Model\Project', 'joined', 'iduser', 'idproject');
+    }
+
+    public function projects(){
         return $this->belongsToMany('\App\Model\Project', 'joined', 'iduser', 'idproject');
     }
     

@@ -27,5 +27,9 @@
   </button>
 </a>
   {{-- projects card --}}
-  @include('layouts.project_card')
+
+  @foreach($user->projects as $project)
+    @include('layouts.project_card', ['project' => $project])
+  @endforeach
+
 @endsection
