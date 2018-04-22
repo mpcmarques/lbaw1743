@@ -22,10 +22,10 @@
 
 @section('card-body')
 
-@include('layouts.user-card')
-
-@include('layouts.user-card')
-
-@include('layouts.user-card')
+<!--
+foreach user
+include('layouts.user-card')
+endforeach
+ -->
 
 @endsection

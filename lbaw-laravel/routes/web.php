@@ -36,7 +36,7 @@ Route::get('/admin/projects', 'Admin\AdminProjectsController@show');
 
 Route::get('/','HomeController@show');
 
-// login 
+// login
 Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@login')->name('/login');
 
@@ -74,10 +74,11 @@ Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@s
 
 Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show');
 
-// TODO: search 
+// TODO: search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 
-Route::get('/search/{text}', 'Search\SearchController@show');
+//TODO: redirecte search/text to search/text/projects
+// Route::get('/search/{text}', 'Search\SearchController@show');
 
 Route::get('/search/{text}/projects', 'Search\SearchProjectsController@show');
 
