@@ -21,9 +21,10 @@
 @endsection
 
 @section('card-body')
+@foreach ($search_title as $task)
 <div class="card">
   <div class="card-header">
-    <p>#132 - Change profile name</p>
+    <p>#{{$task->idtask}} - {{$task->title}}</p>
   </div>
   <div class="card-body">
     <div class="row">
@@ -38,11 +39,7 @@
         </p>
       </div>
     </div>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Molestie nunc non blandit massa enim.
-      At volutpat diam ut venenatis.
-    </p>
+    <p>{{$task->description}}</p>
   </div>
   <div class="card-footer">
     <div class="row">
@@ -58,5 +55,5 @@
     </div>
   </div>
 </div>
+@endforeach
 @endsection
-

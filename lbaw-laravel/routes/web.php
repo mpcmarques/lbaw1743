@@ -60,7 +60,9 @@ Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show')-
 Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@show')->middleware('auth');
 
 // project
-//TODO: redirecte project/id to project/id/tasks
+Route::get('/project/{id}', function($id){
+  return redirect('/project/'.$id.'/tasks');
+});
 
 Route::get('/project/{id}/tasks', 'Project\ProjectTasksController@show');
 
@@ -74,11 +76,12 @@ Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@s
 
 Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show');
 
-// TODO: search
+// search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 
-//TODO: redirecte search/text to search/text/projects
-// Route::get('/search/{text}', 'Search\SearchController@show');
+Route::get('/search/{text}', function($text){
+  return redirect('/search/'.$text.'/projects');
+});
 
 Route::get('/search/{text}/projects', 'Search\SearchProjectsController@show');
 
