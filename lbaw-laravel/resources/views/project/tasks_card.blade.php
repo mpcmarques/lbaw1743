@@ -22,6 +22,8 @@
 @endsection
 
 @section('card-body')
+<!-- TODO: create new task -->
+<!-- TODO: last task activity -->
 
 <div class="nopadding">
   <table class="table">
@@ -34,7 +36,7 @@
           <p class="text-left font-weight-bold">Task Name</p>
         </th>
         <th scope="col-4">
-          <p class="text-left font-weight-bold">Category</p>
+          <p class="text-left font-weight-bold">Tags</p>
         </th>
         <th scope="col-3">
           <p class="text-left font-weight-bold">Assigned</p>
@@ -51,7 +53,11 @@
           <p class="text-left">{{$task->title}}</p>
         </td>
         <td>
-          <p class="text-left">{{$task->title}}</p>
+          <p class="text-left">
+            @foreach($task->tags as $tag)
+              {{$tag->name}}
+            @endforeach
+          </p>
         </td>
         <td>
           <p class="text-left">

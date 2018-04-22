@@ -54,7 +54,7 @@
       @foreach ($project->members as $member)
       <tr>
         <th scope="row">
-          <img src="{{ asset('img/profile_pic.png')}}" class="img-round img-center thumbnail-small" alt="Profile Picture">
+          <img src="{{ asset('img/profile/'.$member->iduser.'.png')}}" class="img-round img-center thumbnail-small" alt="Profile Picture">
         </th>
         <td>
           <div class="text-left">
@@ -81,16 +81,6 @@
 @section('card-footer')
 
 <div class="card-footer">
-  <div class="float-right">
-    <a class="btn btn-terciary" href="#" role="button">
-      <span class="octicon octicon-pencil"/>
-      Edit
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
-      <span class="octicon octicon-trashcan"/>
-      Remove
-    </a>
-  </div>
 </div>
 
 @endsection

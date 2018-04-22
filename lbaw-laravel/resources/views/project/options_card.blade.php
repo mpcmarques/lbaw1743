@@ -14,7 +14,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-2">
-        <img src="img/project_placeholder.png" alt="Project current image" class="img-center thumbnail">
+        <img src="{{ asset('img/project/'.$project->idproject.'.png') }}" alt="Project current image" class="img-center thumbnail">
       </div>
       <div class="col-md-10">
         <div id="upload-image" class="input-group">

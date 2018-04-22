@@ -99,14 +99,34 @@
 
 <div class="card-footer">
   <div class="float-right">
-    <a class="btn btn-terciary" href="#" role="button">
+    <button type="button" class="btn btn-terciary">
       <span class="octicon octicon-pencil"/>
       Edit
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
+    </button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeTasksModal">
       <span class="octicon octicon-trashcan"/>
       Remove
-    </a>
+    </button>
+  </div>
+</div>
+
+<div class="modal fade" id="removeTasksModal" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Remove tasks?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Warning: this action is destructive!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Remove</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
 

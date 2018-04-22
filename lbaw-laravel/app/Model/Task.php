@@ -38,4 +38,10 @@ class Task extends BaseModel
     return $this->hasMany('App\Model\CloseRequest', 'idtask');
   }
 
+  /**
+  * Get the tags for the task
+  */
+  public function tags() {
+    return $this->belongsToMany('\App\Model\Tag', 'tagged', 'idtask', 'idtag');
+  }
 }
