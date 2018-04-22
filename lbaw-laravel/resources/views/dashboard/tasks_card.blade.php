@@ -56,34 +56,23 @@
         </tr>
       </thead>
       <tbody>
+        @foreach($user->tasks as $task)
         <tr>
           <th scope="row">
-            <p class"text-left">123</p>
+            <p class"text-left">{{$task->idtask}}</p>
           </th>
           <td>
-            <p class="text-left">Bug Correction</p>
+            <p class="text-left">{{$task->title}}</p>
           </td>
           <td>
-            <p class="text-left">Bug fix</p>
+            <p class="text-left">{{$task->description}}</p>
           </td>
           <td>
-            <p class="text-left">Project name</p>
+            <p class="text-left">{{$task->project->name}}</p>
           </td>
         </tr>
-        <tr>
-          <th scope="row">
-            <p class"text-left">142</p>
-          </th>
-          <td>
-            <p class="text-left">UI Improvement</p>
-          </td>
-          <td>
-            <p class="text-left">Design</p>
-          </td>
-          <td>
-            <p class="text-left">Project name</p>
-          </td>
-        </tr>
+        @endforeach
+        
       </tbody>
     </table>
   </div>

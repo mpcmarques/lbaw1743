@@ -56,10 +56,18 @@ class User extends Authenticatable
     public function setPasswordAttribute($password){
         $this->attributes['password'] = $password;
     }
+
     /**
      * Get the assigned tasks of the user for a project
      */
     public function assignedTasksForProject($idproject) {
         return $this->belongsToMany('\App\Model\Task', 'assigned', 'idtask', 'iduser');
+    }
+
+    /**
+     * Get all user tasks, created or assigned to him
+     */
+    public function tasks(){
+        return $this->hasMany('App\Model\Task', 'iduser');
     }
 }
