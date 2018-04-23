@@ -27,4 +27,5 @@ https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 * A5: [Relational Schema, Validation and Schema Refinement](/artifacts/A5/A5.md)
 * A6: [Integrity constraints. Indexes, triggers, user functions and database populated with data](/artifacts/A6/A6.md)
 * A7: [Web Resources Documentation](/artifacts/A7/A7.md)
-<!-- * A8: [Vertical prototype](/artifacts/A8/A8.md) -->
+* A8: [Vertical prototype](/artifacts/A8/A8.md)
+* A9: [Main Accesses to the database and transactions](/artifacts/A9/A9.md)
