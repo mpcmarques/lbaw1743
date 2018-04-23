@@ -57,6 +57,7 @@
       </thead>
       <tbody>
         @foreach($user->tasks as $task)
+
         <tr>
           <th scope="row">
             <p class"text-left">{{$task->idtask}}</p>

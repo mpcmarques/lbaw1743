@@ -39,7 +39,7 @@ class Task extends BaseModel
   }
 
   public function project(){
-    return $this->belongsTo('App\Model\Project', 'idtask');
+    return $this->belongsTo('App\Model\Project', 'idproject');
   }
 
   /**
