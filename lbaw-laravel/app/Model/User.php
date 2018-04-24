@@ -61,7 +61,7 @@ class User extends Authenticatable
   * Get the assigned tasks of the user for a project
   */
   public function assignedTasksForProject($idproject) {
-    return $this->belongsToMany('\App\Model\Task', 'assigned', 'idtask', 'iduser');
+    return $this->belongsToMany('\App\Model\Task', 'assigned', 'idtask', 'iduser')->where('idproject', '=', $idproject);
   }
 
   /**
