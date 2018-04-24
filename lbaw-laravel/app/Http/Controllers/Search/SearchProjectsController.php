@@ -7,9 +7,9 @@ use App\Model\Project;
 
 class SearchProjectsController extends Controller{
   public function show($text){
-    $search_name = Project::name($text)->get();
-    $search_desc = Project::description($text)->get();
+    $search_name = null;
+    $search_desc = null;
 
-    return view('search.projects_card', ['text' => $text, 'search_name' => $search_name, 'search_desc' => $search_desc]);
+    return view('search.projects_card', ['text' => $text, 'projects' => $search_name]);
   }
 }

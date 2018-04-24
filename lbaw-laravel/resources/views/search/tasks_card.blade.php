@@ -21,7 +21,8 @@
 @endsection
 
 @section('card-body')
-@foreach ($search_title as $task)
+
+@foreach ($tasks as $task)
 <div class="card">
   <div class="card-header">
     <p>#{{$task->idtask}} - {{$task->title}}</p>
@@ -56,4 +57,5 @@
   </div>
 </div>
 @endforeach
+
 @endsection

@@ -7,9 +7,8 @@ use App\Http\Controllers\Controller;
 
 class SearchUsersController extends Controller{
   public function show($text){
-    $search_username = User::username($text)->get();
-    $search_name = User::name($text)->get();
+    $users = User::usernameName($text)->get();
 
-    return view('search.users_card', ['text' => $text, 'search_username' => $search_username, 'search_name' => $search_name]);
+    return view('search.users_card', ['text' => $text, 'users' => $users]);
   }
 }
