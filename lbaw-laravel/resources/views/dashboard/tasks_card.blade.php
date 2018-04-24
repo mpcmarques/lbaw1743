@@ -39,7 +39,7 @@
   </div>
   <div class="card-body">
     <table class="table">
-      <thead>
+      <thead class="thead-light">
         <tr>
           <th scope="col-1">
             #
@@ -48,7 +48,7 @@
             Task Name
           </th>
           <th scope="col-4">
-            Category
+            Tags
           </th>
           <th scope="col-3">
             Project
@@ -66,7 +66,17 @@
             <p class="text-left">{{$task->title}}</p>
           </td>
           <td>
-            <p class="text-left">{{$task->description}}</p>
+            <p class="text-left">
+              @if(count($task->tags) > 0)
+
+              @foreach($task->tags as $tag)
+                {{$tag->name}}
+              @endforeach
+
+              @else
+              none
+              @endif
+            </p>
           </td>
           <td>
             <p class="text-left">{{$task->project->name}}</p>
