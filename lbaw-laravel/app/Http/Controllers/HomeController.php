@@ -69,8 +69,11 @@ class HomeController extends Controller {
     else {
       $message = [$this->username() => trans('auth.failed')];
     }
-  
-    throw ValidationException::withMessages($message);
+    
+    $exception = ValidationException::withMessages($message);
+    $exception->redirectTo('login');
+
+    throw $exception;
   }
   
   protected function validator(array $data){
