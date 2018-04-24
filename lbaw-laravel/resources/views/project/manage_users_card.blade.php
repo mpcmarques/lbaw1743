@@ -65,7 +65,7 @@
           <div class="text-left">{{$member->username}}</div>
         </td>
         <td>
-          <div class="text-left">foo</div>
+          <div class="text-left">{{count($member->assignedTasksForProject($project->idproject)->get())}}</div>
         </td>
         <td>
           <div class="text-left">{{$member->name}}</div>
