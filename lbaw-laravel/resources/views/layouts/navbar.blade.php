@@ -85,24 +85,16 @@
 					
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input id="email" type="email" name="email" class="form-control"  placeholder="Email" required>
-						
-						@if (isset($errors) && $errors->has('email'))
-						<div class="card text-white bg-danger">
-							<div class="card-header">{{ $errors->first('email') }}</div>
-						</div>
-						@endif
+
+						@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
 						
 					</div>
 					
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
-						@if (isset($errors)  && $errors->has('password'))
-						<div class="card text-white bg-danger">
-							<div class="card-header">{{ $errors->first('password') }}</div>
-						</div>
-						@endif
+
+						@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
+
 					</div>
 					
 					<div class="nav-item">
@@ -157,93 +149,88 @@
 					<div class="form-group row required">
 						<label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
 						<div class="col-sm-8">
-							<input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus class="form-control">
+
+							@include('layouts.validation-input', ['name' => 'name'])
+
 						</div>
-						@if (isset($errors) && $errors->has('name'))
-						<span class="error">
-							{{ $errors->first('name') }}
-						</span>
-						@endif
 					</div>
 					
 					<div class="form-group row required">
 						<label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
 						<div class="col-sm-8">
-							<input id="username" name="username" type="text" class="form-control" value="{{ old('username') }}" required>
+							
+							@include('layouts.validation-input', ['name' => 'username'])
+
 						</div>
-						@if (isset($errors) && $errors->has('username'))
-						<span class="error">
-							{{ $errors->first('username') }}
-						</span>
-						@endif
+						
 					</div>
 					
 					<div class="form-group row required">
 						<label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
 						<div class="col-sm-8">
-							<input  id="email" type="email" name="email" value="{{ old('email') }}" class="form-control" required>
+							
+							@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
+
 						</div>
-						@if (isset($errors) && $errors->has('email'))
-						<span class="error">
-							{{ $errors->first('email') }}
-						</span>
-						@endif
+					
 					</div>
 					
 					<div class="form-group row required">
 						<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
 						<div class="col-sm-8">
-							<input id="password" type="password" name="password" class="form-control validate" required>
+
+							@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
+
 						</div>
-						@if (isset($errors) && $errors->has('password'))
-						<span class="error">
-							{{ $errors->first('password') }}
-						</span>
-						@endif
+					
 					</div>
 					
 					<div class="form-group row required">
 						<label for="inputRepeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
 						<div class="col-sm-8">
-							<input id="password-confirm"  name="password_confirmation" type="password" class="form-control validate" required>
+							@include('layouts.validation-input', ['name' => 'password_confirmation', 'type' => 'password'])
 						</div>
 					</div>
+
 					<!--  Gender -->
+
 					<div class="form-group row">
 						<label for="inputInstCompany" class="col-sm-4 col-form-label">Institution / Company</label>
 						<div class="col-sm-8">
-							<input id="institution_company" name="institution_company" type="text" class="form-control validate">
+							@include('layouts.validation-input', ['name' => 'institution_company'])
 						</div>
 					</div>
-					@if (isset($errors) && $errors->has('institution_company'))
-					<span class="error">
-						{{ $errors->first('institution_company') }}
-					</span>
-					@endif
+			
 					
 					<div class="form-group row required">
 						<label for="inputInstCompany" class="col-sm-4 col-form-label">Birthday</label>
 						<div class="col-sm-8">
-							<input id="birthday" name="birthday" type="date" class="form-control validate" value="2000-01-01" required>
+							@include('layouts.validation-input', ['name' => 'birthday', 'type' => 'date'])
 						</div>
-						@if (isset($errors) && $errors->has('birthday'))
-						<span class="error">
-							{{ $errors->first('birthday') }}
-						</span>
-						@endif
 					</div>
 					
 					<div class="modal-footer d-flex justify-content-end">
 						<div class="form-check">
+
+
+							@if (isset($errors) && $errors->has('checkbox'))
+							
+							<input id="checkbox" name="checkbox" class="form-check-input is-invalid" type="checkbox">
+
+							<span class="invalid-feedback">
+								{{ $errors->first('checkbox') }}
+							</span>
+
+							@else 
+
 							<input id="checkbox" name="checkbox" class="form-check-input" type="checkbox">
+
+							@endif
+
 							<label class="form-check-label" for="gridCheck">
 								I read and agreed with the Terms of Service and the Privacy Policy
 							</label>
-							@if (isset($errors) && $errors->has('checkbox'))
-							<span class="error">
-								{{ $errors->first('checkbox') }}
-							</span>
-							@endif
+
 						</div>
 						<button type="submit" class="btn btn-primary">Register</button>	
 					</div>
