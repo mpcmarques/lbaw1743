@@ -70,12 +70,8 @@ class User extends Authenticatable
   public function tasks(){
     return $this->hasMany('App\Model\Task', 'iduser');
   }
-
-  public function scopeUsername($query, $text){
-    return $query->where('username', 'like', "%{$text}%");
-  }
-
-  public function scopeName($query, $text){
-    return $query->where('name', 'like', "%{$text}%");
+  
+  public function scopeUsernameName($query, $text){
+    return $query->where('username', 'like', "%{$text}%")->orWhere('name', 'like', "%{$text}%");
   }
 }

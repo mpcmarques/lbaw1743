@@ -2,14 +2,23 @@
 
 namespace App\Http\Controllers\Search;
 
-use App\Model\Task;
 use App\Http\Controllers\Controller;
+
+use App\Model\Project;
+use App\Model\User;
+use App\Model\Task;
 
 class SearchTasksController extends Controller{
   public function show($text){
-    $search_title = Task::title($text)->get();
-    $search_desc = Task::description($text)->get();
+    $projects = Project::nameDescription($text)->get();
+    $tasks = Task::titleDescription($text)->get();
+    $users = User::usernameName($text)->get();
 
-    return view('search.tasks_card', ['text' => $text, 'search_title' => $search_title, 'search_desc' => $search_desc]);
+    return view('search.tasks_card',
+    ['text' => $text,
+    'countProjects' => $projects->count(),
+    'countTasks' => $tasks->count(),
+    'countUsers' => $users->count(),
+    'tasks' => $tasks]);
   }
 }

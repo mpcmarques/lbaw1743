@@ -80,9 +80,11 @@ Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@s
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 
-Route::get('/search/{text}', function($text){
-  return redirect('/search/'.$text.'/projects');
-});
+// Route::get('/search/{text}', function($text){
+//   return redirect('/search/'.$text.'/projects');
+// });
+
+Route::get('/search/{text}', 'Search\SearchController@show');
 
 Route::get('/search/{text}/projects', 'Search\SearchProjectsController@show');
 

@@ -22,12 +22,7 @@
 
 @section('card-body')
 
-
-@foreach ($search_username as $user)
-@include('layouts.user-card', ['user' => $user])
-@endforeach
-
-@foreach ($search_name as $user)
+@foreach ($users as $user)
 @include('layouts.user-card', ['user' => $user])
 @endforeach
 

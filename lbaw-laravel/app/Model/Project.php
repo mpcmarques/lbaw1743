@@ -34,13 +34,7 @@ class Project extends BaseModel
     return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role');
   }
 
-  public function scopeName($query, $text)
-  {
-    return $query->where('name', 'like', "%{$text}%");
-  }
-
-  public function scopeDescription($query, $text)
-  {
-    return $query->where('description', 'like', "%{$text}%");
+  public function scopeNameDescription($query, $text){
+    return $query->where('name', 'like', "%{$text}%")->orWhere('description', 'like', "%{$text}%");
   }
 }
