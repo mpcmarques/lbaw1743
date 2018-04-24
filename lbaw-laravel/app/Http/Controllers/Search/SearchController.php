@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Search;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
 use App\Model\Project;
 use App\Model\User;
 use App\Model\Task;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class SearchController extends Controller{
   public function search(Request $request){
@@ -30,11 +31,26 @@ class SearchController extends Controller{
     }
 
     if($projects->count() >= $tasks->count() && $projects->count() >= $users->count()){
-      return view('search.projects_card', ['text' => $text, 'projects' => $projects]);
+      return view('search.projects_card',
+      ['text' => $text,
+      'countProjects' => $projects->count(),
+      'countTasks' => $tasks->count(),
+      'countUsers' => $users->count(),
+      'projects' => $projects]);
     } else if($tasks->count() >= $projects->count() && $tasks->count() >= $users->count()){
-      return view('search.tasks_card', ['text' => $text, 'tasks' => $tasks]);
+      return view('search.tasks_card',
+      ['text' => $text,
+      'countProjects' => $projects->count(),
+      'countTasks' => $tasks->count(),
+      'countUsers' => $users->count(),
+      'tasks' => $tasks]);
     } else{
-      return view('search.users_card', ['text' => $text, 'users' => $users]);
+      return view('search.users_card',
+      ['text' => $text,
+      'countProjects' => $projects->count(),
+      'countTasks' => $tasks->count(),
+      'countUsers' => $users->count(),
+      'users' => $users]);
     }
   }
 }
