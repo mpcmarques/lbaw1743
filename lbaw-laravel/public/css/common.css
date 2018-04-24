@@ -165,6 +165,25 @@ option.slct-primary {
     color: #70C1B3;
 }
 
+/* badges */
+
+.badge.badge-primary {
+    background-color: #F25F5C !important;
+    border-color: #F25F5C;
+}
+
+.badge.badge-secondary {
+    background-color: #247BA0 !important;
+    border-color: #247BA0;
+    color: white;
+}
+
+.badge.badge-terciary {
+    background-color: #70C1B3 !important;
+    border-color: #70C1B3;
+    color: white;
+}
+
 /* nav-links*/
 
 .nav .nav-link.active{
