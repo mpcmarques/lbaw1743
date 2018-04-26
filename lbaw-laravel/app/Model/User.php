@@ -53,9 +53,10 @@ class User extends Authenticatable
     return $this->belongsToMany('\App\Model\Project', 'joined', 'iduser', 'idproject');
   }
 
+  /*
   public function setPasswordAttribute($password){
     $this->attributes['password'] = $password;
-  }
+  }*/
 
   /**
   * Get the assigned tasks of the user for a project

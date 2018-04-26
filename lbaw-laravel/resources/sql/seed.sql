@@ -1,5 +1,5 @@
-DROP EXTENSION IF EXISTS pgcrypto;
-CREATE EXTENSION pgcrypto;
+/*DROP EXTENSION IF EXISTS pgcrypto;
+CREATE EXTENSION pgcrypto;*/
 
 /* every table should already be dropped, we are just making sure :) */
 /* admin */
