@@ -11,7 +11,7 @@
           <h1 class="text-right">4</h1>
         </div>
         <div class="col">
-          <a href="index.php">
+          <a href="/">
             <img src="{{ asset('img/logo.png') }}">
           </a>
         </div>
