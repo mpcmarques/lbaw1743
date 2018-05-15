@@ -50,14 +50,19 @@
 
 			@else
 
-			<div class="nav-item dropdown text-right pl-4 pr-4">
+			<div class="nav-item dropdown text-right">
 				<img class="img-round dropdown-toggle" data-toggle="dropdown" src="{{ asset('img/profile/'.Auth::user()->iduser.'.png') }}" alt="Profile Picture" width="40" height="40">
-		      <div class="dropdown-menu">
+		      <div class="dropdown-menu dropdown-menu-right">
 						<a class="dropdown-item" href="{{ url('/profile/'.Auth::user()->iduser) }}">Profile</a>
 		        <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
 		      </div>
 		  </div>
 
+			<a class="logout" href="{{ url('/logout') }}">
+				<button class="btn btn-outline-primary my-2 my-sm-0">
+					Logout
+				</button>
+			</a>
 			@endif
 
 		</div>
