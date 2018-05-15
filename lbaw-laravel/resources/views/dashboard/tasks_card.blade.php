@@ -63,7 +63,9 @@
             <p class"text-left">{{$task->idtask}}</p>
           </th>
           <td>
-            <p class="text-left">{{$task->title}}</p>
+            <p class="text-left">
+              <a href="{{ url('project/'.$task->project->idproject.'/task/'.$task->idtask) }}">{{$task->title}}</a>
+            </p>
           </td>
           <td>
             <p class="text-left">
@@ -79,11 +81,13 @@
             </p>
           </td>
           <td>
-            <p class="text-left">{{$task->project->name}}</p>
+            <p class="text-left">
+              <a href="{{ url('project/'.$task->project->idproject) }}">{{$task->project->name}}</a>
+            </p>
           </td>
         </tr>
         @endforeach
-        
+
       </tbody>
     </table>
   </div>

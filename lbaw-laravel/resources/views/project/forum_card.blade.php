@@ -36,14 +36,16 @@
   </div>
   <div class="card-body">
     <p>
-      <b>Last message by @mpcm:</b>
+      <b>Last message by
+        <a href="{{ url('profile/'.$post->user->iduser) }}">{{$post->user->username}}</a>:
+      </b>
     </p>
     <p>
       {{$post->content}}
     </p>
-    <p>
+    <!-- <p>
       show more...
-    </p>
+    </p> -->
   </div>
   <div class="card-footer mt-0 pt-0">
     <p class="text-justify">

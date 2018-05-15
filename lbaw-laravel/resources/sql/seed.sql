@@ -817,12 +817,14 @@ insert into task (creationDate, lastEditDate, title, description, deadline, comp
 insert into task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2017-03-25', '2017-05-29', 'Multi-tiered upward-trending hardware', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', '2018-05-08', false, NULL, 5, 5);
 
 insert into task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2017-09-03', NULL, 'Customizable neutral circuit II', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2018-06-04', false, NULL, 1, 1);
+
 --Assigned
 insert into assigned (idUser, idTask) values (1, 1);
 insert into assigned (idUser, idTask) values (2, 2);
 insert into assigned (idUser, idTask) values (3, 3);
 insert into assigned (idUser, idTask) values (4, 4);
 insert into assigned (idUser, idTask) values (5, 5);
+insert into assigned (idUser, idTask) values (1, 6);
 
 --EditTaskInfo
 insert into edittaskinfo (idUser, idTask, editDate) values (1, 1, '2017-07-05');

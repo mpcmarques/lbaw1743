@@ -2,23 +2,23 @@
 	<a class="navbar-brand" href="{{ url('/') }}">
 		<img class="company-icon" src="{{ asset('img/logo.png')}}" alt="Plenum" width="40" height="40"/>
 	</a>
-	
+
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"/>
 	</button>
-	
+
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('dashboard') }}">Dashboard</a>
 			</li>
 		</ul>
-		
+
 		{{-- search input --}}
 		<div class="navbar-search">
 			<form class="form-inline" method="POST" action="{{ route('/search') }}">
 				{{ csrf_field() }}
-				
+
 				<div class="input-group">
 					<input id="search-text"
 					name="search-text"
@@ -36,10 +36,10 @@
 				</div>
 			</form>
 		</div>
-		
+
 		{{-- buttons --}}
 		<div class="buttons">
-			
+
 			@if(!Auth::check())
 			<button class="btn btn-outline-terciary my-2 my-sm-0" data-toggle="modal" data-target="#signup-modal">
 				Register
@@ -47,13 +47,19 @@
 			<button class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#signin-modal">
 				Login
 			</button>
-			
+
 			@else
-			
-			Logged as <a href="{{ url('/logout') }}">{{Auth::user()->username}}</a>
-			
+
+			<div class="nav-item dropdown text-right pl-4 pr-4">
+				<img class="img-round dropdown-toggle" data-toggle="dropdown" src="{{ asset('img/profile/'.Auth::user()->iduser.'.png') }}" alt="Profile Picture" width="40" height="40">
+		      <div class="dropdown-menu">
+						<a class="dropdown-item" href="{{ url('/profile/'.Auth::user()->iduser) }}">Profile</a>
+		        <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
+		      </div>
+		  </div>
+
 			@endif
-			
+
 		</div>
 	</div>
 </nav>
@@ -79,31 +85,31 @@
 				</button>
 			</div>
 			<div class="modal-body mx-3">
-				
+
 				<form method="POST" action="{{ route('login') }}">
 					{{ csrf_field() }}
-					
+
 					<div class="form-group">
 						<label for="email">Email</label>
 
 						@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
-						
+
 					</div>
-					
+
 					<div class="form-group">
 						<label for="password">Password</label>
 
 						@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
 
 					</div>
-					
+
 					<div class="nav-item">
 						<button type="submit" class="btn btn-primary">Login</button>
 					</div>
 				</form>
-				
+
 			</div>
-			
+
 			<div class="modal-footer justify-content-center">
 				<div class="buttons text-center">
 					<button class="btn facebook">
@@ -140,12 +146,12 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			
+
 			<div class="modal-body">
-				
+
 				<form method="POST" action="{{ route('register') }}">
 					{{ csrf_field() }}
-					
+
 					<div class="form-group row required">
 						<label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
 						<div class="col-sm-8">
@@ -154,27 +160,27 @@
 
 						</div>
 					</div>
-					
+
 					<div class="form-group row required">
 						<label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
 						<div class="col-sm-8">
-							
+
 							@include('layouts.validation-input', ['name' => 'username'])
 
 						</div>
-						
+
 					</div>
-					
+
 					<div class="form-group row required">
 						<label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
 						<div class="col-sm-8">
-							
+
 							@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
 
 						</div>
-					
+
 					</div>
-					
+
 					<div class="form-group row required">
 						<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
 						<div class="col-sm-8">
@@ -182,9 +188,9 @@
 							@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
 
 						</div>
-					
+
 					</div>
-					
+
 					<div class="form-group row required">
 						<label for="inputRepeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
 						<div class="col-sm-8">
@@ -200,28 +206,28 @@
 							@include('layouts.validation-input', ['name' => 'institution_company'])
 						</div>
 					</div>
-			
-					
+
+
 					<div class="form-group row required">
 						<label for="inputInstCompany" class="col-sm-4 col-form-label">Birthday</label>
 						<div class="col-sm-8">
 							@include('layouts.validation-input', ['name' => 'birthday', 'type' => 'date'])
 						</div>
 					</div>
-					
+
 					<div class="modal-footer d-flex justify-content-end">
 						<div class="form-check">
 
 
 							@if (isset($errors) && $errors->has('checkbox'))
-							
+
 							<input id="checkbox" name="checkbox" class="form-check-input is-invalid" type="checkbox">
 
 							<span class="invalid-feedback">
 								{{ $errors->first('checkbox') }}
 							</span>
 
-							@else 
+							@else
 
 							<input id="checkbox" name="checkbox" class="form-check-input" type="checkbox">
 
@@ -232,11 +238,11 @@
 							</label>
 
 						</div>
-						<button type="submit" class="btn btn-primary">Register</button>	
+						<button type="submit" class="btn btn-primary">Register</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
+
 </div>
