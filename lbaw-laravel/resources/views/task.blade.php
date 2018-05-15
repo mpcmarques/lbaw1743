@@ -4,17 +4,22 @@
 
 @section('content')
 
+@if($project->idProject != $task->idProject)
+  abort(404);
+@endif
+
+
 <div id="task" class="container-fluid">
   {{-- breadcrumb --}}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{
-        url('project/'.$project->idproject.'/') 
+        url('project/'.$project->idproject.'/')
       }}">{{ $project->name }}</a></li>
       <li class="breadcrumb-item active" aria-current="page">
-  
+
         {{ $task->title }}
-        
+
       </li>
     </ol>
   </nav>
@@ -42,7 +47,9 @@
     </div>
     <div class="card-footer">
       <small>
-        created by {{ $task->creator->username }} on {{ $task->creationdate }}
+        created by
+        <a href="{{ url('profile/'.$task->creator->iduser) }}">{{ $task->creator->username }}</a>
+         on {{ $task->creationdate }}
       </small>
     </div>
   </div>
@@ -61,7 +68,7 @@
       <h5 class="panel-title">Discussion</h5>
     </div>
     <div class="card-body">
-      
+
       @foreach($task->comments as $comment)
       <div class="media">
         <img class="mr-3" src="{{ asset('img/task-placeholder.svg') }}" alt="Generic placeholder image">
@@ -71,7 +78,7 @@
         </div>
       </div>
       @endforeach
-      
+
       @if(count($task->comments) > 8)
       <button type="button" class="btn btn-block btn-xs m-0 p-0">...</button>
       @endif

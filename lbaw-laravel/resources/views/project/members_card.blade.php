@@ -58,7 +58,7 @@
         </th>
         <td>
           <div class="text-left">
-            {{$member->username}}
+            <a href="{{ url('profile/'.$member->iduser) }}">{{$member->username}}</a>
           </div>
         </td>
         <td>

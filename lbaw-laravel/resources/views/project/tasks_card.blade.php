@@ -50,7 +50,9 @@
           <p class"text-left">{{$task->idtask}}</p>
         </th>
         <td>
-          <p class="text-left">{{$task->title}}</p>
+          <p class="text-left">
+            <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{$task->title}}</a>
+          </p>
         </td>
         <td>
           <p class="text-left">
