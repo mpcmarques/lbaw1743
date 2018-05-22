@@ -14,7 +14,7 @@
         <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"/>
+            <span class="octicon octicon-search"></span>
           </button>
         </div>
       </div>
@@ -100,11 +100,11 @@
 <div class="card-footer">
   <div class="float-right">
     <button type="button" class="btn btn-terciary">
-      <span class="octicon octicon-pencil"/>
+      <span class="octicon octicon-pencil"></span>
       Edit
     </button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeTasksModal">
-      <span class="octicon octicon-trashcan"/>
+      <span class="octicon octicon-trashcan"></span>
       Remove
     </button>
   </div>
