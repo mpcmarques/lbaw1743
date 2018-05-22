@@ -49,7 +49,6 @@ class ProfileController extends Controller
 
     //TODO validate only what changes
 
-    // $request->image->move(public_path('/img/profile/'), $profile->iduser);
     if($request->has('profilePicture')){
       $request->profilePicture->move(public_path().'/img/profile/', $profile->iduser.'.png');
     }
