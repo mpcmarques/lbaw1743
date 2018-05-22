@@ -65,19 +65,19 @@ Route::get('/project/{id}', function($id){
   return redirect('/project/'.$id.'/tasks');
 });
 
-Route::get('/project/{id}/tasks', 'Project\ProjectTasksController@show');
+Route::get('/project/{id}/tasks', 'Project\ProjectTasksController@show')->middleware('project');
 
-Route::get('/project/{id}/members', 'Project\ProjectMembersController@show');
+Route::get('/project/{id}/members', 'Project\ProjectMembersController@show')->middleware('project');
 
-Route::get('/project/{id}/forum', 'Project\ProjectForumController@show');
+Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
 
-Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show');
+Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show')->middleware('project');
 
-Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete');
+Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('project', 'can:delete');
 
-Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show');
+Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project');;
 
-Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show');
+Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project');;
 
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
