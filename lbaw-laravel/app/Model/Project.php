@@ -37,4 +37,11 @@ class Project extends BaseModel
   public function scopeNameDescription($query, $text){
     return $query->where('name', 'like', "%{$text}%")->orWhere('description', 'like', "%{$text}%");
   }
+
+  /**
+   * Get the owner of the project.
+   */
+  public function owner(){
+    return $query->where('members', 'role', 'OWNER');
+  }
 }

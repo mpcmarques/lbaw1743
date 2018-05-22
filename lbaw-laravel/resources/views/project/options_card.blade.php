@@ -35,7 +35,7 @@
     <label class="form-check-label" for="description">Description</label>
     <textarea class="form-control" id="description">{{$project->description}}</textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Save Changes</button>
+  <button type="submit" class="btn btn-secondary">Save Changes</button>
 </form>
 
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteProjectModal">
@@ -58,7 +58,6 @@
           <div class="modal-footer">
 
             <a href="{{ url('project/'.$project->idproject.'/options/delete') }}"
-              type="button"
               class="btn btn-primary">
               Delete
             </a>
