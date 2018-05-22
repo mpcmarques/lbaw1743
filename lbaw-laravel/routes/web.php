@@ -104,6 +104,9 @@ Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@sh
 
 Route::get('/profile/{id}', 'ProfileController@show');
 
+Route::get('/profile/{id}/edit', 'ProfileController@showEditModal');
+Route::post('/profile/{id}/edit', 'ProfileController@editProfile');
+
 // contact
 
 Route::get('/contact', 'ContactController@show');

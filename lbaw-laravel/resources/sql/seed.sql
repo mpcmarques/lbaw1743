@@ -813,11 +813,11 @@ insert into joined (idUser, idProject, joinedDate, role) values (2, 2, '2017-11-
 insert into joined (idUser, idProject, joinedDate, role) values (3, 3, '2017-06-21', 'Owner');
 insert into joined (idUser, idProject, joinedDate, role) values (4, 4, '2017-03-06', 'Owner');
 insert into joined (idUser, idProject, joinedDate, role) values (5, 5, '2017-07-19', 'Owner');
-insert into joined (idUser, idProject, joinedDate, role) values (6, 1, '2017-09-22', 'Coordinator');
-insert into joined (idUser, idProject, joinedDate, role) values (7, 2, '2017-04-27', 'Coordinator');
-insert into joined (idUser, idProject, joinedDate, role) values (8, 3, '2017-04-27', 'Coordinator');
-insert into joined (idUser, idProject, joinedDate, role) values (9, 4, '2017-07-03', 'Coordinator');
-insert into joined (idUser, idProject, joinedDate, role) values (10, 5, '2017-06-29', 'Coordinator');
+insert into joined (idUser, idProject, joinedDate, role) values (6, 1, '2017-09-22', 'Manager');
+insert into joined (idUser, idProject, joinedDate, role) values (7, 2, '2017-04-27', 'Manager');
+insert into joined (idUser, idProject, joinedDate, role) values (8, 3, '2017-04-27', 'Manager');
+insert into joined (idUser, idProject, joinedDate, role) values (9, 4, '2017-07-03', 'Manager');
+insert into joined (idUser, idProject, joinedDate, role) values (10, 5, '2017-06-29', 'Manager');
 insert into joined (idUser, idProject, joinedDate, role) values (11, 1, '2017-09-22', 'Member');
 insert into joined (idUser, idProject, joinedDate, role) values (12, 2, '2017-09-22', 'Member');
 insert into joined (idUser, idProject, joinedDate, role) values (13, 3, '2017-09-25', 'Member');
