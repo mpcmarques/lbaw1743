@@ -33,7 +33,7 @@
 
         <div class="modal-body mx-3">
 
-          <form method="POST" action="{{ url('profile/'.$profile->iduser.'/edit') }}">
+          <form method="POST" action="{{ url('profile/'.$profile->iduser.'/edit') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
 
           <div class="md-form mb-3 required">
@@ -82,7 +82,7 @@
           <div class="md-form mb-3">
             <label for="inputName" class="col-sm-4 col-form-label">Profile Picture</label>
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01">
+              <input type="file" class="custom-file-input" id="profilePicture" name="profilePicture">
               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
             </div>
           </div>

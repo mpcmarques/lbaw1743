@@ -43,10 +43,16 @@ class ProfileController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function editProfile(Request $request) {
-    // echo $request;
     $profile = Auth::user();
     // $this->validator($request->all())->validate();
     $data = $request->all();
+
+    //TODO validate only what changes
+
+    // $request->image->move(public_path('/img/profile/'), $profile->iduser);
+    if($request->has('profilePicture')){
+      $request->profilePicture->move(public_path().'/img/profile/', $profile->iduser.'.png');
+    }
 
     if($data['name'] != $profile->name){
         $profile->name = $data['name'];
