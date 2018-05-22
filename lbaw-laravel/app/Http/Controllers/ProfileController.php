@@ -81,7 +81,7 @@ class ProfileController extends Controller
 
     $profile->save();
 
-    // redirect()->route('/profile/'.$profile->iduser);
+    // redirect('/profile/'.$profile->iduser);
 }
 
 }

@@ -44,4 +44,16 @@ class Project extends BaseModel
   public function owner(){
     return $query->where('members', 'role', 'OWNER');
   }
+
+  /**
+   * Get project image.
+   */
+  public function getPicture(){
+      if (file_exists('img/project/'.$this->idproject.'.png')) {
+          return asset('img/project/'.$this->idproject.'.png');
+      } else {
+          return asset('img/project/default.png');
+      }
+  }
+
 }

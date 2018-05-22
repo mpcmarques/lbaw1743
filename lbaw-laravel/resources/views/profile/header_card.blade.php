@@ -113,7 +113,7 @@
             <label for="inputName" class="col-sm-4 col-form-label">Profile Picture</label>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="profilePicture" name="profilePicture">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              <label class="custom-file-label" for="inputGroupFile01">Choose File</label>
             </div>
           </div>
 
@@ -133,7 +133,7 @@
   <div class="grid">
     <div class="row">
       <div class="col-md-3 text-center">
-        <img class="img-round" src="{{ asset('img/profile/'.$profile->iduser.'.png') }}" alt="Profile Picture" width="100">
+        <img class="img-round" src="{{ $profile->getPicture() }}" alt="Profile Picture" width="100">
       </div>
       <div class="col-md-9">
         <h1 class="display-4">{{$profile->username}}</h1>

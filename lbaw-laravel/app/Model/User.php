@@ -71,8 +71,19 @@ class User extends Authenticatable
   public function tasks(){
     return $this->hasMany('App\Model\Task', 'iduser');
   }
-  
+
   public function scopeUsernameName($query, $text){
     return $query->where('username', 'like', "%{$text}%")->orWhere('name', 'like', "%{$text}%");
+  }
+
+  /**
+   * Get project image.
+   */
+  public function getPicture(){
+      if (file_exists('img/profile/'.$this->iduser.'.png')) {
+          return asset('img/profile/'.$this->iduser.'.png');
+      } else {
+          return asset('img/profile/default.png');
+      }
   }
 }

@@ -69,6 +69,9 @@
 	</div>
 </nav>
 
+
+@if(!Auth::check())
+
 {{-- Show login when $login is not empty and true --}}
 @if( ! empty($login) && $login)
 
@@ -251,3 +254,5 @@
 	</div>
 
 </div>
+
+@endif

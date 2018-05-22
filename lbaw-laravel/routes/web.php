@@ -58,9 +58,11 @@ Route::get('/dashboard/tasks', 'Dashboard\DashboardTasksController@show')->middl
 
 Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show')->middleware('auth');
 
-Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@show')->middleware('auth');
-
 // project
+
+Route::get('/dashboard/new-project', 'Dashboard\DashboardNewProjectController@show')->middleware('auth');
+Route::post('/dashboard/new-project/', 'Dashboard\DashboardNewProjectController@newProject');
+
 Route::get('/project/{id}', function($id){
   return redirect('/project/'.$id.'/tasks');
 });

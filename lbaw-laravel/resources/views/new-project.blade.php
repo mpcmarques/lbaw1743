@@ -5,7 +5,7 @@
 @section('content')
 
 <div id="new-project" class="container-fluid">
-    
+
     {{-- breadcrumb --}}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -13,24 +13,26 @@
             <li class="breadcrumb-item active" aria-current="page">New Project</li>
         </ol>
     </nav>
-    
+
     {{-- main card --}}
     <div class="card">
         <div class="card-header panel-header">
             <h5>New Project</h5>
         </div>
         <div class="card-body">
-            <form>
+          <form method="POST" action="{{ url('dashboard/new-project') }}" enctype="multipart/form-data">
+            {{ csrf_field() }}
+
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-3 col-form-label">Name</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputEmail3" placeholder="Project name">
+                      @include('layouts.validation-input', ['name' => 'name'])
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="exampleTextarea">Description</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Project description"></textarea>
+                        <textarea class="form-control" id="description" name="description" rows="4"></textarea>
                     </div>
                 </div>
                 <fieldset class="form-group row">
@@ -38,29 +40,31 @@
                     <div class="col-sm-9">
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                <input class="form-check-input" type="radio" name="private" id="public" value="false" checked>
                                 Public
                             </label>
                         </div>
+                        @if (Auth::user()->premium)
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                <input class="form-check-input" type="radio" name="private" id="private" value="true">
                                 Private
                             </label>
                         </div>
+                        @endif
                     </div>
                 </fieldset>
-                
+
                 <div class="form-group row">
                     <label class="col-sm-3">Image</label>
                     <div class="col-sm-9">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            <input type="file" class="custom-file-input" id="projectPicture" name="projectPicture">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose File</label>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="form-group row" style="margin-bottom: 0;">
                     <div class="container-fluid">
                         <button type="submit" class="btn btn-primary">
