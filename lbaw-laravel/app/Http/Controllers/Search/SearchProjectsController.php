@@ -10,7 +10,7 @@ use App\Model\Task;
 
 class SearchProjectsController extends Controller{
   public function show($text){
-    $projects = Project::nameDescription($text)->get();
+    $projects = Project::nameDescriptionPublic($text)->get();
     $tasks = Task::titleDescription($text)->get();
     $users = User::usernameName($text)->get();
 

@@ -40,7 +40,7 @@
           </div>
           <div class="modal-footer">
 
-            <a href="{{ url('profiile/'.$profile->iduser.'/delete') }}"
+            <a href="{{ url('profile/'.$profile->iduser.'/delete') }}"
               class="btn btn-primary">
               Delete
             </a>
