@@ -13,4 +13,12 @@ class ProjectOptionsController extends Controller
 
     return view('project.options_card', ['project' => $project]);
   }
+
+  public function delete($id){
+    $project = Project::findOrFail($id);
+
+    $project->delete();
+
+    return redirect()->route('home');
+  }
 }

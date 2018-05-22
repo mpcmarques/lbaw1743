@@ -73,6 +73,8 @@ Route::get('/project/{id}/forum', 'Project\ProjectForumController@show');
 
 Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show');
 
+Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete');
+
 Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show');
 
 Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show');

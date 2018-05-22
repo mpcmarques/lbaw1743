@@ -56,7 +56,12 @@
             Warning: this action is destructive!
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Delete</button>
+
+            <a href="{{ url('project/'.$project->idproject.'/options/delete') }}"
+              type="button"
+              class="btn btn-primary">
+              Delete
+            </a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
