@@ -6,6 +6,8 @@ use App\Model\User;
 use App\Model\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
@@ -23,15 +25,57 @@ class ProfileController extends Controller
       return view('profile.index', ['profile' => $profile], ['editProfile' => true]);
     }
 
-
-    /**
-     * Handle a registration request for the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function editProfile(Request $request) {
-      // echo $request;
+  function validator(array $data)
+  {
+      return Validator::make($data, [
+          'username' => 'required|string|unique:usertable',
+          'name' => 'required|string|max:255',
+          'email' => 'required|string|email|max:255|unique:usertable',
+          'password' => 'required|string|min:6|confirmed',
+          'birthdate' => 'required|date',
+      ]);
   }
+
+  /**
+   * Handle a update request for the application.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function editProfile(Request $request) {
+    // echo $request;
+    $profile = Auth::user();
+    // $this->validator($request->all())->validate();
+    $data = $request->all();
+
+    if($data['name'] != $profile->name){
+        $profile->name = $data['name'];
+    }
+
+    if($data['username'] != $profile->username){
+        $profile->username = $data['username'];
+    }
+
+    if($data['email'] != $profile->email){
+        $profile->email = $data['email'];
+    }
+
+    if($data['institution'] != $profile->institution){
+        $profile->institution = $data['institution'];
+    }
+
+    if($data['birthdate'] != $profile->birthdate){
+        $profile->birthdate = $data['birthdate'];
+    }
+
+    if(bcrypt($data['password']) != $profile->password
+        && $data['password'] == $data['password_confirmation']){
+        $profile->password = bcrypt($data['password']);
+    }
+
+    $profile->save();
+
+    // redirect()->route('/profile/'.$profile->iduser);
+}
 
 }

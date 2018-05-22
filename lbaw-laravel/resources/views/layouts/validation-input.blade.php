@@ -1,7 +1,7 @@
 
 @if (isset($errors) && $errors->has($name))
 
-<input id="{{$name}}" type="{{$type or 'text'}}" name="{{$name}}" value="{{ old($name) }}" required autofocus class="form-control is-invalid">
+<input id="{{$name}}" type="{{$type or 'text'}}" name="{{$name}}" value="{{ $value or old($name) }}" required autofocus class="form-control is-invalid">
 
 <span class="invalid-feedback">
 
@@ -11,6 +11,6 @@
 
 @else
 
-<input id="{{$name}}" type="{{$type or 'text'}}" name="{{$name}}" value="{{ old($name) }}" required autofocus class="form-control">
+<input id="{{$name}}" type="{{$type or 'text'}}" name="{{$name}}" value="{{ $value or old($name) }}" required autofocus class="form-control">
 
 @endif

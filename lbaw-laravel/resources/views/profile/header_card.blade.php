@@ -38,17 +38,17 @@
 
           <div class="md-form mb-3 required">
             <label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
-            <input type="text" class="form-control" value="{{$profile->name}}" required>
+            	@include('layouts.validation-input', ['name' => 'name', 'value' => $profile->name])
           </div>
 
           <div class="md-form mb-3 required">
             <label for="inputName" class="col-sm-4 col-form-label">Username</label>
-            <input type="text" class="form-control" value="{{$profile->username}}" required>
+            @include('layouts.validation-input', ['name' => 'username', 'value' => $profile->username])
           </div>
 
           <div class="md-form mb-3 required">
             <label for="inputName" class="col-sm-4 col-form-label">Email</label>
-            <input type="text" class="form-control" value="{{$profile->email}}" required>
+            	@include('layouts.validation-input', ['name' => 'email', 'type' => 'email', 'value' => $profile->email] )
             <small>
               We'll never share your email with anyone else.
             </small>
@@ -56,19 +56,19 @@
 
           <div class="md-form mb-3 required">
             <label for="inputName" class="col-sm-4 col-form-label">Password</label>
-            <input type="password" class="form-control" value="********" required>
+            @include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
           </div>
 
           <div class="md-form mb-3 required">
             <label for="inputName" class="col-sm-6 col-form-label">Repeat Password</label>
-            <input type="password" class="form-control" value="********" required>
+            @include('layouts.validation-input', ['name' => 'password_confirmation', 'type' => 'password'])
           </div>
 
           <!--  Gender -->
 
           <div class="md-form mb-3">
             <label for="inputName" class="col-sm-6 col-form-label">Institucion / Company</label>
-            <input type="text" class="form-control" value="{{$profile->institution}}">
+            @include('layouts.validation-input', ['name' => 'institution', 'value' => $profile->institution])
             <small>
               Fill if you belong to a company or institution.
             </small>
@@ -76,7 +76,7 @@
 
           <div class="md-form mb-3 required">
             <label for="inputName" class="col-sm-4 col-form-label">Birthday</label>
-            <input type="date" class="form-control" value="{{ \Carbon\Carbon::parse($profile->birthdate)->format('d/m/Y')}}" required>
+            @include('layouts.validation-input', ['name' => 'birthdate', 'type' => 'date', 'value' => \Carbon\Carbon::parse($profile->birthdate)->format('d/m/Y')] )
           </div>
 
           <div class="md-form mb-3">
