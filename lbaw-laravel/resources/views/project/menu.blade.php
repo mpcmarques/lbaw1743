@@ -11,12 +11,14 @@
   <a href="{{ url('project/'.$project->idproject.'/forum') }}" class="list-group-item list-group-item-action" role="button">
     Forum
   </a>
-  <a href="{{ url('project/'.$project->idproject.'/options') }}" class="list-group-item list-group-item-action" role="button">
-    Options
-  </a>
+  
+
   <li class="list-group-item list-group-item-info">
     Administration
   </li>
+  <a href="{{ url('project/'.$project->idproject.'/options') }}" class="list-group-item list-group-item-action" role="button">
+    Options
+  </a>
   <a href="{{ url('project/'.$project->idproject.'/manage_tasks') }}" class="list-group-item list-group-item-action" role="button">
     Manage tasks
   </a>
