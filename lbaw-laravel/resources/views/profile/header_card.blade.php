@@ -5,8 +5,13 @@
  @else
 
  @if(Auth::check() && Auth::user() == $profile)
-  <button class="btn btn-primary card-edit-button" data-toggle="modal" data-target="#editprofile-modal">
+  <button class="btn btn-secondary card-edit-button" data-toggle="modal" data-target="#editprofile-modal">
     <span class="octicon octicon-pencil">
+    </span>
+  </button>
+
+  <button class="btn btn-primary card-delete-button" data-toggle="modal" data-target="#deleteprofile-modal">
+    <span class="octicon octicon-trashcan">
     </span>
   </button>
 
@@ -20,6 +25,31 @@
   </script>
 
   @endif
+
+  <div class="modal fade" id="deleteprofile-modal" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Delete project?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Warning: this action is destructive!
+          </div>
+          <div class="modal-footer">
+
+            <a href="{{ url('profiile/'.$profile->iduser.'/delete') }}"
+              class="btn btn-primary">
+              Delete
+            </a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal fade bd-example-modal-lg" id="editprofile-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
