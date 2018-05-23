@@ -24,14 +24,23 @@ class TaskEditController extends Controller
     {
         return Validator::make($data, [
             'title' => 'required|string',
+            'description' => 'required|string',
         ]);
     }
 
-    public function editTask(Request $request){
-      print_r($request->all());
-
+    public function editTask(Request $request, $idproject, $idtask){
       $this->validator($request->all())->validate();
 
+      $data = $request->all();
 
+      $task = Task::find($idtask);
+
+      $task->title = $data['title'];
+      $task->description = $data['description'];
+      $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+
+      $task->save();
+
+      // redirect();
     }
 }

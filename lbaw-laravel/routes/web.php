@@ -74,6 +74,7 @@ Route::get('/project/{id}/members', 'Project\ProjectMembersController@show')->mi
 Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
 
 Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show')->middleware('project');
+Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProject')->middleware('project');
 
 Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('project', 'can:delete');
 

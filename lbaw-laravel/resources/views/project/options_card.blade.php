@@ -11,30 +11,58 @@
 @section('card-body')
 
 <div class="container-fluid">
-<form>
+  <form method="POST" action="{{ url('project/'.$project->idproject.'/options') }}" enctype="multipart/form-data">
+    {{ csrf_field() }}
   <div class="form-group">
     <div class="row">
       <div class="col-md-2">
-        <img src="{{ $project->getPicture() }}" alt="Project current image" class="img-center thumbnail">
+        <img src="{{ $project->getPicture() }}" alt="Project Picture" class="img-center thumbnail">
       </div>
       <div class="col-md-10">
         <div id="upload-image" class="input-group">
           <div class="custom-file">
-            <label class="custom-file-label" for="new_image">Choose file</label>
-            <input type="file" class="custom-file-input" id="new_image">
+            <label class="custom-file-label" for="new_image">Choose File</label>
+            <input type="file" class="custom-file-input" id="projectPicture" name="projectPicture">
           </div>
-          <div class="input-group-append">
+          <!-- <div class="input-group-append">
             <span class="input-group-text" id="">Upload</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
   <div class="form-group">
-    <input type="text" id="projectname" class="form-control" value="{{$project->name}}" required>
+    @include('layouts.validation-input', ['name' => 'name', 'value' => $project->name])
     <label class="form-check-label" for="description">Description</label>
-    <textarea class="form-control" id="description">{{$project->description}}</textarea>
+    @include('layouts.validation-input-textarea', ['name' => 'description', 'rows' => '4', 'value' => $project->description])
   </div>
+  <fieldset class="form-group row">
+      <legend class="col-form-legend col-sm-3">Type</legend>
+      <div class="col-sm-9">
+          <div class="form-check">
+              <label class="form-check-label">
+                @if ($project->private)
+                <input class="form-check-input form-control" type="radio" name="private" id="public" value="false">
+                @else
+                <input class="form-check-input form-control" type="radio" name="private" id="public" value="false" checked>
+                @endif
+                  Public
+              </label>
+          </div>
+          @if (Auth::user()->premium)
+          <div class="form-check">
+              <label class="form-check-label">
+                @if ($project->private)
+                <input class="form-check-input form-control" type="radio" name="private" id="private" value="true" checked>
+                @else
+                <input class="form-check-input form-control" type="radio" name="private" id="private" value="true">
+                @endif
+                Private
+              </label>
+          </div>
+          @endif
+      </div>
+  </fieldset>
   <button type="submit" class="btn btn-secondary">Save Changes</button>
 </form>
 
