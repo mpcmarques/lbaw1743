@@ -12,6 +12,12 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('dashboard') }}">Dashboard</a>
 			</li>
+
+			@if(Auth::check())
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url('/profile/'.Auth::user()->iduser) }}">Profile</a>
+			</li>
+			@endif
 		</ul>
 
 		{{-- search input --}}
@@ -53,7 +59,6 @@
 			<div class="nav-item dropdown text-right">
 				<img class="img-round dropdown-toggle" data-toggle="dropdown" src="{{ asset('img/profile/'.Auth::user()->iduser.'.png') }}" alt="Profile Picture" width="40" height="40">
 		      <div class="dropdown-menu dropdown-menu-right">
-						<a class="dropdown-item" href="{{ url('/profile/'.Auth::user()->iduser) }}">Profile</a>
 		        <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
 		      </div>
 		  </div>
