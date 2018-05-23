@@ -48,8 +48,4 @@ class Task extends BaseModel
   public function tags() {
     return $this->belongsToMany('\App\Model\Tag', 'tagged', 'idtask', 'idtag');
   }
-  
-  public function scopeTitleDescription($query, $text){
-    return $query->where('title', 'like', "%{$text}%")->orWhere('description', 'like', "%{$text}%");
-  }
 }
