@@ -13,7 +13,7 @@
         <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"/>
+            <span class="octicon octicon-search"></span>
           </button>
         </div>
       </div>
@@ -41,16 +41,16 @@
     <table class="table">
       <thead class="thead-light">
         <tr>
-          <th scope="col-1">
+          <th scope="col">
             #
           </th>
-          <th scope="col-4">
+          <th scope="col">
             Task Name
           </th>
-          <th scope="col-4">
+          <th scope="col">
             Tags
           </th>
-          <th scope="col-3">
+          <th scope="col">
             Project
           </th>
         </tr>
@@ -60,7 +60,7 @@
 
         <tr>
           <th scope="row">
-            <p class"text-left">{{$task->idtask}}</p>
+            <p class="text-left">{{$task->idtask}}</p>
           </th>
           <td>
             <p class="text-left">

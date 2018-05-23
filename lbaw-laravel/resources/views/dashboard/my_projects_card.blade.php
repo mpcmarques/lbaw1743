@@ -22,7 +22,7 @@
 
 @section('card-body')
 <a class="create-new-project" href="{{ url('dashboard/new-project')}}">
-  <button type="button" class="btn btn-outline-light btn-block create-new-project-button">
+  <button class="btn btn-outline-light btn-block create-new-project-button">
     + create new project
   </button>
 </a>

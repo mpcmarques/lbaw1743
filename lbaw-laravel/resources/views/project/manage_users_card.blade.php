@@ -14,7 +14,7 @@
         <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"/>
+            <span class="octicon octicon-search"></span>
           </button>
         </div>
       </div>
@@ -29,24 +29,24 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col-1">
+        <th scope="col">
         </th>
-        <th scope="col-3">
+        <th scope="col">
           <div class="text-left font-weight-bold">
             Username
           </div>
         </th>
-        <th scope="col-3">
+        <th scope="col">
           <div class="text-left font-weight-bold">
             Tasks assigned
           </div>
         </th>
-        <th scope="col-3">
+        <th scope="col">
           <div class="text-left font-weight-bold">
             Name
           </div>
         </th>
-        <th scope="col-2">
+        <th scope="col">
           <div class="text-left font-weight-bold">
             Role
           </div>

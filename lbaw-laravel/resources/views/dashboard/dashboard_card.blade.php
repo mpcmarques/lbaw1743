@@ -25,7 +25,7 @@
 
 @section('card-body')
 <div class="media">
-  <img class="align-self-center mr-1"src="img/task-placeholder.svg" alt="Dashboard Image">
+  <img class="align-self-center mr-1" src="img/task-placeholder.svg" alt="Dashboard Image">
   <div class="media-body">
     <p class="description">
       <span class="text-link">@mateus</span> created task <span class="text-link">#133 - Finish Design</span> on <span class="text-link">project Manager</span>.

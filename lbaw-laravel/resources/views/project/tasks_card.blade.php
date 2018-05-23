@@ -29,16 +29,16 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col-1">
+        <th scope="col">
           <p class="text-left font-weight-bold">#</p>
         </th>
-        <th scope="col-4">
+        <th scope="col">
           <p class="text-left font-weight-bold">Task Name</p>
         </th>
-        <th scope="col-4">
+        <th scope="col">
           <p class="text-left font-weight-bold">Tags</p>
         </th>
-        <th scope="col-3">
+        <th scope="col">
           <p class="text-left font-weight-bold">Assigned</p>
         </th>
       </tr>
@@ -47,7 +47,7 @@
       @foreach($project->tasks as $task)
       <tr>
         <th scope="row">
-          <p class"text-left">{{$task->idtask}}</p>
+          <p class="text-left">{{$task->idtask}}</p>
         </th>
         <td>
           <p class="text-left">

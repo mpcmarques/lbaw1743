@@ -31,19 +31,19 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col-3">
+        <th scope="col">
         </th>
-        <th scope="col-3">
+        <th scope="col">
           <div class="text-left font-weight-bold">
             Username
           </div>
         </th>
-        <th scope="col-3">
+        <th scope="col">
           <div class="text-left font-weight-bold">
             Name
           </div>
         </th>
-        <th scope="col-3">
+        <th scope="col">
           <div class="text-left font-weight-bold">
             Role
           </div>

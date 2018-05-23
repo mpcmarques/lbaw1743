@@ -8,7 +8,7 @@
     <h1 class="text-center">F.A.Q.</h1>
     <div class="container faq-content text-center">
         <p>Frequently Asked Questions</p>
-        
+
         <div id="accordion">
             <div class="card">
                 <div class="card-header" id="headingOne">
@@ -18,7 +18,7 @@
                         </button>
                     </h5>
                 </div>
-                
+
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit amet. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Quis vel eros donec ac odio. Non curabitur gravida arcu ac tortor. Lobortis elementum nibh tellus molestie nunc non blandit massa. Urna condimentum mattis pellentesque id nibh tortor id. Libero id faucibus nisl tincidunt eget. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id venenatis a condimentum vitae sapien.
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
@@ -58,7 +58,6 @@
     </div>
     <ol class="list-group faq-questions">
     </ol>
-</div>
 </div>
 
 @endsection

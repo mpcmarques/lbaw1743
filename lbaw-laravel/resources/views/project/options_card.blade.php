@@ -21,7 +21,7 @@
       <div class="col-md-10">
         <div id="upload-image" class="input-group">
           <div class="custom-file">
-            <label class="custom-file-label" for="new_image">Choose File</label>
+            <label class="custom-file-label">Choose File</label>
             <input type="file" class="custom-file-input" id="projectPicture" name="projectPicture">
           </div>
           <!-- <div class="input-group-append">
