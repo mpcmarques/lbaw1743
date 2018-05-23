@@ -219,7 +219,7 @@
 					<div class="form-group row required">
 						<label class="col-sm-4 col-form-label">Birthday</label>
 						<div class="col-sm-8">
-							@include('layouts.validation-input', ['name' => 'birthdate', 'type' => 'date', 'preview' => '01-01-1990'])
+							@include('layouts.validation-input', ['name' => 'birthdate', 'type' => 'date'])
 						</div>
 					</div>
 
