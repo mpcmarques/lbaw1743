@@ -101,6 +101,7 @@ Route::get('/search/{text}/users', 'Search\SearchUsersController@show');
 Route::get('project/{idProject}/task/{idTask}', 'Task\TaskController@show');
 
 Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@show');
+Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
 
 // profile
 

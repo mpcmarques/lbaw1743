@@ -14,21 +14,20 @@
   </nav>
   <div class="card">
     <div class="card-header panel-header">
-      <h5>Edit task</h5>
+      <h5>Edit Task</h5>
     </div>
     <div class="card-body">
-      <form>
+      <form method="POST" action="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/edit') }}">
+        {{ csrf_field() }}
         <div class="form-group">
-          <label for="task_name">Task title</label>
-          <input type="text" class="form-control" id="task_name" placeholder="{{$task->title}}">
+          <label for="task_name">Task Title</label>
+          @include('layouts.validation-input', ['name' => 'title', 'value' => $task->title])
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea class="form-control" id="description" style="min-height: 150px;">
-          {{ $task->description }}
-          </textarea>
+          <textarea class="form-control" id="description" name="description" style="min-height: 150px;">{{ $task->description }}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary float-right">Accept Changes</button>
+        <button type="submit" class="btn btn-primary float-right">Save Changes</button>
       </form>
     </div>
   </div>

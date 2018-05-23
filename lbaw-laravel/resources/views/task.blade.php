@@ -51,6 +51,13 @@
         <a href="{{ url('profile/'.$task->creator->iduser) }}">{{ $task->creator->username }}</a>
          on {{ $task->creationdate }}
       </small>
+      <small class="float-right">
+      @if($task->deadline && !$task->completed)
+        deadline at {{ $task->deadline }}
+      @elseif ($task->completed)
+        completed on {{ $task->completetiondate }}
+      @endif
+      </small>
     </div>
   </div>
   <div class="card">

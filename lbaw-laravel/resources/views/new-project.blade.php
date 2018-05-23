@@ -32,7 +32,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="exampleTextarea">Description</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+                      @include('layouts.validation-input-textarea', ['name' => 'description', 'rows' => '4'])
                     </div>
                 </div>
                 <fieldset class="form-group row">
@@ -40,14 +40,14 @@
                     <div class="col-sm-9">
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="private" id="public" value="false" checked>
+                                <input class="form-check-input form-control" type="radio" name="private" id="public" value="false" checked>
                                 Public
                             </label>
                         </div>
                         @if (Auth::user()->premium)
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="private" id="private" value="true">
+                                <input class="form-check-input form-control" type="radio" name="private" id="private" value="true">
                                 Private
                             </label>
                         </div>
