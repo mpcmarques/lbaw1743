@@ -27,6 +27,10 @@
           <label>Description</label>
           <textarea class="form-control" id="description" name="description" style="min-height: 150px;">{{ $task->description }}</textarea>
         </div>
+        <div class="form-group">
+          <label>Deadline</label>
+          @include('layouts.validation-input', ['name' => 'deadline', 'type' => 'date' ,'value' => \Carbon\Carbon::parse($task->deadline)->format('Y-m-d')])
+        </div>
         <button type="submit" class="btn btn-primary float-right">Save Changes</button>
       </form>
     </div>
