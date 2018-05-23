@@ -31,22 +31,26 @@
     <div class="row">
       <div class="col-6">
         <p class="text-left">
-          <b>Project Name</b>
+          <b>{{ $task->name }}</b>
         </p>
       </div>
       <div class="col-6">
         <p class="text-right">
-          @jotapsa
+          {{-- $task->creator->name --}}
         </p>
       </div>
     </div>
-    <p>{{$task->description}}</p>
+    <p>{{ $task->description }}</p>
   </div>
   <div class="card-footer">
     <div class="row">
       <div class="col-6">
         <p class="text-left">
-          last updated 2 days ago.
+          @if (!empty($task->lasteditdate))
+          last updated on {{ \Carbon\Carbon::parse($task->lasteditdate)->format('d/m/Y') }}
+          @else
+          last updated on {{ \Carbon\Carbon::parse($task->creationdate)->format('d/m/Y') }}
+          @endif
         </p>
       </div>
       <div class="col-6 text-right">

@@ -116,7 +116,7 @@ option.slct-primary {
     border-radius: 25px;
 }
 
-.card-edit-button{
+.card-edit-button, .card-enter-button, .card-leave-button{
     width: 50px;
     height: 50px;
     text-align: center;
@@ -239,6 +239,7 @@ option.slct-primary {
 
 .panel-header h5, .panel-header .panel-title {
     padding-top: 6px;
+    padding-left: 10px;
 }
 
 @media(max-width: 728px){

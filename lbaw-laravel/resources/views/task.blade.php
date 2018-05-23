@@ -69,6 +69,18 @@
   <div class="card">
     <div class="card-header panel-header">
       <h5 class="panel-title">Assigned</h5>
+
+      <!-- If Auth::user() is not assigned to task -->
+      <button class="btn btn-terciary card-leave-button">
+        <span class="octicon octicon-sign-out">
+        </span>
+      </button>
+
+      <!-- Else If Auth::user() is assigned to task -->
+      <!-- <button class="btn btn-terciary card-enter-button">
+        <span class="octicon octicon-sign-in">
+        </span>
+      </button> -->
     </div>
     <div class="card-body">
       @foreach($task->assigned as $user)
