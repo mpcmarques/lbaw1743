@@ -38,7 +38,7 @@ class ProjectOptionsController extends Controller
 
     $data = $request->all();
 
-    $project = Project::find($idproject);
+    $project = Project::findOrFail($idproject);
 
     if($request->has('projectPicture')){
       $request->projectPicture->move(public_path().'/img/project/', $project->idproject.'.png');
@@ -50,6 +50,6 @@ class ProjectOptionsController extends Controller
 
     $project->save();
 
-    // redirect();
+    return redirect('/project/'.$idproject);
   }
 }

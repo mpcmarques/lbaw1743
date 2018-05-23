@@ -9,6 +9,7 @@ use App\Model\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class TaskEditController extends Controller
 {
@@ -33,7 +34,13 @@ class TaskEditController extends Controller
 
       $data = $request->all();
 
-      $task = Task::find($idtask);
+      // Task::update([
+      //     'title' => $data['title'],
+      //     'description' => $data['description'],
+      //     'lasteditdate' => date('Y-m-d H:i:s', strtotime(Carbon::now()))
+      // ], $idtask);
+
+      $task = Task::findOrFail($idtask);
 
       $task->title = $data['title'];
       $task->description = $data['description'];
@@ -41,6 +48,6 @@ class TaskEditController extends Controller
 
       $task->save();
 
-      // redirect();
+      return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
 }

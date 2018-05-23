@@ -62,7 +62,7 @@ class DashboardNewProjectController extends Controller
 
       // $this->validator($request->all())->validate();
 
-      $newProject = $this->newPro($request->all());
+      $newProject = $this->create($request->all());
 
       if(empty($newProject)) { // Failed to register project
           redirect('dashboard/new-project'); // Wherever you want to redirect
@@ -72,6 +72,6 @@ class DashboardNewProjectController extends Controller
         $request->projectPicture->move(public_path().'/img/project/', $newProject->idproject.'.png');
       }
 
-      // redirect('project/'.$newProject->idproject);
+      return redirect('project/'.$newProject->idproject);
     }
 }

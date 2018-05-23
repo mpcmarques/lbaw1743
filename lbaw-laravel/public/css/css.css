@@ -389,6 +389,7 @@ div.required label:after {
 .card.project-card {
     width: 10em;
     overflow: hidden;
+    margin: 15px;
 }
 
 .card.project-card img {
