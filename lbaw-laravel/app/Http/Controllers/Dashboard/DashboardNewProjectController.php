@@ -20,38 +20,37 @@ class DashboardNewProjectController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'description' => 'string',
+            'description' => 'required|string',
             'private' => 'required|boolean',
         ]);
     }
 
-    function create(array $data)
-    {
-        return Project::create([
-            'creationdate' => Carbon::now()->format('Y-m-d'),
-            'name' => $data['name'],
-            'description' => $data['description'],
-            'private' => $data['private'],
-        ]);
+    function create(array $data){
+        $project = new Project;
+
+        $project->creationdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+        $project->name = $data['name'];
+        $project->description = $data['description'];
+        $project->private = $data['private'];
+
+        $project->save();
+
+        return $project;
     }
 
     public function newProject(Request $request) {
-      $profile = Auth::user();
-
-      echo $request;
-
       // $this->validator($request->all())->validate();
-      //
+
       $newProject = $this->create($request->all());
 
-      // if(empty($newProject)) { // Failed to register project
-      //     redirect('dashboard/new-project'); // Wherever you want to redirect
-      // }
-      //
-      // if($request->has('projectPicture')){
-      //   $request->projectPicture->move(public_path().'/img/project/', $newProject->idproject.'.png');
-      // }
-      //
+      if(empty($newProject)) { // Failed to register project
+          redirect('dashboard/new-project'); // Wherever you want to redirect
+      }
+
+      if($request->has('projectPicture')){
+        $request->projectPicture->move(public_path().'/img/project/', $newProject->idproject.'.png');
+      }
+
       // redirect('project/'.$newProject->idproject);
     }
 }
