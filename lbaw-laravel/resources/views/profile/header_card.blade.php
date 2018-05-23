@@ -5,7 +5,7 @@
  @else
 
  @if(Auth::check() && Auth::user() == $profile)
-  <button class="btn btn-secondary card-edit-button" data-toggle="modal" data-target="#editprofile-modal">
+  <button class="btn btn-terciary card-edit-button" data-toggle="modal" data-target="#editprofile-modal">
     <span class="octicon octicon-pencil">
     </span>
   </button>

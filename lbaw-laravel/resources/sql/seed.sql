@@ -829,7 +829,7 @@ insert into joined (idUser, idProject, joinedDate, role) values (18, 3, '2017-09
 insert into joined (idUser, idProject, joinedDate, role) values (19, 4, '2017-09-20', 'Member');
 insert into joined (idUser, idProject, joinedDate, role) values (20, 5, '2017-09-22', 'Member');
 
-insert into joined (idUser, idProject, joinedDate, role) values (1, 5, '2017-10-20', 'Owner');
+insert into joined (idUser, idProject, joinedDate, role) values (1, 5, '2017-10-20', 'Manager');
 
 
 --ForumPost
@@ -863,7 +863,7 @@ insert into assigned (idUser, idTask) values (4, 4);
 insert into assigned (idUser, idTask) values (5, 5);
 
 insert into assigned (idUser, idTask) values (1, 6);
-insert into assigned (idUser, idTask) values (2, 6);
+insert into assigned (idUser, idTask) values (6, 6);
 
 --EditTaskInfo
 insert into edittaskinfo (idUser, idTask, editDate) values (1, 1, '2017-07-05');

@@ -103,6 +103,7 @@ Route::get('project/{idProject}/task/{idTask}', 'Task\TaskController@show');
 
 Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@show');
 Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
+Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@delete');
 
 // profile
 

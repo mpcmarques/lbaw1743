@@ -16,4 +16,12 @@ class TaskController extends Controller
 
       return view('task', ['task'=> $task, 'project' => $project]);
     }
+
+    public function delete($idproject, $idtask){
+      $task = Task::find($idtask);
+
+      $task->delete();
+
+      return redirect('/project/'.$idproject);
+    }
 }
