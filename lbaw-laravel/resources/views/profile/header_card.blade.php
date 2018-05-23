@@ -77,7 +77,7 @@
 
           <div class="md-form mb-3 required">
             <label class="col-sm-4 col-form-label">Email</label>
-            	@include('layouts.validation-input', ['name' => 'emailProfile', 'type' => 'email', 'value' => $profile->email] )
+            	@include('layouts.validation-input', ['name' => 'email', 'type' => 'email', 'value' => $profile->email] )
             <small>
               We'll never share your email with anyone else.
             </small>
@@ -85,7 +85,7 @@
 
           <div class="md-form mb-3 required">
             <label class="col-sm-4 col-form-label">Password</label>
-            @include('layouts.validation-input', ['name' => 'passwordProfile', 'type' => 'password'])
+            @include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
           </div>
 
           <div class="md-form mb-3 required">
@@ -96,7 +96,7 @@
           <!--  Gender -->
 
           <div class="md-form mb-3">
-            <label class="col-sm-6 col-form-label">Institucion / Company</label>
+            <label class="col-sm-6 col-form-label">Institution / Company</label>
             @include('layouts.validation-input', ['name' => 'institution', 'value' => $profile->institution])
             <small>
               Fill if you belong to a company or institution.

@@ -23,7 +23,7 @@ class DashboardNewProjectController extends Controller
         return Validator::make($data, [
             'name' => 'required|string',
             'description' => 'required|string',
-            'private' => 'required|boolean',
+            'private' => 'required|string',
         ]);
     }
 
@@ -58,9 +58,7 @@ class DashboardNewProjectController extends Controller
     }
 
     public function newProject(Request $request) {
-      // print_r($request->all());
-
-      // $this->validator($request->all())->validate();
+      $this->validator($request->all())->validate();
 
       $newProject = $this->create($request->all());
 

@@ -219,13 +219,12 @@
 					<div class="form-group row required">
 						<label class="col-sm-4 col-form-label">Birthday</label>
 						<div class="col-sm-8">
-							@include('layouts.validation-input', ['name' => 'birthday', 'type' => 'date'])
+							@include('layouts.validation-input', ['name' => 'birthdate', 'type' => 'date'])
 						</div>
 					</div>
 
 					<div class="modal-footer d-flex justify-content-end">
 						<div class="form-check">
-
 
 							@if (isset($errors) && $errors->has('checkbox'))
 
