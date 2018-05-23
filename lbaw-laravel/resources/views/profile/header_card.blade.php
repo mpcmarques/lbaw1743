@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <div class="modal fade bd-example-modal-lg" id="editprofile-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade bd-example-modal-lg" id="editprofile-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header text-center bg-primary">
@@ -67,37 +67,37 @@
             {{ csrf_field() }}
 
           <div class="md-form mb-3 required">
-            <label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
+            <label class="col-sm-4 col-form-label">Full Name</label>
             	@include('layouts.validation-input', ['name' => 'name', 'value' => $profile->name])
           </div>
 
           <div class="md-form mb-3 required">
-            <label for="inputName" class="col-sm-4 col-form-label">Username</label>
+            <label class="col-sm-4 col-form-label">Username</label>
             @include('layouts.validation-input', ['name' => 'username', 'value' => $profile->username])
           </div>
 
           <div class="md-form mb-3 required">
-            <label for="inputName" class="col-sm-4 col-form-label">Email</label>
-            	@include('layouts.validation-input', ['name' => 'email', 'type' => 'email', 'value' => $profile->email] )
+            <label class="col-sm-4 col-form-label">Email</label>
+            	@include('layouts.validation-input', ['name' => 'emailProfile', 'type' => 'email', 'value' => $profile->email] )
             <small>
               We'll never share your email with anyone else.
             </small>
           </div>
 
           <div class="md-form mb-3 required">
-            <label for="inputName" class="col-sm-4 col-form-label">Password</label>
-            @include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
+            <label class="col-sm-4 col-form-label">Password</label>
+            @include('layouts.validation-input', ['name' => 'passwordProfile', 'type' => 'password'])
           </div>
 
           <div class="md-form mb-3 required">
-            <label for="inputName" class="col-sm-6 col-form-label">Repeat Password</label>
+            <label class="col-sm-6 col-form-label">Repeat Password</label>
             @include('layouts.validation-input', ['name' => 'password_confirmation', 'type' => 'password'])
           </div>
 
           <!--  Gender -->
 
           <div class="md-form mb-3">
-            <label for="inputName" class="col-sm-6 col-form-label">Institucion / Company</label>
+            <label class="col-sm-6 col-form-label">Institucion / Company</label>
             @include('layouts.validation-input', ['name' => 'institution', 'value' => $profile->institution])
             <small>
               Fill if you belong to a company or institution.
@@ -105,15 +105,15 @@
           </div>
 
           <div class="md-form mb-3 required">
-            <label for="inputName" class="col-sm-4 col-form-label">Birthday</label>
-            @include('layouts.validation-input', ['name' => 'birthdate', 'type' => 'date', 'value' => \Carbon\Carbon::parse($profile->birthdate)->format('d/m/Y')] )
+            <label class="col-sm-4 col-form-label">Birthday</label>
+            @include('layouts.validation-input', ['name' => 'birthdate', 'type' => 'date', 'value' => \Carbon\Carbon::parse($profile->birthdate)->format('Y-m-d')] )
           </div>
 
           <div class="md-form mb-3">
-            <label for="inputName" class="col-sm-4 col-form-label">Profile Picture</label>
+            <label class="col-sm-4 col-form-label">Profile Picture</label>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="profilePicture" name="profilePicture">
-              <label class="custom-file-label" for="inputGroupFile01">Choose File</label>
+              <label class="custom-file-label">Choose File</label>
             </div>
           </div>
 
@@ -141,7 +141,7 @@
           {{$profile->description}}
         </p>
         <div class="company">
-          <span class="octicon octicon-location"/>
+          <span class="octicon octicon-location"></span>
           <strong>{{$profile->institution}}</strong>
         </div>
       </div>

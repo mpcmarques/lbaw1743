@@ -30,8 +30,8 @@ class ProfileController extends Controller
       return Validator::make($data, [
           'username' => 'required|string|unique:usertable',
           'name' => 'required|string|max:255',
-          'email' => 'required|string|email|max:255|unique:usertable',
-          'password' => 'required|string|min:6|confirmed',
+          'emailProfile' => 'required|string|email|max:255|unique:usertable',
+          'passwordProfile' => 'required|string|min:6|confirmed',
           'birthdate' => 'required|date',
       ]);
   }
@@ -61,8 +61,8 @@ class ProfileController extends Controller
         $profile->username = $data['username'];
     }
 
-    if($data['email'] != $profile->email){
-        $profile->email = $data['email'];
+    if($data['emailProfile'] != $profile->email){
+        $profile->email = $data['emailProfile'];
     }
 
     if($data['institution'] != $profile->institution){
@@ -73,9 +73,9 @@ class ProfileController extends Controller
         $profile->birthdate = $data['birthdate'];
     }
 
-    if(bcrypt($data['password']) != $profile->password
-        && $data['password'] == $data['password_confirmation']){
-        $profile->password = bcrypt($data['password']);
+    if(bcrypt($data['passwordProfile']) != $profile->password
+        && $data['passwordProfile'] == $data['password_confirmation']){
+        $profile->password = bcrypt($data['passwordProfile']);
     }
 
     $profile->save();

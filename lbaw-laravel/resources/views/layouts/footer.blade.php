@@ -21,12 +21,12 @@
             <div class="row pt-2 pb-2">
                 <div class="col-6">
                     <a href="https://github.com">
-                        <span class="octicon octicon-mark-github footer-icon float-right"/>
+                        <span class="octicon octicon-mark-github footer-icon float-right"></span>
                     </a>
                 </div>
                 <div class="col-6">
                     <a  href="https://sigarra.up.pt/feup/pt/web_page.inicial">
-                        <span class="octicon octicon-mortar-board footer-icon float-left"/>
+                        <span class="octicon octicon-mortar-board footer-icon float-left"></span>
                     </a>
                 </div>
             </div>

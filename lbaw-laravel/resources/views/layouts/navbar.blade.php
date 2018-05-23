@@ -4,7 +4,7 @@
 	</a>
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"/>
+		<span class="navbar-toggler-icon"></span>
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,8 +29,8 @@
 					value="{{ old('search-text') }}"
 					>
 					<div class="input-group-append">
-						<button  type="submit" class="btn input-button" type="button">
-							<span class="octicon octicon-search" />
+						<button type="submit" class="btn input-button">
+							<span class="octicon octicon-search"></span>
 						</button>
 					</div>
 				</div>
@@ -83,7 +83,7 @@
 
 @endif
 
-<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog"  aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header text-center bg-primary">
@@ -98,14 +98,14 @@
 					{{ csrf_field() }}
 
 					<div class="form-group">
-						<label for="email">Email</label>
+						<label>Email</label>
 
 						@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
 
 					</div>
 
 					<div class="form-group">
-						<label for="password">Password</label>
+						<label>Password</label>
 
 						@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
 
@@ -145,7 +145,7 @@
 
 @endif
 
-<div class="modal fade bd-example-modal-lg" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header text-center bg-primary">
@@ -161,7 +161,7 @@
 					{{ csrf_field() }}
 
 					<div class="form-group row required">
-						<label for="inputName" class="col-sm-4 col-form-label">Full Name</label>
+						<label class="col-sm-4 col-form-label">Full Name</label>
 						<div class="col-sm-8">
 
 							@include('layouts.validation-input', ['name' => 'name'])
@@ -170,7 +170,7 @@
 					</div>
 
 					<div class="form-group row required">
-						<label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
+						<label class="col-sm-4 col-form-label">Username</label>
 						<div class="col-sm-8">
 
 							@include('layouts.validation-input', ['name' => 'username'])
@@ -180,7 +180,7 @@
 					</div>
 
 					<div class="form-group row required">
-						<label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
+						<label class="col-sm-4 col-form-label">Email</label>
 						<div class="col-sm-8">
 
 							@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
@@ -190,7 +190,7 @@
 					</div>
 
 					<div class="form-group row required">
-						<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+						<label class="col-sm-4 col-form-label">Password</label>
 						<div class="col-sm-8">
 
 							@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
@@ -200,7 +200,7 @@
 					</div>
 
 					<div class="form-group row required">
-						<label for="inputRepeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
+						<label class="col-sm-4 col-form-label">Repeat Password</label>
 						<div class="col-sm-8">
 							@include('layouts.validation-input', ['name' => 'password_confirmation', 'type' => 'password'])
 						</div>
@@ -209,7 +209,7 @@
 					<!--  Gender -->
 
 					<div class="form-group row">
-						<label for="inputInstCompany" class="col-sm-4 col-form-label">Institution / Company</label>
+						<label class="col-sm-4 col-form-label">Institution / Company</label>
 						<div class="col-sm-8">
 							@include('layouts.validation-input', ['name' => 'institution_company'])
 						</div>
@@ -217,7 +217,7 @@
 
 
 					<div class="form-group row required">
-						<label for="inputInstCompany" class="col-sm-4 col-form-label">Birthday</label>
+						<label class="col-sm-4 col-form-label">Birthday</label>
 						<div class="col-sm-8">
 							@include('layouts.validation-input', ['name' => 'birthday', 'type' => 'date'])
 						</div>
@@ -241,7 +241,7 @@
 
 							@endif
 
-							<label class="form-check-label" for="gridCheck">
+							<label class="form-check-label">
 								I read and agreed with the Terms of Service and the Privacy Policy
 							</label>
 
