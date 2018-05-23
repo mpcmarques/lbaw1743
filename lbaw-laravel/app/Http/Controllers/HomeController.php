@@ -97,6 +97,7 @@ class HomeController extends Controller
             'password' => bcrypt($data['password']),
             'username' => $data['username'],
             'institution' => $data['institution'],
+            'birthdate' => date('Y-m-d H:i:s', $data['birthdate'])
         ]);
     }
 
@@ -108,17 +109,17 @@ class HomeController extends Controller
      */
     public function register(Request $request) {
       $this->validator($request->all())->validate();
-      
+
       $user = $this->create($request->all());
-  
+
       if(empty($user)) { // Failed to register user
           redirect('register'); // Wherever you want to redirect
       }
-  
+
       event(new Registered($user));
-  
+
       $this->guard()->login($user);
-  
+
       // Success redirection - which will be attribute `$redirectTo`
       redirect($this->redirectPath());
   }
