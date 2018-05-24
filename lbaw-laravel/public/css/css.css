@@ -480,6 +480,15 @@ div.required label:after {
   padding: 5px 0px;
 }
 
+#task .card.discussion-card .removeComment{
+  font-size: 10px;
+  padding: 2px;
+}
+
+#task .card.discussion-card .removeComment span{
+  padding-left: 3px;
+}
+
 #task #addtag-modal #tag{
   margin-right: 1em;
 }

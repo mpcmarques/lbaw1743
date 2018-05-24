@@ -114,6 +114,7 @@ Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@sh
 Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
 
 Route::post('project/{idProject}/task/{idTask}/comment', 'Task\TaskEditController@postComment');
+Route::get('project/{idProject}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment');
 
 // tags
 

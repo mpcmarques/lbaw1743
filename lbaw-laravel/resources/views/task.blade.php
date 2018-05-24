@@ -134,6 +134,14 @@
         <div class="media-body">
           <h5 class="mt-0"> <a href="{{ url('profile/'.$comment->user->iduser) }}">{{$comment->user->username}}</a></h5>
           {{$comment->content}}
+
+          @if ( Auth::check() && ( $comment->user == Auth::user()
+                                    || $task->project->editors->contains('iduser', Auth::user()->iduser) ))
+          <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete-comment/'.$comment->idcomment) }}" class="btn btn-primary removeComment">
+            <span class="octicon octicon-x">
+            </span>
+          </a>
+            @endif
         </div>
       </div>
       @endforeach

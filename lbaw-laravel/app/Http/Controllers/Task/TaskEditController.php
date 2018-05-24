@@ -103,4 +103,17 @@ class TaskEditController extends Controller
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
+
+    public function deleteComment($idproject, $idtask, $idcomment){
+      $profile = Auth::user();
+
+      $comment = Comment::findOrFail($idcomment);
+      $task = Task::findOrFail($idtask);
+
+      if ($comment->user == $profile|| $task->project->editors->contains('iduser', $profile->iduser)){
+          $comment->delete();
+      }
+
+      return redirect('/project/'.$idproject.'/task/'.$idtask);
+    }
 }
