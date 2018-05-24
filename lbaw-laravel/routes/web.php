@@ -113,6 +113,8 @@ Route::get('project/{idProject}/task/{idTask}/unassign/{idUser}', 'Task\TaskCont
 Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@show');
 Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
 
+Route::post('project/{idProject}/task/{idTask}/comment', 'Task\TaskEditController@postComment');
+
 // tags
 
 Route::post('project/{idProject}/task/{idTask}/add-tag', 'Task\TaskEditController@addTag');

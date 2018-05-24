@@ -467,9 +467,17 @@ div.required label:after {
 }
 
 #task .card.discussion-card .btn{
-    margin-top: 1em !important;
+    /* margin-top: 1em !important; */
     background-color: gray;
     color: white;
+}
+
+#task .card.discussion-card textarea{
+  margin-top: 10px;
+}
+
+#task .card.discussion-card .media{
+  padding: 5px 0px;
 }
 
 #task #addtag-modal #tag{

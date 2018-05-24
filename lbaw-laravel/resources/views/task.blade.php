@@ -130,13 +130,24 @@
 
       @foreach($task->comments as $comment)
       <div class="media">
-        <img class="mr-3" src="{{ asset('img/task-placeholder.svg') }}" alt="Generic placeholder image">
+        <img class="img-round mr-3" src="{{ $comment->user->getPicture() }}" alt="Profile Picture" width="40">
         <div class="media-body">
-          <h5 class="mt-0">{{$comment->user->username}}</h5>
+          <h5 class="mt-0"> <a href="{{ url('profile/'.$comment->user->iduser) }}">{{$comment->user->username}}</a></h5>
           {{$comment->content}}
         </div>
       </div>
       @endforeach
+
+      @if ( Auth::check() && $task->project->members->contains('iduser', Auth::user()->iduser))
+      <form method="POST" action="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/comment') }}">
+        {{ csrf_field() }}
+      <div class="form-group">
+          <!-- <label>Add a Comment:</label> -->
+          @include('layouts.validation-input-textarea', ['name' => 'content', 'rows' => '2'])
+      </div>
+      <button type="submit" class="btn btn-primary float-right">Comment</button>
+      </form>
+    @endif
 
       @if(count($task->comments) > 8)
       <button type="button" class="btn btn-block btn-xs m-0 p-0">...</button>

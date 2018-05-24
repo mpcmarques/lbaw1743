@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Task;
 use App\Model\Project;
 use App\Model\Tag;
+use App\Model\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -84,6 +85,21 @@ class TaskEditController extends Controller
     public function removeTag($idproject, $idtask, $idtag){
 
       Task::find($idtask)->tags()->detach($idtag);
+
+      return redirect('/project/'.$idproject.'/task/'.$idtask);
+    }
+
+    public function postComment(Request $request, $idproject, $idtask){
+      $data = $request->all();
+
+      $profile = Auth::user();
+
+      $comment = new Comment;
+      $comment->content = $data['content'];
+      $comment->creationdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      $comment->idtask = $idtask;
+      $comment->iduser= $profile->iduser;
+      $comment->save();
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
