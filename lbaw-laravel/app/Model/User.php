@@ -72,6 +72,10 @@ class User extends Authenticatable
     return $this->hasMany('App\Model\Task', 'iduser');
   }
 
+  public function assignedTasks(){
+    return $this->belongsToMany('\App\Model\Task', 'assigned', 'iduser', 'idtask');
+  }
+
   public function premiumSignatures(){
     return $this->hasMany('\App\Model\PremiumSignature', 'iduser');
   }

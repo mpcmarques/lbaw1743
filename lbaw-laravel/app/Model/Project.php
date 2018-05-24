@@ -15,7 +15,7 @@ class Project extends BaseModel
   */
   public function tasks()
   {
-    return $this->hasMany('App\Model\Task', 'idproject');
+    return $this->hasMany('App\Model\Task', 'idproject')->orderBy('lasteditdate', 'DESC');;
   }
 
   /**
@@ -31,7 +31,7 @@ class Project extends BaseModel
   */
   public function members()
   {
-    return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role');
+    return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role')->orderBy('role', 'ASC');
   }
 
   public function scopeNameDescriptionPublic($query, $text){

@@ -167,16 +167,6 @@ CREATE TABLE Assigned(
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
 
-/* edit task info */
-CREATE TABLE EditTaskInfo(
-	idUser integer,
-	idTask integer,
-	editDate timestamp NOT NULL,
-	PRIMARY KEY(idUser, idTask),
-	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
-	FOREIGN KEY(idTask) REFERENCES Task(idTask)
-);
-
 /* comment */
 CREATE TABLE Comment(
 	idComment serial PRIMARY KEY,
@@ -865,9 +855,6 @@ insert into assigned (idUser, idTask) values (5, 5);
 
 insert into assigned (idUser, idTask) values (1, 6);
 insert into assigned (idUser, idTask) values (6, 6);
-
---EditTaskInfo
-insert into edittaskinfo (idUser, idTask, editDate) values (1, 1, '2017-07-05');
 
 --Comment
 insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-01-12', '2017-09-12', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 1, 1);
