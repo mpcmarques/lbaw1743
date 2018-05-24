@@ -17,17 +17,43 @@ class ProjectOptionsController extends Controller
   }
 
   public function delete($id){
-    $project = Project::findOrFail($id);
+    $project = Project::find($id);
 
-    if( $project->owner->contains('iduser', Auth::user()->iduser)){
-      $project->delete();
-      return redirect()->route('home');
-    }
-    else{
-      return redirect('/project/'.$id);
+    $forumPosts = $project->forumPosts()->get();
+    foreach ($forumPosts as $forumPost) {
+      $replys = $forumPost->replys()->get();
+      foreach ($replys as $reply){
+        $reply->delete();
+      }
+
+      $forumPost->delete();
     }
 
-    return redirect()->route('home');
+    $tasks = $project->tasks()->get();
+    foreach ($tasks as $task){
+      $comments = $task->comments()->get();
+      echo $comments;
+
+      foreach($comments as $comment){
+        $comment->delete();
+      }
+
+      $closerequests = $task->closeRequest()->get();
+      foreach($closerequests as $closerequest){
+        $closerequest->delete();
+      }
+
+      $task->tags()->detach();
+      $task->assigned()->detach();
+
+      $task->delete();
+    }
+
+    $project->members()->detach();
+
+    $project->delete();
+
+    return redirect('/home');
   }
 
   function validator(array $data)

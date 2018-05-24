@@ -121,7 +121,7 @@ class ProfileController extends Controller
 
     //TODO: Banned record
 
-    $user->delete();
+    //$user->delete();
 
     return redirect('/home/');
   }

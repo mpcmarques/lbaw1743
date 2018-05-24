@@ -15,13 +15,13 @@ class Project extends BaseModel
   */
   public function tasks()
   {
-    return $this->hasMany('App\Model\Task', 'idproject')->orderBy('lasteditdate', 'DESC');;
+    return $this->hasMany('App\Model\Task', 'idproject')->orderBy('lasteditdate', 'DESC');
   }
 
   /**
-  * Get the members for the project.
+  * Get the forumPosts for the project.
   */
-  public function posts()
+  public function forumPosts()
   {
     return $this->hasMany('\App\Model\Post', 'idproject');
   }

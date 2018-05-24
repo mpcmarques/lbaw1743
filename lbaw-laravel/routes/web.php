@@ -76,7 +76,7 @@ Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middle
 Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show')->middleware('project');
 Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProject')->middleware('project');
 
-Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('project', 'can:delete');
+Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete');
 
 Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project');
 
