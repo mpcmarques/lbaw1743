@@ -65,6 +65,12 @@ class TaskEditController extends Controller
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
 
+    public function update($idtask){
+      $task = Task::find($idtask);
+      $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      $task->save();
+    }
+
     public function addTag(Request $request, $idproject, $idtask){
       $data = $request->all();
 
@@ -79,12 +85,16 @@ class TaskEditController extends Controller
 
       Task::find($idtask)->tags()->attach($tag->idtag);
 
+      $this->update($idtask);
+
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
 
     public function removeTag($idproject, $idtask, $idtag){
 
       Task::find($idtask)->tags()->detach($idtag);
+
+      $this->update($idtask);
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
@@ -101,6 +111,8 @@ class TaskEditController extends Controller
       $comment->iduser= $profile->iduser;
       $comment->save();
 
+      $this->update($idtask);
+
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
 
@@ -113,6 +125,8 @@ class TaskEditController extends Controller
       if ($comment->user == $profile|| $task->project->editors->contains('iduser', $profile->iduser)){
           $comment->delete();
       }
+
+      $this->update($idtask);
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }

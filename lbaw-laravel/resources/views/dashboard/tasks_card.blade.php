@@ -91,18 +91,36 @@
       </tbody>
     </table>
   </div>
-  @if(count($user->tasks) > 5)
+  @if(count($user->assignedTasks) > 5)
   <button type="button" class="btn btn-white btn-block m-0 p-0">...</button>
   @endif
 </div>
 @endsection
 
+<?php use Carbon\Carbon;
+      $now = Carbon::now();?>
+
 @section('card-footer')
 
 <div class="card-footer">
+  @if(count($user->assignedTasks) > 0)
   <small>
-    last task activity <span class="text-link">task name</span>, 2 days ago.
+    <?php $date = Carbon::parse($user->assignedTasks->first()->lasteditdate);
+          $days = $date->diffInDays($now);
+          $hours = $date->diffInHours($now);
+          $minutes = $date->diffInMinutes($now);
+          $seconds = $date->diffInSeconds($now); ?>
+    @if ($days > 0)
+    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $days }} days ago.
+    @elseif ($hours > 0)
+    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $hours }} hours ago.
+    @elseif ($minutes > 0)
+    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $minutes }} minutes ago.
+    @else
+    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $seconds }} seconds ago.
+    @endif
   </small>
+  @endif
 </div>
 
 @endsection

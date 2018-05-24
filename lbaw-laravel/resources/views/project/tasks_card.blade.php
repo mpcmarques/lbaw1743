@@ -56,9 +56,15 @@
         </td>
         <td>
           <p class="text-left">
+            @if(count($task->tags) > 0)
+
             @foreach($task->tags as $tag)
               {{$tag->name}}
             @endforeach
+
+            @else
+            none
+            @endif
           </p>
         </td>
         <td>
@@ -81,12 +87,31 @@
 
 @endsection
 
+<?php use Carbon\Carbon;
+      $now = Carbon::now();?>
+
 @section('card-footer')
 
 <div class="card-footer">
-  <p class="text-center">
-    last task activity task name, 2 days ago.
-  </p>
+  @if(count($project->tasks) > 0)
+  <small>
+    <?php $task = $project->tasks->first();
+          $date = Carbon::parse($task->lasteditdate);
+          $days = $date->diffInDays($now);
+          $hours = $date->diffInHours($now);
+          $minutes = $date->diffInMinutes($now);
+          $seconds = $date->diffInSeconds($now); ?>
+    @if ($days > 0)
+    last task activity <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{ $task->title }}</a>, {{ $days }} days ago.
+    @elseif ($hours > 0)
+    last task activity <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{ $task->title }}</a>, {{ $hours }} hours ago.
+    @elseif ($minutes > 0)
+    last task activity <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{ $task->title }}</a>, {{ $minutes }} minutes ago.
+    @else
+    last task activity <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{ $task->title }}</a>, {{ $seconds }} seconds ago.
+    @endif
+  </small>
+  @endif
 </div>
 
 @endsection

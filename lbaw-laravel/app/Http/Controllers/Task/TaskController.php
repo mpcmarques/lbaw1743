@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Model\Task;
 use App\Model\Project;
+use Carbon\Carbon;
 
 class TaskController extends Controller
 {
@@ -38,14 +39,24 @@ class TaskController extends Controller
       return redirect('/project/'.$idproject);
     }
 
+    public function update($idtask){
+      $task = Task::find($idtask);
+      $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      $task->save();
+    }
+
     public function assign($idproject, $idtask, $iduser){
         Task::find($idtask)->assigned()->attach($iduser);
+
+        $this->update($idtask);
 
         return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
 
     public function unassign($idproject, $idtask, $iduser){
         Task::find($idtask)->assigned()->detach($iduser);
+
+        $this->update($idtask);
 
         return redirect('/project/'.$idproject.'/task/'.$idtask);
     }

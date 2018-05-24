@@ -15,7 +15,7 @@ class Project extends BaseModel
   */
   public function tasks()
   {
-    return $this->hasMany('App\Model\Task', 'idproject')->orderBy('lasteditdate', 'DESC');;
+    return $this->hasMany('App\Model\Task', 'idproject')->orderBy('lasteditdate', 'DESC');
   }
 
   /**

@@ -73,7 +73,7 @@ class User extends Authenticatable
   }
 
   public function assignedTasks(){
-    return $this->belongsToMany('\App\Model\Task', 'assigned', 'iduser', 'idtask');
+    return $this->belongsToMany('\App\Model\Task', 'assigned', 'iduser', 'idtask')->orderBy('lasteditdate', 'DESC');
   }
 
   public function premiumSignatures(){
