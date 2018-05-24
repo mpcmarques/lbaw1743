@@ -160,10 +160,11 @@
               </button>
             </div>
             <div class="modal-body">
-              <form class="form-inline">
+              <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
+                {{ csrf_field() }}
                 <div class="form-group">
                   <label for="tag">Tag:</label>
-                  <input type="text" class="form-control" id="tag">
+                  @include('layouts.validation-input', ['name' => 'tag'])
                 </div>
                 <button type="button submit" class="btn btn-primary">Confirm</button>
               </form>

@@ -107,6 +107,7 @@ Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@dele
 
 // tags
 
+Route::post('project/{idProject}/task/{idTask}/add-tag', 'Task\TaskEditController@addTag');
 Route::get('project/{idProject}/task/{idTask}/remove-tag/{idTag}', 'Task\TaskEditController@removeTag');
 
 // profile

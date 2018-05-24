@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 
 use App\Model\Task;
 use App\Model\Project;
+use App\Model\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+
 
 class TaskEditController extends Controller
 {
@@ -49,6 +51,23 @@ class TaskEditController extends Controller
       $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
 
       $task->save();
+
+      return redirect('/project/'.$idproject.'/task/'.$idtask);
+    }
+
+    public function addTag(Request $request, $idproject, $idtask){
+      $data = $request->all();
+
+      // $tag = Tag::firstOrCreate(['name' => $data['tag']]);  //wish you were here
+
+      $tag = Tag::where('name', $data['tag'])->first();
+      if(!$tag){
+        $tag = new Tag;
+        $tag->name = $data['tag'];
+        $tag->save();
+      }
+
+      Task::find($idtask)->tags()->attach($tag->idtag);
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }

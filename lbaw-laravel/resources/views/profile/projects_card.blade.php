@@ -5,9 +5,7 @@
   <div class="card-body">
     {{-- project card --}}
     @foreach($projects as $project)
-
-    @include('layouts.project_card', ['project' => $project])
-
+      @include('layouts.project_card', ['project' => $project])
     @endforeach
   </div>
 </div>
