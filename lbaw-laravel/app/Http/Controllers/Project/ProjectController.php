@@ -16,8 +16,12 @@ class ProjectController extends Controller {
   }
 
   public function leave($id, $iduser){
-    if(Auth::user()->iduser == $iduser){
-      Project::find($id)->members()->detach($iduser);
+    $project = Project::find($id);
+
+    if (Auth::user()->iduser == $iduser
+          && $project->members->contains('iduser', Auth::user()->iduser)
+          && !$project->owner->contains('iduser', Auth::user()->iduser)){
+      $project->members()->detach($iduser);
     }
     else{
       return redirect('/project/'.$id);

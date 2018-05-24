@@ -53,7 +53,7 @@ class ProjectOptionsController extends Controller
 
     $project->delete();
 
-    return redirect('/home');
+    return redirect('/');
   }
 
   function validator(array $data)

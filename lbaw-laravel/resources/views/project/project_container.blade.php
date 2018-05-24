@@ -2,7 +2,7 @@
   <div class="card-header">
     <h3 class="text-center">{{$project->name}}</h3>
 
-    @if ( Auth::check() && $project->members->contains('iduser', Auth::user()->iduser))
+    @if ( Auth::check() && $project->members->contains('iduser', Auth::user()->iduser) && !$project->owner->contains('iduser', Auth::user()->iduser))
     <a href="{{ url('project/'.$project->idproject.'/leave/'.Auth::user()->iduser) }}" class="btn btn-primary card-leave-button">
       <span class="octicon octicon-sign-out">
       </span>
