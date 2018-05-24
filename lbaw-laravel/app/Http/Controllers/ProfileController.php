@@ -75,8 +75,6 @@ class ProfileController extends Controller
   }
 
   public function deleteProfile($iduser){
-    //first delete from premiumsignature table
-
     $user = User::find($iduser);
 
     $premiumSignatures = $user->premiumSignatures()->get();
@@ -86,15 +84,45 @@ class ProfileController extends Controller
 
     $forumPosts = $user->forumPosts()->get();
     foreach ($forumPosts as $forumPost) {
+      $replys = $forumPost->replys()->get();
+      foreach ($replys as $reply){
+        $reply->delete();
+      }
+
       $forumPost->delete();
+    }
+
+    $comments = $user->comments()->get();
+    foreach ($comments as $comment) {
+      $comment->delete();
+    }
+
+    $user->assignedTasks()->detach();
+
+    $tasks = $user->tasks()->get();
+    foreach ($tasks as $task){
+      $comments = $task->comments()->get();
+      foreach($comments as $comment){
+        $comment->delete();
+      }
+
+      $closerequests = $task->closeRequest()->get();
+      foreach($closerequests as $closerequest){
+        $closerequest->delete();
+      }
+
+      $task->tags()->detach();
+      $task->assigned()->detach();
+
+      $task->delete();
     }
 
     $user->projects()->detach();
 
+    //TODO: Banned record
 
+    $user->delete();
 
-    // $user->delete();
-
-    // return redirect('/home/');
+    return redirect('/home/');
   }
 }

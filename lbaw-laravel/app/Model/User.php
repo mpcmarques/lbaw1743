@@ -84,6 +84,10 @@ class User extends Authenticatable
     return $this->hasMany('\App\Model\Post', 'iduser');
   }
 
+  public function comments(){
+    return $this->hasMany('App\Model\Comment', 'iduser');
+  }
+
   public function scopeUsernameName($query, $text){
     return $query->where('username', 'like', "%{$text}%")->orWhere('name', 'like', "%{$text}%");
   }

@@ -10,7 +10,11 @@ class Post extends BaseModel
     parent::__construct('forumpost', 'idpost');
   }
 
-  function user(){
+  public function user(){
     return $this->belongsTo('App\Model\User', 'iduser');
+  }
+
+  public function replys(){
+    return $this->hasMany('App\Model\Reply', 'idpost');
   }
 }
