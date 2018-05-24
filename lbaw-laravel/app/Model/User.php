@@ -66,10 +66,18 @@ class User extends Authenticatable
   }
 
   /**
-  * Get all user tasks, created or assigned to him
+  * Get all user tasks, created by him
   */
   public function tasks(){
     return $this->hasMany('App\Model\Task', 'iduser');
+  }
+
+  public function premiumSignatures(){
+    return $this->hasMany('\App\Model\PremiumSignature', 'iduser');
+  }
+
+  public function forumPosts() {
+    return $this->hasMany('\App\Model\Post', 'iduser');
   }
 
   public function scopeUsernameName($query, $text){

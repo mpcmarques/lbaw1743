@@ -117,6 +117,8 @@ Route::get('/profile/{id}', 'ProfileController@show');
 Route::get('/profile/{id}/edit', 'ProfileController@showEditModal');
 Route::post('/profile/{id}/edit', 'ProfileController@editProfile');
 
+Route::get('/profile/{id}/delete', 'ProfileController@deleteProfile');
+
 // contact
 
 Route::get('/contact', 'ContactController@show');

@@ -36,12 +36,10 @@
             </button>
           </div>
           <div class="modal-body">
-            Warning: this action is destructive!
+            <b>Warning</b>: this action is destructive!
           </div>
           <div class="modal-footer">
-
-            <a href="{{ url('profile/'.$profile->iduser.'/delete') }}"
-              class="btn btn-primary">
+            <a href="{{ url('profile/'.$profile->iduser.'/delete') }}" class="btn btn-primary">
               Delete
             </a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
