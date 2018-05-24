@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <h5>Manage users</h5>
+    <h5>Manage Users</h5>
   </div>
   <div class="col-md-4">
     <form>
@@ -38,7 +38,7 @@
         </th>
         <th scope="col">
           <div class="text-left font-weight-bold">
-            Tasks assigned
+            Tasks Assigned
           </div>
         </th>
         <th scope="col">
@@ -58,20 +58,26 @@
       <tr>
         <th scope="row">
           <div class="text-center">
-            <input type="checkbox" value="">
+            @include('layouts.validation-input', ['name' => 'user'.$member->iduser, 'type' => 'checkbox'])
           </div>
         </th>
         <td>
           <a href="{{ url('profile/'.$member->iduser) }}">{{$member->username}}</a>
         </td>
         <td>
-          <div class="text-left">{{count($member->assignedTasksForProject($project->idproject)->get())}}</div>
+          <div class="text-left">{{ count($member->assignedTasksForProject($project->idproject)->get() ) }}</div>
         </td>
         <td>
           <div class="text-left">{{$member->name}}</div>
         </td>
         <td>
+          @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
+          @include('layouts.role-input', ['role' => $member->pivot->role])
+          @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $project->managers->contains('iduser', Auth::user()->iduser) )
+          @include('layouts.role-input', ['role' => $member->pivot->role])
+          @else
           <div class="text-left">{{$member->pivot->role}}</div>
+          @endif
         </td>
       </tr>
       @endforeach
