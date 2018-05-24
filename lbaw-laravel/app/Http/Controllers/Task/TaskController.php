@@ -20,6 +20,19 @@ class TaskController extends Controller
     public function delete($idproject, $idtask){
       $task = Task::find($idtask);
 
+      $comments = $task->comments()->get();
+      foreach($comments as $comment){
+        $comment->delete();
+      }
+
+      $closerequests = $task->closeRequest()->get();
+      foreach($closerequests as $closerequest){
+        $closerequest->delete();
+      }
+
+      $task->tags()->detach();
+      $task->assigned()->detach();
+
       $task->delete();
 
       return redirect('/project/'.$idproject);
