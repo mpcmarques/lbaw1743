@@ -24,13 +24,13 @@
             {{ csrf_field() }}
 
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Name</label>
+                    <label class="col-sm-3 col-form-label">Name</label>
                     <div class="col-sm-9">
                       @include('layouts.validation-input', ['name' => 'name'])
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="exampleTextarea">Description</label>
+                    <label class="col-sm-3 col-form-label">Description</label>
                     <div class="col-sm-9">
                       @include('layouts.validation-input-textarea', ['name' => 'description', 'rows' => '4'])
                     </div>
@@ -60,7 +60,7 @@
                     <div class="col-sm-9">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="projectPicture" name="projectPicture">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose File</label>
+                            <label class="custom-file-label">Choose File</label>
                         </div>
                     </div>
                 </div>

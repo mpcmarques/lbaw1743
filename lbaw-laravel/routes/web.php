@@ -84,6 +84,9 @@ Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@s
 
 Route::get('/project/{id}/leave/{iduser}', 'Project\ProjectController@leave')->middleware('project');
 
+Route::get('/project/{id}/new-task', 'Project\ProjectNewTaskController@show')->middleware('project');
+Route::post('/project/{id}/new-task', 'Project\ProjectNewTaskController@newTask')->middleware('project');
+
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 

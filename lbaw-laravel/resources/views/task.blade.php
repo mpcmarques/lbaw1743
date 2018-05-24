@@ -158,7 +158,7 @@
         @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
                                   || $task->project->editors->contains('iduser', Auth::user()->iduser)
                                   || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
-                                  
+
         <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
             <span class="octicon octicon-plus"></span>
         </button>
@@ -176,7 +176,7 @@
                   <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
-                      <label for="tag">Tag:</label>
+                      <label>Tag:</label>
                       @include('layouts.validation-input', ['name' => 'tag'])
                     </div>
                     <button type="button submit" class="btn btn-primary">Confirm</button>

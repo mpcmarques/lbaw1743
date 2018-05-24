@@ -19,7 +19,13 @@ class ProjectOptionsController extends Controller
   public function delete($id){
     $project = Project::findOrFail($id);
 
-    $project->delete();
+    if( $project->owner->contains('iduser', Auth::user()->iduser)){
+      $project->delete();
+      return redirect()->route('home');
+    }
+    else{
+      return redirect('/project/'.$id);
+    }
 
     return redirect()->route('home');
   }

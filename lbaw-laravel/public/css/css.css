@@ -360,6 +360,10 @@ div.required label:after {
   color: white;
 }
 
+.table{
+  margin-bottom: 0;
+}
+
 .deleteProject{
   float: right;
 }

@@ -153,6 +153,7 @@ CREATE TABLE Task(
 	idUser integer NOT NULL,
 	idProject integer NOT NULL,
 	CONSTRAINT completionDate_valid CHECK (completetionDate > creationDate),
+	CONSTRAINT deadline_valid CHECK (deadline > creationDate),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idProject) REFERENCES Project(idProject)
 );
