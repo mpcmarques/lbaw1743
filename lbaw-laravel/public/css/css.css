@@ -468,6 +468,10 @@ div.required label:after {
   margin-right: 1em;
 }
 
+.octicon-sign-out, .octicon-sign-in{
+  padding-top: 10px;
+}
+
 /* faq */
 
 #faq h5 {

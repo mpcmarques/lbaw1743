@@ -69,18 +69,17 @@
   <div class="card">
     <div class="card-header panel-header">
       <h5 class="panel-title">Assigned</h5>
-
-      <!-- If Auth::user() is not assigned to task -->
-      <button class="btn btn-terciary card-leave-button">
+      @if ( Auth::check() && $task->assigned->contains('iduser', Auth::user()->iduser))
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/unassign/'.Auth::user()->iduser) }}" class="btn btn-terciary card-leave-button">
         <span class="octicon octicon-sign-out">
         </span>
-      </button>
-
-      <!-- Else If Auth::user() is assigned to task -->
-      <!-- <button class="btn btn-terciary card-enter-button">
+      </a>
+      @elseif (Auth::check() && $task->project->members->contains('iduser', Auth::user()->iduser))
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/assign/'.Auth::user()->iduser) }}" class="btn btn-terciary card-enter-button">
         <span class="octicon octicon-sign-in">
         </span>
-      </button> -->
+      </a>
+      @endif
     </div>
     <div class="card-body">
       @foreach($task->assigned as $user)

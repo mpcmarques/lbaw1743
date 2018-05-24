@@ -100,10 +100,13 @@ Route::get('/search/{text}/users', 'Search\SearchUsersController@show');
 // task
 
 Route::get('project/{idProject}/task/{idTask}', 'Task\TaskController@show');
+Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@delete');
+
+Route::get('project/{idProject}/task/{idTask}/assign/{idUser}', 'Task\TaskController@assign');
+Route::get('project/{idProject}/task/{idTask}/unassign/{idUser}', 'Task\TaskController@unassign');
 
 Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@show');
 Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
-Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@delete');
 
 // tags
 
