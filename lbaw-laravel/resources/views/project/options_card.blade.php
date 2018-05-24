@@ -24,9 +24,6 @@
             <label class="custom-file-label">Choose File</label>
             <input type="file" class="custom-file-input" id="projectPicture" name="projectPicture">
           </div>
-          <!-- <div class="input-group-append">
-            <span class="input-group-text" id="">Upload</span>
-          </div> -->
         </div>
       </div>
     </div>

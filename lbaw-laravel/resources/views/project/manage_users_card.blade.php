@@ -25,6 +25,8 @@
 @endsection
 
 @section('card-body')
+<form method="POST" action="{{ url('project/'.$project->idproject.'/manage_users/update') }}">
+  {{ csrf_field() }}
 <div class="nopadding">
   <table class="table">
     <thead>
@@ -72,9 +74,10 @@
         </td>
         <td>
           @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
-          @include('layouts.role-input', ['role' => $member->pivot->role])
-          @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $project->managers->contains('iduser', Auth::user()->iduser) )
-          @include('layouts.role-input', ['role' => $member->pivot->role])
+          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Owner'])
+          @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $member->pivot->role != 'Manager'
+                      && $project->managers->contains('iduser', Auth::user()->iduser) )
+          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Manager'])
           @else
           <div class="text-left">{{$member->pivot->role}}</div>
           @endif
@@ -100,6 +103,7 @@
     </button>
   </div>
 </div>
+</form>
 
 <div class="modal fade" id="removeUsersModal" role="dialog">
   <div class="modal-dialog modal-dialog-centered">

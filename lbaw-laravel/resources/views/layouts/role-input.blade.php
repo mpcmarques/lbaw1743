@@ -1,7 +1,7 @@
-<select name="role" form="carform">
+<select name="role">
   @if ($role == 'Owner')
   <option value="Owner" selected>Owner</option>
-  @else
+  @elseif ($user == 'Owner')
   <option value="Owner">Owner</option>
   @endif
   @if ($role == 'Manager')

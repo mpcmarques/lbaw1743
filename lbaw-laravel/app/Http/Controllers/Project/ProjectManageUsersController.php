@@ -11,4 +11,12 @@ class ProjectManageUsersController extends Controller{
 
     return view('project.manage_users_card', ['project' => $project]);
   }
+
+  public function remove(Request $request, $id){
+
+  }
+
+  public function update(Request $request, $id){
+
+  }
 }
