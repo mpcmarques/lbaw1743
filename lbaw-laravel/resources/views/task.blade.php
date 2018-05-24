@@ -5,7 +5,7 @@
 @section('content')
 
 @if($project->idProject != $task->idProject)
-  abort(404);
+abort(404);
 @endif
 
 <?php use Carbon\Carbon; ?>
@@ -29,15 +29,15 @@
     <div class="card-header panel-header">
 
       @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
-                                || $task->project->editors->contains('iduser', Auth::user()->iduser)
-                                || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+      || $task->project->editors->contains('iduser', Auth::user()->iduser)
+      || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
 
       @include('layouts.card-edit-button', ['href' => $task->idtask.'/edit', 'extra' => ''])
 
       @endif
 
       @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
-                                || $task->project->editors->contains('iduser', Auth::user()->iduser) ) )
+      || $task->project->editors->contains('iduser', Auth::user()->iduser) ) )
 
       <button class="btn btn-primary card-delete-button" data-toggle="modal" data-target="#deletetask-modal">
         <span class="octicon octicon-trashcan">
@@ -45,28 +45,28 @@
       </button>
 
       <div class="modal fade" id="deletetask-modal" role="dialog">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5>Delete Task?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Warning: this action is destructive!
-              </div>
-              <div class="modal-footer">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Delete Task?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Warning: this action is destructive!
+            </div>
+            <div class="modal-footer">
 
-                <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete') }}"
-                  class="btn btn-primary">
-                  Delete
-                </a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
+              <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete') }}"
+                class="btn btn-primary">
+                Delete
+              </a>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
+      </div>
 
       @endif
       <div class="row">
@@ -91,17 +91,18 @@
       <small>
         created by
         <a href="{{ url('profile/'.$task->creator->iduser) }}">{{ $task->creator->username }}</a>
-         on {{ Carbon::parse($task->creationdate)->format('d/m/Y') }}
+        on {{ Carbon::parse($task->creationdate)->format('d/m/Y') }}
       </small>
       <small class="float-right">
-      @if($task->deadline && !$task->completed)
+        @if($task->deadline && !$task->completed)
         deadline at {{ Carbon::parse($task->deadline)->format('d/m/Y') }}
-      @elseif ($task->completed)
+        @elseif ($task->completed)
         completed on {{ Carbon::parse($task->completetiondate)->format('d/m/Y') }}
-      @endif
+        @endif
       </small>
     </div>
   </div>
+
   <div class="card">
     <div class="card-header panel-header">
       <h5 class="panel-title">Assigned</h5>
@@ -123,6 +124,7 @@
       @endforeach
     </div>
   </div>
+
   <div class="card discussion-card">
     <div class="card-header panel-header">
       <h5 class="panel-title">Discussion</h5>
@@ -137,12 +139,12 @@
           {{$comment->content}}
 
           @if ( Auth::check() && ( $comment->user == Auth::user()
-                                    || $task->project->editors->contains('iduser', Auth::user()->iduser) ))
+          || $task->project->editors->contains('iduser', Auth::user()->iduser) ))
           <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete-comment/'.$comment->idcomment) }}" class="btn btn-primary removeComment">
             <span class="octicon octicon-x">
             </span>
           </a>
-            @endif
+          @endif
         </div>
       </div>
       @endforeach
@@ -150,16 +152,16 @@
       @if ( Auth::check() && $task->project->members->contains('iduser', Auth::user()->iduser))
       <form method="POST" action="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/comment') }}">
         {{ csrf_field() }}
-      <div class="form-group">
+        <div class="form-group">
           <!-- <label>Add a Comment:</label> -->
           @include('layouts.validation-input-textarea', ['name' => 'content', 'rows' => '2'])
-      </div>
-      <button type="submit" class="btn btn-primary float-right">
-        <span class="octicon octicon-comment"></span>
-        Comment
-      </button>
+        </div>
+        <button type="submit" class="btn btn-primary float-right">
+          <span class="octicon octicon-comment"></span>
+          Comment
+        </button>
       </form>
-    @endif
+      @endif
 
       @if(count($task->comments) > 8)
       <button type="button" class="btn btn-block btn-xs m-0 p-0">...</button>
@@ -167,54 +169,65 @@
     </div>
   </div>
 
-    <div class="card tags-card">
-      <div class="card-header panel-header">
-        <h5 class="panel-title">Tags</h5>
-      </div>
-      <div class="card-body">
-        @foreach($task->tags as $tag)
-          <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/remove-tag/'.$tag->idtag) }}" class="btn btn-primary">
-            {{$tag->name}}
-          </a>
-        @endforeach
+  <div class="card tags-card">
+    <div class="card-header panel-header">
+      <h5 class="panel-title">Tags</h5>
+    </div>
+    <div class="card-body">
+      @foreach($task->tags as $tag)
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/remove-tag/'.$tag->idtag) }}" class="btn btn-primary">
+        {{$tag->name}}
+      </a>
+      @endforeach
 
-        @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
-                                  || $task->project->editors->contains('iduser', Auth::user()->iduser)
-                                  || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+      @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+      || $task->project->editors->contains('iduser', Auth::user()->iduser)
+      || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
 
-        <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
-            <span class="octicon octicon-plus"></span>
-        </button>
+      <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
+        <span class="octicon octicon-plus"></span>
+      </button>
 
-        <div class="modal fade" id="addtag-modal" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5>Add new tag</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+      <div class="modal fade" id="addtag-modal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Add new tag</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
+                {{ csrf_field() }}
+                <div class="form-group">
+                  <label>Tag:</label>
+                  @include('layouts.validation-input', ['name' => 'tag'])
                 </div>
-                <div class="modal-body">
-                  <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
-                    {{ csrf_field() }}
-                    <div class="form-group">
-                      <label>Tag:</label>
-                      @include('layouts.validation-input', ['name' => 'tag'])
-                    </div>
-                    <button type="button submit" class="btn btn-primary">Confirm</button>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
+                <button type="button submit" class="btn btn-primary">Confirm</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
-
-        @endif
+        </div>
       </div>
+
+      @endif
     </div>
+  </div>
+
+  <div class="card closerequests-card">
+    <div class="card-header panel-header">
+      <h5 class="panel-title">Close Requests</h5>
+    </div>
+    <div class="card-body">
+      @foreach($task->closerequest as $closerequest)
+      @include('layouts.closerequest')
+      @endforeach
+    </div>
+  </div>
 
 </div>
 

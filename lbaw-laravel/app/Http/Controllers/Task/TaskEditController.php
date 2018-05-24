@@ -130,4 +130,8 @@ class TaskEditController extends Controller
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
+
+    public function complete($idproject, $idtask, $iduser){
+      
+    }
 }
