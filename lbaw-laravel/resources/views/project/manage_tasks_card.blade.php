@@ -63,7 +63,7 @@
           </div>
         </th>
         <td>
-          <div class="text-left">{{$task->title}}</div>
+          <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{$task->title}}</a>
         </td>
         <td>
           <div class="text-left">{{count($task->assigned)}}</div>

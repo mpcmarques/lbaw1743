@@ -26,13 +26,48 @@
   {{-- card --}}
   <div class="card">
     <div class="card-header panel-header">
+
+      @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+                                || $task->project->editors->contains('iduser', Auth::user()->iduser)
+                                || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+
       @include('layouts.card-edit-button', ['href' => $task->idtask.'/edit', 'extra' => ''])
+
+      @endif
+
+      @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+                                || $task->project->editors->contains('iduser', Auth::user()->iduser) ) )
 
       <button class="btn btn-primary card-delete-button" data-toggle="modal" data-target="#deletetask-modal">
         <span class="octicon octicon-trashcan">
         </span>
       </button>
 
+      <div class="modal fade" id="deletetask-modal" role="dialog">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5>Delete Task?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Warning: this action is destructive!
+              </div>
+              <div class="modal-footer">
+
+                <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete') }}"
+                  class="btn btn-primary">
+                  Delete
+                </a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      @endif
       <div class="row">
         <div class="col-6">
           <h5 class="panel-title">{{ $task->title }}</h5>
@@ -69,18 +104,17 @@
   <div class="card">
     <div class="card-header panel-header">
       <h5 class="panel-title">Assigned</h5>
-
-      <!-- If Auth::user() is not assigned to task -->
-      <button class="btn btn-terciary card-leave-button">
+      @if ( Auth::check() && $task->assigned->contains('iduser', Auth::user()->iduser))
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/unassign/'.Auth::user()->iduser) }}" class="btn btn-terciary card-leave-button">
         <span class="octicon octicon-sign-out">
         </span>
-      </button>
-
-      <!-- Else If Auth::user() is assigned to task -->
-      <!-- <button class="btn btn-terciary card-enter-button">
+      </a>
+      @elseif (Auth::check() && $task->project->members->contains('iduser', Auth::user()->iduser))
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/assign/'.Auth::user()->iduser) }}" class="btn btn-terciary card-enter-button">
         <span class="octicon octicon-sign-in">
         </span>
-      </button> -->
+      </a>
+      @endif
     </div>
     <div class="card-body">
       @foreach($task->assigned as $user)
@@ -96,43 +130,38 @@
 
       @foreach($task->comments as $comment)
       <div class="media">
-        <img class="mr-3" src="{{ asset('img/task-placeholder.svg') }}" alt="Generic placeholder image">
+        <img class="img-round mr-3" src="{{ $comment->user->getPicture() }}" alt="Profile Picture" width="40">
         <div class="media-body">
-          <h5 class="mt-0">{{$comment->user->username}}</h5>
+          <h5 class="mt-0"> <a href="{{ url('profile/'.$comment->user->iduser) }}">{{$comment->user->username}}</a></h5>
           {{$comment->content}}
+
+          @if ( Auth::check() && ( $comment->user == Auth::user()
+                                    || $task->project->editors->contains('iduser', Auth::user()->iduser) ))
+          <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete-comment/'.$comment->idcomment) }}" class="btn btn-primary removeComment">
+            <span class="octicon octicon-x">
+            </span>
+          </a>
+            @endif
         </div>
       </div>
       @endforeach
+
+      @if ( Auth::check() && $task->project->members->contains('iduser', Auth::user()->iduser))
+      <form method="POST" action="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/comment') }}">
+        {{ csrf_field() }}
+      <div class="form-group">
+          <!-- <label>Add a Comment:</label> -->
+          @include('layouts.validation-input-textarea', ['name' => 'content', 'rows' => '2'])
+      </div>
+      <button type="submit" class="btn btn-primary float-right">Comment</button>
+      </form>
+    @endif
 
       @if(count($task->comments) > 8)
       <button type="button" class="btn btn-block btn-xs m-0 p-0">...</button>
       @endif
     </div>
   </div>
-
-  <div class="modal fade" id="deletetask-modal" role="dialog">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5>Delete Task?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Warning: this action is destructive!
-          </div>
-          <div class="modal-footer">
-
-            <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete') }}"
-              class="btn btn-primary">
-              Delete
-            </a>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="card tags-card">
       <div class="card-header panel-header">
@@ -144,37 +173,44 @@
             {{$tag->name}}
           </a>
         @endforeach
+
+        @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+                                  || $task->project->editors->contains('iduser', Auth::user()->iduser)
+                                  || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+
         <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
             <span class="octicon octicon-plus"></span>
         </button>
-      </div>
-    </div>
 
-    <div class="modal fade" id="addtag-modal" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5>Add new tag</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
-                {{ csrf_field() }}
-                <div class="form-group">
-                  <label for="tag">Tag:</label>
-                  @include('layouts.validation-input', ['name' => 'tag'])
+        <div class="modal fade" id="addtag-modal" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5>Add new tag</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                <button type="button submit" class="btn btn-primary">Confirm</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="modal-body">
+                  <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                      <label>Tag:</label>
+                      @include('layouts.validation-input', ['name' => 'tag'])
+                    </div>
+                    <button type="button submit" class="btn btn-primary">Confirm</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
+        @endif
       </div>
+    </div>
 
 </div>
 

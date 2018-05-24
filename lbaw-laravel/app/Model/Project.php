@@ -42,7 +42,20 @@ class Project extends BaseModel
    * Get the owner of the project.
    */
   public function owner(){
-    return $query->where('members', 'role', 'OWNER');
+    // return $query->where('members', 'role', 'Owner');
+    return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role')->where('role', 'Owner');
+  }
+
+  /**
+   * Get the managers of the project.
+   */
+  public function managers(){
+    // return $query->where('members', 'role', 'Manager');
+    return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role')->where('role', 'Manager');
+  }
+
+  public function editors(){
+    return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role')->where('role','!=', 'Member');
   }
 
   /**

@@ -11,8 +11,8 @@
   <a href="{{ url('project/'.$project->idproject.'/forum') }}" class="list-group-item list-group-item-action" role="button">
     Forum
   </a>
-  
 
+  @if ( Auth::check() && $project->editors->contains('iduser', Auth::user()->iduser) )
   <li class="list-group-item list-group-item-info">
     Administration
   </li>
@@ -20,9 +20,10 @@
     Options
   </a>
   <a href="{{ url('project/'.$project->idproject.'/manage_tasks') }}" class="list-group-item list-group-item-action" role="button">
-    Manage tasks
+    Manage Tasks
   </a>
   <a href="{{ url('project/'.$project->idproject.'/manage_users') }}" class="list-group-item list-group-item-action" role="button">
-    Manage users
+    Manage Users
   </a>
+  @endif
 </div>

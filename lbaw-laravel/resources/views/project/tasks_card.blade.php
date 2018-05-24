@@ -74,7 +74,9 @@
       @endforeach
     </tbody>
   </table>
-  <a id="newtask-button" class="btn btn-block btn-xs m-0 p-0" href="#" role="button">+ create new task</a>
+  <a class="create-new-project btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/new-task')}}">
+      + create new task
+  </a>
 </div>
 
 @endsection

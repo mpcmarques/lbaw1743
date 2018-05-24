@@ -78,9 +78,14 @@ Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProje
 
 Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('project', 'can:delete');
 
-Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project');;
+Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project');
 
-Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project');;
+Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project');
+
+Route::get('/project/{id}/leave/{iduser}', 'Project\ProjectController@leave')->middleware('project');
+
+Route::get('/project/{id}/new-task', 'Project\ProjectNewTaskController@show')->middleware('project');
+Route::post('/project/{id}/new-task', 'Project\ProjectNewTaskController@newTask')->middleware('project');
 
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
@@ -100,10 +105,16 @@ Route::get('/search/{text}/users', 'Search\SearchUsersController@show');
 // task
 
 Route::get('project/{idProject}/task/{idTask}', 'Task\TaskController@show');
+Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@delete');
+
+Route::get('project/{idProject}/task/{idTask}/assign/{idUser}', 'Task\TaskController@assign');
+Route::get('project/{idProject}/task/{idTask}/unassign/{idUser}', 'Task\TaskController@unassign');
 
 Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@show');
 Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
-Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@delete');
+
+Route::post('project/{idProject}/task/{idTask}/comment', 'Task\TaskEditController@postComment');
+Route::get('project/{idProject}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment');
 
 // tags
 

@@ -24,4 +24,16 @@ class TaskController extends Controller
 
       return redirect('/project/'.$idproject);
     }
+
+    public function assign($idproject, $idtask, $iduser){
+        Task::find($idtask)->assigned()->attach($iduser);
+
+        return redirect('/project/'.$idproject.'/task/'.$idtask);
+    }
+
+    public function unassign($idproject, $idtask, $iduser){
+        Task::find($idtask)->assigned()->detach($iduser);
+
+        return redirect('/project/'.$idproject.'/task/'.$idtask);
+    }
 }

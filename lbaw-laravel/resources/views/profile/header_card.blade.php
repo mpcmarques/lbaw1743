@@ -138,7 +138,7 @@
           {{$profile->description}}
         </p>
         <div class="company">
-          <span class="octicon octicon-location"></span>
+          <span class="octicon octicon-globe"></span>
           <strong>{{$profile->institution}}</strong>
         </div>
       </div>
