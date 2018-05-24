@@ -8,6 +8,7 @@
   abort(404);
 @endif
 
+<?php use Carbon\Carbon; ?>
 
 <div id="task" class="container-fluid">
   {{-- breadcrumb --}}
@@ -90,13 +91,13 @@
       <small>
         created by
         <a href="{{ url('profile/'.$task->creator->iduser) }}">{{ $task->creator->username }}</a>
-         on {{ $task->creationdate }}
+         on {{ Carbon::parse($task->creationdate)->format('d/m/Y') }}
       </small>
       <small class="float-right">
       @if($task->deadline && !$task->completed)
-        deadline at {{ $task->deadline }}
+        deadline at {{ Carbon::parse($task->deadline)->format('d/m/Y') }}
       @elseif ($task->completed)
-        completed on {{ $task->completetiondate }}
+        completed on {{ Carbon::parse($task->completetiondate)->format('d/m/Y') }}
       @endif
       </small>
     </div>

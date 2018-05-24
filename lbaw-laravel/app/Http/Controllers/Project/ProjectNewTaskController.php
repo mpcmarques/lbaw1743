@@ -40,6 +40,7 @@ class ProjectNewTaskController extends Controller
     $task->description = $data['description'];
     $task->deadline = $data['deadline'];
     $task->creationdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+    $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
     $task->completed = false;
     $task->completetiondate = null;
     $task->idproject = $id;

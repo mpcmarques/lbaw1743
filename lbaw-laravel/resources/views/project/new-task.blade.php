@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Deadline</label>
-                  <div class="col-sm-2">
+                  <div class="col-sm-3">
                     <?php use Carbon\Carbon; ?>
                     @include('layouts.validation-input', ['name' => 'deadline', 'type' => 'date', 'value' => \Carbon\Carbon::now()->toDateString() ])
                   </div>
