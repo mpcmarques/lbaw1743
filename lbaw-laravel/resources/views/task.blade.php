@@ -26,13 +26,48 @@
   {{-- card --}}
   <div class="card">
     <div class="card-header panel-header">
+
+      @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+                                || $task->project->editors->contains('iduser', Auth::user()->iduser)
+                                || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+
       @include('layouts.card-edit-button', ['href' => $task->idtask.'/edit', 'extra' => ''])
+
+      @endif
+
+      @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+                                || $task->project->editors->contains('iduser', Auth::user()->iduser) ) )
 
       <button class="btn btn-primary card-delete-button" data-toggle="modal" data-target="#deletetask-modal">
         <span class="octicon octicon-trashcan">
         </span>
       </button>
 
+      <div class="modal fade" id="deletetask-modal" role="dialog">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5>Delete Task?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Warning: this action is destructive!
+              </div>
+              <div class="modal-footer">
+
+                <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete') }}"
+                  class="btn btn-primary">
+                  Delete
+                </a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      @endif
       <div class="row">
         <div class="col-6">
           <h5 class="panel-title">{{ $task->title }}</h5>
@@ -109,30 +144,6 @@
     </div>
   </div>
 
-  <div class="modal fade" id="deletetask-modal" role="dialog">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5>Delete Task?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Warning: this action is destructive!
-          </div>
-          <div class="modal-footer">
-
-            <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete') }}"
-              class="btn btn-primary">
-              Delete
-            </a>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="card tags-card">
       <div class="card-header panel-header">
         <h5 class="panel-title">Tags</h5>
@@ -143,37 +154,44 @@
             {{$tag->name}}
           </a>
         @endforeach
+
+        @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+                                  || $task->project->editors->contains('iduser', Auth::user()->iduser)
+                                  || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+                                  
         <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
             <span class="octicon octicon-plus"></span>
         </button>
-      </div>
-    </div>
 
-    <div class="modal fade" id="addtag-modal" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5>Add new tag</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
-                {{ csrf_field() }}
-                <div class="form-group">
-                  <label for="tag">Tag:</label>
-                  @include('layouts.validation-input', ['name' => 'tag'])
+        <div class="modal fade" id="addtag-modal" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5>Add new tag</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                <button type="button submit" class="btn btn-primary">Confirm</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="modal-body">
+                  <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                      <label for="tag">Tag:</label>
+                      @include('layouts.validation-input', ['name' => 'tag'])
+                    </div>
+                    <button type="button submit" class="btn btn-primary">Confirm</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
+        @endif
       </div>
+    </div>
 
 </div>
 

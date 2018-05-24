@@ -91,7 +91,7 @@
       </tbody>
     </table>
   </div>
-  @if(count($task->tags) > 5)
+  @if(count($user->tasks) > 5)
   <button type="button" class="btn btn-white btn-block m-0 p-0">...</button>
   @endif
 </div>
