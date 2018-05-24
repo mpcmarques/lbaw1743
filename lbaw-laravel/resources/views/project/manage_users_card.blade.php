@@ -62,7 +62,7 @@
           </div>
         </th>
         <td>
-          <div class="text-left">{{$member->username}}</div>
+          <a href="{{ url('profile/'.$member->iduser) }}">{{$member->username}}</a>
         </td>
         <td>
           <div class="text-left">{{count($member->assignedTasksForProject($project->idproject)->get())}}</div>
