@@ -360,6 +360,10 @@ div.required label:after {
   color: white;
 }
 
+.deleteProject{
+  float: right;
+}
+
  /* profile */
 
 #profile #profile-header-card img {

@@ -64,9 +64,9 @@
       </div>
   </fieldset>
   <button type="submit" class="btn btn-secondary">Save Changes</button>
-</form>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteProjectModal">
+  @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
+  <button type="button" class="btn btn-primary deleteProject" data-toggle="modal" data-target="#deleteProjectModal">
       <span class="octicon octicon-trashcan"></span>
       Delete Project
   </button>
@@ -94,6 +94,8 @@
         </div>
       </div>
     </div>
+  @endif
+</form>
   </div>
 
 @endsection
