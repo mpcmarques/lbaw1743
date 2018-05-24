@@ -78,9 +78,11 @@ Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProje
 
 Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('project', 'can:delete');
 
-Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project');;
+Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project');
 
-Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project');;
+Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project');
+
+Route::get('/project/{id}/leave/{iduser}', 'Project\ProjectController@leave')->middleware('project');
 
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');

@@ -11,9 +11,11 @@
                 <span  class="octicon octicon-comment-discussion"></span>
             </a>
 
+            @if ( Auth::check() && $project->editors->contains('iduser', Auth::user()->iduser) )
             <a href="{{ url('project/'.$project->idproject.'/options') }}" class="btn btn-primary">
                 <span  class="octicon octicon-tools"></span>
             </a>
+            @endif
         </div>
     </div>
 </div>

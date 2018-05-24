@@ -472,6 +472,10 @@ div.required label:after {
   padding-top: 10px;
 }
 
+input[type='checkbox']{
+  zoom: 1.5;
+}
+
 /* faq */
 
 #faq h5 {

@@ -50,6 +50,15 @@ class TaskEditController extends Controller
       $task->deadline = $data['deadline'];
       $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
 
+      if(empty($data['completed'])){
+        $task->completed = false;
+        $task->completetiondate = null;
+      }
+      else{
+        $task->completed = true;
+        $task->completetiondate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      }
+
       $task->save();
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
