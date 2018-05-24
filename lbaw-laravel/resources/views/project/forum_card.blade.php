@@ -29,7 +29,7 @@
 <!-- TODO: Last message -->
 
 @section('card-body')
-@foreach($project->posts as $post)
+@foreach($project->forumPosts as $post)
 <div class="card forum-card">
   <div class="card-header">
     <p>{{$post->title}}</p>

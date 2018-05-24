@@ -154,7 +154,10 @@
           <!-- <label>Add a Comment:</label> -->
           @include('layouts.validation-input-textarea', ['name' => 'content', 'rows' => '2'])
       </div>
-      <button type="submit" class="btn btn-primary float-right">Comment</button>
+      <button type="submit" class="btn btn-primary float-right">
+        <span class="octicon octicon-comment"></span>
+        Comment
+      </button>
       </form>
     @endif
 

@@ -99,8 +99,8 @@
 <div class="card-footer">
   <div class="float-right">
     <button type="button" class="btn btn-terciary">
-      <span class="octicon octicon-pencil"></span>
-      Edit
+      <span class="octicon octicon-clippy"></span>
+      Save
     </button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeTasksModal">
       <span class="octicon octicon-trashcan"></span>

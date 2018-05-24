@@ -63,7 +63,10 @@
           @endif
       </div>
   </fieldset>
-  <button type="submit" class="btn btn-secondary">Save Changes</button>
+  <button type="submit" class="btn btn-secondary">
+    <span class="octicon octicon-clippy"></span>
+    Save Changes
+  </button>
 
   @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
   <button type="button" class="btn btn-primary deleteProject" data-toggle="modal" data-target="#deleteProjectModal">
