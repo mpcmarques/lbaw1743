@@ -464,6 +464,10 @@ div.required label:after {
     color: white;
 }
 
+#task #addtag-modal #tag{
+  margin-right: 1em;
+}
+
 /* faq */
 
 #faq h5 {

@@ -52,4 +52,11 @@ class TaskEditController extends Controller
 
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
+
+    public function removeTag($idproject, $idtask, $idtag){
+
+      Task::find($idtask)->tags()->detach($idtag);
+
+      return redirect('/project/'.$idproject.'/task/'.$idtask);
+    }
 }

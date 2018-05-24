@@ -105,6 +105,10 @@ Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@sh
 Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
 Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@delete');
 
+// tags
+
+Route::get('project/{idProject}/task/{idTask}/remove-tag/{idTag}', 'Task\TaskEditController@removeTag');
+
 // profile
 
 Route::get('/profile/{id}', 'ProfileController@show');

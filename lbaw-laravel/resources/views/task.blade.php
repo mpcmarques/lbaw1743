@@ -122,6 +122,47 @@
       </div>
     </div>
 
+    <div class="card tags-card">
+      <div class="card-header panel-header">
+        <h5 class="panel-title">Tags</h5>
+      </div>
+      <div class="card-body">
+        @foreach($task->tags as $tag)
+          <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/remove-tag/'.$tag->idtag) }}" class="btn btn-primary">
+            {{$tag->name}}
+          </a>
+        @endforeach
+        <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
+            <span class="octicon octicon-plus"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addtag-modal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Add new tag</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-inline">
+                <div class="form-group">
+                  <label for="tag">Tag:</label>
+                  <input type="text" class="form-control" id="tag">
+                </div>
+                <button type="button submit" class="btn btn-primary">Confirm</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </div>
 
 @endsection
