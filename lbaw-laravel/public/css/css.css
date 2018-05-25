@@ -520,3 +520,9 @@ input[type='checkbox']{
 #faq .btn.btn-link {
     color: #50514F;
 }
+
+/* search */
+
+#search .card{
+  margin: 10px;
+}

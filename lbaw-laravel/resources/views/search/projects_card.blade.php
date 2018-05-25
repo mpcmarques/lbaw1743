@@ -20,6 +20,9 @@
 </div>
 @endsection
 
+<?php use Carbon\Carbon;
+      $now = Carbon::now();?>
+
 @section('card-body')
 
 @foreach ($projects as $project)
@@ -27,13 +30,13 @@
   <div class="card-header">
     <div class="row">
       <div class="col-6">
-        <p class="text-left">
-          <b>{{$project->name}}</b>
-        </p>
+        <h5 class="text-left">
+          <a href="{{ url('project/'.$project->idproject) }}" style="text-decoration: none;">{{$project->name}}</a>
+        </h5>
       </div>
       <div class="col-6">
         <p class="text-right">
-          @jotapsa
+          <a href="{{ url('profile/'.$project->owner->first()->iduser) }}" style="text-decoration: none;">{{$project->owner->first()->username}}</a>
         </p>
       </div>
     </div>
@@ -44,13 +47,30 @@
   <div class="card-footer">
     <div class="row">
       <div class="col-6">
-        <p class="text-left">
-          last updated 2 days ago.
-        </p>
+        <small>
+          <?php $date = Carbon::parse($project->lasteditdate);
+                $days = $date->diffInDays($now);
+                $hours = $date->diffInHours($now);
+                $minutes = $date->diffInMinutes($now);
+                $seconds = $date->diffInSeconds($now); ?>
+          @if ($days > 0)
+          last updated {{ $days }} days ago.
+          @elseif ($hours > 0)
+          last updated {{ $hours }} hours ago.
+          @elseif ($minutes > 0)
+          last updated {{ $minutes }} minutes ago.
+          @else
+          last updated {{ $seconds }} seconds ago.
+          @endif
+        </small>
       </div>
       <div class="col-6 text-right">
-        <span class="octicon octicon-comment-discussion" />
-        <span class="octicon octicon-organization" />
+        <span class="octicon octicon-file"></span>
+        <small>{{count($project->tasks)}}</small>
+      </div>
+      <div class="col text-right">
+        <span class="octicon octicon-organization"></span>
+        <small>{{count($project->members)}}</small>
       </div>
     </div>
   </div>
