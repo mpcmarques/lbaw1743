@@ -7,6 +7,18 @@
       <span class="octicon octicon-sign-out">
       </span>
     </a>
+    @elseif ( Auth::check() )
+    <a href="{{ url('project/'.$project->idproject.'/join/'.Auth::user()->iduser) }}" class="btn btn-terciary card-enter-button">
+      <span class="octicon octicon-sign-in">
+      </span>
+    </a>
+    @endif
+
+    @if($project->private)
+    <a class="btn btn-secondary card-private-button">
+      <span class="octicon octicon-lock">
+      </span>
+    </a>
     @endif
   </div>
   <div class="card-body">

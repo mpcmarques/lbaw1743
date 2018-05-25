@@ -107,7 +107,7 @@
     <div class="card-header panel-header">
       <h5 class="panel-title">Assigned</h5>
       @if ( Auth::check() && $task->assigned->contains('iduser', Auth::user()->iduser))
-      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/unassign/'.Auth::user()->iduser) }}" class="btn btn-terciary card-leave-button">
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/unassign/'.Auth::user()->iduser) }}" class="btn btn-primary card-leave-button">
         <span class="octicon octicon-sign-out">
         </span>
       </a>
