@@ -1,7 +1,7 @@
 <select name="{{'role'.$iduser}}">
   @if ($role == 'Owner')
   <option value="Owner" selected>Owner</option>
-  @elseif ($user == 'Owner')
+  @elseif ($user == 'Owner' && $allowOwner)
   <option value="Owner">Owner</option>
   @endif
   @if ($role == 'Manager')

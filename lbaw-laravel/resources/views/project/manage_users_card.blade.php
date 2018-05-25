@@ -78,8 +78,9 @@
           <div class="text-left">{{$member->name}}</div>
         </td>
         <td>
+          <?php $allowOwner = $project->private == true ? $member->premium == true : true; ?>
           @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
-          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Owner', 'iduser' => $member->iduser])
+          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Owner', 'iduser' => $member->iduser, 'allowOwner' => $allowOwner])
           @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $member->pivot->role != 'Manager'
                       && $project->managers->contains('iduser', Auth::user()->iduser) )
           @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Manager', 'iduser' => $member->iduser])
