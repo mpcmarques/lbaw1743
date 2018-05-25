@@ -10,54 +10,46 @@ use Carbon\Carbon;
 
 class TaskController extends Controller
 {
-    public function show($idProject, $idTask)
-    {
-      $project = Project::find($idProject);
-      $task = Task::find($idTask);
+  public function show($idProject, $idTask)
+  {
+    $project = Project::find($idProject);
+    $task = Task::find($idTask);
 
-      return view('task', ['task'=> $task, 'project' => $project]);
+    return view('task.task', ['task'=> $task, 'project' => $project]);
+  }
+
+  public function delete($idproject, $idtask){
+    $task = Task::find($idtask);
+
+    $comments = $task->comments()->get();
+    foreach($comments as $comment){
+      $comment->delete();
     }
 
-    public function delete($idproject, $idtask){
-      $task = Task::find($idtask);
-
-      $comments = $task->comments()->get();
-      foreach($comments as $comment){
-        $comment->delete();
-      }
-
-      $closerequests = $task->closeRequest()->get();
-      foreach($closerequests as $closerequest){
-        $closerequest->delete();
-      }
-
-      $task->tags()->detach();
-      $task->assigned()->detach();
-
-      $task->delete();
-
-      return redirect('/project/'.$idproject);
+    $closerequests = $task->closeRequest()->get();
+    foreach($closerequests as $closerequest){
+      $closerequest->delete();
     }
 
-    public function update($idtask){
-      $task = Task::find($idtask);
-      $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
-      $task->save();
-    }
+    $task->tags()->detach();
+    $task->assigned()->detach();
 
-    public function assign($idproject, $idtask, $iduser){
-        Task::find($idtask)->assigned()->attach($iduser);
+    $task->delete();
 
-        $this->update($idtask);
+    return redirect('/project/'.$idproject);
+  }
 
-        return redirect('/project/'.$idproject.'/task/'.$idtask);
-    }
+  public function update($idtask){
+    $task = Task::find($idtask);
+    $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+    $task->save();
+  }
 
-    public function unassign($idproject, $idtask, $iduser){
-        Task::find($idtask)->assigned()->detach($iduser);
+  public function assign($idproject, $idtask, $iduser){
+    Task::find($idtask)->assigned()->attach($iduser);
 
-        $this->update($idtask);
+    $this->update($idtask);
 
-        return redirect('/project/'.$idproject.'/task/'.$idtask);
-    }
+    return redirect('/project/'.$idproject.'/task/'.$idtask);
+  }
 }

@@ -227,6 +227,11 @@ abort(404);
       @include('layouts.closerequest')
       @endforeach
     </div>
+    <div class="card-footer">
+      <a class="create-new-closerequest btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/new-cr')}}">
+          + create new close request
+      </a>
+    </div>
   </div>
 
 </div>

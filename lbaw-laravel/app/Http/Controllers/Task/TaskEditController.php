@@ -8,6 +8,7 @@ use App\Model\Task;
 use App\Model\Project;
 use App\Model\Tag;
 use App\Model\Comment;
+use App\Model\CloseRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -21,7 +22,7 @@ class TaskEditController extends Controller
       $project = Project::find($idproject);
       $task = Task::find($idtask);
 
-      return view('task_edit', ['task' => $task, 'project' => $project]);
+      return view('task.task_edit', ['task' => $task, 'project' => $project]);
     }
 
     function validator(array $data)
@@ -131,7 +132,17 @@ class TaskEditController extends Controller
       return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
 
-    public function complete($idproject, $idtask, $iduser){
-      
+    public function complete($idproject, $idtask, $idrequest){
+      $closeRequest = CloseRequest::find($idrequest);
+      $task = Task::find($idtask);
+
+      $closeRequest->approved = true;
+      $task->completed = true;
+      $task->completetiondate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+
+      $closeRequest->save();
+      $task->save();
+
+      return redirect('/project/'.$idproject.'/task/'.$idtask);
     }
 }

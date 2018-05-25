@@ -2,10 +2,12 @@
 
 <div class="card closerequest-card">
   <div class="card-header">
+    @if ($task->completed == false)
     <button class="btn btn-terciary card-edit-button" data-toggle="modal" data-target="#approve-closerequest-modal">
       <span class="octicon octicon-check">
       </span>
     </button>
+    @endif
     <div class="row">
       <div class="col-6">
         <h5 class="panel-title">{{$closerequest->title}}</h5>
@@ -47,7 +49,7 @@
         </button>
       </div>
       <div class="modal-footer">
-        <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/approve-cr/'.$closerequest->iduser) }}"
+        <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/approve-cr/'.$closerequest->idrequest)}}"
           class="btn btn-primary">
           Approve
         </a>
