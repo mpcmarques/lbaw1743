@@ -32,4 +32,22 @@ class ProjectController extends Controller {
 
     return redirect('/project/'.$id);
   }
+
+  public function join($id, $iduser){
+    $project = Project::findOrFail($id);
+
+    if (Auth::check() && Auth::user()->iduser == $iduser
+          && !$project->members->contains('iduser', Auth::user()->iduser)){
+      $project->members()->attach($iduser,[
+  'joineddate' => date('Y-m-d H:i:s', strtotime(Carbon::now())),
+  'role' => 'Member']);
+      $project->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      $project->save();
+    }
+    else{
+      return redirect('/project/'.$id);
+    }
+
+    return redirect('/project/'.$id);
+  }
 }

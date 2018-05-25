@@ -43,14 +43,8 @@ class DashboardNewProjectController extends Controller
 
       // ----------------------
 
-      $joined = new Joined;
-
-      $joined->iduser = $profile->iduser;
-      $joined->idproject = $project->idproject;
-      $joined->joineddate = $project->creationdate;
-      $joined->role = 'Owner';
-
-      $joined->save();
+      $project->members()->attach($profile->iduser,['joineddate' => date('Y-m-d H:i:s', strtotime(Carbon::now())),
+                                            'role' => 'Owner']);
 
       \DB::commit();
 

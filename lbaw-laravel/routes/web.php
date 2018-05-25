@@ -85,6 +85,7 @@ Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@s
 Route::post('/project/{id}/manage_users/remove', 'Project\ProjectManageUsersController@remove')->middleware('project');
 Route::post('/project/{id}/manage_users/update', 'Project\ProjectManageUsersController@update')->middleware('project');
 
+Route::get('/project/{id}/join/{iduser}', 'Project\ProjectController@join')->middleware('project');
 Route::get('/project/{id}/leave/{iduser}', 'Project\ProjectController@leave')->middleware('project');
 
 Route::get('/project/{id}/new-task', 'Project\ProjectNewTaskController@show')->middleware('project');

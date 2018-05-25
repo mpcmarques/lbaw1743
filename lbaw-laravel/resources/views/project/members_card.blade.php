@@ -77,10 +77,3 @@
   </table>
 </div>
 @endsection
-
-@section('card-footer')
-
-<div class="card-footer">
-</div>
-
-@endsection
