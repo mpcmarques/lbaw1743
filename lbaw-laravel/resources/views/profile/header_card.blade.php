@@ -81,21 +81,26 @@
             </small>
           </div>
 
-          <div class="md-form mb-3 required">
-            <label class="col-sm-4 col-form-label">Password</label>
-            @include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
+          <div class="form-group">
+            <label class="col-sm-4 col-form-label">Description</label>
+            <textarea id="description" name="description" rows="4" class="form-control">{{ $profile->description }}</textarea>
           </div>
 
-          <div class="md-form mb-3 required">
+          <div class="md-form mb-3">
+            <label class="col-sm-4 col-form-label">Password</label>
+            <input id="password" type="password" name="password" class="form-control">
+          </div>
+
+          <div class="md-form mb-3">
             <label class="col-sm-6 col-form-label">Repeat Password</label>
-            @include('layouts.validation-input', ['name' => 'password_confirmation', 'type' => 'password'])
+            <input id="password_confirmation" type="password" name="password_confirmation" class="form-control">
           </div>
 
           <!--  Gender -->
 
           <div class="md-form mb-3">
             <label class="col-sm-6 col-form-label">Institution / Company</label>
-            @include('layouts.validation-input', ['name' => 'institution', 'value' => $profile->institution])
+            <input id="institution" name="institution" class="form-control" value="{{ $profile->institution }}">
             <small>
               Fill if you belong to a company or institution.
             </small>

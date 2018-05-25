@@ -54,7 +54,7 @@
       @foreach ($project->members as $member)
       <tr>
         <th scope="row">
-          <img src="{{ asset('img/profile/'.$member->iduser.'.png')}}" class="img-round img-center thumbnail-small" alt="Profile Picture">
+          <img src="{{ $member->getPicture() }}" class="img-round img-center thumbnail-small" alt="Profile Picture">
         </th>
         <td>
           <div class="text-left">

@@ -20,7 +20,7 @@ class CheckCanSeeProject
     {
         $project = Project::findOrFail($request->id);
 
-        if (Auth::user()->can('show', $project))
+        if (!$project->private || (Auth::check() && Auth::user()->can('show', $project)))
             return $next($request);
         else
             return redirect('/');

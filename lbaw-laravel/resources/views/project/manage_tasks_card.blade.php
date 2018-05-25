@@ -98,7 +98,7 @@
 @endsection
 
 @section('card-footer')
-
+@if(count($project->tasks) > 0)
 <div class="card-footer">
   <div class="float-right">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeTasksModal">
@@ -127,6 +127,7 @@
     </div>
   </div>
 </div>
+@endif
 </form>
 
 @endsection

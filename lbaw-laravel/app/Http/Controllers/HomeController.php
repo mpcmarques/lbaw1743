@@ -77,7 +77,6 @@ class HomeController extends Controller
 
     function validator(array $data)
     {
-
         return Validator::make($data, [
             'username' => 'required|string|unique:usertable',
             'name' => 'required|string|max:255',
@@ -90,14 +89,13 @@ class HomeController extends Controller
 
     function create(array $data)
     {
-
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
             'username' => $data['username'],
-            'institution' => $data['institution'],
-            'birthdate' => date('Y-m-d H:i:s', $data['birthdate'])
+            'password' => bcrypt($data['password']),
+            'email' => $data['email'],
+            'name' => $data['name'],
+            'institution' => $data['institution_company'],
+            'birthdate' => date('Y-m-d H:i:s',strtotime($data['birthdate']))
         ]);
     }
 
@@ -110,13 +108,24 @@ class HomeController extends Controller
     public function register(Request $request) {
       $this->validator($request->all())->validate();
 
-      $user = $this->create($request->all());
+      $data = $request->all();
+      // $user = $this->create($request->all());
+      $user = new User;
+      $user->username = $data['username'];
+      $user->password = bcrypt($data['password']);
+      $user->email = $data['email'];
+      $user->name = $data['name'];
+      $user->institution = $data['institution_company'];
+      $user->birthdate = date('Y-m-d H:i:s',strtotime($data['birthdate']));
+      $user->premium = false;
+      $user->banned = false;
+      $user->save();
 
       if(empty($user)) { // Failed to register user
           redirect('register'); // Wherever you want to redirect
       }
 
-      event(new Registered($user));
+      // event(new Registered($user));
 
       $this->guard()->login($user);
 

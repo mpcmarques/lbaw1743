@@ -55,6 +55,10 @@ class ProfileController extends Controller
       $profile->email = $data['email'];
     }
 
+    if($data['description'] != $profile->description){
+      $profile->description = $data['description'];
+    }
+
     if($data['institution'] != $profile->institution){
       $profile->institution = $data['institution'];
     }
@@ -64,7 +68,7 @@ class ProfileController extends Controller
       $profile->birthdate = $data['birthdate'];
     }
 
-    if(bcrypt($data['password']) != $profile->password && $data['password'] == $data['password_confirmation']){
+    if($data['password'] != '' && bcrypt($data['password']) != $profile->password && $data['password'] == $data['password_confirmation']){
       Validator::make($data,['password' => 'required|string|min:6|confirmed'])->validate();
       $profile->password = bcrypt($data['password']);
     }

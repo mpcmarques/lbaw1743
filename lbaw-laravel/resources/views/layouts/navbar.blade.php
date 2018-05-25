@@ -57,7 +57,7 @@
 			@else
 
 			<div class="nav-item dropdown text-right">
-				<img class="img-round dropdown-toggle" data-toggle="dropdown" src="{{ asset('img/profile/'.Auth::user()->iduser.'.png') }}" alt="Profile Picture" width="40" height="40">
+				<img class="img-round dropdown-toggle" data-toggle="dropdown" src="{{ Auth::user()->getPicture() }}" alt="Profile Picture" width="40" height="40">
 		      <div class="dropdown-menu dropdown-menu-right">
 		        <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
 		      </div>
@@ -216,7 +216,7 @@
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">Institution / Company</label>
 						<div class="col-sm-8">
-							@include('layouts.validation-input', ['name' => 'institution_company'])
+							<input id="institution_company" name="institution_company" class="form-control"></input>
 						</div>
 					</div>
 
