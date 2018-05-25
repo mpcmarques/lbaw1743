@@ -3,8 +3,13 @@
 <div class="card closerequest-card">
   <div class="card-header">
     @if ($task->completed == false)
-    <button class="btn btn-terciary card-edit-button" data-toggle="modal" data-target="#approve-closerequest-modal">
-      <span class="octicon octicon-check">
+    <button class="btn btn-primary card-edit-button" data-toggle="modal" data-target="#approve-closerequest-modal">
+      <span class="octicon octicon-unverified">
+      </span>
+    </button>
+    @else
+    <button class="btn btn-terciary card-edit-button">
+      <span class="octicon octicon-verified">
       </span>
     </button>
     @endif
@@ -13,7 +18,7 @@
         <h5 class="panel-title">{{$closerequest->title}}</h5>
       </div>
       <div class="col-6">
-        <p class="text-right">
+        <p class="text-right status">
           @if($closerequest->approved)
           Status: Approved
           @else

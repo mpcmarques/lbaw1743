@@ -505,6 +505,12 @@ input[type='checkbox']{
   zoom: 1.5;
 }
 
+#task .card.closerequest-card .status {
+    margin-top: .45em;
+    margin-right: .45em;
+    color: black;
+}
+
 /* faq */
 
 #faq h5 {
