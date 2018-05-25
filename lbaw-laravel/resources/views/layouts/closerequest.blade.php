@@ -2,8 +2,13 @@
 
 <div class="card closerequest-card">
   <div class="card-header">
-    @if ($task->completed == false)
+    @if(!$closerequest->approved)
+
+    @if( Auth::check() && $task->project->editors->contains('iduser', Auth::user()->iduser))
     <button class="btn btn-primary card-edit-button" data-toggle="modal" data-target="#approve-closerequest-modal">
+    @else
+    <button class="btn btn-primary card-edit-button">
+    @endif
       <span class="octicon octicon-unverified">
       </span>
     </button>
@@ -40,6 +45,13 @@
         <a href="{{ url('profile/'.$closerequest->user->iduser) }}">{{ $closerequest->user->username }}</a>
         on {{ Carbon::parse($closerequest->creationdate)->format('d/m/Y') }}
       </small>
+      @if($closerequest->approved)
+      <small class="float-right">
+        approved by
+        <a href="{{ url('profile/'.$closerequest->user_approved->iduser) }}">{{ $closerequest->user_approved->username }}</a>
+        on {{ Carbon::parse($closerequest->approveddate)->format('d/m/Y') }}
+      </small>
+      @endif
     </p>
   </div>
 </div>

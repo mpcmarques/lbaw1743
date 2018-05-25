@@ -204,8 +204,11 @@ CREATE TABLE CloseRequest(
 	title text NOT NULL,
 	description text,
 	approved boolean NOT NULL,
+	approvedUser integer,
+	approvedDate timestamp,
 	idUser integer NOT NULL,
 	idTask integer NOT NULL,
+	FOREIGN KEY(approvedUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
 );
@@ -887,11 +890,11 @@ insert into tagged (idTask, idTag) values (4, 4);
 insert into tagged (idTask, idTag) values (5, 5);
 
 --CloseRequest
-insert into closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-04', 'Distributed demand-driven forecast', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false, 1, 1);
-insert into closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-02', 'Progressive upward-trending hierarchy', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', false, 2, 2);
-insert into closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-01-06', 'Switchable leading edge pricing structure', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', false, 3, 3);
-insert into closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-11', 'Digitized high-level analyzer', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', false, 4, 4);
-insert into closerequest (creationDate, title, description, approved, idUser, idTask) values ('2018-03-14', 'Profit-focused demand-driven workforce', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', true, 5, 5);
+insert into closerequest (creationDate, title, description, approved, approvedUser, approvedDate, idUser, idTask) values ('2018-03-04', 'Distributed demand-driven forecast', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', true, 1,'2018-05-13', 1, 1);
+insert into closerequest (creationDate, title, description, approved, approvedUser, approvedDate, idUser, idTask) values ('2018-03-02', 'Progressive upward-trending hierarchy', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', false, NULL, NULL, 2, 2);
+insert into closerequest (creationDate, title, description, approved, approvedUser, approvedDate, idUser, idTask) values ('2018-01-06', 'Switchable leading edge pricing structure', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', false, NULL, NULL, 3, 3);
+insert into closerequest (creationDate, title, description, approved, approvedUser, approvedDate, idUser, idTask) values ('2018-03-11', 'Digitized high-level analyzer', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', true, 4, '2018-05-29', 4, 4);
+insert into closerequest (creationDate, title, description, approved, approvedUser, approvedDate, idUser, idTask) values ('2018-03-14', 'Profit-focused demand-driven workforce', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', false, NULL, NULL, 5, 5);
 
 --Admin
 

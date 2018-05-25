@@ -13,4 +13,8 @@ class CloseRequest extends BaseModel
   function user(){
     return $this->belongsTo('App\Model\User', 'iduser');
   }
+
+  function user_approved(){
+    return $this->belongsTo('App\Model\User', 'approveduser');
+  }
 }

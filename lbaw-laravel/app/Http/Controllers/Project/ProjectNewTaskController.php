@@ -20,8 +20,7 @@ class ProjectNewTaskController extends Controller
     return view('project.new-task', ['project' => $project]);
   }
 
-  function validator(array $data)
-  {
+  function validator(array $data){
       return Validator::make($data, [
           'title' => 'required|string',
           'description' => 'required|string',

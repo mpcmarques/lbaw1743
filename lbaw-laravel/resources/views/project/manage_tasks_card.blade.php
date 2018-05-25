@@ -45,12 +45,12 @@
         </th>
         <th scope="col">
           <div class="text-left font-weight-bold">
-            Status
+            Assigned
           </div>
         </th>
         <th scope="col">
           <div class="text-left font-weight-bold">
-            Close Request
+            Status
           </div>
         </th>
       </tr>
@@ -74,18 +74,18 @@
         <td>
           <div class="text-left">
             @if (count($task->assigned))
-              Assigned
+              Yes
             @else
-              Not Assigned
+              No
             @endif
           </div>
         </td>
         <td>
           <div class="text-left">
-            @if (count($task->closeRequest))
-              Yes
+            @if ($task->completed)
+              Completed
             @else
-              No
+              Open
             @endif
           </div>
         </td>
@@ -101,10 +101,6 @@
 
 <div class="card-footer">
   <div class="float-right">
-    <button type="submit" class="btn btn-terciary" formaction="">
-      <span class="octicon octicon-clippy"></span>
-      Save
-    </button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeTasksModal">
       <span class="octicon octicon-trashcan"></span>
       Remove

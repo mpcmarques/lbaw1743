@@ -31,14 +31,6 @@
           <label>Deadline</label>
           @include('layouts.validation-input', ['name' => 'deadline', 'type' => 'date' ,'value' => \Carbon\Carbon::parse($task->deadline)->format('Y-m-d')])
         </div>
-        <div class="form-group">
-          <label>Completed</label>
-          @if ($task->completed)
-          <input class="form-control" type="checkbox" name="completed" id="completed" checked>
-          @else
-          <input class="form-control" type="checkbox" name="completed" id="completed">
-          @endif
-        </div>
         <button type="submit" class="btn btn-primary float-right">Save Changes</button>
       </form>
     </div>

@@ -119,7 +119,8 @@ Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@e
 Route::post('project/{idProject}/task/{idTask}/comment', 'Task\TaskEditController@postComment');
 Route::get('project/{idProject}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment');
 
-Route::get('project/{idProject}/task{idTask}/new-cr', 'Task\TaskNewCloseRequestController@show');
+Route::get('project/{idProject}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@show');
+Route::post('project/{idProject}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@newCloseRequest');
 Route::get('project/{idProject}/task/{idTask}/approve-cr/{idUser}', 'Task\TaskEditController@complete');
 
 // tags
