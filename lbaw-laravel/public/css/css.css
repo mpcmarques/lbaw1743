@@ -412,6 +412,10 @@ div.required label:after {
     margin-top: -.5em;
 }
 
+.card.project-card .card-body h5 a{
+    color: black;
+}
+
 .card.project-card .card-body .btn-group {
     width: 100%;
     height: 2.5em;

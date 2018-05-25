@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Project;
 use Illuminate\Support\Facades\Auth;
 use App\Model\User;
+use Carbon\Carbon;
 
 class ProjectController extends Controller {
   public function show($id)
@@ -16,12 +17,14 @@ class ProjectController extends Controller {
   }
 
   public function leave($id, $iduser){
-    $project = Project::find($id);
+    $project = Project::findOrFail($id);
 
     if (Auth::user()->iduser == $iduser
           && $project->members->contains('iduser', Auth::user()->iduser)
           && !$project->owner->contains('iduser', Auth::user()->iduser)){
       $project->members()->detach($iduser);
+      $project->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      $project->save();
     }
     else{
       return redirect('/project/'.$id);

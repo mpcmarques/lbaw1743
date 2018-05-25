@@ -25,7 +25,7 @@
 @endsection
 
 @section('card-body')
-<form method="POST" action="{{ url('project/'.$project->idproject.'/manage_users/update') }}">
+<form method="POST">
   {{ csrf_field() }}
 <div class="nopadding">
   <table class="table">
@@ -59,9 +59,14 @@
       @foreach($project->members as $member)
       <tr>
         <th scope="row">
-          <div class="text-center">
-            @include('layouts.validation-input', ['name' => 'user'.$member->iduser, 'type' => 'checkbox'])
-          </div>
+            <div class="text-center">
+              @if ( Auth::check() && $member->pivot->role != 'Owner' && $project->owner->contains('iduser', Auth::user()->iduser))
+              @include('layouts.checkbox-input', ['name' => 'user'.$member->iduser])
+              @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $member->pivot->role != 'Manager'
+                          && $project->managers->contains('iduser', Auth::user()->iduser) )
+              @include('layouts.checkbox-input', ['name' => 'user'.$member->iduser])
+              @endif
+            </div>
         </th>
         <td>
           <a href="{{ url('profile/'.$member->iduser) }}">{{$member->username}}</a>
@@ -74,10 +79,10 @@
         </td>
         <td>
           @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
-          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Owner'])
+          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Owner', 'iduser' => $member->iduser])
           @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $member->pivot->role != 'Manager'
                       && $project->managers->contains('iduser', Auth::user()->iduser) )
-          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Manager'])
+          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Manager', 'iduser' => $member->iduser])
           @else
           <div class="text-left">{{$member->pivot->role}}</div>
           @endif
@@ -93,7 +98,7 @@
 
 <div class="card-footer">
   <div class="float-right">
-    <button type="button" class="btn btn-terciary">
+    <button type="submit" class="btn btn-terciary" formaction="{{ url('project/'.$project->idproject.'/manage_users/update') }}">
       <span class="octicon octicon-clippy"></span>
       Save
     </button>
@@ -103,13 +108,12 @@
     </button>
   </div>
 </div>
-</form>
 
 <div class="modal fade" id="removeUsersModal" role="dialog">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5>Remove users?</h5>
+        <h5>Remove Users?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -118,11 +122,12 @@
         Warning: this action is destructive!
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Remove</button>
+        <button type="submit" class="btn btn-primary" formaction="{{ url('project/'.$project->idproject.'/manage_users/remove') }}">Remove</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
+</form>
 
 @endsection

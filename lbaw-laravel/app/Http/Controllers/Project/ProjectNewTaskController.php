@@ -51,6 +51,10 @@ class ProjectNewTaskController extends Controller
       return redirect('/project/'.$id);
     }
 
+    $project = Project::findOrFail($id);
+    $project->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+    $project->save();
+
     return redirect('/project/'.$id.'/task/'.$task->idtask);
   }
 }

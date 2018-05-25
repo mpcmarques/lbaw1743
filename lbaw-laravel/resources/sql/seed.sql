@@ -99,6 +99,7 @@ CREATE TABLE PremiumSignature(
 CREATE TABLE Project(
 	idProject serial PRIMARY KEY,
 	creationDate timestamp NOT NULL,
+	lastEditDate timestamp,
 	name text NOT NULL,
 	description text NOT NULL,
 	private boolean NOT NULL
@@ -792,11 +793,11 @@ insert into premiumsignature (idPremium, startDate, duration, idUser) values (4,
 insert into premiumsignature (idPremium, startDate, duration, idUser) values (5, '2017-07-10', interval '5 year', 5);
 
 --Project
-insert into project (creationDate, name, description, private) values ('2017-03-05', 'Tin', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', true);
-insert into project (creationDate, name, description, private) values ('2017-03-03', 'Treeflex', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', true);
-insert into project (creationDate, name, description, private) values ('2017-03-18', 'Sub-Ex', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', false);
-insert into project (creationDate, name, description, private) values ('2017-03-14', 'Bamity', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false);
-insert into project (creationDate, name, description, private) values ('2017-02-09', 'Voltsillam', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', true);
+insert into project (creationDate, lastEditDate, name, description, private) values ('2017-03-05', '2017-03-05', 'Tin', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', true);
+insert into project (creationDate, lastEditDate, name, description, private) values ('2017-03-03', '2017-03-03', 'Treeflex', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', true);
+insert into project (creationDate, lastEditDate, name, description, private) values ('2017-03-18', '2017-03-18', 'Sub-Ex', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', false);
+insert into project (creationDate, lastEditDate, name, description, private) values ('2017-03-14', '2017-03-14', 'Bamity', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', false);
+insert into project (creationDate, lastEditDate, name, description, private) values ('2017-02-09', '2017-02-09', 'Voltsillam', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', true);
 
 --Joined
 insert into joined (idUser, idProject, joinedDate, role) values (1, 1, '2017-10-22', 'Owner');

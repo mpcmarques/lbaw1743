@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class ProjectOptionsController extends Controller
 {
@@ -78,6 +79,7 @@ class ProjectOptionsController extends Controller
 
     $project->name = $data['name'];
     $project->description = $data['description'];
+    $project->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
     $project->private = $data['private'];
 
     $project->save();
