@@ -18,7 +18,7 @@ class TaskController extends Controller
     return view('task.task', ['task'=> $task, 'project' => $project]);
   }
 
-  public function delete($idproject, $idtask){
+  public static function delete($idproject, $idtask){
     $task = Task::find($idtask);
 
     $comments = $task->comments()->get();
@@ -47,6 +47,14 @@ class TaskController extends Controller
 
   public function assign($idproject, $idtask, $iduser){
     Task::find($idtask)->assigned()->attach($iduser);
+
+    $this->update($idtask);
+
+    return redirect('/project/'.$idproject.'/task/'.$idtask);
+  }
+
+  public function unassign($idproject, $idtask, $iduser){
+    Task::find($idtask)->assigned()->detach($iduser);
 
     $this->update($idtask);
 

@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <h5>Manage tasks</h5>
+    <h5>Manage Tasks</h5>
   </div>
   <div class="col-md-4">
     <form>
@@ -25,7 +25,8 @@
 @endsection
 
 @section('card-body')
-
+<form method="POST">
+  {{ csrf_field() }}
 <div class="nopadding">
   <table class="table">
     <thead>
@@ -39,7 +40,7 @@
         </th>
         <th scope="col">
           <div class="text-left font-weight-bold">
-            Members assigned
+            Members Assigned
           </div>
         </th>
         <th scope="col">
@@ -59,7 +60,9 @@
       <tr>
         <th scope="row">
           <div class="text-center">
-            <input type="checkbox" value="">
+            @if ( Auth::check() && $project->editors->contains('iduser', Auth::user()->iduser))
+            @include('layouts.checkbox-input', ['name' => 'task'.$task->idtask])
+            @endif
           </div>
         </th>
         <td>
@@ -98,7 +101,7 @@
 
 <div class="card-footer">
   <div class="float-right">
-    <button type="button" class="btn btn-terciary">
+    <button type="submit" class="btn btn-terciary" formaction="">
       <span class="octicon octicon-clippy"></span>
       Save
     </button>
@@ -113,7 +116,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5>Remove tasks?</h5>
+        <h5>Remove Tasks ?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -122,11 +125,12 @@
         Warning: this action is destructive!
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Remove</button>
+        <button type="submit" class="btn btn-primary" formaction="{{ url('project/'.$project->idproject.'/manage_tasks/remove') }}">Remove</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
+</form>
 
 @endsection

@@ -4,8 +4,8 @@
 
 @section('content')
 
-@if($project->idProject != $task->idProject)
-abort(404);
+@if($project->idproject != $task->project->idproject)
+  <!-- page not found -->
 @endif
 
 <?php use Carbon\Carbon; ?>
@@ -227,11 +227,15 @@ abort(404);
       @include('layouts.closerequest')
       @endforeach
     </div>
+
+    @if ( Auth::check() && ( $task->project->editors->contains('iduser', Auth::user()->iduser)
+          || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
     <div class="card-footer">
       <a class="create-new-closerequest btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/new-cr')}}">
           + create new close request
       </a>
     </div>
+    @endif
   </div>
 
 </div>
