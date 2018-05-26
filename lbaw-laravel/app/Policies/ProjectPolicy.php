@@ -17,7 +17,6 @@ class ProjectPolicy {
     }
 
     public function show(User $user, Project $project){
-
         foreach($project->members as $member){
             if ($member->iduser == $user->iduser || !$project->private)
                 return true;
@@ -26,4 +25,17 @@ class ProjectPolicy {
         return false;
     }
 
+    public function options(User $user, Project $project){
+      if($project->owner->first()->iduser == $user->iduser){
+        return true;
+      }
+        return false;
+    }
+
+    public function manage(User $user, Project $project){
+      if($project->editors->contains('iduser', $user->iduser)){
+        return true;
+      }
+        return false;
+    }
 }

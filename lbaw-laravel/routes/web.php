@@ -73,17 +73,17 @@ Route::get('/project/{id}/members', 'Project\ProjectMembersController@show')->mi
 
 Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
 
-Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show')->middleware('project');
-Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProject')->middleware('project');
+Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show')->middleware('project')->middleware('owner');
+Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProject')->middleware('project')->middleware('owner');
 
-Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete');
+Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('owner');
 
-Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project');
-Route::post('/project/{id}/manage_tasks/remove', 'Project\ProjectManageTasksController@remove')->middleware('project');
+Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project')->middleware('manager');
+Route::post('/project/{id}/manage_tasks/remove', 'Project\ProjectManageTasksController@remove')->middleware('project')->middleware('manager');
 
-Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project');
-Route::post('/project/{id}/manage_users/remove', 'Project\ProjectManageUsersController@remove')->middleware('project');
-Route::post('/project/{id}/manage_users/update', 'Project\ProjectManageUsersController@update')->middleware('project');
+Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project')->middleware('manager');
+Route::post('/project/{id}/manage_users/remove', 'Project\ProjectManageUsersController@remove')->middleware('project')->middleware('manager');
+Route::post('/project/{id}/manage_users/update', 'Project\ProjectManageUsersController@update')->middleware('project')->middleware('manager');
 
 Route::get('/project/{id}/join/{iduser}', 'Project\ProjectController@join')->middleware('project');
 Route::get('/project/{id}/leave/{iduser}', 'Project\ProjectController@leave')->middleware('project');
