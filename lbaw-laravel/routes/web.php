@@ -76,7 +76,7 @@ Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middle
 Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show')->middleware('project')->middleware('owner');
 Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProject')->middleware('project')->middleware('owner');
 
-Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('owner');
+Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@delete')->middleware('project')->middleware('owner');
 
 Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project')->middleware('manager');
 Route::post('/project/{id}/manage_tasks/remove', 'Project\ProjectManageTasksController@remove')->middleware('project')->middleware('manager');
@@ -85,8 +85,8 @@ Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@s
 Route::post('/project/{id}/manage_users/remove', 'Project\ProjectManageUsersController@remove')->middleware('project')->middleware('manager');
 Route::post('/project/{id}/manage_users/update', 'Project\ProjectManageUsersController@update')->middleware('project')->middleware('manager');
 
-Route::get('/project/{id}/join/{iduser}', 'Project\ProjectController@join')->middleware('project');
-Route::get('/project/{id}/leave/{iduser}', 'Project\ProjectController@leave')->middleware('project');
+Route::get('/project/{id}/join', 'Project\ProjectController@join')->middleware('project');
+Route::get('/project/{id}/leave', 'Project\ProjectController@leave')->middleware('project');
 
 Route::get('/project/{id}/new-task', 'Project\ProjectNewTaskController@show')->middleware('project');
 Route::post('/project/{id}/new-task', 'Project\ProjectNewTaskController@newTask')->middleware('project');

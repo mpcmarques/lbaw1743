@@ -16,13 +16,13 @@ class ProjectController extends Controller {
     return view('project.tasks', ['project' => $project]);
   }
 
-  public function leave($id, $iduser){
+  public function leave($id){
     $project = Project::findOrFail($id);
 
-    if (Auth::user()->iduser == $iduser
+    if (Auth::check()
           && $project->members->contains('iduser', Auth::user()->iduser)
           && !$project->owner->contains('iduser', Auth::user()->iduser)){
-      $project->members()->detach($iduser);
+      $project->members()->detach(Auth::user()->iduser);
       $project->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
       $project->save();
     }
@@ -33,12 +33,12 @@ class ProjectController extends Controller {
     return redirect('/project/'.$id);
   }
 
-  public function join($id, $iduser){
+  public function join($id){
     $project = Project::findOrFail($id);
 
-    if (Auth::check() && Auth::user()->iduser == $iduser
+    if (Auth::check()
           && !$project->members->contains('iduser', Auth::user()->iduser)){
-      $project->members()->attach($iduser,[
+      $project->members()->attach(Auth::user()->iduser,[
   'joineddate' => date('Y-m-d H:i:s', strtotime(Carbon::now())),
   'role' => 'Member']);
       $project->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
