@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Task;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Project;
 use App\Model\Task;
 
-class TaskBelongsProject
+class UserAssignTask
 {
     /**
      * Handle an incoming request.
@@ -21,11 +21,11 @@ class TaskBelongsProject
         $project = Project::findOrFail($request->id);
         $task = Task::findOrFail($request->idTask);
 
-        if($project->can('show', $task)){
+        if( Auth::check() && Auth::user()->can('assign', $task) ){
           return $next($request);
         }
         else{
-          return redirect('/project/'.$project->idproject);
+          return redirect('/project/'.$project->idproject.'/task/'.$task->idtask);
         }
     }
 }

@@ -4,10 +4,6 @@
 
 @section('content')
 
-@if($project->idproject != $task->project->idproject)
-  <!-- page not found -->
-@endif
-
 <?php use Carbon\Carbon; ?>
 
 <div id="task" class="container-fluid">
@@ -107,12 +103,12 @@
     <div class="card-header panel-header">
       <h5 class="panel-title">Assigned</h5>
       @if ( Auth::check() && $task->assigned->contains('iduser', Auth::user()->iduser))
-      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/unassign/'.Auth::user()->iduser) }}" class="btn btn-primary card-leave-button">
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/unassign') }}" class="btn btn-primary card-leave-button">
         <span class="octicon octicon-sign-out">
         </span>
       </a>
       @elseif (Auth::check() && $task->project->members->contains('iduser', Auth::user()->iduser))
-      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/assign/'.Auth::user()->iduser) }}" class="btn btn-terciary card-enter-button">
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/assign') }}" class="btn btn-terciary card-enter-button">
         <span class="octicon octicon-sign-in">
         </span>
       </a>

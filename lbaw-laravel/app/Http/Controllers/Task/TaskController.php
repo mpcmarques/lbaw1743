@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Task;
 use App\Model\Project;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -45,16 +46,16 @@ class TaskController extends Controller
     $task->save();
   }
 
-  public function assign($idproject, $idtask, $iduser){
-    Task::find($idtask)->assigned()->attach($iduser);
+  public function assign($idproject, $idtask){
+    Task::find($idtask)->assigned()->attach(Auth::user()->iduser);
 
     $this->update($idtask);
 
     return redirect('/project/'.$idproject.'/task/'.$idtask);
   }
 
-  public function unassign($idproject, $idtask, $iduser){
-    Task::find($idtask)->assigned()->detach($iduser);
+  public function unassign($idproject, $idtask){
+    Task::find($idtask)->assigned()->detach(Auth::user()->iduser);
 
     $this->update($idtask);
 

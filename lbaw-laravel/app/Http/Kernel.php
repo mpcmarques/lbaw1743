@@ -57,9 +57,14 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'project' => \App\Http\Middleware\CheckCanSeeProject::class,
-        'owner' => \App\Http\Middleware\ProjectOwnerOptions::class,
-        'manager' => \App\Http\Middleware\ProjectManagerOptions::class,
-        'task' => \App\Http\Middleware\TaskBelongsProject::class
+        'project' => \App\Http\Middleware\Project\CheckCanSeeProject::class,
+        'owner' => \App\Http\Middleware\Project\ProjectOwnerOptions::class,
+        'manager' => \App\Http\Middleware\Project\ProjectManagerOptions::class,
+        'task' => \App\Http\Middleware\Task\TaskBelongsProject::class,
+        'editTask' => \App\Http\Middleware\Task\UserEditTask::class,
+        'deleteTask' => \App\Http\Middleware\Task\UserDeleteTask::class,
+        'assignTask' => \App\Http\Middleware\Task\UserAssignTask::class,
+        'unassignTask' => \App\Http\Middleware\Task\UserUnassignTask::class,
+        'commentTask' => \App\Http\Middleware\Task\UserUnassignTask::class
     ];
 }

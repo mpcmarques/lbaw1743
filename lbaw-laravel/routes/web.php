@@ -109,15 +109,15 @@ Route::get('/search/{text}/users', 'Search\SearchUsersController@show');
 // task
 
 Route::get('project/{id}/task/{idTask}', 'Task\TaskController@show')->middleware('project')->middleware('task');
-Route::get('project/{id}/task/{idTask}/delete', 'Task\TaskController@delete');
+Route::get('project/{id}/task/{idTask}/delete', 'Task\TaskController@delete')->middleware('project')->middleware('task')->middleware('deleteTask');
 
-Route::get('project/{id}/task/{idTask}/assign/{idUser}', 'Task\TaskController@assign');
-Route::get('project/{id}/task/{idTask}/unassign/{idUser}', 'Task\TaskController@unassign');
+Route::get('project/{id}/task/{idTask}/assign', 'Task\TaskController@assign')->middleware('project')->middleware('task')->middleware('assignTask');
+Route::get('project/{id}/task/{idTask}/unassign', 'Task\TaskController@unassign')->middleware('project')->middleware('task')->middleware('unassignTask');
 
-Route::get('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@show');
-Route::post('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
+Route::get('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@show')->middleware('project')->middleware('task')->middleware('editTask');
+Route::post('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@editTask')->middleware('project')->middleware('task')->middleware('editTask');
 
-Route::post('project/{id}/task/{idTask}/comment', 'Task\TaskEditController@postComment');
+Route::post('project/{id}/task/{idTask}/comment', 'Task\TaskEditController@postComment')->middleware('project')->middleware('task')->middleware('commentTask');
 Route::get('project/{id}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment');
 
 Route::get('project/{id}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@show');
