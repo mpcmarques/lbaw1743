@@ -16,20 +16,43 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-2">
-        <img src="{{ $project->getPicture() }}" alt="Project Picture" class="img-center thumbnail">
+        <img id="atualProjectPicture" src="{{ $project->getPicture() }}" alt="Project Picture" class="img-center thumbnail">
       </div>
       <div class="col-md-10">
         <div id="upload-image" class="input-group">
           <div class="custom-file">
-            <label class="custom-file-label">Choose File</label>
+            <label class="custom-file-label" id="projectPictureName">Choose File</label>
             <input type="file" class="custom-file-input" id="projectPicture" name="projectPicture">
           </div>
         </div>
       </div>
     </div>
+
+    <script type='text/javascript'>
+        document.getElementById('projectPicture').addEventListener("change", updateImage);
+
+        function updateImage(event){
+          var reader = new FileReader();
+          var selectedFile = event.target.files[0];
+
+          var imgtag = document.getElementById("atualProjectPicture");
+          document.getElementById("projectPictureName").innerHTML = selectedFile.name;
+          imgtag.title = selectedFile.name;
+
+          reader.onload = function(event) {
+            imgtag.src = event.target.result;
+          };
+
+          reader.readAsDataURL(selectedFile);
+        }
+    </script>
+    
   </div>
   <div class="form-group">
+    <label class="form-check-label" for="description">Project Name</label>
     @include('layouts.validation-input', ['name' => 'name', 'value' => $project->name])
+  </div>
+  <div class="form-group">
     <label class="form-check-label" for="description">Description</label>
     @include('layouts.validation-input-textarea', ['name' => 'description', 'rows' => '4', 'value' => $project->description])
   </div>
