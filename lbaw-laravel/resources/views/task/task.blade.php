@@ -54,7 +54,7 @@
               </button>
             </div>
             <div class="modal-body">
-              Warning: this action is destructive!
+              <b>Warning</b>: this action is destructive!
             </div>
             <div class="modal-footer">
 

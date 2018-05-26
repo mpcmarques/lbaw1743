@@ -52,6 +52,10 @@ class ProjectOptionsController extends Controller
 
     $project->members()->detach();
 
+    if (file_exists('img/project/'.$project->idproject.'.png')){
+      unlink(public_path().'/img/project/'.$project->idproject.'.png');
+    }
+
     $project->delete();
 
     return redirect('/');

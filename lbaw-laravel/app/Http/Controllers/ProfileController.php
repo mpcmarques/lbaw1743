@@ -125,8 +125,12 @@ class ProfileController extends Controller
 
     //TODO: Banned record
 
+    if (file_exists('img/profile/'.$user->iduser.'.png')){
+      unlink(public_path().'/img/profile/'.$user->iduser.'.png');
+    }
+
     //$user->delete();
 
-    return redirect('/home/');
+    return redirect('/logout');
   }
 }
