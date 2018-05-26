@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'project' => \App\Http\Middleware\CheckCanSeeProject::class,
         'owner' => \App\Http\Middleware\ProjectOwnerOptions::class,
-        'manager' => \App\Http\Middleware\ProjectManagerOptions::class
+        'manager' => \App\Http\Middleware\ProjectManagerOptions::class,
+        'task' => \App\Http\Middleware\TaskBelongsProject::class
     ];
 }

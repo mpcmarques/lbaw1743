@@ -2,7 +2,6 @@
 
 namespace App\Policies;
 
-
 use App\Model\Project;
 use App\Model\User;
 

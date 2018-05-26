@@ -108,26 +108,26 @@ Route::get('/search/{text}/users', 'Search\SearchUsersController@show');
 
 // task
 
-Route::get('project/{idProject}/task/{idTask}', 'Task\TaskController@show');
-Route::get('project/{idProject}/task/{idTask}/delete', 'Task\TaskController@delete');
+Route::get('project/{id}/task/{idTask}', 'Task\TaskController@show')->middleware('project')->middleware('task');
+Route::get('project/{id}/task/{idTask}/delete', 'Task\TaskController@delete');
 
-Route::get('project/{idProject}/task/{idTask}/assign/{idUser}', 'Task\TaskController@assign');
-Route::get('project/{idProject}/task/{idTask}/unassign/{idUser}', 'Task\TaskController@unassign');
+Route::get('project/{id}/task/{idTask}/assign/{idUser}', 'Task\TaskController@assign');
+Route::get('project/{id}/task/{idTask}/unassign/{idUser}', 'Task\TaskController@unassign');
 
-Route::get('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@show');
-Route::post('project/{idProject}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
+Route::get('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@show');
+Route::post('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@editTask');
 
-Route::post('project/{idProject}/task/{idTask}/comment', 'Task\TaskEditController@postComment');
-Route::get('project/{idProject}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment');
+Route::post('project/{id}/task/{idTask}/comment', 'Task\TaskEditController@postComment');
+Route::get('project/{id}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment');
 
-Route::get('project/{idProject}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@show');
-Route::post('project/{idProject}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@newCloseRequest');
-Route::get('project/{idProject}/task/{idTask}/approve-cr/{idUser}', 'Task\TaskEditController@complete');
+Route::get('project/{id}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@show');
+Route::post('project/{id}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@newCloseRequest');
+Route::get('project/{id}/task/{idTask}/approve-cr/{idUser}', 'Task\TaskEditController@complete');
 
 // tags
 
-Route::post('project/{idProject}/task/{idTask}/add-tag', 'Task\TaskEditController@addTag');
-Route::get('project/{idProject}/task/{idTask}/remove-tag/{idTag}', 'Task\TaskEditController@removeTag');
+Route::post('project/{id}/task/{idTask}/add-tag', 'Task\TaskEditController@addTag');
+Route::get('project/{id}/task/{idTask}/remove-tag/{idTag}', 'Task\TaskEditController@removeTag');
 
 // profile
 
