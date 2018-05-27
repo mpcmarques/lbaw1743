@@ -23,6 +23,22 @@
   {{-- card --}}
   <div class="card">
     <div class="card-header panel-header">
+      <div class="row">
+        <div class="col-6">
+          <h5 class="panel-title">{{ $task->title }}</h5>
+        </div>
+        <div class="col-6">
+          <p class="text-right status">
+            @if($task->completed)
+            Status: Completed
+            @else
+            Status: Open
+            @endif
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
 
       @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
       || $task->project->editors->contains('iduser', Auth::user()->iduser)
@@ -65,22 +81,7 @@
       </div>
 
       @endif
-      <div class="row">
-        <div class="col-6">
-          <h5 class="panel-title">{{ $task->title }}</h5>
-        </div>
-        <div class="col-6">
-          <p class="text-right status">
-            @if($task->completed)
-            Status: Completed
-            @else
-            Status: Open
-            @endif
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
+      
       {{ $task->description}}
     </div>
     <div class="card-footer">

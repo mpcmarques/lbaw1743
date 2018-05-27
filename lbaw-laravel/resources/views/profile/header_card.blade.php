@@ -113,9 +113,18 @@
             <label class="col-sm-4 col-form-label">Profile Picture</label>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="profilePicture" name="profilePicture">
-              <label class="custom-file-label">Choose File</label>
+              <label class="custom-file-label" id="profilePictureName">Choose File</label>
             </div>
           </div>
+
+          <script type='text/javascript'>
+              document.getElementById('profilePicture').addEventListener("change", updateImage);
+
+              function updateImage(event){
+                var selectedFile = event.target.files[0];
+                document.getElementById("profilePictureName").innerHTML = selectedFile.name;
+              }
+          </script>
 
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Save Changes</button>
