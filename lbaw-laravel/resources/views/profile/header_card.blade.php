@@ -148,8 +148,21 @@
         <p class="card-text">
           {{$profile->description}}
         </p>
-        <div class="company">
+        <div class="gender">
+          @if( $profile->gender == 'Male')
+          <span class="fa fa-mars"></span>
+          <strong>Male</strong>
+          @else
+          <span class="fa fa-venus"></span>
+          <strong class="female">Female</strong>
+          @endif
+        </div>
+        <div class="country">
           <span class="octicon octicon-globe"></span>
+          <strong>{{$profile->country->name}}</strong>
+        </div>
+        <div class="company">
+          <span class="fa fa-suitcase"></span>
           <strong>{{$profile->institution}}</strong>
         </div>
         @if($profile->premium)
@@ -168,7 +181,7 @@
           }
         } ?>
 
-        <div class="company">
+        <div class="premium">
           <span class="octicon octicon-star"></span>
           @if(Auth::check() && Auth::user()->iduser == $profile->iduser)
           <strong>{{$years}}y {{$days}}d {{$hours}}h {{$minutes}}m</strong>

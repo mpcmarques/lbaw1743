@@ -53,6 +53,10 @@ class User extends Authenticatable
     return $this->belongsToMany('\App\Model\Project', 'joined', 'iduser', 'idproject')->orderBy('lasteditdate', 'DESC');
   }
 
+  public function country(){
+    return $this->hasOne('App\Model\Country', 'idcountry');
+  }
+
   /*
   public function setPasswordAttribute($password){
     $this->attributes['password'] = $password;

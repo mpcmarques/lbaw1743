@@ -375,9 +375,26 @@ div.required label:after {
     margin-top: 1em;
 }
 
-#profile #profile-header-card .company {
+#profile #profile-header-card .company,
+#profile #profile-header-card .gender,
+#profile #profile-header-card .premium,
+#profile #profile-header-card .country {
     color: #247BA0;
 }
+
+#profile #profile-header-card .female{
+  padding-left: 4px;
+}
+
+#profile #profile-header-card .company strong{
+  padding-left: 1px;
+}
+
+#profile #profile-header-card .gender span{
+  font-size: 20px;
+  padding-left: 1px;
+}
+
 /* Small devices (landscape phones, 728px and up) */
 @media (max-width: 728px) {
     #profile #profile-header-card{
