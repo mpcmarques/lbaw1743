@@ -117,6 +117,7 @@ class HomeController extends Controller
       $user->name = $data['name'];
       $user->gender = $data['gender'];
       $user->institution = $data['institution_company'];
+      $user->idcountry = $data['country'];
       $user->birthdate = date('Y-m-d H:i:s',strtotime($data['birthdate']));
       $user->premium = false;
       $user->banned = false;

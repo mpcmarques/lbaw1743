@@ -94,31 +94,25 @@
             <input id="password_confirmation" type="password" name="password_confirmation" class="form-control">
           </div>
 
-          <fieldset class="form-group row">
-              <legend class="col-form-legend col-sm-3">Gender</legend>
-              <div class="col">
-                  <div class="form-check">
-                      <label class="form-check-label">
-                        @if (Auth::user()->gender == 'Male')
-                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Male" checked>
-                        @else
-                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Male">
-                        @endif
-                          Male
-                      </label>
-                  </div>
-                  <div class="form-check">
-                      <label class="form-check-label">
-                        @if (Auth::user()->gender == 'Female')
-                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Female" checked>
-                        @else
-                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Female">
-                        @endif
-                          Female
-                      </label>
-                  </div>
-              </div>
-          </fieldset>
+          <div class="md-form">
+              <label class="col-sm-4 col-form-label">Gender</label>
+							<div class="radioGender">
+                @if ($profile->gender == 'Male')
+                <label class="radio-inline"><input type="radio" name="gender" id="gender" value="Male" checked>Male</label>
+								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Female">Female</label>
+                @else
+                <label class="radio-inline"><input type="radio" name="gender" id="gender" value="Male">Male</label>
+								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Female" checked>Female</label>
+                @endif
+							</div>
+          </div>
+
+          <div class="md-form">
+            <label class="col-sm-4 col-form-label">Country</label>
+            <div class="col-sm-7">
+							@include('layouts.country-list', ['selected' => $profile->country->name])
+						</div>
+          </div>
 
           <div class="md-form mb-3">
             <label class="col-sm-6 col-form-label">Institution / Company</label>

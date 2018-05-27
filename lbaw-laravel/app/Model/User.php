@@ -54,7 +54,7 @@ class User extends Authenticatable
   }
 
   public function country(){
-    return $this->hasOne('App\Model\Country', 'idcountry');
+    return $this->belongsTo('App\Model\Country', 'idcountry');
   }
 
   /*

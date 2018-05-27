@@ -55,13 +55,8 @@ class ProfileController extends Controller
       $profile->email = $data['email'];
     }
 
-    if($data['description'] != $profile->description){
-      $profile->description = $data['description'];
-    }
-
-    if($data['institution'] != $profile->institution){
-      $profile->institution = $data['institution'];
-    }
+    $profile->description = $data['description'];
+    $profile->institution = $data['institution'];
 
     if($data['birthdate'] != $profile->birthdate){
       Validator::make($data,['birthdate' => 'required|date'])->validate();
@@ -73,9 +68,8 @@ class ProfileController extends Controller
       $profile->password = bcrypt($data['password']);
     }
 
-    if($data['gender'] != $profile->gender){
-      $profile->gender = $data['gender'];
-    }
+    $profile->gender = $data['gender'];
+    $profile->idcountry = $data['country'];
 
     $profile->save();
 

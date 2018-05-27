@@ -211,13 +211,21 @@
 						</div>
 					</div>
 
-					<fieldset class="form-group row">
+					<div class="form-group row">
               <label class="col-sm-4 col-form-label">Gender</label>
 							<div class="radioGender">
 								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Male" checked>Male</label>
 								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Female">Female</label>
 							</div>
-          </fieldset>
+          </div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">Country</label>
+
+						<div class="col-sm-7">
+							@include('layouts.country-list', ['selected' => 'Portugal'])
+						</div>
+					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">Institution / Company</label>
@@ -225,7 +233,6 @@
 							<input id="institution_company" name="institution_company" class="form-control"></input>
 						</div>
 					</div>
-
 
 					<div class="form-group row required">
 						<label class="col-sm-4 col-form-label">Birthday</label>
@@ -239,7 +246,7 @@
 
 							@if (isset($errors) && $errors->has('checkbox'))
 
-							<input id="checkbox" name="checkbox" class="form-check-input is-invalid" type="checkbox">
+							<input id="checkbox" name="checkbox" class="form-check-input is-invalid" type="checkbox" required>
 
 							<span class="invalid-feedback">
 								{{ $errors->first('checkbox') }}
@@ -247,7 +254,7 @@
 
 							@else
 
-							<input id="checkbox" name="checkbox" class="form-check-input" type="checkbox">
+							<input id="checkbox" name="checkbox" class="form-check-input" type="checkbox" required>
 
 							@endif
 
