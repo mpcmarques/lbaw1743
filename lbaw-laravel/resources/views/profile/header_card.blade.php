@@ -1,8 +1,6 @@
 <div id="profile-header-card" class="card">
 
- @if (empty($profile))
-    <h1>Perfil não encontrado></h1>
- @else
+<?php use Carbon\Carbon; ?>
 
  @if(Auth::check() && Auth::user() == $profile)
   <button class="btn btn-terciary card-edit-button" data-toggle="modal" data-target="#editprofile-modal">
@@ -130,7 +128,6 @@
 
 @endif
 
-
 <div class="card-body">
   <div class="grid">
     <div class="row">
@@ -146,11 +143,34 @@
           <span class="octicon octicon-globe"></span>
           <strong>{{$profile->institution}}</strong>
         </div>
+        @if($profile->premium)
+        <?php
+        foreach($profile->premiumSignatures as $premiumSignature){
+          $end = new DateTime($premiumSignature->startdate);
+          $now = new DateTime(Carbon::now());
+          date_add($end, date_interval_create_from_date_string($premiumSignature->duration));
+          if($end >= $now){
+            $end = Carbon::parse($end->format('Y-m-d'));
+            $years = $end->diffInYears($now);
+            $days = $end->subYears($years)->diffInDays($now);
+            $hours = $end->subDays($days)->diffInHours($now);
+            $minutes = $end->subHours($hours)->diffInMinutes($now);
+            break;
+          }
+        } ?>
+
+        <div class="company">
+          <span class="octicon octicon-star"></span>
+          @if(Auth::check() && Auth::user()->iduser == $profile->iduser)
+          <strong>{{$years}}y {{$days}}d {{$hours}}h {{$minutes}}m</strong>
+          @else
+          <strong>Premium</strong>
+          @endif
+        </div>
+        @endif
       </div>
     </div>
   </div>
 </div>
-
-@endif
 
 </div>

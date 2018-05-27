@@ -77,7 +77,7 @@ class User extends Authenticatable
   }
 
   public function premiumSignatures(){
-    return $this->hasMany('\App\Model\PremiumSignature', 'iduser');
+    return $this->hasMany('\App\Model\PremiumSignature', 'iduser')->orderBy('startdate', 'ASC');
   }
 
   public function forumPosts() {

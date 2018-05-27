@@ -789,11 +789,13 @@ insert into usertable (username, password, email, premium, banned, name, gender,
 
 
 --PremiumSignature
-insert into premiumsignature (idPremium, startDate, duration, idUser) values (1, '2017-10-20', interval '5 year', 1);
-insert into premiumsignature (idPremium, startDate, duration, idUser) values (2, '2017-11-05', interval '5 year', 2);
-insert into premiumsignature (idPremium, startDate, duration, idUser) values (3, '2017-06-17', interval '5 year', 3);
-insert into premiumsignature (idPremium, startDate, duration, idUser) values (4, '2017-03-01', interval '5 year', 4);
-insert into premiumsignature (idPremium, startDate, duration, idUser) values (5, '2017-07-10', interval '5 year', 5);
+insert into premiumsignature (startDate, duration, idUser) values ('2015-10-19', interval '1 year', 1);
+
+insert into premiumsignature (startDate, duration, idUser) values ('2016-10-20', interval '5 year', 1);
+insert into premiumsignature (startDate, duration, idUser) values ('2016-11-05', interval '5 year', 2);
+insert into premiumsignature (startDate, duration, idUser) values ('2016-06-17', interval '5 year', 3);
+insert into premiumsignature (startDate, duration, idUser) values ('2016-03-01', interval '5 year', 4);
+insert into premiumsignature (startDate, duration, idUser) values ('2016-07-10', interval '5 year', 5);
 
 --Project
 insert into project (creationDate, lastEditDate, name, description, private) values ('2017-03-05', '2017-03-05', 'Tin', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', true);

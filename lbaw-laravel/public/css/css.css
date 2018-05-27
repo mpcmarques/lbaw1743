@@ -38,6 +38,7 @@
 
 #header .logout {
   display: none;
+  padding-top: 3px;
 }
 
 /* Small devices (landscape phones, 728px and up) */
