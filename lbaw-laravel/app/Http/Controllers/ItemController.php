@@ -41,7 +41,7 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $item = Item::find($id);
+      $item = Item::findOrFail($id);
 
       $this->authorize('update', $item);
 
@@ -59,7 +59,7 @@ class ItemController extends Controller
      */
     public function delete(Request $request, $id)
     {
-      $item = Item::find($id);
+      $item = Item::findOrFail($id);
 
       $this->authorize('delete', $item);
       $item->delete();

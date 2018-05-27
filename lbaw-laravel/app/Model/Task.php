@@ -28,7 +28,7 @@ class Task extends BaseModel
   * Tasks comments
    */
   public function comments() {
-    return $this->hasMany('App\Model\Comment', 'idtask')->orderBy('idparent', 'ASC');;
+    return $this->hasMany('App\Model\Comment', 'idtask')->orderBy('lasteditdate', 'ASC');
   }
 
   /**

@@ -13,14 +13,14 @@ class ProfileController extends Controller
 {
   public function show($id)
   {
-    $profile = User::find($id);
+    $profile = User::findOrFail($id);
 
     return view('profile.index', ['profile' => $profile]);
   }
 
   function showEditModal($id)
   {
-    $profile = User::find($id);
+    $profile = User::findOrFail($id);
 
     return view('profile.index', ['profile' => $profile], ['editProfile' => true]);
   }
@@ -79,7 +79,17 @@ class ProfileController extends Controller
   }
 
   public function deleteProfile($iduser){
-    $user = User::find($iduser);
+    $user = User::findOrFail($iduser);
+
+    if( !(Auth::check() && Auth::user() == $user) ){
+      return redirect('/profile/'.$user->iduser);
+    }
+
+    foreach ($user->projects as $project) {
+      if($project->owner->contains('iduser', $user->iduser)){
+        return redirect('/profile/'.$user->iduser);
+      }
+    }
 
     $premiumSignatures = $user->premiumSignatures()->get();
     foreach ($premiumSignatures as $premiumSignature) {

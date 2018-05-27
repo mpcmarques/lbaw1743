@@ -863,15 +863,15 @@ insert into assigned (idUser, idTask) values (1, 6);
 insert into assigned (idUser, idTask) values (6, 6);
 
 --Comment
-insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-01-12', '2017-09-12', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 1, 1);
-insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-04-03', '2017-05-07', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 2, 2);
-insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-10-01', NULL, 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 3, 3);
-insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-09-25', '2018-03-12', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 4, 4);
-insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-07-12', NULL, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 5, 5);
-insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-03-02', '2017-07-19', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 1, 6);
-insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-10-01', NULL, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 2, 7);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-12-12', '2017-12-12', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 1, 1);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2018-03-02', '2018-03-02', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 1, 6);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser, idParent) values ('2018-03-03', '2018-03-03', 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 1, 1, 2);
 
-insert into comment (creationDate, lastEditDate, content, idTask, idUser, idParent) values ('2018-03-03', NULL, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 1, 1, 6);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-04-03', '2017-04-03', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 2, 2);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-10-01', '2017-10-01', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 3, 3);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-09-25', '2017-09-25', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 4, 4);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-07-12', '2017-07-12', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 5, 5);
+insert into comment (creationDate, lastEditDate, content, idTask, idUser) values ('2017-10-01', '2017-10-01', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 2, 7);
 --Tag
 insert into tag (name) values ('full-range');
 insert into tag (name) values ('moderator');

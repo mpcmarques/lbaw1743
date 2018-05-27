@@ -498,6 +498,10 @@ div.required label:after {
   margin-right: 1em;
 }
 
+.tag{
+  color: white !important;
+}
+
 .octicon-sign-out, .octicon-sign-in, .octicon-lock{
   padding-top: 10px;
   color: white;

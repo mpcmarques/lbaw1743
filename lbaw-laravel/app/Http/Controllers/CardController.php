@@ -18,7 +18,7 @@ class CardController extends Controller
      */
     public function show($id)
     {
-      $card = Card::find($id);
+      $card = Card::findOrFail($id);
 
       $this->authorize('show', $card);
 
@@ -61,7 +61,7 @@ class CardController extends Controller
 
     public function delete(Request $request, $id)
     {
-      $card = Card::find($id);
+      $card = Card::findOrFail($id);
 
       $this->authorize('delete', $card);
       $card->delete();

@@ -19,8 +19,8 @@ class TaskEditController extends Controller
 {
     public function show($idproject, $idtask)
     {
-      $project = Project::find($idproject);
-      $task = Task::find($idtask);
+      $project = Project::findOrFail($idproject);
+      $task = Task::findOrFail($idtask);
 
       return view('task.task_edit', ['task' => $task, 'project' => $project]);
     }
@@ -58,7 +58,7 @@ class TaskEditController extends Controller
     }
 
     public function update($idtask){
-      $task = Task::find($idtask);
+      $task = Task::findOrFail($idtask);
       $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
       $task->save();
     }
@@ -75,7 +75,7 @@ class TaskEditController extends Controller
         $tag->save();
       }
 
-      Task::find($idtask)->tags()->attach($tag->idtag);
+      Task::findOrFail($idtask)->tags()->attach($tag->idtag);
 
       $this->update($idtask);
 
@@ -84,7 +84,7 @@ class TaskEditController extends Controller
 
     public function removeTag($idproject, $idtask, $idtag){
 
-      Task::find($idtask)->tags()->detach($idtag);
+      Task::findOrFail($idtask)->tags()->detach($idtag);
 
       $this->update($idtask);
 
@@ -99,6 +99,7 @@ class TaskEditController extends Controller
       $comment = new Comment;
       $comment->content = $data['content'];
       $comment->creationdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      $comment->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
       $comment->idtask = $idtask;
       $comment->iduser= $profile->iduser;
       $comment->save();
@@ -124,8 +125,8 @@ class TaskEditController extends Controller
     }
 
     public function complete($idproject, $idtask, $idrequest){
-      $closeRequest = CloseRequest::find($idrequest);
-      $task = Task::find($idtask);
+      $closeRequest = CloseRequest::findOrFail($idrequest);
+      $task = Task::findOrFail($idtask);
 
       $closeRequest->approved = true;
       $closeRequest->approveduser = Auth::user()->iduser;

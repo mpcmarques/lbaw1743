@@ -171,7 +171,14 @@
     </div>
     <div class="card-body">
       @foreach($task->tags as $tag)
-      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/remove-tag/'.$tag->idtag) }}" class="btn btn-primary">
+
+      @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+      || $task->project->editors->contains('iduser', Auth::user()->iduser)
+      || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+      <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/remove-tag/'.$tag->idtag) }}" class="btn btn-primary tag">
+      @else
+      <a class="btn btn-primary tag">
+      @endif
         {{$tag->name}}
       </a>
       @endforeach
@@ -188,7 +195,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5>Add new tag</h5>
+              <h5>Add New Tag</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

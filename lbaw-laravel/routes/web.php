@@ -118,25 +118,25 @@ Route::get('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@show')->m
 Route::post('project/{id}/task/{idTask}/edit', 'Task\TaskEditController@editTask')->middleware('project')->middleware('task')->middleware('editTask');
 
 Route::post('project/{id}/task/{idTask}/comment', 'Task\TaskEditController@postComment')->middleware('project')->middleware('task')->middleware('commentTask');
-Route::get('project/{id}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment');
+Route::get('project/{id}/task/{idTask}/delete-comment/{idComment}', 'Task\TaskEditController@deleteComment')->middleware('project')->middleware('task')->middleware('deleteComment');
 
-Route::get('project/{id}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@show');
-Route::post('project/{id}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@newCloseRequest');
-Route::get('project/{id}/task/{idTask}/approve-cr/{idUser}', 'Task\TaskEditController@complete');
+Route::get('project/{id}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@show')->middleware('project')->middleware('task')->middleware('closeRequest');
+Route::post('project/{id}/task/{idTask}/new-cr', 'Task\TaskNewCloseRequestController@newCloseRequest')->middleware('project')->middleware('task')->middleware('closeRequest');
+Route::get('project/{id}/task/{idTask}/approve-cr/{idRequest}', 'Task\TaskEditController@complete')->middleware('project')->middleware('task')->middleware('completeCloseRequest');
 
 // tags
 
-Route::post('project/{id}/task/{idTask}/add-tag', 'Task\TaskEditController@addTag');
-Route::get('project/{id}/task/{idTask}/remove-tag/{idTag}', 'Task\TaskEditController@removeTag');
+Route::post('project/{id}/task/{idTask}/add-tag', 'Task\TaskEditController@addTag')->middleware('project')->middleware('task');
+Route::get('project/{id}/task/{idTask}/remove-tag/{idTag}', 'Task\TaskEditController@removeTag')->middleware('project')->middleware('task');
 
 // profile
 
-Route::get('/profile/{id}', 'ProfileController@show');
+Route::get('/profile/{id}', 'ProfileController@show')->middleware('profile');
 
-Route::get('/profile/{id}/edit', 'ProfileController@showEditModal');
-Route::post('/profile/{id}/edit', 'ProfileController@editProfile');
+Route::get('/profile/{id}/edit', 'ProfileController@showEditModal')->middleware('profile');
+Route::post('/profile/{id}/edit', 'ProfileController@editProfile')->middleware('profile');
 
-Route::get('/profile/{id}/delete', 'ProfileController@deleteProfile');
+Route::get('/profile/{id}/delete', 'ProfileController@deleteProfile')->middleware('profile');
 
 // contact
 

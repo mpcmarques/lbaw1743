@@ -18,7 +18,7 @@ class ProjectOptionsController extends Controller
   }
 
   public function delete($id){
-    $project = Project::find($id);
+    $project = Project::findOrFail($id);
 
     $forumPosts = $project->forumPosts()->get();
     foreach ($forumPosts as $forumPost) {

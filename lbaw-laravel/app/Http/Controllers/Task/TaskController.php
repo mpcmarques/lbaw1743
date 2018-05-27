@@ -13,14 +13,14 @@ class TaskController extends Controller
 {
   public function show($idProject, $idTask)
   {
-    $project = Project::find($idProject);
-    $task = Task::find($idTask);
+    $project = Project::findOrFail($idProject);
+    $task = Task::findOrFail($idTask);
 
     return view('task.task', ['task'=> $task, 'project' => $project]);
   }
 
   public static function delete($idproject, $idtask){
-    $task = Task::find($idtask);
+    $task = Task::findOrFail($idtask);
 
     $comments = $task->comments()->get();
     foreach($comments as $comment){
@@ -41,13 +41,13 @@ class TaskController extends Controller
   }
 
   public function update($idtask){
-    $task = Task::find($idtask);
+    $task = Task::findOrFail($idtask);
     $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
     $task->save();
   }
 
   public function assign($idproject, $idtask){
-    Task::find($idtask)->assigned()->attach(Auth::user()->iduser);
+    Task::findOrFail($idtask)->assigned()->attach(Auth::user()->iduser);
 
     $this->update($idtask);
 
@@ -55,7 +55,7 @@ class TaskController extends Controller
   }
 
   public function unassign($idproject, $idtask){
-    Task::find($idtask)->assigned()->detach(Auth::user()->iduser);
+    Task::findOrFail($idtask)->assigned()->detach(Auth::user()->iduser);
 
     $this->update($idtask);
 
