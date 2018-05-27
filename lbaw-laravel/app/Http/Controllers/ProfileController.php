@@ -73,6 +73,10 @@ class ProfileController extends Controller
       $profile->password = bcrypt($data['password']);
     }
 
+    if($data['gender'] != $profile->gender){
+      $profile->gender = $data['gender'];
+    }
+
     $profile->save();
 
     return redirect('/profile/'.$profile->iduser);

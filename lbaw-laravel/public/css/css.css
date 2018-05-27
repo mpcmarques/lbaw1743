@@ -549,3 +549,9 @@ input[type='checkbox']{
 #search .card{
   margin: 10px;
 }
+
+/* register */
+
+.radio-inline{
+  padding-left: 15px;
+}

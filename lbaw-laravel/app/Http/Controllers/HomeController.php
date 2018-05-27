@@ -115,6 +115,7 @@ class HomeController extends Controller
       $user->password = bcrypt($data['password']);
       $user->email = $data['email'];
       $user->name = $data['name'];
+      $user->gender = $data['gender'];
       $user->institution = $data['institution_company'];
       $user->birthdate = date('Y-m-d H:i:s',strtotime($data['birthdate']));
       $user->premium = false;

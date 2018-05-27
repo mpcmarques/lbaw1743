@@ -211,7 +211,13 @@
 						</div>
 					</div>
 
-					<!--  Gender -->
+					<fieldset class="form-group row">
+              <label class="col-sm-4 col-form-label">Gender</label>
+							<div class="radioGender">
+								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Male" checked>Male</label>
+								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Female">Female</label>
+							</div>
+          </fieldset>
 
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">Institution / Company</label>

@@ -54,7 +54,6 @@
                         @endif
                     </div>
                 </fieldset>
-
                 <div class="form-group row">
                     <label class="col-sm-3">Image</label>
                     <div class="col-sm-9">

@@ -94,7 +94,31 @@
             <input id="password_confirmation" type="password" name="password_confirmation" class="form-control">
           </div>
 
-          <!--  Gender -->
+          <fieldset class="form-group row">
+              <legend class="col-form-legend col-sm-3">Gender</legend>
+              <div class="col">
+                  <div class="form-check">
+                      <label class="form-check-label">
+                        @if (Auth::user()->gender == 'Male')
+                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Male" checked>
+                        @else
+                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Male">
+                        @endif
+                          Male
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <label class="form-check-label">
+                        @if (Auth::user()->gender == 'Female')
+                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Female" checked>
+                        @else
+                        <input class="form-check-input form-control" type="radio" name="gender" id="gender" value="Female">
+                        @endif
+                          Female
+                      </label>
+                  </div>
+              </div>
+          </fieldset>
 
           <div class="md-form mb-3">
             <label class="col-sm-6 col-form-label">Institution / Company</label>
