@@ -22,6 +22,8 @@
 </div>
 @endsection
 
+<?php use Carbon\Carbon; ?>
+
 @section('card-body')
 <div class="nopadding">
   <div class="card-body">
@@ -34,30 +36,38 @@
           <th scope="col">Owner</th>
           <th scope="col">Members</th>
           <th scope="col">Tasks</th>
-          <th scope="col">Created at</th>
+          <th scope="col">Type</th>
+          <th scope="col">Created</th>
+          <th scope="col">Last Edited</th>
         </tr>
       </thead>
       <tbody>
-        @for($i = 0; $i < count($projects); $i++)
+        @foreach($projects as $project)
         <tr>
           <td scope="row">
             <div class="text-center">
               <input type="checkbox" value="">
             </div>
           </td>
-          <td>{{$projects[$i]->idproject}}</td>
-          <td>{{$projects[$i]->name}}</td>
+          <td>{{$project->idproject}}</td>
           <td>
-            <span class="text-link" href="#">
-              @mateus
-            </span>
+            <a href="{{ url('project/'.$project->idproject) }}">{{$project->name}}</a>
           </td>
-          <td>22</td>
-          <td>177</td>
-          <td>{{$projects[$i]->creationdate}}</td>
+          <td>
+            <a class="owners" href="{{ url('profile/'.$project->owner->first()->iduser) }}">{{$project->owner->first()->username}}</a>
+          </td>
+          <td>{{count($project->members)}}</td>
+          <td>{{count($project->tasks)}}</td>
+          @if($project->private)
+          <td>Private</td>
+          @else
+          <td>Public</td>
+          @endif
+          <td>{{ Carbon::parse($project->creationdate)->format('d/m/Y')}}</td>
+          <td>{{ Carbon::parse($project->lasteditdate)->format('d/m/Y')}}</td>
         </tr>
-        @endfor
-    
+        @endforeach
+
       </tbody>
     </table>
   </div>
@@ -79,4 +89,3 @@
       </div>
     </div>
     @endsection
-    

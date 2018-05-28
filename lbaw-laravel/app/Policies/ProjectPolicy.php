@@ -17,7 +17,7 @@ class ProjectPolicy {
 
     public function show(User $user, Project $project){
         foreach($project->members as $member){
-            if ($member->iduser == $user->iduser || !$project->private)
+            if ($member->iduser == $user->iduser || !$project->private || $user->type == 'admin')
                 return true;
         }
 

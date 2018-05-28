@@ -24,7 +24,7 @@ class CheckAdminUser
           return redirect('/dashboard');
         }
         else{
-          return redirect('/login');
+          return redirect('/admin');
         }
     }
 }

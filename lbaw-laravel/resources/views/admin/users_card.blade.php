@@ -35,31 +35,27 @@
         <th scope="col">Username</th>
         <th scope="col">Full Name</th>
         <th scope="col">Email</th>
-        <th scope="col">Joined at</th>
         <th scope="col">Last Session</th>
       </tr>
     </thead>
     <tbody>
-      @for($i = 0; $i < count($users); $i++)
+      @foreach($users as $user)
       <tr>
         <td scope="row">
           <div class="text-center">
             <input type="checkbox" value="">
           </div>
         </td>
-        <td>1</td>
+        <td>{{$user->iduser}}</td>
         <td>
-          <span class="text-link" href="#">
-            {{$users[$i]->username}}
-          </span>
+          <a href="{{ url('profile/'.$user->iduser) }}">{{$user->username}}</a>
         </td>
-        <td>{{$users[$i]->name}}</th>
-        <td>{{$users[$i]->email}}</th>
-        <td>01/01/2018</th>
+        <td>{{$user->name}}</th>
+        <td>{{$user->email}}</th>
         <td>01/03/2018</th>
       </tr>
-      @endfor
-      
+      @endforeach
+
     </tbody>
   </table>
   </div>

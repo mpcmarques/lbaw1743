@@ -9,8 +9,7 @@ class AdminUsersController extends Controller
 {
     public function show()
     {
-
-      $users = User::all();
+      $users = User::where('type', 'user')->orderBy("iduser", "ASC")->get();
 
       return view('admin.users_card', ['users' => $users]);
     }

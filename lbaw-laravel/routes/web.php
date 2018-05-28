@@ -13,10 +13,10 @@
 
 /* ========> Mark admin */
 
-Route::get('/admin', 'Admin\AdminController@show');
+Route::get('/admin', 'Admin\AdminController@show')->middleware('admin');
 
 // route to show the login form
-Route::get('/admin/login', 'Admin\AdminController@show');
+Route::get('/admin/login', 'Admin\AdminController@show')->middleware('admin');
 
 // logout
 Route::get('/admin/logout', function(){

@@ -72,3 +72,7 @@ html, body {
 .projects-card .card-footer .btn.btn-secondary {
     margin-right: 8px;
 }
+
+.owners{
+  color:black;
+}

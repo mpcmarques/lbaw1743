@@ -226,14 +226,6 @@ div.required label:after {
 
 /* dashboard */
 
-li{
-  list-style-type: none;
-}
-
-li a{
-  border-radius: 0 !important;
-}
-
 #dashboard .card-body .media {
     padding-top: 0.5em;
     padding-bottom: 0.5em;

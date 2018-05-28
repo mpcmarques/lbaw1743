@@ -102,8 +102,8 @@
 
 @section('card-footer')
 
+@if(count($user->assignedTasks) > 0)
 <div class="card-footer">
-  @if(count($user->assignedTasks) > 0)
   <small>
     <?php $date = Carbon::parse($user->assignedTasks->first()->lasteditdate);
           $days = $date->diffInDays($now);
@@ -120,7 +120,7 @@
     last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $seconds }} seconds ago.
     @endif
   </small>
-  @endif
 </div>
+@endif
 
 @endsection

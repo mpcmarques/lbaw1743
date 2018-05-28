@@ -9,7 +9,7 @@ class AdminProjectsController extends Controller
 {
     public function show()
     {
-      $projects = Project::all();
+      $projects = Project::orderBy('idproject', 'ASC')->get();
 
       return view('admin.projects_card', ['projects' => $projects]);
     }
