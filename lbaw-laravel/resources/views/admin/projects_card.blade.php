@@ -25,6 +25,8 @@
 <?php use Carbon\Carbon; ?>
 
 @section('card-body')
+<form method="POST" id="manageProjects">
+  {{ csrf_field() }}
 <div class="nopadding">
   <div class="card-body">
     <table class="table table-bordered">
@@ -46,7 +48,7 @@
         <tr>
           <td scope="row">
             <div class="text-center">
-              <input type="checkbox" value="">
+              @include('layouts.checkbox-input', ['name' => 'project'.$project->idproject])
             </div>
           </td>
           <td>{{$project->idproject}}</td>
@@ -72,13 +74,14 @@
     </table>
   </div>
 </div>
+</form>
 @endsection
 
 @section('card-footer')
 <button type="button" class="btn btn-terciary btn-block more">...</button>
 <div class="card-footer">
   <div class="float-right">
-    <button type="submit" class="btn btn-primary" form="manageUsers" formaction="{{ url('') }}">
+    <button type="submit" class="btn btn-primary" form="manageProjects" formaction="{{ url('/admin/projects/remove') }}">
       <span class="octicon octicon-trashcan"></span>
       Remove
     </button>

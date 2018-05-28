@@ -17,10 +17,9 @@ class ProjectOptionsController extends Controller
     return view('project.options_card', ['project' => $project]);
   }
 
-  public function delete($id){
-    $project = Project::findOrFail($id);
-
+  public static function delete($project){
     $forumPosts = $project->forumPosts()->get();
+
     foreach ($forumPosts as $forumPost) {
       $replys = $forumPost->replys()->get();
       foreach ($replys as $reply){
@@ -33,7 +32,7 @@ class ProjectOptionsController extends Controller
     $tasks = $project->tasks()->get();
     foreach ($tasks as $task){
       $comments = $task->comments()->get();
-      echo $comments;
+      // echo $comments;
 
       foreach($comments as $comment){
         $comment->delete();
@@ -57,6 +56,12 @@ class ProjectOptionsController extends Controller
     }
 
     $project->delete();
+  }
+
+  public function deleteProject($id){
+    $project = Project::findOrFail($id);
+
+    ProjectOptionsController::delete($project);
 
     return redirect('/');
   }
