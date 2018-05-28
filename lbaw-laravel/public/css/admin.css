@@ -18,6 +18,12 @@ html, body {
   margin-top: 100px;
 }
 
+@media (min-width: 576px){
+  .admin-login {
+    width: 75%;
+  }
+}
+
 .admin-login .card {
   border-color: #247BA0;
   max-width: 30em;

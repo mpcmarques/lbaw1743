@@ -10,26 +10,18 @@
                 {{ csrf_field() }}
 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" name="email" class="form-control"  placeholder="Email" required>
+      						<label>Email</label>
 
-                    @if ($errors->has('email'))
-                    <div class="card text-white bg-danger">
-                        <div class="card-header">{{ $errors->first('email') }}</div>
-                    </div>
-                    @endif
+      						@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
 
-                </div>
+      					</div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
-                    @if ($errors->has('password'))
-                        <div class="card text-white bg-danger">
-                            <div class="card-header">{{ $errors->first('password') }}</div>
-                        </div>
-                    @endif
-                </div>
+      					<div class="form-group">
+      						<label>Password</label>
+
+      						@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
+
+      					</div>
 
                 <div class="nav-item">
                   <button type="submit" class="btn btn-primary">Login</button>
