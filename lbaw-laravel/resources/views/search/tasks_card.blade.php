@@ -20,24 +20,36 @@
 </div>
 @endsection
 
+<?php use Carbon\Carbon;
+      $now = Carbon::now();?>
+
 @section('card-body')
 
 @foreach ($tasks as $task)
 <div class="card">
   <div class="card-header">
-    <p>#{{$task->idtask}} - {{$task->title}}</p>
-  </div>
-  <div class="card-body">
     <div class="row">
-      <div class="col-6">
-        <p class="text-left">
-          <b>{{ $task->name }}</b>
+      <div class="col">
+        <p class="text-left">#{{$task->idtask}} -
+        <a href="{{ url('project/'.$task->project->idproject.'/task/'.$task->idtask) }}" style="text-decoration: underline; color:black;">
+          {{$task->title}}
+        </a>
         </p>
       </div>
       <div class="col-6">
         <p class="text-right">
-          {{-- $task->creator->name --}}
+          <a href="{{ url('profile/'.$task->creator->iduser) }}" style="text-decoration: none;">{{$task->creator->username}}</a>
         </p>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <h5 class="text-left">
+          <a href="{{ url('project/'.$task->project->idproject) }}" style="text-decoration: none; color:black;">{{$task->project->name}}</a>
+        </h5>
       </div>
     </div>
     <p>{{ $task->description }}</p>
@@ -45,17 +57,30 @@
   <div class="card-footer">
     <div class="row">
       <div class="col-6">
-        <p class="text-left">
-          @if (!empty($task->lasteditdate))
-          last updated on {{ \Carbon\Carbon::parse($task->lasteditdate)->format('d/m/Y') }}
+        <small>
+          <?php $date = Carbon::parse($task->lasteditdate);
+                $days = $date->diffInDays($now);
+                $hours = $date->diffInHours($now);
+                $minutes = $date->diffInMinutes($now);
+                $seconds = $date->diffInSeconds($now); ?>
+          @if ($days > 0)
+          last updated {{ $days }} days ago.
+          @elseif ($hours > 0)
+          last updated {{ $hours }} hours ago.
+          @elseif ($minutes > 0)
+          last updated {{ $minutes }} minutes ago.
           @else
-          last updated on {{ \Carbon\Carbon::parse($task->creationdate)->format('d/m/Y') }}
+          last updated {{ $seconds }} seconds ago.
           @endif
-        </p>
+        </small>
       </div>
       <div class="col-6 text-right">
-        <span class="octicon octicon-comment-discussion"/>
-        <span class="octicon octicon-organization"/>
+        <span class="octicon octicon-comment-discussion"></span>
+        <small>{{count($task->comments)}}</small>
+      </div>
+      <div class="col text-right">
+        <span class="octicon octicon-organization"></span>
+        <small>{{count($task->assigned)}}</small>
       </div>
     </div>
   </div>

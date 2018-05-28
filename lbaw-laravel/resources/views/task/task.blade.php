@@ -226,11 +226,13 @@
     <div class="card-header panel-header">
       <h5 class="panel-title">Close Requests</h5>
     </div>
+    @if(count($task->closerequest) > 0)
     <div class="card-body">
       @foreach($task->closerequest as $closerequest)
       @include('layouts.closerequest')
       @endforeach
     </div>
+    @endif
 
     @if ( Auth::check() && ( $task->project->editors->contains('iduser', Auth::user()->iduser)
           || $task->assigned->contains('iduser', Auth::user()->iduser) ) )

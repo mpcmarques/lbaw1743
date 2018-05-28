@@ -11,12 +11,12 @@ use App\Model\Task;
 
 class SearchTasksController extends Controller{
   public function show($text){
-    $projects = Project::nameDescriptionPublic($text)->get();
+    $projects = Project::nameDescriptionPublic($text)->orderBy('lasteditdate','DESC')->get();
     $projects = SearchController::filterProjects($projects);
 
-    
-    $tasks = DB::table('task')->join('project', 'project.idproject', '=', 'task.idproject')->where('project.private', '=', 'false')
-    ->where('task.title', 'ilike', "%{$text}%")->orWhere('task.description', 'ilike', "%{$text}%")->get();
+    $tasks = Task::where('title', 'ilike', "%{$text}%")->orWhere('description', 'ilike', "%{$text}%")->get();
+    $tasks = SearchController::filterTasks($tasks);
+
     $users = User::usernameName($text)->get();
 
     return view('search.tasks_card',

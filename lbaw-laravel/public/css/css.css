@@ -564,6 +564,14 @@ input[type='checkbox']{
 
 /* register */
 
-.radio-inline{
+.radioGender .radio-inline{
+  padding-left: 15px;
+}
+
+.radioProfile .radio-inline:nth-child(2){
+  padding-left: 15px;
+}
+
+.radioType .radio-inline:nth-child(2){
   padding-left: 15px;
 }

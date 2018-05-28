@@ -28,6 +28,9 @@
 <!--  TODO:show more button-->
 <!-- TODO: Last message -->
 
+<?php use Carbon\Carbon;
+      $now = Carbon::now();?>
+
 @section('card-body')
 @foreach($project->forumPosts as $post)
 <div class="card forum-card">
@@ -47,10 +50,28 @@
       show more...
     </p> -->
   </div>
-  <div class="card-footer mt-0 pt-0">
+  <!-- <div class="card-footer mt-0 pt-0">
     <p class="text-justify">
       {{$post->creationDate}}
     </p>
+  </div> -->
+  <div class="card-footer">
+    <small>
+      <?php $date = Carbon::parse($post->lasteditdate);
+            $days = $date->diffInDays($now);
+            $hours = $date->diffInHours($now);
+            $minutes = $date->diffInMinutes($now);
+            $seconds = $date->diffInSeconds($now); ?>
+      @if ($days > 0)
+      last activity {{ $days }} days ago.
+      @elseif ($hours > 0)
+      last activity {{ $hours }} hours ago.
+      @elseif ($minutes > 0)
+      last activity {{ $minutes }} minutes ago.
+      @else
+      last activity {{ $seconds }} seconds ago.
+      @endif
+    </small>
   </div>
 </div>
 @endforeach

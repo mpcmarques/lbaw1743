@@ -96,7 +96,7 @@
 
           <div class="md-form">
               <label class="col-sm-4 col-form-label">Gender</label>
-							<div class="radioGender">
+							<div class="radioProfile">
                 @if ($profile->gender == 'Male')
                 <label class="radio-inline"><input type="radio" name="gender" id="genderM" value="Male" checked>Male</label>
 								<label class="radio-inline"><input type="radio" name="gender" id="genderF" value="Female">Female</label>

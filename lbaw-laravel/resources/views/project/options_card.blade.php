@@ -49,40 +49,31 @@
 
   </div>
   <div class="form-group">
-    <label class="form-check-label" for="description">Project Name</label>
+    <label class="form-check-label">Project Name</label>
     @include('layouts.validation-input', ['name' => 'name', 'value' => $project->name])
   </div>
   <div class="form-group">
-    <label class="form-check-label" for="description">Description</label>
+    <label class="form-check-label">Description</label>
     @include('layouts.validation-input-textarea', ['name' => 'description', 'rows' => '4', 'value' => $project->description])
   </div>
-  <fieldset class="form-group row">
-      <legend class="col-form-legend col-sm-3">Type</legend>
-      <div class="col-sm-9">
-          <div class="form-check">
-              <label class="form-check-label">
-                @if ($project->private)
-                <input class="form-check-input form-control" type="radio" name="private" id="public" value="false">
-                @else
-                <input class="form-check-input form-control" type="radio" name="private" id="public" value="false" checked>
-                @endif
-                  Public
-              </label>
-          </div>
-          @if (Auth::user()->premium)
-          <div class="form-check">
-              <label class="form-check-label">
-                @if ($project->private)
-                <input class="form-check-input form-control" type="radio" name="private" id="private" value="true" checked>
-                @else
-                <input class="form-check-input form-control" type="radio" name="private" id="private" value="true">
-                @endif
-                Private
-              </label>
-          </div>
+  <div class="form-group">
+      <label class="form-check-label">Type</label>
+      <div class="radioType">
+        @if ($project->private)
+        <label class="radio-inline"><input type="radio" name="private" id="public" value="false">Public</label>
+        @else
+        <label class="radio-inline"><input type="radio" name="private" id="public" value="false" checked>Public</label>
+        @endif
+
+        @if (Auth::user()->premium)
+          @if ($project->private)
+          <label class="radio-inline"><input type="radio" name="private" id="private" value="true" checked>Private</label>
+          @else
+          <label class="radio-inline"><input type="radio" name="private" id="private" value="true">Private</label>
           @endif
+        @endif
       </div>
-  </fieldset>
+  </div>
   <button type="submit" class="btn btn-secondary">
     <span class="octicon octicon-clippy"></span>
     Save Changes

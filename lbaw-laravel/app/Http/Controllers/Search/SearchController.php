@@ -37,13 +37,26 @@ class SearchController extends Controller{
     return $visibleProjects;
   }
 
+  public static function filterTasks($tasks){
+    $visibleTasks = new Collection;
+
+    foreach ($tasks as $task) {
+      // echo $task .'<br>'.$task->project->private .'<br>';
+      if( (Auth::check() && $task->project->private && $task->project->members->contains('iduser', Auth::user()->iduser) )
+          || !$task->project->private ){
+            $visibleTasks->push($task);
+      }
+    }
+
+    return $visibleTasks;
+  }
+
   public function show($text){
-    $projects = Project::nameDescriptionPublic($text)->get();
+    $projects = Project::nameDescriptionPublic($text)->orderBy('lasteditdate','DESC')->get();
     $projects = SearchController::filterProjects($projects);
 
-    $tasks = DB::table('task')->join('project', 'project.idproject', '=', 'task.idproject')->where('project.private', '=', 'false')
-    ->where('task.title', 'ilike', "%{$text}%")->orWhere('task.description', 'ilike', "%{$text}%")->get();
-
+    $tasks = Task::where('title', 'ilike', "%{$text}%")->orWhere('description', 'ilike', "%{$text}%")->get();
+    $tasks = SearchController::filterTasks($tasks);
 
     $users = User::usernameName($text)->get();
 
