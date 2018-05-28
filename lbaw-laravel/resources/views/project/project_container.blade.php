@@ -16,7 +16,7 @@
 
     @if($project->private)
     <a class="btn btn-secondary card-private-button">
-      <span class="octicon octicon-lock">
+      <span class="octicon octicon-shield">
       </span>
     </a>
     @endif

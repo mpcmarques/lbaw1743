@@ -13,13 +13,15 @@
 				<a class="nav-link" href="{{ url('dashboard') }}">Dashboard</a>
 			</li>
 
+			@if(Auth::check())
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url('/profile/'.Auth::user()->iduser) }}">Profile</a>
+			</li>
+			@endif
+
 			@if(Auth::check() && Auth::user()->type == 'admin')
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('/admin/users') }}">Administration</a>
-			</li>
-			@elseif(Auth::check())
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url('/profile/'.Auth::user()->iduser) }}">Profile</a>
 			</li>
 			@endif
 		</ul>

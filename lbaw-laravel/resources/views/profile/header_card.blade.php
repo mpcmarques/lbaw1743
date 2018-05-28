@@ -179,10 +179,12 @@
           <span class="octicon octicon-globe"></span>
           <strong>{{$profile->country->name}}</strong>
         </div>
+        @if($profile->institution != '')
         <div class="company">
-          <span class="fa fa-suitcase"></span>
+          <span class="fa fa-users"></span>
           <strong>{{$profile->institution}}</strong>
         </div>
+        @endif
         @if($profile->premium)
         <?php
         foreach($profile->premiumSignatures as $premiumSignature){
@@ -206,6 +208,13 @@
           @else
           <strong>Premium</strong>
           @endif
+        </div>
+        @endif
+
+        @if($profile->type == 'admin')
+        <div class="premium">
+          <span class="octicon octicon-octoface"></span>
+          <strong>Administrator</strong>
         </div>
         @endif
       </div>

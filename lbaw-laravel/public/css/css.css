@@ -526,7 +526,7 @@ div.required label:after {
   color: white !important;
 }
 
-.octicon-sign-out, .octicon-sign-in, .octicon-lock{
+.octicon-sign-out, .octicon-sign-in, .octicon-shield{
   padding-top: 10px;
   color: white;
 }
