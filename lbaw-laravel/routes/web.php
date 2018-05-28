@@ -28,9 +28,9 @@ Route::get('/admin/logout', function(){
 // route to process the login form
 Route::post('/admin/login', 'Admin\AdminController@login')->name('/admin/login');
 
-Route::get('/admin/users', 'Admin\AdminUsersController@show');
+Route::get('/admin/users', 'Admin\AdminUsersController@show')->middleware('admin');
 
-Route::get('/admin/projects', 'Admin\AdminProjectsController@show');
+Route::get('/admin/projects', 'Admin\AdminProjectsController@show')->middleware('admin');
 
 /* =========> MARK: app */
 
