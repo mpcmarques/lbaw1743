@@ -73,7 +73,7 @@
             <span class="octicon octicon-octoface"></span>
             Promote
           </button>
-          <button type="submit" class="btn btn-secondary" form="manageUsers" formaction="{{ url('/admin/users/ban') }}">
+          <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#banUsersModal">
             <span class="octicon octicon-circle-slash"></span>
             Ban
           </button>
@@ -81,6 +81,27 @@
             <span class="octicon octicon-trashcan"></span>
             Remove
           </button>
+        </div>
+
+        <div class="modal fade" id="banUsersModal" role="dialog">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5>Ban Users</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h6>Motive</h6>
+                <textarea id="motive" name="motive" rows="3" form="manageUsers" required class="form-control"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" form="manageUsers" formaction="{{ url('/admin/users/ban') }}">Ban</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       @endsection

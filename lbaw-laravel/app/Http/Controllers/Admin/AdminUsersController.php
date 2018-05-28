@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProfileController;
 use App\Model\User;
+use App\Model\BannedRecord;
+use Carbon\Carbon;
 
 class AdminUsersController extends Controller
 {
@@ -49,7 +52,14 @@ class AdminUsersController extends Controller
 
       foreach($users as $user){
         if(isset($data['user'.$user->iduser])){
-          
+          $bannedrecord = new BannedRecord;
+          $bannedrecord->startdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+          $bannedrecord->duration = '1 year';
+          $bannedrecord->motive = $data['motive'];
+          $bannedrecord->iduser = $user->iduser;
+          $bannedrecord->idadmin = Auth::user()->iduser;
+
+          $bannedrecord->save();
         }
       }
 

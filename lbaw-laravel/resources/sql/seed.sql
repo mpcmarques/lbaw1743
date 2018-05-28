@@ -233,7 +233,7 @@ CREATE TABLE BannedRecord(
 	idUser integer NOT NULL,
 	idAdmin integer NOT NULL,
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
-	FOREIGN KEY(idAdmin) REFERENCES Admin(idAdmin),
+	FOREIGN KEY(idAdmin) REFERENCES UserTable(idUser),
 	CONSTRAINT min_time check (duration > interval '0 second')
 );
 
@@ -915,4 +915,4 @@ insert into usertable (username, password, email, premium, banned, name, gender,
 insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('jotapsa', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201506252@fe.up.pt', false, false, 'João Sá', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
 
 --BannedRecord
-insert into bannedrecord (startDate, duration, motive, idUser, idAdmin) values ('2018-01-20', interval '6 months', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 6, 1);
+insert into bannedrecord (startDate, duration, motive, idUser, idAdmin) values ('2018-01-20', interval '6 months', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 19, 21);

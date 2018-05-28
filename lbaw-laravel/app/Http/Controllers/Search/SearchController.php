@@ -41,7 +41,6 @@ class SearchController extends Controller{
     $visibleTasks = new Collection;
 
     foreach ($tasks as $task) {
-      // echo $task .'<br>'.$task->project->private .'<br>';
       if( (Auth::check() && $task->project->private && $task->project->members->contains('iduser', Auth::user()->iduser) )
           || !$task->project->private ||(Auth::check() && Auth::user()->type == 'admin')){
             $visibleTasks->push($task);
