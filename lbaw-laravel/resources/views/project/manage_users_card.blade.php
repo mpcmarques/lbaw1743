@@ -27,72 +27,72 @@
 @section('card-body')
 <form method="POST" id="manageUsers">
   {{ csrf_field() }}
-<div class="nopadding">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Username
-          </div>
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Tasks Assigned
-          </div>
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Name
-          </div>
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Role
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($project->members as $member)
-      <tr>
-        <th scope="row">
+  <div class="nopadding">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Username
+            </div>
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Tasks Assigned
+            </div>
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Name
+            </div>
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Role
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($project->members as $member)
+        <tr>
+          <th scope="row">
             <div class="text-center">
               @if ( Auth::check() && $member->pivot->role != 'Owner' && $project->owner->contains('iduser', Auth::user()->iduser))
               @include('layouts.checkbox-input', ['name' => 'user'.$member->iduser])
               @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $member->pivot->role != 'Manager'
-                          && $project->managers->contains('iduser', Auth::user()->iduser) )
+              && $project->managers->contains('iduser', Auth::user()->iduser) )
               @include('layouts.checkbox-input', ['name' => 'user'.$member->iduser])
               @endif
             </div>
-        </th>
-        <td>
-          <a href="{{ url('profile/'.$member->iduser) }}">{{$member->username}}</a>
-        </td>
-        <td>
-          <div class="text-left">{{ count($member->assignedTasksForProject($project->idproject)->get() ) }}</div>
-        </td>
-        <td>
-          <div class="text-left">{{$member->name}}</div>
-        </td>
-        <td>
-          <?php $allowOwner = $project->private == true ? $member->premium == true : true; ?>
-          @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
-          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Owner', 'iduser' => $member->iduser, 'allowOwner' => $allowOwner])
-          @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $member->pivot->role != 'Manager'
-                      && $project->managers->contains('iduser', Auth::user()->iduser) )
-          @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Manager', 'iduser' => $member->iduser])
-          @else
-          <div class="text-left">{{$member->pivot->role}}</div>
-          @endif
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-</div>
+          </th>
+          <td>
+            <a href="{{ url('profile/'.$member->iduser) }}">{{$member->username}}</a>
+          </td>
+          <td>
+            <div class="text-left">{{ count($member->assignedTasksForProject($project->idproject)->get() ) }}</div>
+          </td>
+          <td>
+            <div class="text-left">{{$member->name}}</div>
+          </td>
+          <td>
+            <?php $allowOwner = $project->private == true ? $member->premium == true : true; ?>
+            @if ( Auth::check() && $project->owner->contains('iduser', Auth::user()->iduser) )
+            @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Owner', 'iduser' => $member->iduser, 'allowOwner' => $allowOwner])
+            @elseif ( Auth::check() && $member->pivot->role != 'Owner' && $member->pivot->role != 'Manager'
+            && $project->managers->contains('iduser', Auth::user()->iduser) )
+            @include('layouts.role-input', ['role' => $member->pivot->role, 'user' => 'Manager', 'iduser' => $member->iduser])
+            @else
+            <div class="text-left">{{$member->pivot->role}}</div>
+            @endif
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
 </form>
 @endsection
 

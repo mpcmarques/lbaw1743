@@ -76,13 +76,7 @@ class ProfileController extends Controller
     return redirect('/profile/'.$profile->iduser);
   }
 
-  public function deleteProfile($iduser){
-    $user = User::findOrFail($iduser);
-
-    if( !(Auth::check() && Auth::user() == $user) ){
-      return redirect('/profile/'.$user->iduser);
-    }
-
+  public static function delete($user){
     foreach ($user->projects as $project) {
       if($project->owner->contains('iduser', $user->iduser)){
         return redirect('/profile/'.$user->iduser);
@@ -137,7 +131,17 @@ class ProfileController extends Controller
       unlink(public_path().'/img/profile/'.$user->iduser.'.png');
     }
 
-    //$user->delete();
+    $user->delete();
+  }
+
+  public function deleteProfile($iduser){
+    $user = User::findOrFail($iduser);
+
+    if( !(Auth::check() && Auth::user() == $user) ){
+      return redirect('/profile/'.$user->iduser);
+    }
+
+    ProfileController::delete($user);
 
     return redirect('/logout');
   }

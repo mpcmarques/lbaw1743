@@ -26,8 +26,12 @@ Route::get('/admin/logout', function(){
 Route::post('/admin/login', 'Admin\AdminController@login')->name('/admin/login');
 
 Route::get('/admin/users', 'Admin\AdminUsersController@show')->middleware('admin');
+Route::post('/admin/users/promote', 'Admin\AdminUsersController@promoteUsers')->middleware('admin');
+Route::post('/admin/users/ban', 'Admin\AdminUsersController@banUsers')->middleware('admin');
+Route::post('/admin/users/remove', 'Admin\AdminUsersController@removeUsers')->middleware('admin');
 
 Route::get('/admin/projects', 'Admin\AdminProjectsController@show')->middleware('admin');
+Route::post('/admin/projects/remove', 'Admin\AdminProjectsController@removeProjects')->middleware('admin');
 
 /* =========> MARK: app */
 

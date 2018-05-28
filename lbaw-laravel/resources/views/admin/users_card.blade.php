@@ -25,59 +25,62 @@
 @endsection
 
 @section('card-body')
-<div class="nopadding">
-  <div class="card-body">
-    <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">ID</th>
-        <th scope="col">Username</th>
-        <th scope="col">Full Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Last Session</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($users as $user)
-      <tr>
-        <td scope="row">
-          <div class="text-center">
-            <input type="checkbox" value="">
+<form method="POST" id="manageUsers">
+  {{ csrf_field() }}
+  <div class="nopadding">
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Last Session</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($users as $user)
+          <tr>
+            <td scope="row">
+              <div class="text-center">
+                @include('layouts.checkbox-input', ['name' => 'user'.$user->iduser])
+              </div>
+            </td>
+            <td>{{$user->iduser}}</td>
+            <td>
+              <a href="{{ url('profile/'.$user->iduser) }}">{{$user->username}}</a>
+            </td>
+            <td>{{$user->name}}</th>
+              <td>{{$user->email}}</th>
+                <td>01/03/2018</th>
+                </tr>
+                @endforeach
+
+              </tbody>
+            </table>
           </div>
-        </td>
-        <td>{{$user->iduser}}</td>
-        <td>
-          <a href="{{ url('profile/'.$user->iduser) }}">{{$user->username}}</a>
-        </td>
-        <td>{{$user->name}}</th>
-        <td>{{$user->email}}</th>
-        <td>01/03/2018</th>
-      </tr>
-      @endforeach
+        </div>
+      </form>
+      @endsection
 
-    </tbody>
-  </table>
-  </div>
-</div>
-@endsection
-
-@section('card-footer')
-<button type="button" class="btn btn-terciary btn-block more">...</button>
-<div class="card-footer">
-  <div class="float-right">
-    <a class="btn btn-terciary" href="#" role="button">
-      <span class="octicon octicon-pencil">
-        Edit
-      </span></a>
-    <a class="btn btn-secondary" href="#" role="button">
-        <span class="octicon octicon-circle-slash">
-          Ban
-        </span></a>
-    <a class="btn btn-primary" href="#" role="button">
-          <span class="octicon octicon-trashcan">
+      @section('card-footer')
+      <button type="button" class="btn btn-terciary btn-block more">...</button>
+      <div class="card-footer">
+        <div class="float-right">
+          <button type="submit" class="btn btn-terciary" form="manageUsers" formaction="{{ url('/admin/users/promote') }}">
+            <span class="octicon octicon-octoface"></span>
+            Promote
+          </button>
+          <button type="submit" class="btn btn-secondary" form="manageUsers" formaction="{{ url('/admin/users/ban') }}">
+            <span class="octicon octicon-circle-slash"></span>
+            Ban
+          </button>
+          <button type="submit" class="btn btn-primary" form="manageUsers" formaction="{{ url('/admin/users/remove') }}">
+            <span class="octicon octicon-trashcan"></span>
             Remove
-          </span></a>
-  </div>
-</div>
-@endsection
+          </button>
+        </div>
+      </div>
+      @endsection

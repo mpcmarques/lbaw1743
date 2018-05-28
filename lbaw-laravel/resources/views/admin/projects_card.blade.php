@@ -78,14 +78,10 @@
 <button type="button" class="btn btn-terciary btn-block more">...</button>
 <div class="card-footer">
   <div class="float-right">
-    <a class="btn btn-terciary" href="#" role="button">
-      <span class="octicon octicon-pencil">
-        Edit
-      </span></a>
-      <a class="btn btn-primary" href="#" role="button">
-        <span class="octicon octicon-trashcan">
-          Remove
-        </span></a>
-      </div>
-    </div>
-    @endsection
+    <button type="submit" class="btn btn-primary" form="manageUsers" formaction="{{ url('') }}">
+      <span class="octicon octicon-trashcan"></span>
+      Remove
+    </button>
+  </div>
+</div>
+@endsection

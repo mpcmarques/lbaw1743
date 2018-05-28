@@ -29,7 +29,7 @@ class SearchController extends Controller{
 
     foreach ($projects as $project) {
       if( (Auth::check() && $project->private && $project->members->contains('iduser', Auth::user()->iduser) )
-          || !$project->private || Auth::user()->type == 'admin'){
+          || !$project->private || (Auth::check() && Auth::user()->type == 'admin')){
             $visibleProjects->push($project);
       }
     }
@@ -43,7 +43,7 @@ class SearchController extends Controller{
     foreach ($tasks as $task) {
       // echo $task .'<br>'.$task->project->private .'<br>';
       if( (Auth::check() && $task->project->private && $task->project->members->contains('iduser', Auth::user()->iduser) )
-          || !$task->project->private || Auth::user()->type == 'admin'){
+          || !$task->project->private ||(Auth::check() && Auth::user()->type == 'admin')){
             $visibleTasks->push($task);
       }
     }

@@ -23,6 +23,7 @@ class ProjectManageUsersController extends Controller{
     foreach($project->members as $member){
       if(isset($data['user'.$member->iduser])){
         $project->members()->detach($member->iduser);
+        //TODO missing more detach
       }
     }
 
