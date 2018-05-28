@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Search;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Collection;
 
 use App\Model\Project;
 use App\Model\User;
@@ -22,10 +24,27 @@ class SearchController extends Controller{
     }
   }
 
+  public static function filterProjects($projects){
+    $visibleProjects = new Collection;
+
+    foreach ($projects as $project) {
+      if( (Auth::check() && $project->private && $project->members->contains('iduser', Auth::user()->iduser) )
+          || !$project->private ){
+            $visibleProjects->push($project);
+      }
+    }
+
+    return $visibleProjects;
+  }
+
   public function show($text){
     $projects = Project::nameDescriptionPublic($text)->get();
+    $projects = SearchController::filterProjects($projects);
+
     $tasks = DB::table('task')->join('project', 'project.idproject', '=', 'task.idproject')->where('project.private', '=', 'false')
-    ->where('task.title', 'like', "%{$text}%")->orWhere('task.description', 'like', "%{$text}%")->get();
+    ->where('task.title', 'ilike', "%{$text}%")->orWhere('task.description', 'ilike', "%{$text}%")->get();
+
+
     $users = User::usernameName($text)->get();
 
     if($projects->isEmpty() && $tasks->isEmpty() && $users->isEmpty()){

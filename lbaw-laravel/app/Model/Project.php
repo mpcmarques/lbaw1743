@@ -35,7 +35,7 @@ class Project extends BaseModel
   }
 
   public function scopeNameDescriptionPublic($query, $text){
-    return $query->where('name', 'like', "%{$text}%")->orWhere('description', 'like', "%{$text}%")->where('private', '=', 'false');
+    return $query->where('name', 'ilike', "%{$text}%")->orWhere('description', 'ilike', "%{$text}%")->where('private', '=', 'false');
   }
 
   /**

@@ -93,7 +93,7 @@ class User extends Authenticatable
   }
 
   public function scopeUsernameName($query, $text){
-    return $query->where('username', 'like', "%{$text}%")->orWhere('name', 'like', "%{$text}%");
+    return $query->where('username', 'ilike', "%{$text}%")->orWhere('name', 'ilike', "%{$text}%");
   }
 
   /**
