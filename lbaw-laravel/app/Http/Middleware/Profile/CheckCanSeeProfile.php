@@ -20,6 +20,14 @@ class CheckCanSeeProfile
     {
         $profile = User::findOrFail($request->id);
 
-        return $next($request);
+        if($profile->type == 'user'){
+          return $next($request);
+        }
+        else if(Auth::check()){
+          return redirect('/dashboard');
+        }
+        else{
+          return redirect('/');
+        }
     }
 }

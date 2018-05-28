@@ -56,10 +56,12 @@ DROP TABLE IF EXISTS Assigned CASCADE;
 /* dropping old data types*/
 DROP TYPE IF EXISTS gender;
 DROP TYPE IF EXISTS role;
+DROP TYPE IF EXISTS login;
 
 /* creating data types */
 CREATE TYPE gender AS ENUM('Male', 'Female');
 CREATE TYPE role AS ENUM('Owner' , 'Manager', 'Member');
+CREATE TYPE login AS ENUM('user' , 'admin');
 
 /* country */
 CREATE TABLE Country(
@@ -83,6 +85,7 @@ CREATE TABLE UserTable(
 	remember_token text,
 	birthDate date CONSTRAINT valid_date CHECK (birthdate < current_date),
 	idCountry integer,
+	type login default 'user',
 	FOREIGN KEY(idCountry) REFERENCES Country(idCountry)
 );
 
@@ -899,12 +902,17 @@ insert into closerequest (creationDate, title, description, approved, approvedUs
 insert into closerequest (creationDate, title, description, approved, approvedUser, approvedDate, idUser, idTask) values ('2018-03-14', 'Profit-focused demand-driven workforce', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', false, NULL, NULL, 5, 5);
 
 --Admin
-
 -- lbaw2018
 insert into admin (username, email, password) values ('barbosa','up201503477@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
 insert into admin (username, email, password) values ('mario','up201503406@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
 insert into admin (username, email, password) values ('mateus','up201601876@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
 insert into admin (username, email, password) values ('jotapsa','up201506252@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
+
+-- lbaw2018
+insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('barbosa', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201503477@fe.up.pt', false, false, 'Bernardo Barbosa', 'Male', NULL, NULL, NULL, '1997-04-02', 1, 'admin');
+insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('mario', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201503406@fe.up.pt', false, false, 'Mário Santos', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
+insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('mateus', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201601876@fe.up.pt', false, false, 'Mateus Pedroza', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
+insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('jotapsa', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201506252@fe.up.pt', false, false, 'João Sá', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
 
 --BannedRecord
 insert into bannedrecord (startDate, duration, motive, idUser, idAdmin) values ('2018-01-20', interval '6 months', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 6, 1);

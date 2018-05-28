@@ -16,15 +16,15 @@ class CheckAdminUser
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
-    {
-        $profile = User::findOrFail($request->id);
-
-        // if($profile->type == 'admin'){
-        //   return $next($request);
-        // }
-        // else{
-        //   return redirect('/');
-        // }
+    public function handle($request, Closure $next, $guard = null){
+        if(Auth::check() && Auth::user()->type == 'admin'){
+          return $next($request);
+        }
+        else if(Auth::check()){
+          return redirect('/dashboard');
+        }
+        else{
+          return redirect('/login');
+        }
     }
 }
