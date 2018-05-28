@@ -98,11 +98,11 @@
               <label class="col-sm-4 col-form-label">Gender</label>
 							<div class="radioGender">
                 @if ($profile->gender == 'Male')
-                <label class="radio-inline"><input type="radio" name="gender" id="gender" value="Male" checked>Male</label>
-								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Female">Female</label>
+                <label class="radio-inline"><input type="radio" name="gender" id="genderM" value="Male" checked>Male</label>
+								<label class="radio-inline"><input type="radio" name="gender" id="genderF" value="Female">Female</label>
                 @else
-                <label class="radio-inline"><input type="radio" name="gender" id="gender" value="Male">Male</label>
-								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Female" checked>Female</label>
+                <label class="radio-inline"><input type="radio" name="gender" id="genderM" value="Male">Male</label>
+								<label class="radio-inline"><input type="radio" name="gender" id="genderF" value="Female" checked>Female</label>
                 @endif
 							</div>
           </div>
@@ -135,7 +135,7 @@
             </div>
           </div>
 
-          <script type='text/javascript'>
+          <script>
               document.getElementById('profilePicture').addEventListener("change", updateImage);
 
               function updateImage(event){

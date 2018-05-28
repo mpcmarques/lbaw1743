@@ -30,7 +30,7 @@ class TaskEditController extends Controller
         return Validator::make($data, [
             'title' => 'required|string',
             'description' => 'required|string',
-            'deadline' => 'date'
+            'deadline' => 'nullable|date'
         ]);
     }
 
@@ -49,8 +49,13 @@ class TaskEditController extends Controller
 
       $task->title = $data['title'];
       $task->description = $data['description'];
-      $task->deadline = $data['deadline'];
       $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+      if(isset($data['deadline'])){
+        $task->deadline = $data['deadline'];
+      }
+      else{
+        $task->deadline = null;
+      }
 
       $task->save();
 

@@ -106,14 +106,18 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function register(Request $request) {
-      $this->validator($request->all())->validate();
-
       $data = $request->all();
+
+      $data['email'] = $data['emailRegister'];
+      $data['password'] = $data['passwordRegister'];
+
+      $this->validator($data)->validate();
       // $user = $this->create($request->all());
+
       $user = new User;
       $user->username = $data['username'];
-      $user->password = bcrypt($data['password']);
-      $user->email = $data['email'];
+      $user->password = bcrypt($data['passwordRegister']);
+      $user->email = $data['emailRegister'];
       $user->name = $data['name'];
       $user->gender = $data['gender'];
       $user->institution = $data['institution_company'];
@@ -124,7 +128,7 @@ class HomeController extends Controller
       $user->save();
 
       if(empty($user)) { // Failed to register user
-          redirect('register'); // Wherever you want to redirect
+          return redirect('register'); // Wherever you want to redirect
       }
 
       // event(new Registered($user));
@@ -132,7 +136,7 @@ class HomeController extends Controller
       $this->guard()->login($user);
 
       // Success redirection - which will be attribute `$redirectTo`
-      redirect($this->redirectPath());
+      return redirect($this->redirectPath());
   }
 
 }

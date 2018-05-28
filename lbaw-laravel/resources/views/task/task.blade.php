@@ -81,7 +81,7 @@
       </div>
 
       @endif
-      
+
       {{ $task->description}}
     </div>
     <div class="card-footer">
@@ -208,7 +208,7 @@
                   <label>Tag:</label>
                   @include('layouts.validation-input', ['name' => 'tag'])
                 </div>
-                <button type="button submit" class="btn btn-primary">Confirm</button>
+                <button type="submit" class="btn btn-primary">Confirm</button>
               </form>
             </div>
             <div class="modal-footer">

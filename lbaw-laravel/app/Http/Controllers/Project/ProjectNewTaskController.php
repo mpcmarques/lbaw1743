@@ -24,7 +24,7 @@ class ProjectNewTaskController extends Controller
       return Validator::make($data, [
           'title' => 'required|string',
           'description' => 'required|string',
-          'deadline' => 'date'
+          'deadline' => 'nullable|date'
       ]);
   }
 
@@ -37,7 +37,9 @@ class ProjectNewTaskController extends Controller
     $task = new Task;
     $task->title = $data['title'];
     $task->description = $data['description'];
-    $task->deadline = $data['deadline'];
+    if(isset($data['deadline'])){
+      $task->deadline = $data['deadline'];
+    }
     $task->creationdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
     $task->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
     $task->completed = false;

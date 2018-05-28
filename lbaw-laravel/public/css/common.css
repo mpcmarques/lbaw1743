@@ -198,6 +198,10 @@ option.slct-primary {
 
 /* badges */
 
+.badge{
+  font-size:15px;
+}
+
 .badge.badge-primary {
     background-color: #F25F5C !important;
     border-color: #F25F5C;

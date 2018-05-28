@@ -25,7 +25,7 @@
 @endsection
 
 @section('card-body')
-<form method="POST">
+<form method="POST" id="removeTasks">
   {{ csrf_field() }}
 <div class="nopadding">
   <table class="table">
@@ -94,6 +94,7 @@
     </tbody>
   </table>
 </div>
+</form>
 
 @endsection
 
@@ -121,13 +122,12 @@
         <b>Warning</b>: this action is destructive!
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" formaction="{{ url('project/'.$project->idproject.'/manage_tasks/remove') }}">Remove</button>
+        <button type="submit" class="btn btn-primary" form="removeTasks" formaction="{{ url('project/'.$project->idproject.'/manage_tasks/remove') }}">Remove</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 @endif
-</form>
 
 @endsection

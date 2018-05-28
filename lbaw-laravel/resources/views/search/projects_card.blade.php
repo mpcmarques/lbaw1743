@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-6">
         <h5 class="text-left">
-          <a href="{{ url('project/'.$project->idproject) }}" style="text-decoration: none;">{{$project->name}}</a>
+          <a href="{{ url('project/'.$project->idproject) }}" style="text-decoration: underline; color:black;">{{$project->name}}</a>
         </h5>
       </div>
       <div class="col-6">

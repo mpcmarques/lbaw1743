@@ -1,4 +1,4 @@
-<div class="list-group">
+<ol class="list-group">
   <li class="list-group-item list-group-item-info">
     Project
   </li>
@@ -22,4 +22,4 @@
   <!-- project manage users -->
   @include('layouts.list-item', ['name' => 'Manage Users', 'path' => '/manage_users', 'url' => 'project/'.$project->idproject.'/manage_users'])
   @endif
-</div>
+</ol>

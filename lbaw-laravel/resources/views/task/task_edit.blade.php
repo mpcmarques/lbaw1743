@@ -7,10 +7,14 @@
 <div class="container-fluid page-container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ url( 'project/'.$project->idproject)}}">Project</a></li>
-      <li class="breadcrumb-item"><a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">Task Name</a></li>
+      <li class="breadcrumb-item"><a href="{{
+        url('project/'.$project->idproject.'/')
+      }}">{{ $project->name }}</a></li>
+      <li class="breadcrumb-item"><a href="{{
+        url('project/'.$project->idproject.'/task/'.$task->idtask)
+      }}">{{ $task->title }}</a></li>
       <li class="breadcrumb-item active" aria-current="page">Edit</li>
-    </ol>
+      </ol>
   </nav>
   <div class="card">
     <div class="card-header panel-header">
@@ -29,7 +33,7 @@
         </div>
         <div class="form-group">
           <label>Deadline</label>
-          @include('layouts.validation-input', ['name' => 'deadline', 'type' => 'date' ,'value' => \Carbon\Carbon::parse($task->deadline)->format('Y-m-d')])
+          <input class="form-control" id="deadline" type="date" name="deadline" value="{{ \Carbon\Carbon::parse($task->deadline)->format('Y-m-d') }}">
         </div>
         <button type="submit" class="btn btn-primary float-right">Save Changes</button>
       </form>

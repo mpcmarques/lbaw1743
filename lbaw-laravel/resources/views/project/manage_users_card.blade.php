@@ -25,7 +25,7 @@
 @endsection
 
 @section('card-body')
-<form method="POST">
+<form method="POST" id="manageUsers">
   {{ csrf_field() }}
 <div class="nopadding">
   <table class="table">
@@ -93,13 +93,14 @@
     </tbody>
   </table>
 </div>
+</form>
 @endsection
 
 @section('card-footer')
 
 <div class="card-footer">
   <div class="float-right">
-    <button type="submit" class="btn btn-terciary" formaction="{{ url('project/'.$project->idproject.'/manage_users/update') }}">
+    <button type="submit" class="btn btn-terciary" form="manageUsers" formaction="{{ url('project/'.$project->idproject.'/manage_users/update') }}">
       <span class="octicon octicon-clippy"></span>
       Save
     </button>
@@ -123,12 +124,11 @@
         <b>Warning</b>: this action is destructive!
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" formaction="{{ url('project/'.$project->idproject.'/manage_users/remove') }}">Remove</button>
+        <button type="submit" class="btn btn-primary" form="manageUsers" formaction="{{ url('project/'.$project->idproject.'/manage_users/remove') }}">Remove</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-</form>
 
 @endsection

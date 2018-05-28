@@ -1,6 +1,6 @@
 @extends('project.project-layout')
 
-@section('title', 'Manage Tasks')
+@section('title', 'Options')
 
 @section('card-header')
 
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <script type='text/javascript'>
+    <script>
         document.getElementById('projectPicture').addEventListener("change", updateImage);
 
         function updateImage(event){
@@ -46,7 +46,7 @@
           reader.readAsDataURL(selectedFile);
         }
     </script>
-    
+
   </div>
   <div class="form-group">
     <label class="form-check-label" for="description">Project Name</label>

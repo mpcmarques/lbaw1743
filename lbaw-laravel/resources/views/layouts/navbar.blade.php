@@ -63,11 +63,9 @@
 		      </div>
 		  </div>
 
-			<a class="logout" href="{{ url('/logout') }}">
-				<button class="btn btn-outline-primary my-2 my-sm-0">
-					Logout
-				</button>
-			</a>
+			<a class="btn btn-outline-primary my-2 my-sm-0 logout" href="{{ url('/logout') }}">
+	      Logout
+	    </a>
 			@endif
 
 		</div>
@@ -188,7 +186,7 @@
 						<label class="col-sm-4 col-form-label">Email</label>
 						<div class="col-sm-8">
 
-							@include('layouts.validation-input', ['name' => 'email', 'type' => 'email'])
+							@include('layouts.validation-input', ['name' => 'emailRegister', 'type' => 'email'])
 
 						</div>
 
@@ -198,7 +196,7 @@
 						<label class="col-sm-4 col-form-label">Password</label>
 						<div class="col-sm-8">
 
-							@include('layouts.validation-input', ['name' => 'password', 'type' => 'password'])
+							@include('layouts.validation-input', ['name' => 'passwordRegister', 'type' => 'password'])
 
 						</div>
 
@@ -214,8 +212,8 @@
 					<div class="form-group row">
               <label class="col-sm-4 col-form-label">Gender</label>
 							<div class="radioGender">
-								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Male" checked>Male</label>
-								<label class="radio-inline"><input type="radio" name="gender" id="gender" value="Female">Female</label>
+								<label class="radio-inline"><input type="radio" name="gender" id="genderM" value="Male" checked>Male</label>
+								<label class="radio-inline"><input type="radio" name="gender" id="genderF" value="Female">Female</label>
 							</div>
           </div>
 
@@ -230,7 +228,7 @@
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">Institution / Company</label>
 						<div class="col-sm-8">
-							<input id="institution_company" name="institution_company" class="form-control"></input>
+							<input id="institution_company" name="institution_company" class="form-control">
 						</div>
 					</div>
 
