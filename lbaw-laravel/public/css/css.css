@@ -435,6 +435,7 @@ div.required label:after {
     width: 10em;
     overflow: hidden;
     margin: 15px;
+    display: inline-block;
 }
 
 .card.project-card img {

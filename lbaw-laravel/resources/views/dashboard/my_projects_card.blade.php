@@ -21,7 +21,9 @@
 {{-- projects card --}}
 
 @foreach($projects as $project)
+
 @include('layouts.project_card', ['project' => $project])
+
 @endforeach
 
 @endsection
