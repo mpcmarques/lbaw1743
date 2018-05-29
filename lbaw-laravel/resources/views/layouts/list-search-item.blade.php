@@ -4,6 +4,6 @@
   @else
   <a href="{{ url($url) }}" class="list-group-item list-group-item-action" role="button">{{$name}}
   @endif
-  <span class="float-right badge badge-pill badge-primary">{{$number}}</span>
+    <span class="float-right badge badge-pill badge-primary">{{$number}}</span>
   </a>
 </li>

@@ -22,9 +22,6 @@
 @endsection
 
 @section('card-body')
-<!-- TODO: create new task -->
-<!-- TODO: last task activity -->
-
 <div class="nopadding">
   <table class="table">
     <thead>
@@ -59,7 +56,7 @@
             @if(count($task->tags) > 0)
 
             @foreach($task->tags as $tag)
-              {{$tag->name}}
+            {{$tag->name}}
             @endforeach
 
             @else
@@ -70,9 +67,9 @@
         <td>
           <p class="text-left">
             @if (count($task->assigned))
-              Yes
+            Yes
             @else
-              No
+            No
             @endif
           </p>
         </td>
@@ -82,7 +79,7 @@
   </table>
   @if( Auth::check() && $project->members->contains('iduser', Auth::user()->iduser) )
   <a class="create-new-project btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/new-task')}}">
-      + create new task
+    + create new task
   </a>
   @endif
 </div>
@@ -90,7 +87,7 @@
 @endsection
 
 <?php use Carbon\Carbon;
-      $now = Carbon::now();?>
+$now = Carbon::now();?>
 
 @section('card-footer')
 
@@ -98,11 +95,11 @@
   @if(count($project->tasks) > 0)
   <small>
     <?php $task = $project->tasks->first();
-          $date = Carbon::parse($task->lasteditdate);
-          $days = $date->diffInDays($now);
-          $hours = $date->diffInHours($now);
-          $minutes = $date->diffInMinutes($now);
-          $seconds = $date->diffInSeconds($now); ?>
+    $date = Carbon::parse($task->lasteditdate);
+    $days = $date->diffInDays($now);
+    $hours = $date->diffInHours($now);
+    $minutes = $date->diffInMinutes($now);
+    $seconds = $date->diffInSeconds($now); ?>
     @if ($days > 0)
     last task activity <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{ $task->title }}</a>, {{ $days }} days ago.
     @elseif ($hours > 0)

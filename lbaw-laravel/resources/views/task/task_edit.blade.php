@@ -14,7 +14,7 @@
         url('project/'.$project->idproject.'/task/'.$task->idtask)
       }}">{{ $task->title }}</a></li>
       <li class="breadcrumb-item active" aria-current="page">Edit</li>
-      </ol>
+    </ol>
   </nav>
   <div class="card">
     <div class="card-header panel-header">

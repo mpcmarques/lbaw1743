@@ -177,73 +177,73 @@
       || $task->project->editors->contains('iduser', Auth::user()->iduser)
       || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
       <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/remove-tag/'.$tag->idtag) }}" class="btn btn-primary tag">
-      @else
-      <a class="btn btn-primary tag">
-      @endif
-        {{$tag->name}}
-      </a>
-      @endforeach
+        @else
+        <a class="btn btn-primary tag">
+          @endif
+          {{$tag->name}}
+        </a>
+        @endforeach
 
-      @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
-      || $task->project->editors->contains('iduser', Auth::user()->iduser)
-      || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+        @if ( Auth::check() && ( $task->creator->iduser == Auth::user()->iduser
+        || $task->project->editors->contains('iduser', Auth::user()->iduser)
+        || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
 
-      <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
-        <span class="octicon octicon-plus"></span>
-      </button>
+        <button class="btn btn-terciary round-buton" data-toggle="modal" data-target="#addtag-modal">
+          <span class="octicon octicon-plus"></span>
+        </button>
 
-      <div class="modal fade" id="addtag-modal" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5>Add New Tag</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
-                {{ csrf_field() }}
-                <div class="form-group">
-                  <label>Tag:</label>
-                  @include('layouts.validation-input', ['name' => 'tag'])
-                </div>
-                <button type="submit" class="btn btn-primary">Confirm</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="modal fade" id="addtag-modal" role="dialog">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5>Add New Tag</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form-inline" method="POST" action="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/add-tag') }}">
+                  {{ csrf_field() }}
+                  <div class="form-group">
+                    <label>Tag:</label>
+                    @include('layouts.validation-input', ['name' => 'tag'])
+                  </div>
+                  <button type="submit" class="btn btn-primary">Confirm</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
+        @endif
+      </div>
+    </div>
+
+    <div class="card closerequests-card">
+      <div class="card-header panel-header">
+        <h5 class="panel-title">Close Requests</h5>
+      </div>
+      @if(count($task->closerequest) > 0)
+      <div class="card-body">
+        @foreach($task->closerequest as $closerequest)
+        @include('layouts.closerequest')
+        @endforeach
+      </div>
+      @endif
+
+      @if ( Auth::check() && ( $task->project->editors->contains('iduser', Auth::user()->iduser)
+      || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
+      <div class="card-footer">
+        <a class="create-new-closerequest btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/new-cr')}}">
+          + create new close request
+        </a>
+      </div>
       @endif
     </div>
+
   </div>
 
-  <div class="card closerequests-card">
-    <div class="card-header panel-header">
-      <h5 class="panel-title">Close Requests</h5>
-    </div>
-    @if(count($task->closerequest) > 0)
-    <div class="card-body">
-      @foreach($task->closerequest as $closerequest)
-      @include('layouts.closerequest')
-      @endforeach
-    </div>
-    @endif
-
-    @if ( Auth::check() && ( $task->project->editors->contains('iduser', Auth::user()->iduser)
-          || $task->assigned->contains('iduser', Auth::user()->iduser) ) )
-    <div class="card-footer">
-      <a class="create-new-closerequest btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/task/'.$task->idtask.'/new-cr')}}">
-          + create new close request
-      </a>
-    </div>
-    @endif
-  </div>
-
-</div>
-
-@endsection
+  @endsection

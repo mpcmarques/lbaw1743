@@ -64,14 +64,14 @@
 
 			<div class="nav-item dropdown text-right">
 				<img class="img-round dropdown-toggle" data-toggle="dropdown" src="{{ Auth::user()->getPicture() }}" alt="Profile Picture" width="40" height="40">
-		      <div class="dropdown-menu dropdown-menu-right">
-		        <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
-		      </div>
-		  </div>
+				<div class="dropdown-menu dropdown-menu-right">
+					<a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
+				</div>
+			</div>
 
 			<a class="btn btn-outline-primary my-2 my-sm-0 logout" href="{{ url('/logout') }}">
-	      Logout
-	    </a>
+				Logout
+			</a>
 			@endif
 
 		</div>
@@ -85,9 +85,9 @@
 @if( ! empty($login) && $login)
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#signin-modal").modal({show: true});
-	});
+$(document).ready(function() {
+	$("#signin-modal").modal({show: true});
+});
 </script>
 
 @endif
@@ -147,9 +147,9 @@
 @if( ! empty($showRegisterModal) && $showRegisterModal)
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#signup-modal").modal({show: true});
-	});
+$(document).ready(function() {
+	$("#signup-modal").modal({show: true});
+});
 </script>
 
 @endif
@@ -216,12 +216,12 @@
 					</div>
 
 					<div class="form-group row">
-              <label class="col-sm-4 col-form-label">Gender</label>
-							<div class="radioGender">
-								<label class="radio-inline"><input type="radio" name="gender" id="genderM" value="Male" checked>Male</label>
-								<label class="radio-inline"><input type="radio" name="gender" id="genderF" value="Female">Female</label>
-							</div>
-          </div>
+						<label class="col-sm-4 col-form-label">Gender</label>
+						<div class="radioGender">
+							<label class="radio-inline"><input type="radio" name="gender" id="genderM" value="Male" checked>Male</label>
+							<label class="radio-inline"><input type="radio" name="gender" id="genderF" value="Female">Female</label>
+						</div>
+					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">Country</label>

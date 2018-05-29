@@ -15,7 +15,7 @@ class DashboardNewProjectController extends Controller
 {
     public function show()
     {
-      return view('new-project');
+      return view('dashboard.new-project');
     }
 
     function validator(array $data)

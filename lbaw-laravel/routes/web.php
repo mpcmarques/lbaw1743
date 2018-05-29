@@ -17,9 +17,9 @@ Route::get('/admin', 'Admin\AdminController@show')->middleware('admin');
 
 // logout
 Route::get('/admin/logout', function(){
-    Auth::logout();
+  Auth::logout();
 
-    return redirect('/admin');
+  return redirect('/admin');
 });
 
 // route to process the login form
@@ -47,8 +47,8 @@ Route::post('register', 'HomeController@register')->name('register');
 
 // logout
 Route::get('/logout', function(){
-    Auth::logout();
-    return redirect('/');
+  Auth::logout();
+  return redirect('/');
 });
 
 // dashboard

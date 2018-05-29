@@ -21,7 +21,7 @@
 @endsection
 
 <?php use Carbon\Carbon;
-      $now = Carbon::now();?>
+$now = Carbon::now();?>
 
 @section('card-body')
 
@@ -49,10 +49,10 @@
       <div class="col-6">
         <small>
           <?php $date = Carbon::parse($project->lasteditdate);
-                $days = $date->diffInDays($now);
-                $hours = $date->diffInHours($now);
-                $minutes = $date->diffInMinutes($now);
-                $seconds = $date->diffInSeconds($now); ?>
+          $days = $date->diffInDays($now);
+          $hours = $date->diffInHours($now);
+          $minutes = $date->diffInMinutes($now);
+          $seconds = $date->diffInSeconds($now); ?>
           @if ($days > 0)
           last updated {{ $days }} days ago.
           @elseif ($hours > 0)

@@ -1,6 +1,6 @@
 
 @if ( ( Auth::check() && $project->private && $project->members->contains('iduser', Auth::user()->iduser) )
-      || !$project->private || Auth::user()->type == 'admin')
+      || !$project->private || ( Auth::check() && Auth::user()->type == 'admin'))
 <div class="card project-card">
     <a href="{{ url('project/'.$project->idproject) }}">
       <img class="card-img-top img-responsive" src="{{ $project->getPicture() }}" alt="profilePicture">

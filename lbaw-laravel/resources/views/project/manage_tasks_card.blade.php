@@ -27,73 +27,73 @@
 @section('card-body')
 <form method="POST" id="removeTasks">
   {{ csrf_field() }}
-<div class="nopadding">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Name
-          </div>
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Members Assigned
-          </div>
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Assigned
-          </div>
-        </th>
-        <th scope="col">
-          <div class="text-left font-weight-bold">
-            Status
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($project->tasks as $task)
-      <tr>
-        <th scope="row">
-          <div class="text-center">
-            @if ( Auth::check() && $project->editors->contains('iduser', Auth::user()->iduser))
-            @include('layouts.checkbox-input', ['name' => 'task'.$task->idtask])
-            @endif
-          </div>
-        </th>
-        <td>
-          <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{$task->title}}</a>
-        </td>
-        <td>
-          <div class="text-left">{{count($task->assigned)}}</div>
-        </td>
-        <td>
-          <div class="text-left">
-            @if (count($task->assigned))
+  <div class="nopadding">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Name
+            </div>
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Members Assigned
+            </div>
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Assigned
+            </div>
+          </th>
+          <th scope="col">
+            <div class="text-left font-weight-bold">
+              Status
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($project->tasks as $task)
+        <tr>
+          <th scope="row">
+            <div class="text-center">
+              @if ( Auth::check() && $project->editors->contains('iduser', Auth::user()->iduser))
+              @include('layouts.checkbox-input', ['name' => 'task'.$task->idtask])
+              @endif
+            </div>
+          </th>
+          <td>
+            <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{$task->title}}</a>
+          </td>
+          <td>
+            <div class="text-left">{{count($task->assigned)}}</div>
+          </td>
+          <td>
+            <div class="text-left">
+              @if (count($task->assigned))
               Yes
-            @else
+              @else
               No
-            @endif
-          </div>
-        </td>
-        <td>
-          <div class="text-left">
-            @if ($task->completed)
+              @endif
+            </div>
+          </td>
+          <td>
+            <div class="text-left">
+              @if ($task->completed)
               Completed
-            @else
+              @else
               Open
-            @endif
-          </div>
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-</div>
+              @endif
+            </div>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
 </form>
 
 @endsection

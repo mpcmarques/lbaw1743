@@ -21,7 +21,7 @@
 @endsection
 
 <?php use Carbon\Carbon;
-      $now = Carbon::now();?>
+$now = Carbon::now();?>
 
 @section('card-body')
 
@@ -31,9 +31,9 @@
     <div class="row">
       <div class="col">
         <p class="text-left">#{{$task->idtask}} -
-        <a href="{{ url('project/'.$task->project->idproject.'/task/'.$task->idtask) }}" style="text-decoration: underline; color:black;">
-          {{$task->title}}
-        </a>
+          <a href="{{ url('project/'.$task->project->idproject.'/task/'.$task->idtask) }}" style="text-decoration: underline; color:black;">
+            {{$task->title}}
+          </a>
         </p>
       </div>
       <div class="col-6">
@@ -59,10 +59,10 @@
       <div class="col-6">
         <small>
           <?php $date = Carbon::parse($task->lasteditdate);
-                $days = $date->diffInDays($now);
-                $hours = $date->diffInHours($now);
-                $minutes = $date->diffInMinutes($now);
-                $seconds = $date->diffInSeconds($now); ?>
+          $days = $date->diffInDays($now);
+          $hours = $date->diffInHours($now);
+          $minutes = $date->diffInMinutes($now);
+          $seconds = $date->diffInSeconds($now); ?>
           @if ($days > 0)
           last updated {{ $days }} days ago.
           @elseif ($hours > 0)

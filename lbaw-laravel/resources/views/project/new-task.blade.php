@@ -13,7 +13,7 @@
         url('project/'.$project->idproject.'/')
       }}">{{ $project->name }}</a></li>
       <li class="breadcrumb-item active" aria-current="page">New Task</li>
-      </ol>
+    </ol>
   </nav>
 
   {{-- main card --}}
