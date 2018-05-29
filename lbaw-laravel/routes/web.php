@@ -105,11 +105,14 @@ Route::post('/project/{id}/manage_users/update', 'Project\ProjectManageUsersCont
 Route::get('/project/{id}/join', 'Project\ProjectController@join')->middleware('project');
 Route::get('/project/{id}/leave', 'Project\ProjectController@leave')->middleware('project')->middleware('member');
 
-Route::get('/project/{id}/new-task', 'Project\ProjectNewTaskController@show')->middleware('project')->middleware('member');;
+Route::get('/project/{id}/new-task', 'Project\ProjectNewTaskController@show')->middleware('project')->middleware('member');
 Route::post('/project/{id}/new-task', 'Project\ProjectNewTaskController@newTask')->middleware('project')->middleware('member');
 
-Route::get('/project/{id}/new-post', 'Project\ProjectNewPostController@show')->middleware('project')->middleware('member');;
+Route::get('/project/{id}/new-post', 'Project\ProjectNewPostController@show')->middleware('project')->middleware('member');
 Route::post('/project/{id}/new-post', 'Project\ProjectNewPostController@newPost')->middleware('project')->middleware('member');
+
+Route::get('/project/{id}/forum/{idPost}/new-reply', 'Project\ProjectNewPostController@show')->middleware('project')->middleware('member');
+Route::post('/project/{id}/forum/{idPost}/new-reply', 'Project\ProjectNewPostController@newReply')->middleware('project')->middleware('member');
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 

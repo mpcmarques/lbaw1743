@@ -125,7 +125,10 @@ class ProfileController extends Controller
 
     $user->projects()->detach();
 
-    //TODO: Banned record
+    $bans = $user->bannedRecords()->get();
+    foreach($bans as $ban){
+      $ban->delete();
+    }
 
     if (file_exists('img/profile/'.$user->iduser.'.png')){
       unlink(public_path().'/img/profile/'.$user->iduser.'.png');
