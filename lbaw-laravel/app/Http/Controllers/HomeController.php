@@ -75,24 +75,12 @@ class HomeController extends Controller
         throw $exception;
     }
 
-    function validator(array $data)
-    {
-        return Validator::make($data, [
-            'username' => 'required|string|unique:usertable',
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:usertable',
-            'password' => 'required|string|min:6|confirmed',
-            'birthdate' => 'required|date',
-            'checkbox' => 'required|accepted',
-        ]);
-    }
-
     function create(array $data)
     {
         return User::create([
             'username' => $data['username'],
-            'password' => bcrypt($data['password']),
-            'email' => $data['email'],
+            'password' => bcrypt($data['passwordRegister']),
+            'email' => $data['emailRegister'],
             'name' => $data['name'],
             'institution' => $data['institution_company'],
             'birthdate' => date('Y-m-d H:i:s',strtotime($data['birthdate']))
@@ -107,13 +95,22 @@ class HomeController extends Controller
      */
     public function register(Request $request) {
       $data = $request->all();
-
       $data['email'] = $data['emailRegister'];
       $data['password'] = $data['passwordRegister'];
+        
+      $validator = Validator::make($data, [
+        'username' => 'required|string|unique:usertable',
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:usertable',
+        'password' => 'required|string|min:6|confirmed',
+        'birthdate' => 'required|date',
+        'checkbox' => 'required|accepted',
+     ]);
 
-      $this->validator($data)->validate();
-      // $user = $this->create($request->all());
-
+      if ($validator->fails()){
+        return redirect('register')->withErrors($validator)->withInput();
+      }
+      
       $user = new User;
       $user->username = $data['username'];
       $user->password = bcrypt($data['passwordRegister']);
