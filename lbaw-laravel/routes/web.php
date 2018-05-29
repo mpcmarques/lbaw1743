@@ -179,4 +179,4 @@ Route::get('/about', 'AboutController@show');
 
 Route::get('/faq', 'FaqController@show');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
