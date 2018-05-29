@@ -4,11 +4,12 @@
   <div class="card-header">
     @if(!$closerequest->approved)
 
-    @if( Auth::check() && $task->project->editors->contains('iduser', Auth::user()->iduser))
+    @if( Auth::check() && ($task->project->editors->contains('iduser', Auth::user()->iduser)
+                            || $task->creator->iduser == Auth::user()->iduser) )
     <button class="btn btn-primary card-edit-button" data-toggle="modal" data-target="#approve-closerequest-modal">
-      @else
-      <button class="btn btn-primary card-edit-button">
-        @endif
+    @else
+    <button class="btn btn-primary card-edit-button">
+    @endif
         <span class="octicon octicon-unverified">
         </span>
       </button>
@@ -56,6 +57,8 @@
     </div>
   </div>
 
+  @if( Auth::check() && ($task->project->editors->contains('iduser', Auth::user()->iduser)
+                          || $task->creator->iduser == Auth::user()->iduser) )
   <div class="modal fade" id="approve-closerequest-modal" role="dialog">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -75,3 +78,4 @@
       </div>
     </div>
   </div>
+  @endif
