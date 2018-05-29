@@ -9,7 +9,7 @@
   </div>
   <div class="col-md-5">
     <nav class="nav nav-pills">
-      @if (strpos($_SERVER['PATH_INFO'], 'completed') !== false)
+      @if (strpos($_SERVER['REQUEST_URI'], 'completed') !== false)
       <a class="nav-link" href="{{ url('/dashboard/tasks') }}">Assigned</a>
       <a class="nav-link active" href="{{ url('/dashboard/tasks/completed') }}">Completed</a>
       @else
@@ -20,7 +20,7 @@
   </div>
   <div class="col md-4">
     {{-- search input --}}
-    @if (strpos($_SERVER['PATH_INFO'], 'completed') !== false)
+    @if (strpos($_SERVER['REQUEST_URI'], 'completed') !== false)
     @include('layouts.search-input', ['name' => 'my_tasks_search_input', 'search' => 'search-my-tasks', 'url' => '/dashboard/tasks/completed'])
     @else
     @include('layouts.search-input', ['name' => 'my_tasks_search_input', 'search' => 'search-my-tasks', 'url' => '/dashboard/tasks'])

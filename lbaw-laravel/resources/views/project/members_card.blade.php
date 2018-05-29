@@ -13,11 +13,11 @@
     <div class="float-right">
         <div class="form-group">
           <select class="form-control" name="filter" onchange="location = this.value;">
-            @if (strpos($_SERVER['PATH_INFO'], 'members/manager') !== false)
+            @if (strpos($_SERVER['REQUEST_URI'], 'members/manager') !== false)
             <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members') }}">Show All</option>
             <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/manager') }}" selected>Show only Managers</option>
             <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/member') }}">Show only Members</option>
-            @elseif (strpos($_SERVER['PATH_INFO'], 'members/member') !== false)
+            @elseif (strpos($_SERVER['REQUEST_URI'], 'members/member') !== false)
             <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members') }}">Show All</option>
             <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/manager') }}">Show only Managers</option>
             <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/member') }}" selected>Show only Members</option>

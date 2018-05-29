@@ -11,11 +11,11 @@
   <div class="col-md-8">
     <div class="float-right">
       <nav class="nav nav-pills">
-        @if (strpos($_SERVER['PATH_INFO'], 'completed') !== false)
+        @if (strpos($_SERVER['REQUEST_URI'], 'completed') !== false)
         <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks')}}">Active</a>
         <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks/unassigned')}}">Unassigned</a>
         <a class="nav-link active" href="{{ url('/project/'.$project->idproject.'/tasks/completed')}}">Completed</a>
-        @elseif (strpos($_SERVER['PATH_INFO'], 'unassigned') !== false)
+        @elseif (strpos($_SERVER['REQUEST_URI'], 'unassigned') !== false)
         <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks')}}">Active</a>
         <a class="nav-link active" href="{{ url('/project/'.$project->idproject.'/tasks/unassigned')}}">Unassigned</a>
         <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks/completed')}}">Completed</a>
