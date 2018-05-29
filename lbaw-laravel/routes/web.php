@@ -86,8 +86,6 @@ Route::get('/project/{id}/members', 'Project\ProjectMembersController@show')->mi
 Route::get('/project/{id}/members/manager', 'Project\ProjectMembersController@showManager')->middleware('project');
 Route::get('/project/{id}/members/member', 'Project\ProjectMembersController@showMember')->middleware('project');
 
-Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
-
 Route::get('/project/{id}/options', 'Project\ProjectOptionsController@show')->middleware('project')->middleware('owner');
 Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProject')->middleware('project')->middleware('owner');
 
@@ -111,8 +109,11 @@ Route::post('/project/{id}/new-task', 'Project\ProjectNewTaskController@newTask'
 Route::get('/project/{id}/new-post', 'Project\ProjectNewPostController@show')->middleware('project')->middleware('member');
 Route::post('/project/{id}/new-post', 'Project\ProjectNewPostController@newPost')->middleware('project')->middleware('member');
 
-Route::get('/project/{id}/forum/{idPost}/new-reply', 'Project\ProjectNewPostController@show')->middleware('project')->middleware('member');
-Route::post('/project/{id}/forum/{idPost}/new-reply', 'Project\ProjectNewPostController@newReply')->middleware('project')->middleware('member');
+// forum
+Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
+Route::get('/project/{id}/forum/{idPost}/new-reply', 'Forum\ForumNewReplyController@show')->middleware('project')->middleware('member');
+Route::post('/project/{id}/forum/{idPost}/new-reply', 'Project\ForumNewReplyController@newReply')->middleware('project')->middleware('member');
+
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 
