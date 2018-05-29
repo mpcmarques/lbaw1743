@@ -22,7 +22,7 @@
       <h5>New Reply</h5>
     </div>
     <div class="card-body">
-      <form method="POST" action="{{ url('project/'.$project->idproject.'/'.$post->idPost.'/new-reply') }}">
+      <form method="POST" action="{{ url('project/'.$project->idproject.'/forum/'.$post->idpost.'/new-reply') }}">
         {{ csrf_field() }}
 
         <div class="form-group row">
@@ -35,8 +35,8 @@
         <div class="form-group row" style="margin-bottom: 0;">
           <div class="container-fluid">
             <button type="submit" class="btn btn-primary">
-              <span class="octicon octicon-plus"></span>
-              Create
+              <span class="octicon octicon-comment-discussion"></span>
+              Reply
             </button>
             <div>
             </div>

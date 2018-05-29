@@ -122,9 +122,8 @@ Route::post('/project/{id}/new-post', 'Project\ProjectNewPostController@newPost'
 
 // forum
 Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
-Route::get('/project/{id}/forum/{idPost}/new-reply', 'Post\ForumNewReplyController@show')->middleware('project')->middleware('member');
-Route::post('/project/{id}/forum/{idPost}/new-reply', 'Post\ForumNewReplyController@newReply')->middleware('project')->middleware('member');
-
+Route::get('/project/{id}/forum/{idPost}/new-reply', 'Post\PostNewReplyController@show')->middleware('project')->middleware('member');
+Route::post('/project/{id}/forum/{idPost}/new-reply', 'Post\PostNewReplyController@newReply')->middleware('project')->middleware('member');
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 

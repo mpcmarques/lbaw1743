@@ -12,13 +12,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 
-class ForumNewReplyController extends Controller
+class PostNewReplyController extends Controller
 {
-  public function show($id)
+  public function show($id, $idpost)
   {
     $project = Project::findOrFail($id);
-
-    return view('project.new-reply', ['project' => $project]);
+    $post = Post::findOrFail($idpost);
+    return view('post.new-reply', ['project' => $project, 'post' => $post]);
   }
 
   function validator(array $data){
@@ -26,7 +26,7 @@ class ForumNewReplyController extends Controller
           'content' => 'required|string',]);
   }
 
-  public function newReply(Request $request, $id){
+  public function newReply(Request $request, $id,$idpost){
     $this->validator($request->all())->validate();
     $profile = Auth::user();
     $data = $request->all();
@@ -35,12 +35,12 @@ class ForumNewReplyController extends Controller
     $reply->content = $data['content'];
     $reply->creationdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
     $reply->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
-    $reply->idPost = $id;
+    $reply->idpost = $idpost;
     $reply->iduser = $profile->iduser;
     $reply->save();
 
     if(empty($reply)){
-      return redirect('/project/'.$id.'/forum/');
+      return redirect('/project/'.$id);
     }
 
     $project = Project::findOrFail($id);
