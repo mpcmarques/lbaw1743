@@ -124,20 +124,12 @@ $(document).ready(function() {
 						<button type="submit" class="btn btn-primary">Login</button>
 					</div>
 				</form>
-
 			</div>
 
 			<div class="modal-footer justify-content-center">
-				<div class="buttons text-center">
-					<button class="btn facebook">
-						<img src="{{ asset('img/facebook.svg') }}" alt="facebook" width="30">
-						Facebook
-					</button>
-					<button class="btn google">
-						<img src="{{ asset('img/google.png') }}" alt="google" width="30">
-						Google+
-					</button>
-				</div>
+				<a href="{{url('password-reset')}}" class="btn btn-light">
+					Forgot password?
+				</a>
 			</div>
 		</div>
 	</div>

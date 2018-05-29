@@ -53,6 +53,10 @@ Route::get('/logout', function(){
   return redirect('/');
 });
 
+
+// password reset
+
+
 // dashboard
 
 Route::get('/dashboard', 'Dashboard\DashboardController@show')->middleware('auth');
