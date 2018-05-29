@@ -75,6 +75,8 @@ Route::get('/project/{id}', function($id){
 });
 
 Route::get('/project/{id}/tasks', 'Project\ProjectTasksController@show')->middleware('project');
+Route::get('/project/{id}/tasks/unassigned', 'Project\ProjectTasksController@showUnassigned')->middleware('project');
+Route::get('/project/{id}/tasks/completed', 'Project\ProjectTasksController@showCompleted')->middleware('project');
 
 Route::get('/project/{id}/members', 'Project\ProjectMembersController@show')->middleware('project');
 

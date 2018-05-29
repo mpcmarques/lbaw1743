@@ -11,9 +11,19 @@
   <div class="col-md-8">
     <div class="float-right">
       <nav class="nav nav-pills">
-        <a class="nav-link active" href="#">Active</a>
-        <a class="nav-link" href="#">Unassigned</a>
-        <a class="nav-link" href="#">Completed</a>
+        @if (strpos($_SERVER['PATH_INFO'], 'completed') !== false)
+        <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks')}}">Active</a>
+        <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks/unassigned')}}">Unassigned</a>
+        <a class="nav-link active" href="{{ url('/project/'.$project->idproject.'/tasks/completed')}}">Completed</a>
+        @elseif (strpos($_SERVER['PATH_INFO'], 'unassigned') !== false)
+        <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks')}}">Active</a>
+        <a class="nav-link active" href="{{ url('/project/'.$project->idproject.'/tasks/unassigned')}}">Unassigned</a>
+        <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks/completed')}}">Completed</a>
+        @else
+        <a class="nav-link active" href="{{ url('/project/'.$project->idproject.'/tasks')}}">Active</a>
+        <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks/unassigned')}}">Unassigned</a>
+        <a class="nav-link" href="{{ url('/project/'.$project->idproject.'/tasks/completed')}}">Completed</a>
+        @endif
       </nav>
     </div>
   </div>
@@ -44,7 +54,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($project->tasks as $task)
+      @foreach($tasks as $task)
       <tr>
         <th scope="row">
           <p class="text-left">{{$task->idtask}}</p>
@@ -104,9 +114,9 @@ $now = Carbon::now();?>
 @section('card-footer')
 
 <div class="card-footer">
-  @if(count($project->tasks) > 0)
+  @if(count($tasks) > 0)
   <small>
-    <?php $task = $project->tasks->first();
+    <?php $task = $tasks->first();
     $date = Carbon::parse($task->lasteditdate);
     $days = $date->diffInDays($now);
     $hours = $date->diffInHours($now);
