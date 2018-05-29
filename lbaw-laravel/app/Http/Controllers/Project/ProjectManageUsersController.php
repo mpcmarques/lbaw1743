@@ -13,7 +13,21 @@ class ProjectManageUsersController extends Controller{
   public function show($id){
     $project = Project::findOrFail($id);
 
-    return view('project.manage_users_card', ['project' => $project]);
+    return view('project.manage_users_card', ['project' => $project, 'members' => $project->members]);
+  }
+
+  public function search(Request $request, $id){
+    $project = Project::findOrFail($id);
+    $text = $request->input('search-users');
+
+    if(is_null($text)){
+      return redirect()->back();
+    }
+    else{
+      $members = $project->members()->where('username', 'ilike', "%{$text}%")->get();
+    }
+
+    return view('project.manage_users_card', ['project' => $project, 'members' => $members]);
   }
 
   public function remove(Request $request, $id){

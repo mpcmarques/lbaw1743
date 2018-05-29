@@ -9,16 +9,7 @@
     <h5>Manage Tasks</h5>
   </div>
   <div class="col-md-4">
-    <form>
-      <div class="input-group">
-        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"></span>
-          </button>
-        </div>
-      </div>
-    </form>
+    @include('layouts.search-input', ['name' => 'project_tasks_search', 'search' => 'search-tasks', 'url' => '/project/'.$project->idproject.'/manage_tasks'])
   </div>
 </div>
 
@@ -56,7 +47,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($project->tasks as $task)
+        @foreach($tasks as $task)
         <tr>
           <th scope="row">
             <div class="text-center">
@@ -99,7 +90,7 @@
 @endsection
 
 @section('card-footer')
-@if(count($project->tasks) > 0)
+@if(count($tasks) > 0)
 <div class="card-footer">
   <div class="float-right">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeTasksModal">

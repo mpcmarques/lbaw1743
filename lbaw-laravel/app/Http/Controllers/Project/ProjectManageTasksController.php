@@ -18,7 +18,21 @@ class ProjectManageTasksController extends Controller
   {
     $project = Project::findOrFail($id);
 
-    return view('project.manage_tasks_card', ['project' => $project]);
+    return view('project.manage_tasks_card', ['project' => $project, 'tasks' => $project->tasks]);
+  }
+
+  public function search(Request $request, $id){
+    $project = Project::findOrFail($id);
+    $text = $request->input('search-tasks');
+
+    if(is_null($text)){
+      return redirect()->back();
+    }
+    else{
+      $tasks = $project->tasks()->where('title', 'ilike', "%{$text}%")->get();
+    }
+
+    return view('project.manage_tasks_card', ['project' => $project, 'tasks' => $tasks]);
   }
 
   public function remove(Request $request, $id){

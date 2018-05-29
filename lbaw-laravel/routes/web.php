@@ -84,9 +84,11 @@ Route::post('/project/{id}/options', 'Project\ProjectOptionsController@editProje
 Route::get('/project/{id}/options/delete', 'Project\ProjectOptionsController@deleteProject')->middleware('project')->middleware('owner');
 
 Route::get('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@show')->middleware('project')->middleware('manager');
+Route::post('/project/{id}/manage_tasks', 'Project\ProjectManageTasksController@search')->middleware('project')->middleware('manager');
 Route::post('/project/{id}/manage_tasks/remove', 'Project\ProjectManageTasksController@remove')->middleware('project')->middleware('manager');
 
 Route::get('/project/{id}/manage_users', 'Project\ProjectManageUsersController@show')->middleware('project')->middleware('manager');
+Route::post('/project/{id}/manage_users', 'Project\ProjectManageUsersController@search')->middleware('project')->middleware('manager');
 Route::post('/project/{id}/manage_users/remove', 'Project\ProjectManageUsersController@remove')->middleware('project')->middleware('manager');
 Route::post('/project/{id}/manage_users/update', 'Project\ProjectManageUsersController@update')->middleware('project')->middleware('manager');
 

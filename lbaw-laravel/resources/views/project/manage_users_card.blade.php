@@ -9,16 +9,8 @@
     <h5>Manage Users</h5>
   </div>
   <div class="col-md-4">
-    <form>
-      <div class="input-group">
-        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"></span>
-          </button>
-        </div>
-      </div>
-    </form>
+    @include('layouts.search-input', ['name' => 'project_users_search', 'search' => 'search-users', 'url' => '/project/'.$project->idproject.'/manage_users'])
+  </div>
   </div>
 </div>
 
@@ -56,7 +48,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($project->members as $member)
+        @foreach($members as $member)
         <tr>
           <th scope="row">
             <div class="text-center">
