@@ -44,9 +44,6 @@ class ProjectController extends Controller {
       $project->lasteditdate = date('Y-m-d H:i:s', strtotime(Carbon::now()));
       $project->save();
     }
-    else{
-      return redirect('/project/'.$id);
-    }
 
     return redirect('/project/'.$id);
   }

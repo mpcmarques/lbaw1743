@@ -72,7 +72,7 @@
               @if(count($task->tags) > 0)
 
               @foreach($task->tags as $tag)
-                {{$tag->name}}
+              {{$tag->name}}
               @endforeach
 
               @else
@@ -98,7 +98,7 @@
 @endsection
 
 <?php use Carbon\Carbon;
-      $now = Carbon::now();?>
+$now = Carbon::now();?>
 
 @section('card-footer')
 
@@ -106,10 +106,10 @@
 <div class="card-footer">
   <small>
     <?php $date = Carbon::parse($user->assignedTasks->first()->lasteditdate);
-          $days = $date->diffInDays($now);
-          $hours = $date->diffInHours($now);
-          $minutes = $date->diffInMinutes($now);
-          $seconds = $date->diffInSeconds($now); ?>
+    $days = $date->diffInDays($now);
+    $hours = $date->diffInHours($now);
+    $minutes = $date->diffInMinutes($now);
+    $seconds = $date->diffInSeconds($now); ?>
     @if ($days > 0)
     last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $days }} days ago.
     @elseif ($hours > 0)

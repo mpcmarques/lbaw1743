@@ -13,7 +13,7 @@
         <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"/>
+            <span class="octicon octicon-search"></span>
           </button>
         </div>
       </div>
@@ -27,53 +27,53 @@
 @section('card-body')
 <form method="POST" id="manageProjects">
   {{ csrf_field() }}
-<div class="nopadding">
-  <div class="card-body">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Owner</th>
-          <th scope="col">Members</th>
-          <th scope="col">Tasks</th>
-          <th scope="col">Type</th>
-          <th scope="col">Created</th>
-          <th scope="col">Last Edited</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($projects as $project)
-        <tr>
-          <td scope="row">
-            <div class="text-center">
-              @include('layouts.checkbox-input', ['name' => 'project'.$project->idproject])
-            </div>
-          </td>
-          <td>{{$project->idproject}}</td>
-          <td>
-            <a href="{{ url('project/'.$project->idproject) }}">{{$project->name}}</a>
-          </td>
-          <td>
-            <a class="owners" href="{{ url('profile/'.$project->owner->first()->iduser) }}">{{$project->owner->first()->username}}</a>
-          </td>
-          <td>{{count($project->members)}}</td>
-          <td>{{count($project->tasks)}}</td>
-          @if($project->private)
-          <td>Private</td>
-          @else
-          <td>Public</td>
-          @endif
-          <td>{{ Carbon::parse($project->creationdate)->format('d/m/Y')}}</td>
-          <td>{{ Carbon::parse($project->lasteditdate)->format('d/m/Y')}}</td>
-        </tr>
-        @endforeach
+  <div class="nopadding">
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Members</th>
+            <th scope="col">Tasks</th>
+            <th scope="col">Type</th>
+            <th scope="col">Created</th>
+            <th scope="col">Last Edited</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($projects as $project)
+          <tr>
+            <td>
+              <div class="text-center">
+                @include('layouts.checkbox-input', ['name' => 'project'.$project->idproject])
+              </div>
+            </td>
+            <td>{{$project->idproject}}</td>
+            <td>
+              <a href="{{ url('project/'.$project->idproject) }}">{{$project->name}}</a>
+            </td>
+            <td>
+              <a class="owners" href="{{ url('profile/'.$project->owner->first()->iduser) }}">{{$project->owner->first()->username}}</a>
+            </td>
+            <td>{{count($project->members)}}</td>
+            <td>{{count($project->tasks)}}</td>
+            @if($project->private)
+            <td>Private</td>
+            @else
+            <td>Public</td>
+            @endif
+            <td>{{ Carbon::parse($project->creationdate)->format('d/m/Y')}}</td>
+            <td>{{ Carbon::parse($project->lasteditdate)->format('d/m/Y')}}</td>
+          </tr>
+          @endforeach
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
 </form>
 @endsection
 

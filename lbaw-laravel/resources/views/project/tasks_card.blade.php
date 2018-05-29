@@ -80,9 +80,11 @@
       @endforeach
     </tbody>
   </table>
+  @if( Auth::check() && $project->members->contains('iduser', Auth::user()->iduser) )
   <a class="create-new-project btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/new-task')}}">
       + create new task
   </a>
+  @endif
 </div>
 
 @endsection

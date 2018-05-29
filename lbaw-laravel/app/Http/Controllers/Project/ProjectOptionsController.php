@@ -32,7 +32,6 @@ class ProjectOptionsController extends Controller
     $tasks = $project->tasks()->get();
     foreach ($tasks as $task){
       $comments = $task->comments()->get();
-      // echo $comments;
 
       foreach($comments as $comment){
         $comment->delete();

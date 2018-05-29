@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Project;
 
-class ProjectManagerOptions
+class ProjectMember
 {
     /**
      * Handle an incoming request.
@@ -20,7 +20,7 @@ class ProjectManagerOptions
     {
         $project = Project::findOrFail($request->id);
 
-        if (Auth::check() && Auth::user()->can('manage', $project)){
+        if (Auth::check() && Auth::user()->can('member', $project)){
           return $next($request);
         }
         else{

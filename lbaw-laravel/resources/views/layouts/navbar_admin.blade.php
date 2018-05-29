@@ -7,7 +7,7 @@
   <div class="nav-item dropdown text-right">
       <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
         Logged as
-        <span class="text-link" href="#">{{Auth::user()->username}}</span>
+        <span class="text-link">{{Auth::user()->username}}</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="{{ url('/admin/logout') }}">Logout</a>

@@ -180,7 +180,7 @@
           <strong>{{$profile->country->name}}</strong>
         </div>
         @if($profile->institution != '')
-        <div class="company">
+        <div class="company institution">
           <span class="fa fa-users"></span>
           <strong>{{$profile->institution}}</strong>
         </div>

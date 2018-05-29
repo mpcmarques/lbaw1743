@@ -402,6 +402,11 @@ div.required label:after {
   padding-left: 1px;
 }
 
+#profile #profile-header-card .institution span{
+  font-size: 11px;
+  padding-left: 1px;
+}
+
 /* Small devices (landscape phones, 728px and up) */
 @media (max-width: 728px) {
     #profile #profile-header-card{

@@ -37,4 +37,11 @@ class ProjectPolicy {
       }
         return false;
     }
+
+    public function member(User $user, Project $project){
+      if($project->members->contains('iduser', $user->iduser)){
+        return true;
+      }
+        return false;
+    }
 }
