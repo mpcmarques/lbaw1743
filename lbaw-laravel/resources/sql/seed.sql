@@ -2,8 +2,6 @@
 CREATE EXTENSION pgcrypto;*/
 
 /* every table should already be dropped, we are just making sure :) */
-/* admin */
-DROP TABLE IF EXISTS Admin CASCADE;
 
 /* UserTable */
 DROP TABLE IF EXISTS UserTable CASCADE ;
@@ -214,14 +212,6 @@ CREATE TABLE CloseRequest(
 	FOREIGN KEY(approvedUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idUser) REFERENCES UserTable(idUser),
 	FOREIGN KEY(idTask) REFERENCES Task(idTask)
-);
-
-/* Admin */
-CREATE TABLE Admin(
-	idAdmin serial PRIMARY KEY,
-	username text UNIQUE NOT NULL,
-	email text UNIQUE NOT NULL,
-	password text NOT NULL
 );
 
 /* Banned record */
@@ -833,18 +823,18 @@ insert into joined (idUser, idProject, joinedDate, role) values (1, 5, '2017-10-
 
 
 --ForumPost
-insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-17', '2018-01-17', 'Enhanced global customer loyalty', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', 1, 1);
-insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-06', NULL, 'Triple-buffered secondary product', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 2, 2);
-insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-19', '2018-02-25', 'Devolved dynamic structure', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 3, 3);
-insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2018-02-23', NULL, 'Automated bottom-line challenge', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 4, 4);
-insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-18', '2017-10-27', 'Re-contextualized multi-tasking process improvement', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 5, 5);
+insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-17', '2017-04-17', 'Enhanced global customer loyalty', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', 1, 1);
+insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-04-06', '2017-04-06', 'Triple-buffered secondary product', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 2, 2);
+insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-19', '2017-06-19', 'Devolved dynamic structure', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 3, 3);
+insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2018-02-23', '2018-02-23', 'Automated bottom-line challenge', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 4, 4);
+insert into forumpost (creationDate, lastEditDate, title, content, idProject, idUser) values ('2017-06-18', '2017-06-18', 'Re-contextualized multi-tasking process improvement', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 5, 5);
 
 --Reply
-insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-30', NULL, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 1, 6);
-insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2018-03-21', NULL, 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 2, 7);
-insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-12', NULL, 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 3, 8);
-insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-09-23', '2017-09-25', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 4, 9);
-insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-08-09', NULL, 'Fusce consequat. Nulla nisl. Nunc nisl.', 5, 10);
+insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-30', '2017-04-30', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 1, 6);
+insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2018-03-21', '2018-03-21', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 2, 7);
+insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-04-12', '2017-04-12', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 3, 8);
+insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-09-23', '2017-09-23', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 4, 9);
+insert into reply (creationDate, lastEditDate, content, idPost, idUser) values ('2017-08-09', '2017-08-09', 'Fusce consequat. Nulla nisl. Nunc nisl.', 5, 10);
 
 --Task
 insert into task (creationDate, lastEditDate, title, description, deadline, completed, completetionDate, idUser, idProject) values ('2017-07-03', '2017-07-05', 'Customizable neutral circuit', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2018-05-04', true, '2018-05-13', 1, 1);
@@ -903,15 +893,9 @@ insert into closerequest (creationDate, title, description, approved, approvedUs
 
 --Admin
 -- lbaw2018
-insert into admin (username, email, password) values ('barbosa','up201503477@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
-insert into admin (username, email, password) values ('mario','up201503406@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
-insert into admin (username, email, password) values ('mateus','up201601876@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
-insert into admin (username, email, password) values ('jotapsa','up201506252@fe.up.pt' ,'$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe');
-
--- lbaw2018
 insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('barbosa', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201503477@fe.up.pt', false, false, 'Bernardo Barbosa', 'Male', NULL, NULL, NULL, '1997-04-02', 1, 'admin');
 insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('mario', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201503406@fe.up.pt', false, false, 'Mário Santos', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
-insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('mateus', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201601876@fe.up.pt', false, false, 'Mateus Pedroza', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
+insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('mpcmarques', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201601876@fe.up.pt', false, false, 'Mateus Pedroza', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
 insert into usertable (username, password, email, premium, banned, name, gender, address, institution, description, birthDate, idCountry, type) values ('jotapsa', '$2a$06$uPtfqW7HmL2rTqWS3fTMN.jJCkPaGv.NSerysJofIxyii05VZPXSe', 'up201506252@fe.up.pt', false, false, 'João Sá', 'Male', NULL, NULL, NULL, '1996-01-01', 1, 'admin');
 
 --BannedRecord
