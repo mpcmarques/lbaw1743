@@ -58,8 +58,10 @@ Route::get('/logout', function(){
 Route::get('/dashboard', 'Dashboard\DashboardController@show')->middleware('auth');
 
 Route::get('/dashboard/tasks', 'Dashboard\DashboardTasksController@show')->middleware('auth');
+Route::post('/dashboard/tasks', 'Dashboard\DashboardTasksController@search')->middleware('auth');
 
 Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show')->middleware('auth');
+Route::post('/dashboard/projects', 'Dashboard\DashboardProjectsController@search')->middleware('auth');
 
 // project
 

@@ -258,8 +258,9 @@ div.required label:after {
     }
 }
 
-#dashboard .my_projects_search_input button {
-    background-color: #dc4e42;
+#dashboard .my_projects_search_input button,
+#dashboard .my_tasks_search_input button {
+    background-color: #F25F5C !important;
     color: white;
 }
 

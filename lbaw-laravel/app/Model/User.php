@@ -42,8 +42,7 @@ class User extends Authenticatable
   protected $primaryKey = 'iduser';
 
   /**
-  * Get the public projects of the user
-  * TODO: check if the project is public before showing it
+  * Get the projects of the user
   */
   public function publicProjects() {
     return $this->belongsToMany('\App\Model\Project', 'joined', 'iduser', 'idproject');

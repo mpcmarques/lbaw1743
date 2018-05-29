@@ -38,6 +38,9 @@
         <th scope="col">
           <p class="text-left font-weight-bold">Assigned</p>
         </th>
+        <th scope="col">
+          <p class="text-left font-weight-bold">Status</p>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -72,6 +75,15 @@
             No
             @endif
           </p>
+        </td>
+        <td>
+          <div class="text-left">
+            @if ($task->completed)
+            Completed
+            @else
+            Open
+            @endif
+          </div>
         </td>
       </tr>
       @endforeach

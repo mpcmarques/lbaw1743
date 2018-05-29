@@ -7,15 +7,9 @@
   <div class="col-md-4">
     <h5 class="panel-title">My Projects</h5>
   </div>
-  <div class="col-md-4">
-    <nav class="nav nav-pills">
-      <a class="nav-link active" href="#">Last seen</a>
-      <a class="nav-link" href="#">All</a>
-    </nav>
-  </div>
   <div class="col md-4">
     {{-- search input --}}
-    @include('layouts.search-input', ['name' => 'my_projects_search_input'])
+    @include('layouts.search-input', ['name' => 'my_projects_search_input', 'search' => 'search-my-projects', 'url' => '/dashboard/projects'])
   </div>
 </div>
 @endsection
@@ -26,7 +20,7 @@
 </a>
 {{-- projects card --}}
 
-@foreach($user->projects as $project)
+@foreach($projects as $project)
 @include('layouts.project_card', ['project' => $project])
 @endforeach
 

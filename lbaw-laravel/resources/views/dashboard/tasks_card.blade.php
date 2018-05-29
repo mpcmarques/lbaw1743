@@ -7,18 +7,7 @@
   <div class="col-md-6">
     <h5>My Tasks</h5>
   </div>
-  <div class="col-md-6">
-    <form>
-      <div class="input-group">
-        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <span class="octicon octicon-search"></span>
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
+  @include('layouts.search-input', ['name' => 'my_tasks_search_input', 'search' => 'search-my-tasks', 'url' => '/dashboard/tasks'])
 </div>
 @endsection
 
@@ -57,7 +46,7 @@
       </thead>
       <tbody>
 
-        @foreach($user->assignedTasks as $task)
+        @foreach($tasks as $task)
         <tr>
           <th scope="row">
             <p class="text-left">{{$task->idtask}}</p>
@@ -91,7 +80,7 @@
       </tbody>
     </table>
   </div>
-  @if(count($user->assignedTasks) > 5)
+  @if(count($tasks) > 5)
   <button type="button" class="btn btn-white btn-block m-0 p-0">...</button>
   @endif
 </div>
@@ -102,22 +91,22 @@ $now = Carbon::now();?>
 
 @section('card-footer')
 
-@if(count($user->assignedTasks) > 0)
+@if(count($tasks) > 0)
 <div class="card-footer">
   <small>
-    <?php $date = Carbon::parse($user->assignedTasks->first()->lasteditdate);
+    <?php $date = Carbon::parse($tasks->first()->lasteditdate);
     $days = $date->diffInDays($now);
     $hours = $date->diffInHours($now);
     $minutes = $date->diffInMinutes($now);
     $seconds = $date->diffInSeconds($now); ?>
     @if ($days > 0)
-    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $days }} days ago.
+    last task activity <a href="">{{ $tasks->first()->title }}</a>, {{ $days }} days ago.
     @elseif ($hours > 0)
-    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $hours }} hours ago.
+    last task activity <a href="">{{ $tasks->first()->title }}</a>, {{ $hours }} hours ago.
     @elseif ($minutes > 0)
-    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $minutes }} minutes ago.
+    last task activity <a href="">{{ $tasks->first()->title }}</a>, {{ $minutes }} minutes ago.
     @else
-    last task activity <a href="">{{ $user->assignedTasks->first()->title }}</a>, {{ $seconds }} seconds ago.
+    last task activity <a href="">{{ $tasks->first()->title }}</a>, {{ $seconds }} seconds ago.
     @endif
   </small>
 </div>
