@@ -36,6 +36,15 @@ $now = Carbon::now();?>
 @foreach($project->forumPosts as $post)
 <div class="card forum-card">
   <div class="card-header">
+    <div class="float-right">
+      <button type="button" class="btn btn-terciary" href="{{ url('/project/'.$project->idproject.'/edit-post')}}">
+        <span class="octicon octicon-pencil"></span>
+        Edit
+      </button>
+      <a type="button" class="btn btn-primary" href="{{ url('/project/'.$project->idproject.'/forum/'.$post->idpost.'/new-reply')}}">
+      <span class="octicon octicon-comment-discussion">Reply</span>
+      </a>
+    </div>
     <p>{{$post->title}}</p>
   </div>
   <div class="card-body">
@@ -108,15 +117,7 @@ $now = Carbon::now();?>
     @endif
   </small>
 
-  <div class="float-right">
-    <button type="button" class="btn btn-terciary" href="{{ url('/project/'.$project->idproject.'/edit-post')}}">
-      <span class="octicon octicon-pencil"></span>
-      Edit
-    </button>
-    <a type="button" class="btn btn-primary" href="{{ url('/project/'.$project->idproject.'/forum/'.$post->idpost.'/new-reply')}}">
-    <span class="octicon octicon-comment-discussion">Reply</span>
-    </a>
-  </div>
+
 </div>
 
 </div>
