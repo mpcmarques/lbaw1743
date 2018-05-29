@@ -91,6 +91,10 @@ class User extends Authenticatable
     return $this->hasMany('App\Model\Comment', 'iduser');
   }
 
+  public function bannedRecords(){
+    return $this->hasMany('App\Model\BannedRecord', 'iduser');
+  }
+
   public function scopeUsernameName($query, $text){
     return $query->where('username', 'ilike', "%{$text}%")->orWhere('name', 'ilike', "%{$text}%");
   }
