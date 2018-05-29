@@ -25,7 +25,7 @@
 
 @endsection
 <!-- TODO:creationDate -->
-<!--  TODO:show more button-->
+<!--  TODO:Reply more button-->
 <!-- TODO: Last message -->
 
 <?php use Carbon\Carbon;
@@ -47,6 +47,19 @@ $now = Carbon::now();?>
     <p>
       {{$post->content}}
     </p>
+    <div class="card-footer">
+      <div class="float-right">
+        <button type="button" class="btn btn-terciary" form="manageUsers" href="{{ url('/project/'.$project->idproject.'/edit-post')}}">
+          <span class="octicon octicon-pencil"></span>
+          Edit
+        </button>
+        <button type="button" class="btn btn-primary" href="{{ url('/project/'.$project->idproject.'/new-reply')}}">
+          <span class="octicon octicon-comment-discussion"></span>
+          Reply
+        </button>
+      </div>
+    </div>
+
     <!-- <p>
     show more...
   </p> -->
@@ -76,11 +89,8 @@ $now = Carbon::now();?>
 </div>
 </div>
 @endforeach
-
-@if( Auth::check() && $project->members->contains('iduser', Auth::user()->iduser) )
 <a class="create-new-post btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/new-post')}}">
   + create new post
 </a>
-@endif
 
 @endsection
