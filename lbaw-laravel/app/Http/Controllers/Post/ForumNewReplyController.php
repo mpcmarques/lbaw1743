@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Project;
+namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
 use App\Model\Project;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 
-class ProjectNewReplyController extends Controller
+class ForumNewReplyController extends Controller
 {
   public function show($id)
   {
@@ -40,7 +40,7 @@ class ProjectNewReplyController extends Controller
     $reply->save();
 
     if(empty($reply)){
-      return redirect('/project/'.$id'/forum/');
+      return redirect('/project/'.$id.'/forum/');
     }
 
     $project = Project::findOrFail($id);

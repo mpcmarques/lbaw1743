@@ -62,10 +62,11 @@ Route::get('/logout', function(){
 });
 
 // Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.request');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
+Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+
+Route::get('/password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('/password/reset/', 'Auth\ResetPasswordController@reset')->name('password.request');
 
 // dashboard
 
@@ -121,8 +122,8 @@ Route::post('/project/{id}/new-post', 'Project\ProjectNewPostController@newPost'
 
 // forum
 Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
-Route::get('/project/{id}/forum/{idPost}/new-reply', 'Forum\ForumNewReplyController@show')->middleware('project')->middleware('member');
-Route::post('/project/{id}/forum/{idPost}/new-reply', 'Project\ForumNewReplyController@newReply')->middleware('project')->middleware('member');
+Route::get('/project/{id}/forum/{idPost}/new-reply', 'Post\ForumNewReplyController@show')->middleware('project')->middleware('member');
+Route::post('/project/{id}/forum/{idPost}/new-reply', 'Post\ForumNewReplyController@newReply')->middleware('project')->middleware('member');
 
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
