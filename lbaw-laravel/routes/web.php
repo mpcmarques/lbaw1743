@@ -29,9 +29,11 @@ Route::get('/admin/users', 'Admin\AdminUsersController@show')->middleware('admin
 Route::post('/admin/users/promote', 'Admin\AdminUsersController@promoteUsers')->middleware('admin');
 Route::post('/admin/users/ban', 'Admin\AdminUsersController@banUsers')->middleware('admin');
 Route::post('/admin/users/remove', 'Admin\AdminUsersController@removeUsers')->middleware('admin');
+Route::post('/admin/users/', 'Admin\AdminUsersController@search')->middleware('admin');
 
 Route::get('/admin/projects', 'Admin\AdminProjectsController@show')->middleware('admin');
 Route::post('/admin/projects/remove', 'Admin\AdminProjectsController@removeProjects')->middleware('admin');
+Route::post('/admin/projects', 'Admin\AdminProjectsController@search')->middleware('admin');
 
 /* =========> MARK: app */
 

@@ -51,7 +51,7 @@ class SearchController extends Controller{
   }
 
   public function show($text){
-    $projects = Project::nameDescriptionPublic($text)->orderBy('lasteditdate','DESC')->get();
+    $projects = Project::nameDescription($text)->orderBy('lasteditdate','DESC')->get();
     $projects = SearchController::filterProjects($projects);
 
     $tasks = Task::where('title', 'ilike', "%{$text}%")->orWhere('description', 'ilike', "%{$text}%")->get();

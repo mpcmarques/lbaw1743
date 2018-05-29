@@ -8,9 +8,12 @@
     <h5 class="card-title">Projects</h5>
   </div>
   <div class="col-7">
-    <form>
+    <form method="POST" action="{{ url('/admin/projects') }}">
+      {{ csrf_field() }}
       <div class="input-group">
-        <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control" type="search"
+        placeholder="Search" aria-label="Search"
+        name="search-project" value="{{ old('search-project') }}">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
             <span class="octicon octicon-search"></span>
@@ -78,7 +81,7 @@
 @endsection
 
 @section('card-footer')
-<button type="button" class="btn btn-terciary btn-block more">...</button>
+<!-- <button type="button" class="btn btn-terciary btn-block more">...</button> -->
 <div class="card-footer">
   <div class="float-right">
     <button type="submit" class="btn btn-primary" form="manageProjects" formaction="{{ url('/admin/projects/remove') }}">

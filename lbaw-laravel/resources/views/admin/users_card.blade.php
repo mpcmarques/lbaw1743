@@ -5,13 +5,16 @@
 @section('card-header')
 
 <div class="row">
-  <div class="col-4">
+  <div class="col-5">
     <h5 class="card-title">Users</h5>
   </div>
-  <div class="col-8">
-    <form>
+  <div class="col-7">
+    <form method="POST" action="{{ url('/admin/users') }}">
+      {{ csrf_field() }}
       <div class="input-group">
-        <input class="form-control navbar-search-input" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control" type="search"
+        placeholder="Search" aria-label="Search"
+        name="search-user" value="{{ old('search-user') }}">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
             <span class="octicon octicon-search"></span>
@@ -66,7 +69,7 @@
 @endsection
 
 @section('card-footer')
-<button type="button" class="btn btn-terciary btn-block more">...</button>
+<!-- <button type="button" class="btn btn-terciary btn-block more">...</button> -->
 <div class="card-footer">
   <div class="float-right">
     <button type="submit" class="btn btn-terciary" form="manageUsers" formaction="{{ url('/admin/users/promote') }}">

@@ -12,9 +12,21 @@ use Carbon\Carbon;
 
 class AdminUsersController extends Controller
 {
-    public function show()
-    {
+    public function show(){
       $users = User::where('type', 'user')->orderBy("iduser", "ASC")->get();
+
+      return view('admin.users_card', ['users' => $users]);
+    }
+
+    public function search(Request $request){
+      $text = $request->input('search-user');
+
+      if(is_null($text)){
+        return redirect()->back();
+      }
+      else{
+        $users = User::usernameName($text)->where('type', 'user')->orderBy("iduser", "ASC")->get();
+      }
 
       return view('admin.users_card', ['users' => $users]);
     }

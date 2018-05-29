@@ -34,8 +34,8 @@ class Project extends BaseModel
     return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role')->orderBy('role', 'ASC');
   }
 
-  public function scopeNameDescriptionPublic($query, $text){
-    return $query->where('name', 'ilike', "%{$text}%")->orWhere('description', 'ilike', "%{$text}%")->where('private', '=', 'false');
+  public function scopeNameDescription($query, $text){
+    return $query->where('name', 'ilike', "%{$text}%")->orWhere('description', 'ilike', "%{$text}%");
   }
 
   /**
