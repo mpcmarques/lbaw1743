@@ -127,7 +127,7 @@
 			</div>
 			
 			<div class="modal-footer justify-content-center">
-				<a href="{{url('password-reset')}}" class="btn btn-light">
+				<a href="{{url('password/reset')}}" class="btn btn-light">
 					Forgot password?
 				</a>
 			</div>
@@ -263,7 +263,7 @@
 					</div>
 				</form>
 				
-				@if ($errors->any())
+				@if (isset($errors) && $errors->any())
 				<div class="alert alert-danger">
 					<ul>
 						@foreach ($errors->all() as $error)
