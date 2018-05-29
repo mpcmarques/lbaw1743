@@ -54,8 +54,9 @@ Route::get('/logout', function(){
 });
 
 // password reset
-Route::get('password-reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::get('password-reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
 Route::post('password-reset', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+//Route::post('password-reset', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.reset');
 
 // dashboard
 
