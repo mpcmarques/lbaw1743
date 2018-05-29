@@ -179,6 +179,4 @@ Route::get('/about', 'AboutController@show');
 
 Route::get('/faq', 'FaqController@show');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
