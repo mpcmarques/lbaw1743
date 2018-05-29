@@ -56,18 +56,7 @@ class TaskPolicy {
     public function comment(User $user, Task $task){
       $project = Project::findOrFail($task->idproject);
 
-      if($task->project->members->contains('iduser', $user->iduser)){
-        return true;
-      }
-      return false;
-    }
-
-    public function deleteComment(User $user, Comment $comment){
-      $task = Task::findOrFail($comment->idtask);
-      $project = Project::findOrFail($task->idproject);
-
-      if($task->project->editors->contains('iduser', $user->iduser)
-          || $comment->user->iduser == $user->iduser ){
+      if($task->project->members->contains('iduser', $user->iduser) || $user->type == 'admin'){
         return true;
       }
       return false;

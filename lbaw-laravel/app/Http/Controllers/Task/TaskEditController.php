@@ -115,14 +115,10 @@ class TaskEditController extends Controller
     }
 
     public function deleteComment($idproject, $idtask, $idcomment){
-      $profile = Auth::user();
-
       $comment = Comment::findOrFail($idcomment);
       $task = Task::findOrFail($idtask);
 
-      if ($comment->user == $profile|| $task->project->editors->contains('iduser', $profile->iduser)){
-          $comment->delete();
-      }
+      $comment->delete();
 
       $this->update($idtask);
 

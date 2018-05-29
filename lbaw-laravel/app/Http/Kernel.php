@@ -67,7 +67,7 @@ class Kernel extends HttpKernel
         'deleteTask' => \App\Http\Middleware\Task\UserDeleteTask::class,
         'assignTask' => \App\Http\Middleware\Task\UserAssignTask::class,
         'unassignTask' => \App\Http\Middleware\Task\UserUnassignTask::class,
-        'commentTask' => \App\Http\Middleware\Task\UserUnassignTask::class,
+        'commentTask' => \App\Http\Middleware\Task\UserCommentTask::class,
         'deleteComment' => \App\Http\Middleware\Task\UserDeleteComment::class,
         'closeRequest' => \App\Http\Middleware\Task\CreateCloseRequest::class,
         'completeCloseRequest' => \App\Http\Middleware\Task\CompleteCloseRequest::class,

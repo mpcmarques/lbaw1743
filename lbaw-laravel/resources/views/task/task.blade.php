@@ -135,8 +135,8 @@
           <h5 class="mt-0"> <a href="{{ url('profile/'.$comment->user->iduser) }}">{{$comment->user->username}}</a></h5>
           {{$comment->content}}
 
-          @if ( Auth::check() && ( $comment->user == Auth::user()
-          || $task->project->editors->contains('iduser', Auth::user()->iduser) ))
+          @if ( Auth::check() && ( ( $comment->user == Auth::user()
+          || $task->project->editors->contains('iduser', Auth::user()->iduser) ) || Auth::user()->type == 'admin' ))
           <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/delete-comment/'.$comment->idcomment) }}" class="btn btn-primary removeComment">
             <span class="octicon octicon-x">
             </span>
@@ -146,7 +146,8 @@
       </div>
       @endforeach
 
-      @if ( Auth::check() && $task->project->members->contains('iduser', Auth::user()->iduser))
+      @if ( Auth::check() && ( $task->project->members->contains('iduser', Auth::user()->iduser)
+                                || Auth::user()->type == 'admin') )
       <form method="POST" action="{{ url('project/'.$project->idproject.'/task/'.$task->idtask.'/comment') }}">
         {{ csrf_field() }}
         <div class="form-group">

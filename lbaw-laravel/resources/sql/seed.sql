@@ -308,26 +308,26 @@ CREATE TRIGGER onCreateReply BEFORE INSERT ON Reply
 FOR EACH ROW
 EXECUTE PROCEDURE insertReply();
 
--- Only a user who has Joined a Project can create Comments for a Project Task.
-DROP TRIGGER IF EXISTS onCreateComment ON Comment;
-
-CREATE OR REPLACE FUNCTION insertComent() RETURNS TRIGGER AS
-$BODY$
-  BEGIN
-    IF NOT EXISTS (
-      SELECT * FROM Joined, Task
-      WHERE new.idTask = Task.idTask AND Task.idProject = Joined.idProject AND new.idUser = Joined.idUser)
-    THEN
-      RAISE EXCEPTION 'Only a user who joined a project can create comments for a Project Task.';
-    END IF;
-    RETURN NEW;
-  END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER onCreateComment BEFORE INSERT ON Comment
-FOR EACH ROW
-EXECUTE PROCEDURE insertComent();
+-- -- Only a user who has Joined a Project can create Comments for a Project Task.
+-- DROP TRIGGER IF EXISTS onCreateComment ON Comment;
+--
+-- CREATE OR REPLACE FUNCTION insertComent() RETURNS TRIGGER AS
+-- $BODY$
+--   BEGIN
+--     IF NOT EXISTS (
+--       SELECT * FROM Joined, Task
+--       WHERE new.idTask = Task.idTask AND Task.idProject = Joined.idProject AND new.idUser = Joined.idUser)
+--     THEN
+--       RAISE EXCEPTION 'Only a user who joined a project can create comments for a Project Task.';
+--     END IF;
+--     RETURN NEW;
+--   END;
+-- $BODY$
+-- LANGUAGE plpgsql;
+--
+-- CREATE TRIGGER onCreateComment BEFORE INSERT ON Comment
+-- FOR EACH ROW
+-- EXECUTE PROCEDURE insertComent();
 
 -- Only a User who was Assigned to a Task can create a Close Request for it.
 DROP TRIGGER IF EXISTS onCreateCloseRequest ON CloseRequest;

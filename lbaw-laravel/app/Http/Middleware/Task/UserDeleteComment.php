@@ -23,7 +23,7 @@ class UserDeleteComment
         $task = Task::findOrFail($request->idTask);
         $comment = Comment::findOrFail($request->idComment);
 
-        if( Auth::check() && Auth::user()->can('deleteComment', $comment) ){
+        if( Auth::check() && Auth::user()->can('delete', $comment) ){
           return $next($request);
         }
         else{
