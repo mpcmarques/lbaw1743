@@ -47,6 +47,47 @@ $now = Carbon::now();?>
     <p>
       {{$post->content}}
     </p>
+    <p>
+      @foreach($post->Replys as $reply)
+      <div class="card forum-card">
+
+        <div class="card-body">
+          <p>
+            <b>By
+              <a href="{{ url('profile/'.$reply->user->iduser) }}">{{$reply->user->username}}</a>:
+            </b>
+          </p>
+          <p>
+            {{$reply->content}}
+          </p>
+        </div>
+        <div class="card-footer">
+          <small>
+            <?php $date = Carbon::parse($post->lasteditdate);
+            $days = $date->diffInDays($now);
+            $hours = $date->diffInHours($now);
+            $minutes = $date->diffInMinutes($now);
+            $seconds = $date->diffInSeconds($now); ?>
+            @if ($days > 0)
+            last activity {{ $days }} days ago.
+            @elseif ($hours > 0)
+            last activity {{ $hours }} hours ago.
+            @elseif ($minutes > 0)
+            last activity {{ $minutes }} minutes ago.
+            @else
+            last activity {{ $seconds }} seconds ago.
+            @endif
+          </small>
+
+          <div class="float-right">
+            <a type="button" class="btn btn-terciary" href="{{ url('/project/'.$project->idproject.'/forum/'.$post->idpost.'/new-reply')}}">
+            <span class="octicon octicon-pencil"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      @endforeach
+    </p>
 </div>
 
 <div class="card-footer">
