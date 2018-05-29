@@ -9,5 +9,7 @@
     @include('layouts.list-item', ['name' => 'Projects', 'path' => '/admin/projects', 'url' => '/admin/projects'])
     <!-- Administration Tasks -->
     @include('layouts.list-item', ['name' => 'Tasks', 'path' => '/admin/tasks', 'url' => '/admin/tasks'])
+    <!-- Administration Comments -->
+    @include('layouts.list-item', ['name' => 'Comments', 'path' => '/admin/comments', 'url' => '/admin/comments'])
   </ol>
 </div>

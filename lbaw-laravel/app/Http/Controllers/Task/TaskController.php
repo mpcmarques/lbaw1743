@@ -39,7 +39,7 @@ class TaskController extends Controller
   public static function delete($idproject, $idtask){
     $task = Task::findOrFail($idtask);
 
-    $this->deleteTask($task);
+    TaskController::deleteTask($task);
 
     return redirect('/project/'.$idproject);
   }
