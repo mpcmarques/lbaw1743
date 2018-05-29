@@ -59,6 +59,8 @@ Route::get('/dashboard', 'Dashboard\DashboardController@show')->middleware('auth
 
 Route::get('/dashboard/tasks', 'Dashboard\DashboardTasksController@show')->middleware('auth');
 Route::post('/dashboard/tasks', 'Dashboard\DashboardTasksController@search')->middleware('auth');
+Route::get('/dashboard/tasks/completed', 'Dashboard\DashboardTasksController@showCompleted')->middleware('auth');
+Route::post('/dashboard/tasks/completed', 'Dashboard\DashboardTasksController@searchCompleted')->middleware('auth');
 
 Route::get('/dashboard/projects', 'Dashboard\DashboardProjectsController@show')->middleware('auth');
 Route::post('/dashboard/projects', 'Dashboard\DashboardProjectsController@search')->middleware('auth');

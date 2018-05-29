@@ -4,28 +4,33 @@
 
 @section('card-header')
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-3">
     <h5>My Tasks</h5>
   </div>
-  @include('layouts.search-input', ['name' => 'my_tasks_search_input', 'search' => 'search-my-tasks', 'url' => '/dashboard/tasks'])
+  <div class="col-md-5">
+    <nav class="nav nav-pills">
+      @if (strpos($_SERVER['PATH_INFO'], 'completed') !== false)
+      <a class="nav-link" href="{{ url('/dashboard/tasks') }}">Assigned</a>
+      <a class="nav-link active" href="{{ url('/dashboard/tasks/completed') }}">Completed</a>
+      @else
+      <a class="nav-link active" href="{{ url('/dashboard/tasks') }}">Assigned</a>
+      <a class="nav-link" href="{{ url('/dashboard/tasks/completed') }}">Completed</a>
+      @endif
+    </nav>
+  </div>
+  <div class="col md-4">
+    {{-- search input --}}
+    @if (strpos($_SERVER['PATH_INFO'], 'completed') !== false)
+    @include('layouts.search-input', ['name' => 'my_tasks_search_input', 'search' => 'search-my-tasks', 'url' => '/dashboard/tasks/completed'])
+    @else
+    @include('layouts.search-input', ['name' => 'my_tasks_search_input', 'search' => 'search-my-tasks', 'url' => '/dashboard/tasks'])
+    @endif
+  </div>
 </div>
 @endsection
 
 @section('card-body')
 <div class="tasks-card nopadding">
-  <div class="container-fluid">
-    <div class="row bg-primary">
-      <div class="col-md-12">
-        <div class="float-right">
-          <div class="nav nav-pills">
-            <a class="nav-link active" href="#">Assigned</a>
-            <a class="nav-link" href="#">Unassigned</a>
-            <a class="nav-link" href="#">Completed</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="card-body">
     <table class="table">
       <thead class="thead-light">

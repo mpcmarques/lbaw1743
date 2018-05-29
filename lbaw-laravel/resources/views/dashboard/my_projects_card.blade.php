@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-md-4">
     <h5 class="panel-title">My Projects</h5>
-  </div>
+  </div> 
   <div class="col md-4">
     {{-- search input --}}
     @include('layouts.search-input', ['name' => 'my_projects_search_input', 'search' => 'search-my-projects', 'url' => '/dashboard/projects'])
