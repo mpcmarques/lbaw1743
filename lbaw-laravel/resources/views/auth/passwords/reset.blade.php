@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('title', 'Plenum - Reset password')
+
+@section('content')
 
 <div class="container">
     <div class="row">
@@ -65,3 +70,5 @@
         </div>
     </div>
 </div>
+
+@endsection
