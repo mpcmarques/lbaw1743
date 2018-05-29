@@ -32,6 +32,7 @@
 $now = Carbon::now();?>
 
 @section('card-body')
+
 @foreach($project->forumPosts as $post)
 <div class="card forum-card">
   <div class="card-header">
@@ -75,6 +76,8 @@ $now = Carbon::now();?>
 </div>
 </div>
 @endforeach
-<button type="button" id="forum-button" class="btn btn-block btn-xs m-0 p-0">...</button>
+<a class="create-new-post btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/new-post')}}">
+  + create new post
+</a>
 
 @endsection

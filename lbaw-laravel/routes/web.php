@@ -96,6 +96,8 @@ Route::get('/project/{id}/leave', 'Project\ProjectController@leave')->middleware
 Route::get('/project/{id}/new-task', 'Project\ProjectNewTaskController@show')->middleware('project')->middleware('member');;
 Route::post('/project/{id}/new-task', 'Project\ProjectNewTaskController@newTask')->middleware('project')->middleware('member');
 
+Route::get('/project/{id}/new-post', 'Project\ProjectNewPostController@show')->middleware('project')->middleware('member');;
+Route::post('/project/{id}/new-post', 'Project\ProjectNewPostController@newPost')->middleware('project')->middleware('member');
 // search
 Route::post('/search', 'Search\SearchController@search')->name('/search');
 
