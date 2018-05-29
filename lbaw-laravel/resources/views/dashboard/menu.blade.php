@@ -1,7 +1,7 @@
 <ol class="list-group">
   <!-- dashboard -->
   <li>
-    @if ( $_SERVER['PATH_INFO'] == '/dashboard')
+    @if ( $_SERVER['REQUEST_URI'] == '/dashboard')
     <a href="{{ url('dashboard') }}" class="list-group-item list-group-item-action active" role="button">Dashboard</a>
     @else
     <a href="{{ url('dashboard') }}" class="list-group-item list-group-item-action" role="button">Dashboard</a>

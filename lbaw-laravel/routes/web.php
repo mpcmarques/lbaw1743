@@ -35,6 +35,10 @@ Route::get('/admin/projects', 'Admin\AdminProjectsController@show')->middleware(
 Route::post('/admin/projects/remove', 'Admin\AdminProjectsController@removeProjects')->middleware('auth')->middleware('admin');
 Route::post('/admin/projects', 'Admin\AdminProjectsController@search')->middleware('auth')->middleware('admin');
 
+Route::get('/admin/tasks', 'Admin\AdminTasksController@show')->middleware('auth')->middleware('admin');
+Route::post('/admin/tasks/remove', 'Admin\AdminTasksController@removeTasks')->middleware('auth')->middleware('admin');
+Route::post('/admin/tasks', 'Admin\AdminTasksController@search')->middleware('auth')->middleware('admin');
+
 /* =========> MARK: app */
 
 Route::get('/','HomeController@show');

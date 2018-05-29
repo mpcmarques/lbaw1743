@@ -57,18 +57,18 @@ $now = Carbon::now();?>
     $minutes = $date->diffInMinutes($now);
     $seconds = $date->diffInSeconds($now); ?>
     @if ($days > 0)
-    last activity {{ $days }} days ago.
+    last post activity {{ $days }} days ago.
     @elseif ($hours > 0)
-    last activity {{ $hours }} hours ago.
+    last post activity {{ $hours }} hours ago.
     @elseif ($minutes > 0)
-    last activity {{ $minutes }} minutes ago.
+    last post activity {{ $minutes }} minutes ago.
     @else
-    last activity {{ $seconds }} seconds ago.
+    last post activity {{ $seconds }} seconds ago.
     @endif
   </small>
 
   <div class="float-right">
-    <button type="button" class="btn btn-terciary" form="manageUsers" href="{{ url('/project/'.$project->idproject.'/edit-post')}}">
+    <button type="button" class="btn btn-terciary" href="{{ url('/project/'.$project->idproject.'/edit-post')}}">
       <span class="octicon octicon-pencil"></span>
       Edit
     </button>
@@ -86,6 +86,31 @@ $now = Carbon::now();?>
 <a class="create-new-post btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/new-post')}}">
   + create new post
 </a>
+@endif
+
+@endsection
+
+@section('card-footer')
+@if(count($project->forumPosts) > 0)
+<div class="card-footer">
+  <small>
+    <?php $post = $project->forumPosts->first();
+    $date = Carbon::parse($post->lasteditdate);
+    $days = $date->diffInDays($now);
+    $hours = $date->diffInHours($now);
+    $minutes = $date->diffInMinutes($now);
+    $seconds = $date->diffInSeconds($now); ?>
+    @if ($days > 0)
+    last forum activity {{ $days }} days ago.
+    @elseif ($hours > 0)
+    last forum activity {{ $hours }} hours ago.
+    @elseif ($minutes > 0)
+    last forum activity {{ $minutes }} minutes ago.
+    @else
+    last forum activity {{ $seconds }} seconds ago.
+    @endif
+  </small>
+</div>
 @endif
 
 @endsection

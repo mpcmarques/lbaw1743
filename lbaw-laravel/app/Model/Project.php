@@ -23,7 +23,7 @@ class Project extends BaseModel
   */
   public function forumPosts()
   {
-    return $this->hasMany('\App\Model\Post', 'idproject');
+    return $this->hasMany('\App\Model\Post', 'idproject')->orderBy('lasteditdate', 'DESC');
   }
 
   /**

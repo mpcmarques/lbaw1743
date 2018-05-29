@@ -79,6 +79,7 @@ html, body {
     margin-right: 8px;
 }
 
-.owners{
-  color:black;
+.owners,
+.projects{
+  color: #247BA0;
 }

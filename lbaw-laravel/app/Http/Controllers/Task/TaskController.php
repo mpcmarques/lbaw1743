@@ -19,9 +19,7 @@ class TaskController extends Controller
     return view('task.task', ['task'=> $task, 'project' => $project]);
   }
 
-  public static function delete($idproject, $idtask){
-    $task = Task::findOrFail($idtask);
-
+  public static function deleteTask($task){
     $comments = $task->comments()->get();
     foreach($comments as $comment){
       $comment->delete();
@@ -36,6 +34,12 @@ class TaskController extends Controller
     $task->assigned()->detach();
 
     $task->delete();
+  }
+
+  public static function delete($idproject, $idtask){
+    $task = Task::findOrFail($idtask);
+
+    $this->deleteTask($task);
 
     return redirect('/project/'.$idproject);
   }
