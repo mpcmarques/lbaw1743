@@ -75,18 +75,6 @@ class HomeController extends Controller
         throw $exception;
     }
 
-    function create(array $data)
-    {
-        return User::create([
-            'username' => $data['username'],
-            'password' => bcrypt($data['passwordRegister']),
-            'email' => $data['emailRegister'],
-            'name' => $data['name'],
-            'institution' => $data['institution_company'],
-            'birthdate' => date('Y-m-d H:i:s',strtotime($data['birthdate']))
-        ]);
-    }
-
     /**
      * Handle a registration request for the application.
      *
@@ -110,7 +98,7 @@ class HomeController extends Controller
       if ($validator->fails()){
         return redirect('register')->withErrors($validator)->withInput();
       }
-      
+
       $user = new User;
       $user->username = $data['username'];
       $user->password = bcrypt($data['passwordRegister']);
@@ -127,8 +115,6 @@ class HomeController extends Controller
       if(empty($user)) { // Failed to register user
           return redirect('register'); // Wherever you want to redirect
       }
-
-      // event(new Registered($user));
 
       $this->guard()->login($user);
 
