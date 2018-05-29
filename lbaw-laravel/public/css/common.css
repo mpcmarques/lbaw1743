@@ -314,6 +314,12 @@ li a{
     }
 }
 
+@media (min-width: 768px) {
+    .page-with-menu .card .card-body{
+        overflow: auto;
+    }
+}
+
 /* nopadding div */
 .nopadding{
   margin: -20px;

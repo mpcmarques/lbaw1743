@@ -58,6 +58,10 @@ class Project extends BaseModel
     return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role')->where('role','!=', 'Member');
   }
 
+  public function onlyMembers(){
+    return $this->belongsToMany('\App\Model\User', 'joined', 'idproject', 'iduser')->withPivot('role')->where('role', 'Member');
+  }
+
   /**
    * Get project image.
    */

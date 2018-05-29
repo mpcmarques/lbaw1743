@@ -11,7 +11,6 @@
   <div class="col-md-4">
     @include('layouts.search-input', ['name' => 'project_users_search', 'search' => 'search-users', 'url' => '/project/'.$project->idproject.'/manage_users'])
   </div>
-  </div>
 </div>
 
 @endsection

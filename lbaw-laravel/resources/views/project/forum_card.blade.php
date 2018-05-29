@@ -76,8 +76,11 @@ $now = Carbon::now();?>
 </div>
 </div>
 @endforeach
+
+@if( Auth::check() && $project->members->contains('iduser', Auth::user()->iduser) )
 <a class="create-new-post btn btn-outline-light btn-block" href="{{ url('/project/'.$project->idproject.'/new-post')}}">
   + create new post
 </a>
+@endif
 
 @endsection

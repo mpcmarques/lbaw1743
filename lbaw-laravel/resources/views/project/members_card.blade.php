@@ -9,17 +9,27 @@
     <h5>Members</h5>
   </div>
   <div class="col-md-4">
+
     <div class="float-right">
-      <form>
         <div class="form-group">
-          <select class="form-control slct-primary" id="sel_filter">
-            <option class="slct-primary">Show all</option>
-            <option class="slct-primary">Show only Managers</option>
-            <option class="slct-primary">Show only Members</option>
+          <select class="form-control" name="filter" onchange="location = this.value;">
+            @if (strpos($_SERVER['PATH_INFO'], 'members/manager') !== false)
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members') }}">Show All</option>
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/manager') }}" selected>Show only Managers</option>
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/member') }}">Show only Members</option>
+            @elseif (strpos($_SERVER['PATH_INFO'], 'members/member') !== false)
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members') }}">Show All</option>
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/manager') }}">Show only Managers</option>
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/member') }}" selected>Show only Members</option>
+            @else
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members') }}" selected>Show All</option>
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/manager') }}">Show only Managers</option>
+            <option class="slct-primary" value="{{ url('/project/'.$project->idproject.'/members/member') }}">Show only Members</option>
+            @endif
           </select>
         </div>
-      </form>
     </div>
+
   </div>
 </div>
 
@@ -51,7 +61,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($project->members as $member)
+      @foreach ($members as $member)
       <tr>
         <th scope="row">
           <img src="{{ $member->getPicture() }}" class="img-round img-center thumbnail-small" alt="Profile Picture">

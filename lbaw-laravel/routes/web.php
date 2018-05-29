@@ -25,15 +25,15 @@ Route::get('/admin/logout', function(){
 // route to process the login form
 Route::post('/admin/login', 'Admin\AdminController@login')->name('/admin/login');
 
-Route::get('/admin/users', 'Admin\AdminUsersController@show')->middleware('admin');
-Route::post('/admin/users/promote', 'Admin\AdminUsersController@promoteUsers')->middleware('admin');
-Route::post('/admin/users/ban', 'Admin\AdminUsersController@banUsers')->middleware('admin');
-Route::post('/admin/users/remove', 'Admin\AdminUsersController@removeUsers')->middleware('admin');
-Route::post('/admin/users/', 'Admin\AdminUsersController@search')->middleware('admin');
+Route::get('/admin/users', 'Admin\AdminUsersController@show')->middleware('auth')->middleware('admin');
+Route::post('/admin/users/promote', 'Admin\AdminUsersController@promoteUsers')->middleware('auth')->middleware('admin');
+Route::post('/admin/users/ban', 'Admin\AdminUsersController@banUsers')->middleware('auth')->middleware('admin');
+Route::post('/admin/users/remove', 'Admin\AdminUsersController@removeUsers')->middleware('auth')->middleware('admin');
+Route::post('/admin/users/', 'Admin\AdminUsersController@search')->middleware('auth')->middleware('admin');
 
-Route::get('/admin/projects', 'Admin\AdminProjectsController@show')->middleware('admin');
-Route::post('/admin/projects/remove', 'Admin\AdminProjectsController@removeProjects')->middleware('admin');
-Route::post('/admin/projects', 'Admin\AdminProjectsController@search')->middleware('admin');
+Route::get('/admin/projects', 'Admin\AdminProjectsController@show')->middleware('auth')->middleware('admin');
+Route::post('/admin/projects/remove', 'Admin\AdminProjectsController@removeProjects')->middleware('auth')->middleware('admin');
+Route::post('/admin/projects', 'Admin\AdminProjectsController@search')->middleware('auth')->middleware('admin');
 
 /* =========> MARK: app */
 
@@ -79,6 +79,8 @@ Route::get('/project/{id}/tasks/unassigned', 'Project\ProjectTasksController@sho
 Route::get('/project/{id}/tasks/completed', 'Project\ProjectTasksController@showCompleted')->middleware('project');
 
 Route::get('/project/{id}/members', 'Project\ProjectMembersController@show')->middleware('project');
+Route::get('/project/{id}/members/manager', 'Project\ProjectMembersController@showManager')->middleware('project');
+Route::get('/project/{id}/members/member', 'Project\ProjectMembersController@showMember')->middleware('project');
 
 Route::get('/project/{id}/forum', 'Project\ProjectForumController@show')->middleware('project');
 

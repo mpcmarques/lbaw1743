@@ -112,9 +112,8 @@
 $now = Carbon::now();?>
 
 @section('card-footer')
-
+@if(count($tasks) > 0)
 <div class="card-footer">
-  @if(count($tasks) > 0)
   <small>
     <?php $task = $tasks->first();
     $date = Carbon::parse($task->lasteditdate);
@@ -132,7 +131,7 @@ $now = Carbon::now();?>
     last task activity <a href="{{ url('project/'.$project->idproject.'/task/'.$task->idtask) }}">{{ $task->title }}</a>, {{ $seconds }} seconds ago.
     @endif
   </small>
-  @endif
 </div>
+@endif
 
 @endsection

@@ -60,7 +60,7 @@
 				Login
 			</button>
 
-			@elseif( Auth::user()->type != 'admin')
+			@else
 
 			<div class="nav-item dropdown text-right">
 				<img class="img-round dropdown-toggle" data-toggle="dropdown" src="{{ Auth::user()->getPicture() }}" alt="Profile Picture" width="40" height="40">
