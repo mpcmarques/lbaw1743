@@ -39,6 +39,10 @@ Route::get('/admin/tasks', 'Admin\AdminTasksController@show')->middleware('auth'
 Route::post('/admin/tasks/remove', 'Admin\AdminTasksController@removeTasks')->middleware('auth')->middleware('admin');
 Route::post('/admin/tasks', 'Admin\AdminTasksController@search')->middleware('auth')->middleware('admin');
 
+Route::get('/admin/comments', 'Admin\AdminCommentsController@show')->middleware('auth')->middleware('admin');
+Route::post('/admin/comments/remove', 'Admin\AdminCommentsController@removeComments')->middleware('auth')->middleware('admin');
+Route::post('/admin/comments', 'Admin\AdminCommentsController@search')->middleware('auth')->middleware('admin');
+
 /* =========> MARK: app */
 
 Route::get('/','HomeController@show');

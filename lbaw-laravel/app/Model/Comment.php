@@ -13,4 +13,8 @@ class Comment extends BaseModel
   function user(){
     return $this->belongsTo('App\Model\User', 'iduser');
   }
+
+  function task(){
+    return $this->belongsTo('App\Model\Task', 'idtask');
+  }
 }
