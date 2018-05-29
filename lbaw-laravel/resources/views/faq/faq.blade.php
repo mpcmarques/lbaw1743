@@ -14,15 +14,15 @@
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Cras justo odio?
+                            What is this website for?
                         </button>
                     </h5>
                 </div>
 
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit amet. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Quis vel eros donec ac odio. Non curabitur gravida arcu ac tortor. Lobortis elementum nibh tellus molestie nunc non blandit massa. Urna condimentum mattis pellentesque id nibh tortor id. Libero id faucibus nisl tincidunt eget. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id venenatis a condimentum vitae sapien.
-                    </div>
+                      The goal of plenum is to give a user friendly, easy to use web application for you to manage your individual or team-oriented projects.
+                      </div>
                 </div>
             </div>
         </div>
@@ -31,13 +31,13 @@
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Dapibus ac facilisis in?
+                        Can I use this for free?
                     </button>
                 </h5>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit amet. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Quis vel eros donec ac odio. Non curabitur gravida arcu ac tortor. Lobortis elementum nibh tellus molestie nunc non blandit massa. Urna condimentum mattis pellentesque id nibh tortor id. Libero id faucibus nisl tincidunt eget. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id venenatis a condimentum vitae sapien.
+                  Yes, plenum is available for free, there is however a premium version which allows you to make your projects private.
                 </div>
             </div>
         </div>
@@ -45,13 +45,27 @@
             <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Morbi leo risus?
+                        Can I have more than one project?
                     </button>
                 </h5>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit amet. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Quis vel eros donec ac odio. Non curabitur gravida arcu ac tortor. Lobortis elementum nibh tellus molestie nunc non blandit massa. Urna condimentum mattis pellentesque id nibh tortor id. Libero id faucibus nisl tincidunt eget. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id venenatis a condimentum vitae sapien.
+                Yes you can have as many as you wish.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                        Can I communicate with my team member through this application?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                Yes you can, each project has its own forum in which you can discuss with your team members.
                 </div>
             </div>
         </div>
