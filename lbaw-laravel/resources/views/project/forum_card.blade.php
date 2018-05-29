@@ -72,10 +72,9 @@ $now = Carbon::now();?>
       <span class="octicon octicon-pencil"></span>
       Edit
     </button>
-    <button type="button" class="btn btn-primary" href="{{ url('/project/'.$project->idproject.'/new-reply')}}">
-      <span class="octicon octicon-comment-discussion"></span>
-      Reply
-    </button>
+    <a type="button" class="btn btn-primary" href="{{ url('/project/'.$project->idproject.'/forum/'.$post->idpost.'/new-reply')}}">
+    <span class="octicon octicon-comment-discussion">Reply</span>
+    </a>
   </div>
 </div>
 
