@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use Request;
+use Illuminate\Http\Request;
 use App\Model\PremiumSignature;
 use Carbon\Carbon;
 
@@ -18,17 +18,16 @@ class PremiumController extends Controller
     // TODO: fix premium add
     public function buy(Request $request){
         $idUser = Auth::user()->iduser;
-        $current_time = Carbon::now()->toDateTimeString();
-        $duration = Carbon::now()->addDays(30)->toDateTimeString();
-        
-        if ($current_time != null && $idUser != null && $duration != null){
+        $current_time = date('Y-m-d H:i:s', strtotime(Carbon::now()));
+
+        if ($current_time != null && $idUser != null){
             $premiumSignature = new PremiumSignature();
             $premiumSignature->iduser = $idUser;
             $premiumSignature->startdate = $current_time;
-            $premiumSignature->duration = $duration;
-            $premiumSignature.save();
+            $premiumSignature->duration = '1 Month';
+            $premiumSignature->save();
         }
-
+        
         return redirect('premium');
     }
 }

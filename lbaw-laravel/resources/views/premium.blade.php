@@ -23,7 +23,7 @@
                 type: "POST",
                 url: '{{ url("premium/buy") }}',
                 dataType: 'JSON',
-                data: { value: value, _token: '{{csrf_token()}}' },
+                data: { duration: value, _token: '{{csrf_token()}}' },
                 success: function (data) {
                     console.log(data);
                     
