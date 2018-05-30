@@ -24,9 +24,11 @@ class PremiumController extends Controller
         if ($current_time != null && $idUser != null && $duration != null){
             $premiumSignature = new PremiumSignature();
             $premiumSignature->iduser = $idUser;
-            $premiumSignature->current_time = $current_time;
+            $premiumSignature->startdate = $current_time;
             $premiumSignature->duration = $duration;
             $premiumSignature.save();
         }
+
+        return redirect('premium');
     }
 }

@@ -40,7 +40,7 @@ class ProjectNewReplyController extends Controller
     $reply->save();
 
     if(empty($reply)){
-      return redirect('/project/'.$id'/forum/');
+      return redirect('/project/'.$id.'/forum/');
     }
 
     $project = Project::findOrFail($id);
