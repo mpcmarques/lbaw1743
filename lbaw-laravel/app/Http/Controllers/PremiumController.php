@@ -22,13 +22,11 @@ class PremiumController extends Controller
         $duration = Carbon::now()->addDays(30)->toDateTimeString();
         
         if ($current_time != null && $idUser != null && $duration != null){
-            $premiumSignature = PremiumSignature::create([
-                'iduser' => $idUser,
-                'startdate' => $current_time,
-                'duration' => $duration
-                ]);
-                
-                $premiumSignature.save();
-            }
+            $premiumSignature = new PremiumSignature();
+            $premiumSignature->iduser = $idUser;
+            $premiumSignature->current_time = $current_time;
+            $premiumSignature->duration = $duration;
+            $premiumSignature.save();
         }
     }
+}
