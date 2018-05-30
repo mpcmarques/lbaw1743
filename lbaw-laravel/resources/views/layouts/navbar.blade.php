@@ -17,6 +17,9 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url('/profile/'.Auth::user()->iduser) }}">Profile</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url('/premium') }}">Premium</a>
+			</li>
 			@endif
 			
 			@if(Auth::check() && Auth::user()->type == 'admin')

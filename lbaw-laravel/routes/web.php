@@ -183,4 +183,8 @@ Route::get('/about', 'AboutController@show');
 
 Route::get('/faq', 'FaqController@show');
 
+// Premium
+Route::get('/premium', 'PremiumController@show')->middleware('auth');
+Route::post('/premium/buy', 'PremiumController@buy')->middleware('auth');
+
 //Route::get('/home', 'HomeController@index')->name('home');
