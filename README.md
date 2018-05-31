@@ -6,12 +6,12 @@ Group 1743
 
 ### THEME:
 
-7.Project Management
+#### 7.Project Management
 
 * URL: [http://lbaw1743.lbaw-prod.fe.up.pt](http://lbaw1743.lbaw-prod.fe.up.pt)
 * DEMO: [https://www.youtube.com/watch?v=CTHymKAezB0](https://www.youtube.com/watch?v=CTHymKAezB0)
 
-https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
+* CLASS: https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 
 ### Group Elements
 
