@@ -8,6 +8,9 @@ Group 1743
 
 7.Project Management
 
+* URL: [http://lbaw1743.lbaw-prod.fe.up.pt](http://lbaw1743.lbaw-prod.fe.up.pt)
+* DEMO: [https://www.youtube.com/watch?v=CTHymKAezB0](https://www.youtube.com/watch?v=CTHymKAezB0)
+
 https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 
 ### Group Elements
@@ -29,3 +32,5 @@ https://web.fe.up.pt/~jlopes/doku.php/teach/lbaw/index
 * A7: [Web Resources Documentation](/artifacts/A7/A7.md)
 * A8: [Vertical prototype](/artifacts/A8/A8.md)
 * A9: [Main Accesses to the database and transactions](/artifacts/A9/A9.md)
+* A10: [Product](/artifacts/A10/A10.md)
+* A11: [Presentation and Discussion](/artifacts/A11/A11.md)
